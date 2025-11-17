@@ -41,7 +41,7 @@ For larger contributions or systematic fixes:
 4. **Make your corrections**
    - Edit the relevant `.umr` files in the language directories
    - Ensure you maintain the file format (see README.md for format description)
-   - Test that the file can still be parsed with `parse_umr_to_json.py`
+   - Test that the file can still parsed with [validation.py](https://github.com/ufal/UMR/blob/main/tools/validate.py)
 
 5. **Commit your changes**
    ```bash
@@ -60,22 +60,6 @@ For larger contributions or systematic fixes:
    - Select your branch
    - Describe your corrections in detail
 
-## Types of Errors to Report
-
-Common annotation errors include:
-
-- **Sentence-level graph errors**: Incorrect concept nodes, relations, or structure
-- **Document-level annotation errors**: Incorrect temporal, modal, or coreference relations
-- **Alignment errors**: Misaligned concepts to token indices
-- **Format errors**: Malformed Penman notation or block structure issues
-- **Meta information errors**: Incorrect sentence IDs or metadata
-
-## Guidelines for Corrections
-
-- **Preserve format**: Maintain the block structure and separator format
-- **Document changes**: In your PR description, explain what was wrong and why your correction is correct
-- **Reference guidelines**: When possible, reference the [UMR guidelines](https://github.com/umr4nlp/umr-guidelines) to support your corrections
-- **One fix per PR**: Keep pull requests focused on a single type of error or a single file when possible
 
 ## Questions?
 
@@ -84,10 +68,7 @@ If you have questions about:
 - The UMR annotation guidelines, visit [umr-guidelines](https://github.com/umr4nlp/umr-guidelines)
 - Contributing process, feel free to open an issue with your question
 
-## Code of Conduct
-
-Please be respectful and constructive in all interactions. We're all working together to improve this resource for the research community.
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the same license as the original dataset (see LICENSE file).
+By contributing, you agree that your contributions will be licensed under the same license as the original dataset.
