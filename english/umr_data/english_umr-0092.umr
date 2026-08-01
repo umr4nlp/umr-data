@@ -3,7 +3,6 @@
 # :: snt1
 # sentence level graph:
 (s1u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -15,7 +14,6 @@
 # :: snt2
 # sentence level graph:
 (s2u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -27,7 +25,6 @@
 # :: snt3
 # sentence level graph:
 (s3u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -39,7 +36,6 @@
 # :: snt4
 # sentence level graph:
 (s4u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -51,7 +47,6 @@
 # :: snt5
 # sentence level graph:
 (s5u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -63,7 +58,6 @@
 # :: snt6
 # sentence level graph:
 (s6u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -75,7 +69,6 @@
 # :: snt7
 # sentence level graph:
 (s7u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -87,7 +80,6 @@
 # :: snt8
 # sentence level graph:
 (s8u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -99,7 +91,6 @@
 # :: snt9
 # sentence level graph:
 (s9u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -111,7 +102,6 @@
 # :: snt10
 # sentence level graph:
 (s10u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -123,7 +113,6 @@
 # :: snt11
 # sentence level graph:
 (s11u / umr-empty)
-
 # alignment:
 
 # document level annotation:
@@ -133,14 +122,15 @@
 ################################################################################
 # meta-info :: sent_id = bolt-eng-DF-170-181103-8886574_0092.12 :: type = partial_conversion
 # :: snt12
-Index: 1        2        3        4        5        
-Words: You      asked    about    the      baggage. 
+Index: 1        2        3        4        5
+Words: You      asked    about    the      baggage.
 
 # sentence level graph:
 (s12a / ask-01
-      :ARG0 (s12y / you)
-      :ARG1 (s12b / baggage))
-
+    :ARG0 (s12y / person
+        :refer-person 2nd
+        :refer-number singular)
+    :ARG1 (s12b / baggage))
 # alignment:
 
 # document level annotation:
@@ -150,16 +140,19 @@ Words: You      asked    about    the      baggage.
 ################################################################################
 # meta-info :: sent_id = bolt-eng-DF-170-181103-8886574_0092.13 :: type = partial_conversion
 # :: snt13
-Index: 1     2     3     4     5     
-Words: I     noted some  of    it.   
+Index: 1     2     3     4     5
+Words: I     noted some  of    it.
 
 # sentence level graph:
 (s13n / note-01
-      :ARG0 (s13i / i)
-      :ARG1 (s13s / some
-                  :ARG1-of (s13i2 / include-91
-                                  :ARG2 (s13i3 / it))))
-
+    :ARG0 (s13i / person
+        :refer-person 1st
+        :refer-number singular)
+    :ARG1 (s13s / some
+        :ARG1-of (s13i2 / include-91
+            :ARG2 (s13i3 / thing
+                :refer-person 3rd
+                :refer-number singular))))
 # alignment:
 
 # document level annotation:
@@ -169,21 +162,24 @@ Words: I     noted some  of    it.
 ################################################################################
 # meta-info :: sent_id = bolt-eng-DF-170-181103-8886574_0092.14 :: type = partial_conversion
 # :: snt14
-Index: 1       2       3       4       5       6       7       8       9       10      
-Words: You     can     deny    it      all     you     want,   but     it      exists. 
+Index: 1       2       3       4       5       6       7       8       9       10
+Words: You     can     deny    it      all     you     want,   but     it      exists.
 
 # sentence level graph:
 (s14c / contrast-91
-      :ARG1 (s14p / possible-01
-                  :ARG1 (s14d / deny-01
-                              :ARG0 (s14y / you)
-                              :ARG1 (s14i / it
-                                          :ARG1-of (s14w / want-01
-                                                         :ARG0 s14y)
-                                          :mod (s14a / all))))
-      :ARG2 (s14e / exist-01
-                  :ARG1 s14i))
-
+    :ARG1 (s14d / deny-01
+        :ARG0 (s14y / person
+            :refer-person 2nd
+            :refer-number singular)
+        :ARG1 (s14i / thing
+            :ARG1-of (s14w / want-01
+                :ARG0 s14y)
+            :mod (s14a / all)
+            :refer-person 3rd
+            :refer-number singular)
+        :modal-strength neutral-affirmative)
+    :ARG2 (s14e / exist-01
+        :ARG1 s14i))
 # alignment:
 
 # document level annotation:
@@ -193,18 +189,19 @@ Words: You     can     deny    it      all     you     want,   but     it      e
 ################################################################################
 # meta-info :: sent_id = bolt-eng-DF-170-181103-8886574_0092.15 :: type = partial_conversion
 # :: snt15
-Index: 1          2          3          4          5          6          
-Words: Newt       is         not        a          viable     candidate. 
+Index: 1          2          3          4          5          6
+Words: Newt       is         not        a          viable     candidate.
 
 # sentence level graph:
-(s15c / candidate
-      :mod (s15v / viable
-                 :polarity -)
-      :domain (s15p / person
-                    :name (s15n / name
-                                :op1 "Newt")
-                    :wiki "Newt_Gingrich"))
-
+(s15h / have-role-91
+   :ARG1 (s15p / person
+               :wiki "Newt_Gingrich"
+               :name (s15n / name
+                           :op1 "Newt"))
+   :ARG3 (s15c / candidate
+               :mod (s15v / viable
+                          :polarity -))
+   :aspect state)
 # alignment:
 
 # document level annotation:
@@ -214,14 +211,15 @@ Words: Newt       is         not        a          viable     candidate.
 ################################################################################
 # meta-info :: sent_id = bolt-eng-DF-170-181103-8886574_0092.16 :: type = partial_conversion
 # :: snt16
-Index: 1      2      3      4      
-Words: That's the    bottom line.  
+Index: 1      2      3      4
+Words: That's the    bottom line.
 
 # sentence level graph:
-(s16l / line
-      :mod (s16b / bottom)
-      :domain (s16t / that))
-
+(s16i / identity-91
+   :ARG1 (s16t / that)
+   :ARG2 (s16l / line
+               :mod (s16b / bottom))
+   :aspect state)
 # alignment:
 
 # document level annotation:
