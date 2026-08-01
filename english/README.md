@@ -1,49 +1,33 @@
-# Usage
-The English UMR 2.0 dataset is a subset of the English AMR dataset selected for conversion into UMR graphs. A list of included sentences along with their corresponding filenames can be found in `directory_by_sentence.tsv`. Not all sentences have been fully converted, the three levels of completeness are:
+# Changes from UMR 2.0 to UMR 3.0
 
-- <strong>Document Level Conversion:</strong> Sentence level graph fully converted based on current UMR guidelines with document level annotation also provided.
-- <strong>Full Conversion:</strong> Sentence level graph fully converted based on current UMR guidelines but no document level annotation.
-- <strong>Partial Conversion:</strong> Sentence level graphs with roleset conversions detailed below: 
+The following additional conversions were applied for the 3.0 release:
 
-| Original AMR Structure             | UMR 2.0 Structure     | Change Type   | Number of Occurrences |
-|------------------------------------|-----------------------|---------------|:---------------------:|
-| :location                          | :place                | deterministic | 17,108                |
-| :location-of                       | :place-of             | deterministic | 0                     |
-| :companion                         | :accompanier          | deterministic | 29                    |
-| :companion-of                      | :accompanier-of       | deterministic | 0                     |
-| :beneficiary                       | :affectee             | deterministic | 69                    |
-| :beneficiary-of                    | :affectee-of          | deterministic | 0                     |
-| :time                              | :temporal             | deterministic | 2,543                 |
-| :time-of                           | :temporal-of          | deterministic | 0                     |
-| :li                                | :list-item            | deterministic | 0                     |
-| :poss                              | :possessor            | deterministic | 566                   |
-| :poss-of                           | :possessor-of         | deterministic | 0                     |
-| be-located-at-91                   | have-place-91         | deterministic | 272                   |
-| be-temporally-at-91                | have-temporal-91      | deterministic | 19                    |
-| have-li-91                         | have-list-item-91     | deterministic | 2                     |
-| instead-of-91                      | have-substitute-91    | deterministic | 324                   |
-| have-rel-role-91                   | have-rel-role-92      | deterministic | 160                   |
-| have-org-role-91                   | have-org-role-92      | deterministic | 140                   |
-| surface form:  'or else' \| 'lest' | :apprehensive         | new role      | 0                     |
-| surface form:  'or else' \| 'lest' | :apprehensive-of      | new role      | 0                     |
-| contrast-01                        | contrast-91           | mixed         | 433                   |
-| contrast-01                        | have-apprehensive-91  | mixed         | 0                     |
-| contrast-01                        | have-pure-addition-91 | mixed         | 0                     |
-| have-mod-91                        | have-mod-91           | manual split  | 50                    |
-| have-mod-91                        | have-other-role-91    | manual split  | 0                     |
-| have-mod-91                        | identity-91           | manual split  | 24                    |
-| have-mod-91                        | have-role-91          | manual split  | 45                    |
-| infer-01                           | infer-91              | mixed         | 128                   |
-| infer-01                           | have-reason-91        | mixed         | 41                    |
-| be-from-91                         | have-start-91         | mixed         | 4                     |
-| be-from-91                         | have-source-91        | mixed         | 2                     |
-| be-from-91                         | have-material-91      | mixed         | 0                     |
-| be-from-91                         | from-boundary-01      | mixed         | 28                    |
-| mean-01                            | mean-91               | mixed         | 127                   |
-| resemble-01                        | resemble-91           | mixed         | 639                   |
-| last-01                            | have-duration-91      | mixed         | 2                     |
-| realize-01                         | aware-01              | mixed         | 2                     |
-| except-01                          | have-subtraction-91   | mixed         | 65                    |
+| Original 2.0 Structure | UMR 3.0 Structure | Change Type | Number of Occurrences |
+|---|---|---|:---:|
+| amr-unknown | umr-unknown | deterministic | 839 |
+| amr-choice | umr-choice | deterministic | 130 |
+| (questions missing `:mode`) | `:mode interrogative` added | deterministic | 1,615 |
+| possible-01 | `:modal-strength neutral-affirmative` | deterministic | — |
+| recommend-01 | `:modal-strength neutral-affirmative` | deterministic | — |
+| permit-01 | `:modal-strength neutral-affirmative` | deterministic | — |
+| likely-01 | `:modal-strength partial-affirmative` | deterministic | — |
+| obligate-01 | `:modal-strength partial-affirmative` | deterministic | 1,477 total |
+| `:domain` | have-configuration-91 | manual | 238 |
+| `:domain` | have-role-91 | manual | 195 |
+| `:domain` | identity-91 | manual | 280 |
+| AMR pronoun concepts (i, you, he, she, it, we, they) | `person` + `:refer-person 1st/2nd/3rd` | deterministic | 8,758 |
+| AMR indefinite pronouns (somebody, anyone, nothing, etc.) | UMR person/thing equivalents + `:refer-person`/`:refer-number` | deterministic | — |
+| Ambiguous pronoun referents | `person` + `:refer-person` (LLM-assisted disambiguation) | LLM-assisted | 3,226 of 3,295 decisions |
+
+**Pronoun conversion detail:**
+
+| Attribute | Occurrences |
+|-----------|------------:|
+| `:refer-person 1st` | 2,512 |
+| `:refer-person 2nd` | 3,827 |
+| `:refer-person 3rd` | 2,301 |
+| `:refer-number plural` | 3,756 |
+| `:refer-number singular` | 7,377 |
 
 # Acknowledgments
 
