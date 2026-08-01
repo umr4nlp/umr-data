@@ -178,7 +178,7 @@ This dataset includes annotated data from the following languages:
 
 #### Newly Added in UMR 3.0 Release
 
-- Portuguese
+- More English and Chinese files
 ---
 
 ### Notes
