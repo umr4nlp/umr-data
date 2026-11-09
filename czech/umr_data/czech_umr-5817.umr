@@ -1,68 +1,60 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1  2     3        4   5         6        7    8  9  10    11 12 13 14     15
 Words: Z  čísel magazínu The Economist vydaných mezi 30 .  zářím a  4  .  říjnem :
 
 # sentence level graph:
 (s1e1 / event
+        :aspect state
         :start (s1c1 / číslo
+            :refer-number plural
             :mod (s1m1 / magazín
-                :name (s1x1 / #Forn
-                    :FPHR (s1t1 / The)
-                    :FPHR (s1e2 / Economist))
-                :refer-number singular)
+                :name (s1n1 / name
+                    :op1 "The" :op2 "Economist"))
             :mod (s1v1 / vydaný
                 :temporal (s1a1 / and
                     :op1 (s1z1 / září
-                        :mod (s1x2 / 30)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s1x1 / 30))
                     :op2 (s1r1 / říjen
-                        :mod (s1x3 / 4)
-                        :refer-number singular))
-                :refer-number plural)
-            :refer-number plural)
-        :aspect state)
+                        :refer-number singular
+                        :mod (s1x2 / 4))))))
 
 # alignment:
 s1e1: 0-0
 s1c1: 1-2
 s1m1: 3-3
-s1x1: 0-0
-s1t1: 4-4
-s1e2: 5-5
+s1n1: 4-5
 s1v1: 6-6
 s1a1: 11-11
 s1z1: 7-7,10-10
-s1x2: 8-9
+s1x1: 8-9
 s1r1: 7-7,14-14
-s1x3: 12-13
+s1x2: 12-13
 
 # document level annotation:
 (s1s0 / sentence)
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1        2     3          4   5    6      7      8
 Words: Generála Aouna neporazila jen síla syrské armády .
 
 # sentence level graph:
 (s2p1 / porazit-001
+        :aspect performance
+        :polarity -
         :ARG1 (s2a1 / Aoun
-            :mod (s2g1 / generál
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s2g1 / generál))
         :clausal-marker (s2j1 / jen)
         :ARG0 (s2s1 / síla
+            :refer-number singular
             :mod (s2a2 / armáda
-                :mod (s2s2 / syrský
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :aspect performance
-        :polarity -)
+                :mod (s2s2 / syrský))))
 
 # alignment:
 s2p1: 3-3
@@ -78,7 +70,7 @@ s2s2: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2    3     4  5    6          7        8  9   10    11 12 13 14   15       16       17      18
 Words: Proti němu stála i  síla libanonské historie a  teď hrozí ,  že se bude opakovat historie Izraele .
@@ -86,29 +78,24 @@ Words: Proti němu stála i  síla libanonské historie a  teď hrozí ,  že se
 # sentence level graph:
 (s3a1 / and
         :op1 (s3s1 / stát-009
-            :ARG1 (s3e1 / entity
+            :aspect activity
+            :ARG2 (s3e1 / entity
                 :refer-number singular
                 :refer-person 3rd)
-            :ARG0 (s3s2 / síla
+            :ARG1 (s3s2 / síla
+                :refer-number singular
                 :clausal-marker (s3i1 / i)
                 :mod (s3h1 / historie
-                    :mod (s3l1 / libanonský
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect activity)
+                    :mod (s3l1 / libanonský))))
         :op2 (s3h2 / hrozit-002
+            :aspect activity
             :temporal (s3t1 / teď)
             :ARG1 (s3e2 / entity)
             :ARG0 (s3o1 / opakovat-se-001
-                :ARG0 (s3h3 / historie
-                    :mod (s3i2 / Izrael
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect activity)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                :aspect activity
+                :ARG1 (s3h3 / historie
+                    :refer-number singular
+                    :mod (s3i2 / Izrael)))))
 
 # alignment:
 s3a1: 8-8
@@ -131,58 +118,51 @@ s3i2: 17-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1      2  3      4    5       6  7       8        9  10        11       12     13 14         15       16
 Words: Izrael je stejně jako Libanon ,  jakkoli neprávem ,  považován arabským světem za koloniální anomálii .
 
 # sentence level graph:
-(s4b1 / but-91
-        :ARG2 (s4p1 / považovat-001
-            :manner (s4p2 / právem
+(s4p1 / považovat-001
+        :aspect activity
+        :ARG1 (s4i1 / Izrael
+            :refer-number singular)
+        :manner (s4s1 / stejně
+            :comparison (s4p2 / považovat-001
+                :aspect activity
+                :ARG0 (s4e1 / entity)
+                :ARG1 (s4l1 / Libanon
+                    :refer-number singular)
+                :effect s4p1))
+        :concession (s4p3 / považovat-001
+            :aspect activity
+            :manner (s4p4 / právem
                 :polarity -)
-            :ARG0 (s4e1 / entity)
+            :ARG0 (s4e2 / entity)
             :ARG1 s4l1
-            :effect s4p3
+            :effect s4p1)
+        :ARG0 (s4s2 / svět
             :refer-number singular
-            :aspect activity)
-        :ARG1 (s4p3 / považovat-001
-            :ARG1 (s4i1 / Izrael
-                :refer-number singular)
-            :manner (s4s1 / stejně
-                :comparison (s4p4 / považovat-001
-                    :ARG0 (s4e2 / entity)
-                    :ARG1 (s4l1 / Libanon
-                        :refer-number singular)
-                    :effect s4p3
-                    :refer-number singular
-                    :aspect activity))
-            :ARG0 (s4s2 / svět
-                :mod (s4a1 / arabský
-                    :refer-number singular)
-                :refer-number singular)
-            :effect (s4a2 / anomálie
-                :mod (s4k1 / koloniální
-                    :refer-number singular)
-                :refer-number singular)
+            :mod (s4a1 / arabský))
+        :effect (s4a2 / anomálie
             :refer-number singular
-            :aspect activity))
+            :mod (s4k1 / koloniální)))
 
 # alignment:
-s4b1: 0-0
-s4p3: 2-2,10-10
+s4p1: 2-2,10-10
 s4i1: 1-1
 s4s1: 3-3
-s4p4: 0-0
-s4e2: 0-0
+s4p2: 0-0
+s4e1: 0-0
 s4l1: 5-5
+s4p3: 0-0
+s4p4: 8-8
+s4e2: 0-0
 s4s2: 12-12
 s4a1: 11-11
 s4a2: 13-13,15-15
 s4k1: 14-14
-s4p1: 0-0
-s4p2: 8-8
-s4e1: 0-0
 
 # document level annotation:
 (s4s0 / sentence
@@ -190,37 +170,31 @@ s4e1: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1    2        3      4  5  6  7  8  9       10      11 12      13 14       15     16 17         18
 Words: Jeho největší naděje na to ,  že ho sousedé přijmou ,  spočívá v  dosažení dohody s  Palestinci .
 
 # sentence level graph:
 (s5s1 / spočívat-003
+        :aspect activity
         :ARG0 (s5n1 / naděje
+            :refer-number singular
             :mod (s5e1 / entity
                 :refer-number singular
                 :refer-person 3rd)
-            :mod (s5v1 / velký
-                :refer-number singular)
+            :mod (s5v1 / velký)
             :mod (s5p1 / přijmout-003
+                :aspect performance
                 :ARG1 s5e1
                 :ARG0 (s5s2 / soused
-                    :refer-number plural)
-                :refer-number plural
-                :refer-person 3rd
-                :aspect performance)
-            :refer-number singular)
+                    :refer-number plural)))
         :ARG1 (s5d1 / dosažení
+            :refer-number singular
             :ARG0 (s5e2 / entity)
             :ARG1 (s5d2 / dohoda
-                :mod (s5p2 / Palestinec
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number singular
+                :mod (s5p2 / Palestinec))))
 
 # alignment:
 s5s1: 12-12
@@ -240,30 +214,24 @@ s5p2: 16-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1      2  3       4    5       6    7     8         9        10
 Words: Izrael se podobně jako Libanon mění podle struktury obyvatel .
 
 # sentence level graph:
 (s6m1 / měnit-se-003
-        :ARG0 (s6i1 / Izrael
-            :refer-number singular
-            :refer-person 3rd)
+        :aspect activity
+        :ARG1 (s6i1 / Izrael
+            :refer-number singular)
         :manner (s6p1 / podobně
             :comparison (s6m2 / měnit-se-003
-                :ARG0 (s6l1 / Libanon
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity))
+                :aspect activity
+                :ARG1 (s6l1 / Libanon
+                    :refer-number singular)))
         :regard (s6s1 / struktura
-            :mod (s6o1 / obyvatel
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number singular
+            :mod (s6o1 / obyvatel)))
 
 # alignment:
 s6m1: 2-2,6-6
@@ -281,31 +249,25 @@ s6o1: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1  2      3       4  5    6   7        8    9  10    11  12        13
 Words: Ve Velkém Izraeli je více než polovina dětí do šesti let muslimská .
 
 # sentence level graph:
 (s7b1 / být-007
+        :aspect activity
         :place (s7i1 / Izrael
-            :mod (s7v1 / Velký
-                :refer-number singular)
-            :refer-number singular)
-        :ARG0 (s7h1 / hodně
+            :refer-number singular
+            :mod (s7v1 / Velký))
+        :ARG1 (s7h1 / hodně
             :comparison (s7p1 / polovina
+                :refer-number singular
                 :mod (s7d1 / dítě
                     :temporal (s7r1 / rok
-                        :mod (s7s1 / šest
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular))
-        :ARG1 (s7m1 / muslimský
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number plural
+                        :mod (s7s1 / šest)))))
+        :ARG2 (s7m1 / muslimský))
 
 # alignment:
 s7b1: 4-4
@@ -324,24 +286,22 @@ s7m1: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1     2  3   4  5    6     7      8        9
 Words: Během 25 let se židé možná stanou menšinou .
 
 # sentence level graph:
 (s8s1 / stát-se-001
+        :aspect performance
         :temporal (s8r1 / rok
-            :mod (s8x1 / 25)
-            :refer-number plural)
-        :ARG0 (s8z1 / žid
+            :refer-number plural
+            :mod (s8x1 / 25))
+        :ARG1 (s8z1 / žid
             :refer-number plural)
         :clausal-marker (s8m1 / možná)
-        :ARG1 (s8m2 / menšina
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect performance)
+        :ARG2 (s8m2 / menšina
+            :refer-number singular))
 
 # alignment:
 s8s1: 4-4,7-7
@@ -356,7 +316,7 @@ s8m2: 8-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1      2  3      4      5   6     7  8   9  10    11     12    13 14  15  16    17       18          19       20 21     22   23        24  25      26    27    28       29      30  31 32  33   34   35    36   37
 Words: Přesto se Izrael nebude ani dělit o  moc se všemi těmito Araby ,  ani jak tvrdí současný ministerský předseda ,  nebude nově vymezovat své hranice blíže srdci židovské oblasti tak ,  jak byla před rokem 1967 .
@@ -364,51 +324,43 @@ Words: Přesto se Izrael nebude ani dělit o  moc se všemi těmito Araby ,  ani
 # sentence level graph:
 (s9a1 / and
         :op1 (s9d1 / dělit-se-001
+            :aspect activity
+            :polarity -
             :ARG0 (s9i1 / Izrael
                 :refer-number singular)
             :clausal-marker (s9p1 / přesto)
             :ARG1 (s9m1 / moc
                 :refer-number singular)
             :ARG2 (s9a2 / Arab
-                :mod (s9v1 / všechen
-                    :refer-number plural)
-                :mod (s9t1 / tento
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s9v1 / všechen)
+                :mod (s9t1 / tento))
             :parenthesis (s9t2 / tvrdit-002
+                :aspect activity
                 :ARG0 (s9p2 / předseda
-                    :mod (s9s1 / současný
-                        :refer-number singular)
-                    :mod (s9m2 / ministerský
-                        :refer-number singular)
-                    :refer-number singular)
-                :effect s9v2
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :aspect activity
-            :polarity -)
+                    :refer-number singular
+                    :mod (s9s1 / současný)
+                    :mod (s9m2 / ministerský))
+                :ARG1 s9v2))
         :op2 (s9v2 / vymezovat-001
+            :aspect activity
+            :polarity -
             :ARG0 s9i1
             :parenthesis s9t2
             :manner (s9n1 / nově)
             :ARG1 (s9h1 / hranice
-                :mod s9i1
-                :refer-number plural)
+                :refer-number plural
+                :mod s9i1)
             :place (s9s2 / srdce
+                :refer-number singular
                 :mod (s9o1 / oblast
-                    :mod (s9z1 / židovský
-                        :refer-number singular)
+                    :mod (s9z1 / židovský)
                     :manner (s9b1 / být-011
-                        :ARG0 s9o1
+                        :aspect activity
+                        :ARG1 s9o1
                         :temporal (s9r1 / rok
-                            :name (s9x6 / 1967)
-                            :refer-number singular)
-                        :aspect activity)
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect activity
-            :polarity -))
+                            :refer-number singular
+                            :name (s9x6 / 1967)))))))
 
 # alignment:
 s9a1: 5-5,14-14
@@ -439,7 +391,7 @@ s9x6: 36-36
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1   2  3  4  5        6         7   8     9  10     11       12 13   14   15      16 17     18   19 20      21       22 23 24    25    26 27      28    29   30 31 32  33 34 35        36       37        38    39
 Words: Tím ,  že si Izraelci nevyberou ani jednu z  těchto možností ,  sami sebe odsoudí ,  stejně jako to udělali Maronité ,  k  věčné válce s  muslimy kolem sebe ,  a  tím i  k  vnitřnímu rozkladu vlastního státu .
@@ -447,61 +399,45 @@ Words: Tím ,  že si Izraelci nevyberou ani jednu z  těchto možností ,  sami
 # sentence level graph:
 (s10a1 / and
         :op1 (s10o1 / odsoudit-001
+            :aspect performance
             :instrument (s10v1 / vybrat-001
+                :aspect performance
+                :polarity -
                 :affectee s10i1
                 :ARG0 (s10i1 / Izraelec
                     :refer-number plural)
                 :clausal-marker (s10a2 / ani)
-                :ARG1 (s10j1 / jeden
-                    :refer-number singular)
-                :source (s10m1 / možnost
-                    :mod (s10t1 / tento
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural
-                :refer-person 3rd
-                :aspect performance
-                :polarity -)
+                :ARG1 (s10j1 / jeden)
+                :ARG2 (s10m1 / možnost
+                    :refer-number plural
+                    :mod (s10t1 / tento)))
             :ARG1 (s10e1 / entity
-                :mod (s10s1 / sám
-                    :refer-number plural))
+                :mod (s10s1 / sám))
             :ARG0 s10i1
             :manner (s10s2 / stejně
                 :comparison (s10u1 / udělat-006
+                    :aspect performance
                     :ARG1 (s10t2 / ten
-                        :refer-number singular
-                        :refer-person 3rd)
+                        :refer-number singular)
                     :ARG0 (s10m2 / Maronita
-                        :refer-number plural)
-                    :refer-number plural
-                    :aspect performance))
-            :effect (s10v2 / válka
-                :mod (s10v3 / věčný
-                    :refer-number singular)
+                        :refer-number plural)))
+            :ARG2 (s10v2 / válka
+                :refer-number singular
+                :mod (s10v3 / věčný)
                 :mod (s10m3 / muslim
-                    :place s10i1
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect performance)
+                    :place s10i1)))
         :op2 (s10o2 / odsoudit-001
+            :aspect performance
             :ARG1 s10e1
             :ARG0 s10i1
             :instrument (s10t3 / ten
                 :refer-number singular)
             :clausal-marker (s10i2 / i)
-            :effect (s10r1 / rozklad
-                :mod (s10v4 / vnitřní
-                    :refer-number singular)
+            :ARG2 (s10r1 / rozklad
+                :refer-number singular
+                :mod (s10v4 / vnitřní)
                 :mod (s10s3 / stát
-                    :mod (s10v5 / vlastní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect performance))
+                    :mod (s10v5 / vlastní)))))
 
 # alignment:
 s10a1: 31-31
@@ -539,7 +475,7 @@ s10v5: 37-37
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1         2    3  4      5  6        7         8  9   10 11    12         13      14      15         16    17 18 19         20 21    22      23 24      25     26
 Words: Izraelští židé na rozdíl od Maronitů nedopustí ,  aby se stali nejslabším článkem systému soukromých armád ;  z  Jeruzaléma se stane Belfast a  posléze Bejrút .
@@ -547,47 +483,35 @@ Words: Izraelští židé na rozdíl od Maronitů nedopustí ,  aby se stali nej
 # sentence level graph:
 (s11i1 / identity-91
         :ARG1 (s11d1 / dopustit-001
+            :aspect performance
+            :polarity -
             :ARG0 (s11z1 / žid
-                :mod (s11i2 / izraelský
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s11i2 / izraelský))
             :comparison (s11m1 / Maronita
                 :refer-number plural)
             :ARG1 (s11s1 / stát-se-001
-                :ARG0 s11z1
-                :ARG1 (s11c1 / článek
-                    :mod (s11s2 / slabý
-                        :refer-number singular)
+                :aspect performance
+                :ARG1 s11z1
+                :ARG2 (s11c1 / článek
+                    :refer-number singular
+                    :mod (s11s2 / slabý)
                     :mod (s11s3 / systém
                         :mod (s11a1 / armáda
-                            :mod (s11s4 / soukromý
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural
-                :aspect performance)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect performance
-            :polarity -)
+                            :mod (s11s4 / soukromý))))))
         :ARG2 (s11a2 / and
             :op1 (s11s5 / stát-se-003
+                :aspect performance
                 :ARG1 (s11j1 / Jeruzalém
                     :refer-number singular)
-                :ARG0 (s11b1 / Belfast
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect performance)
+                :ARG2 (s11b1 / Belfast
+                    :refer-number singular))
             :op2 (s11s6 / stát-se-003
+                :aspect performance
                 :ARG1 s11j1
                 :temporal (s11p1 / posléze)
-                :ARG0 (s11b2 / Bejrút
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect performance)))
+                :ARG2 (s11b2 / Bejrút
+                    :refer-number singular))))
 
 # alignment:
 s11i1: 17-17
@@ -614,31 +538,24 @@ s11b2: 25-25
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1      2        3     4    5      6      7      8         9
 Words: Prohra generála Aouna však žádnou velkou útěchu nepřináší .
 
 # sentence level graph:
 (s12p1 / přinášet-003
+        :aspect activity
+        :polarity -
         :ARG0 (s12p2 / prohra
+            :refer-number singular
             :mod (s12g1 / generál
-                :mod (s12a1 / Aoun
-                    :refer-number singular
-                    :refer-person 3rd)
-                :refer-number singular)
-            :refer-number singular)
+                :mod (s12a1 / Aoun)))
         :clausal-marker (s12v1 / však)
         :ARG1 (s12u1 / útěcha
-            :mod (s12z1 / žádný
-                :refer-number singular)
-            :mod (s12v2 / velký
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity
-        :polarity -)
+            :refer-number singular
+            :mod (s12z1 / žádný)
+            :mod (s12v2 / velký)))
 
 # alignment:
 s12p1: 8-8

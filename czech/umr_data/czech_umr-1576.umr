@@ -1,14 +1,14 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1        2
 Words: Přeprava klesla
 
 # sentence level graph:
 (s1k1 / klesnout-001
+        :aspect performance
         :ARG0 (s1p1 / přeprava
-            :refer-number singular)
-        :aspect performance)
+            :refer-number singular))
 
 # alignment:
 s1k1: 2-2
@@ -19,39 +19,37 @@ s1p1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1          2       3          4     5  6        7    8       9   10    11
 Words: Železniční doprava přepravila letos v  červenci 8059 milionů tun zboží .
 
 # sentence level graph:
 (s2p1 / přepravit-001
+        :aspect performance
         :ARG0 (s2d1 / doprava
-            :mod (s2z1 / železniční
-                :refer-number singular)
-            :refer-number singular)
-        :start (s2e1 / entity)
-        :goal (s2e2 / entity)
+            :refer-number singular
+            :mod (s2z1 / železniční))
+        :start (s2c1 / concept)
+        :goal (s2c2 / concept)
         :temporal (s2l1 / letos)
-        :temporal (s2c1 / červenec
+        :temporal (s2c3 / červenec
             :refer-number singular)
         :ARG1 (s2m1 / milión
             :mod (s2t1 / tuna
+                :refer-number plural
                 :mod (s2z2 / zboží
-                    :refer-number singular)
-                :refer-number plural)
-            :mod (s2x1 / 8059)
-            :refer-number plural)
-        :aspect performance)
+                    :refer-number singular))
+            :mod (s2x1 / 8059)))
 
 # alignment:
 s2p1: 3-3
 s2d1: 2-2
 s2z1: 1-1
-s2e1: 0-0
-s2e2: 0-0
+s2c1: 0-0
+s2c2: 0-0
 s2l1: 4-4
-s2c1: 5-6
+s2c3: 5-6
 s2m1: 8-8
 s2t1: 9-9
 s2z2: 10-10
@@ -62,26 +60,24 @@ s2x1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2        3      4    5  6             7      8  9   10 11
 Words: Proti stejnému období loni to představovalo pokles o  3.9 %  .
 
 # sentence level graph:
 (s3p1 / představovat-003
+        :aspect activity
         :comparison (s3o1 / období
+            :refer-number singular
             :temporal (s3v1 / vloni)
-            :mod (s3s1 / stejný
-                :refer-number singular)
-            :refer-number singular)
+            :mod (s3s1 / stejný))
         :ARG0 (s3t1 / ten
             :refer-number singular)
         :ARG1 (s3p2 / pokles
-            :extent (s3x1 / #Percnt
-                :mod (s3x2 / 3.9))
-            :refer-number singular)
-        :refer-number singular
-        :aspect activity)
+            :refer-number singular
+            :extent (s3p3 / percentage-entity
+                :value "3.9")))
 
 # alignment:
 s3p1: 6-6
@@ -90,8 +86,7 @@ s3v1: 4-4
 s3s1: 2-2
 s3t1: 5-5
 s3p2: 7-7
-s3x1: 8-8,10-10
-s3x2: 9-9
+s3p3: 8-10
 
 # document level annotation:
 (s3s0 / sentence
@@ -99,27 +94,25 @@ s3x2: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1        2    3     4 5    6 7
 Words: Nakládka byla nižší o 12.4 % .
 
 # sentence level graph:
 (s4b1 / být-007
-        :ARG0 (s4n1 / nakládka
+        :aspect activity
+        :ARG1 (s4n1 / nakládka
             :refer-number singular)
-        :ARG1 (s4n2 / nízký
-            :extent (s4x1 / #Percnt
-                :mod (s4x2 / 12.4))
-            :refer-number singular)
-        :aspect activity)
+        :ARG2 (s4n2 / nízký
+            :extent (s4p1 / percentage-entity
+                :value "12.4")))
 
 # alignment:
 s4b1: 2-2
 s4n1: 1-1
 s4n2: 3-3
-s4x1: 4-4,6-6
-s4x2: 5-5
+s4p1: 4-6
 
 # document level annotation:
 (s4s0 / sentence
@@ -127,54 +120,50 @@ s4x2: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1      2  3   4  5  6      7   8  9      10 11    12     13    14       15   16    17    18      19
 Words: Rovněž o  1.2 %  na 451000 tun se snížil v  témže období proti červenci 1993 objem říční dopravy .
 
 # sentence level graph:
 (s5s1 / snížit-se-001
-        :extent (s5x1 / #Percnt
-            :clausal-marker (s5r1 / rovněž)
-            :mod (s5x2 / 1.2))
+        :aspect performance
+        :extent (s5p1 / percentage-entity
+            :value "1.2"
+            :clausal-marker (s5r1 / rovněž))
         :ARG1 (s5t1 / tuna
-            :mod (s5x3 / 451000)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s5x1 / 451000))
         :temporal (s5o1 / období
-            :mod (s5t2 / týž
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s5t2 / týž))
         :comparison (s5c1 / červenec
-            :possessor (s5x4 / 1993)
-            :refer-number singular)
+            :refer-number singular
+            :possessor (s5x2 / 1993))
         :ARG0 (s5o2 / objem
+            :refer-number singular
             :possessor (s5d1 / doprava
-                :mod (s5r2 / říční
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                :refer-number singular
+                :mod (s5r2 / říční))))
 
 # alignment:
 s5s1: 8-9
-s5x1: 2-2,4-4
+s5p1: 2-4
 s5r1: 1-1
-s5x2: 3-3
 s5t1: 5-5,7-7
-s5x3: 6-6
+s5x1: 6-6
 s5o1: 10-10,12-12
 s5t2: 11-11
 s5c1: 13-14
-s5x4: 15-15
+s5x2: 15-15
 s5o2: 16-16
 s5d1: 18-18
 s5r2: 17-17
 
 # document level annotation:
 (s5s0 / sentence
-    :coref ((s5o1 :same-entity s2c1)
-            (s5x4 :same-entity s3v1)
+    :coref ((s5o1 :same-entity s2c3)
+            (s5x2 :same-entity s3v1)
             (s5o2 :same-entity s4n1)))
 
 

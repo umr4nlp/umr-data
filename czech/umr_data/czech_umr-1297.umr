@@ -1,18 +1,17 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1    2    3     4
 Words: Ceny ropy mírně vzrostly
 
 # sentence level graph:
 (s1v1 / vzrůst-001
-        :ARG0 (s1c1 / cena
+        :aspect performance
+        :ARG1 (s1c1 / cena
+            :refer-number plural
             :ARG1 (s1r1 / ropa
-                :refer-number singular)
-            :refer-number plural)
-        :extent (s1m1 / mírně)
-        :refer-number plural
-        :aspect performance)
+                :refer-number singular))
+        :extent (s1m1 / mírně))
 
 # alignment:
 s1v1: 4-4
@@ -25,18 +24,17 @@ s1m1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2  3       4
 Words: Týden ve světové ekonomice
 
 # sentence level graph:
 (s2t1 / týden
+        :refer-number singular
         :place (s2e1 / ekonomika
-            :mod (s2s1 / světový
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular)
+            :refer-number singular
+            :mod (s2s1 / světový)))
 
 # alignment:
 s2t1: 1-1
@@ -48,39 +46,34 @@ s2s1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1    2       3        4     5  6         7     8       9       10
 Words: Přes růstové tendence dolar v  uplynulém týdnu nakonec oslabil .
 
 # sentence level graph:
-(s3b1 / but-91
-        :ARG2 (s3t1 / tendence
-            :mod (s3r1 / růstový
-                :refer-number plural)
-            :refer-number plural)
-        :ARG1 (s3o1 / oslabit-001
-            :ARG0 (s3d1 / dolar
-                :refer-number singular)
-            :ARG1 (s3e1 / entity)
-            :temporal (s3t2 / týden
-                :mod (s3u1 / uplynulý
-                    :refer-number singular)
-                :refer-number singular)
-            :temporal (s3n1 / nakonec)
+(s3o1 / oslabit-001
+        :aspect performance
+        :concession (s3t1 / tendence
+            :refer-number plural
+            :mod (s3r1 / růstový))
+        :ARG0 (s3d1 / dolar
+            :refer-number singular)
+        :ARG1 (s3e1 / entity)
+        :temporal (s3t2 / týden
             :refer-number singular
-            :aspect performance))
+            :mod (s3u1 / uplynulý))
+        :temporal (s3n1 / nakonec))
 
 # alignment:
-s3b1: 0-0
 s3o1: 9-9
+s3t1: 1-1,3-3
+s3r1: 2-2
 s3d1: 4-4
 s3e1: 0-0
 s3t2: 5-5,7-7
 s3u1: 6-6
 s3n1: 8-8
-s3t1: 1-1,3-3
-s3r1: 2-2
 
 # document level annotation:
 (s3s0 / sentence
@@ -88,28 +81,26 @@ s3r1: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1        2     3 4   5         6  7          8     9
 Words: Pondělní údaje z USA neudělaly na obchodníky dojem .
 
 # sentence level graph:
 (s4u1 / udělat-009
-        :ARG0 (s4u2 / údaj
-            :mod (s4p1 / pondělní
-                :refer-number plural)
-            :start (s4u3 / USA
-                :refer-number plural)
-            :refer-number plural)
-        :predicative-noun (s4d1 / dojem
-            :ARG0 s4o1
-            :ARG1 s4u2
-            :refer-number singular)
-        :ARG2 (s4o1 / obchodník
-            :refer-number plural)
-        :refer-number plural
         :aspect performance
-        :polarity -)
+        :polarity -
+        :ARG0 (s4u2 / údaj
+            :refer-number plural
+            :mod (s4p1 / pondělní)
+            :start (s4u3 / USA
+                :refer-number plural))
+        :predicative-noun (s4d1 / dojem
+            :refer-number singular
+            :ARG0 s4o1
+            :ARG1 s4u2)
+        :ARG2 (s4o1 / obchodník
+            :refer-number plural))
 
 # alignment:
 s4u1: 5-5
@@ -124,29 +115,25 @@ s4o1: 6-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1   2  3       4     5      6      7        8    9       10
 Words: Ani v  dalších dnech nebyly pohyby americké měny výrazné .
 
 # sentence level graph:
 (s5b1 / být-007
+        :aspect activity
+        :polarity -
         :clausal-marker (s5a1 / ani)
         :temporal (s5d1 / den
-            :mod (s5d2 / další
-                :refer-number plural)
-            :refer-number plural)
-        :ARG0 (s5p1 / pohyb
+            :refer-number plural
+            :mod (s5d2 / další))
+        :ARG1 (s5p1 / pohyb
+            :refer-number plural
             :ARG0 (s5m1 / měna
-                :mod (s5a2 / americký
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural)
-        :ARG1 (s5v1 / výrazný
-            :refer-number plural)
-        :refer-number plural
-        :aspect activity
-        :polarity -)
+                :refer-number singular
+                :mod (s5a2 / americký)))
+        :ARG2 (s5v1 / výrazný))
 
 # alignment:
 s5b1: 5-5
@@ -164,37 +151,34 @@ s5v1: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1   2     3  4        5           6        7           8  9      10 11      12     13 14            15 16  17 18    19
 Words: Trh čekal na výsledky čtvrtečního zasedání Bundesbanky a  hlavně na páteční zprávu o  zaměstnanosti v  USA za srpen .
 
 # sentence level graph:
 (s6c1 / čekat-003
+        :aspect activity
         :ARG0 (s6t1 / trh
             :refer-number singular)
         :ARG1 (s6g1 / gradation
             :op1 (s6v1 / výsledek
+                :refer-number plural
                 :possessor (s6z1 / zasedání
+                    :refer-number singular
                     :ARG0 (s6b1 / Bundesbanka
                         :refer-number singular)
-                    :temporal (s6c2 / čtvrteční
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
+                    :temporal (s6c2 / čtvrteční)))
             :clausal-marker (s6h1 / hlavně)
             :op2 (s6z2 / zpráva
+                :refer-number singular
                 :ARG1 (s6z3 / zaměstnanost
+                    :refer-number singular
                     :place (s6u1 / USA
-                        :refer-number plural)
-                    :refer-number singular)
+                        :refer-number plural))
                 :duration (s6s1 / srpen
                     :refer-number singular)
-                :mod (s6p1 / páteční
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number singular
-        :aspect activity)
+                :mod (s6p1 / páteční))))
 
 # alignment:
 s6c1: 2-2
@@ -217,25 +201,23 @@ s6p1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1          2           3    4      5 6      7         8
 Words: Obchodníci ponechávali kurz dolaru v úzkých rozpětích .
 
 # sentence level graph:
 (s7p1 / ponechávat-004
+        :aspect habitual
         :ARG0 (s7o1 / obchodník
             :refer-number plural)
         :ARG1 (s7k1 / kurs
+            :refer-number singular
             :possessor (s7d1 / dolar
-                :refer-number singular)
-            :refer-number singular)
-        :place (s7r1 / rozpětí
-            :mod (s7u1 / úzký
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number plural
-        :aspect habitual)
+                :refer-number singular))
+        :ARG2 (s7r1 / rozpětí
+            :refer-number plural
+            :mod (s7u1 / úzký)))
 
 # alignment:
 s7p1: 2-2
@@ -252,13 +234,14 @@ s7u1: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1  2      3     4       5  6     7   8  9   10   11       12     13 14     15 16    17     18    19
 Words: Ve středu dolar uzavřel na 15815 DEM ,  což byla nejvyšší kotace ze závěru v  rámci celého týdne .
 
 # sentence level graph:
 (s8u1 / uzavřít-006
+        :aspect performance
         :temporal (s8s1 / středa
             :refer-number singular)
         :ARG0 (s8d1 / dolar
@@ -268,20 +251,17 @@ Words: Ve středu dolar uzavřel na 15815 DEM ,  což byla nejvyšší kotace ze
             :ARG1 (s8d2 / DEM
                 :mod (s8x1 / 15815))
             :ARG2 (s8b1 / být-007
-                :ARG0 (s8c1 / což)
-                :ARG1 (s8k1 / kotace
+                :aspect activity
+                :ARG1 (s8e2 / entity
+                    :refer-person 3rd)
+                :ARG2 (s8k1 / kotace
+                    :refer-number singular
                     :mod (s8v1 / vysoký
                         :regard (s8t1 / týden
-                            :mod (s8c2 / celý
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular
+                            :mod (s8c1 / celý)))
                     :temporal (s8z1 / závěr
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect activity))
-        :refer-number singular
-        :aspect performance)
+                        :refer-number singular)))))
 
 # alignment:
 s8u1: 4-4
@@ -292,46 +272,44 @@ s8i1: 8-8
 s8d2: 5-5,7-7
 s8x1: 6-6
 s8b1: 10-10
-s8c1: 9-9
+s8e2: 9-9
 s8k1: 12-12
 s8v1: 11-11
 s8t1: 15-16,18-18
-s8c2: 17-17
+s8c1: 17-17
 s8z1: 13-14
 
 # document level annotation:
 (s8s0 / sentence
     :coref ((s8d1 :same-entity s7d1)
-            (s8c1 :same-entity s8d2)
+            (s8e2 :same-entity s8d2)
             (s8t1 :same-entity s3t2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1  2       3           4       5     6      7     8         9         10 11        12     13
 Words: Ve čtvrtek Bundesbanka úrokové sazby vcelku podle očekávání ponechala na dosavadní úrovni .
 
 # sentence level graph:
 (s9p1 / ponechat-006
+        :aspect performance
         :temporal (s9c1 / čtvrtek
             :refer-number singular)
         :ARG0 (s9b1 / Bundesbanka
             :refer-number singular)
         :ARG1 (s9s1 / sazba
-            :mod (s9u1 / úrokový
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s9u1 / úrokový))
         :extent (s9v1 / vcelku)
         :regard (s9o1 / očekávání
+            :refer-number singular
             :ARG0 (s9e1 / entity)
-            :ARG1 (s9e2 / entity)
-            :refer-number singular)
-        :place (s9u2 / úroveň
-            :mod (s9d1 / dosavadní
-                :refer-number singular)
-            :refer-number singular)
-        :aspect performance)
+            :ARG1 (s9e2 / entity))
+        :ARG2 (s9u2 / úroveň
+            :refer-number singular
+            :mod (s9d1 / dosavadní)))
 
 # alignment:
 s9p1: 9-9
@@ -352,38 +330,34 @@ s9d1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1          2         3      4        5      6  7      8       9    10      11 12    13        14       15  16
 Words: Obchodníci reagovali mírným poklesem dolaru ke spodní hranici jeho rozpětí na index nákupních manažerů USA .
 
 # sentence level graph:
 (s10r1 / reagovat-001
+        :aspect process
         :ARG0 (s10o1 / obchodník
             :refer-number plural)
         :manner (s10p1 / pokles
+            :refer-number singular
             :ARG0 (s10d1 / dolar
                 :refer-number singular)
-            :mod (s10m1 / mírný
-                :refer-number singular)
+            :mod (s10m1 / mírný)
             :goal (s10h1 / hranice
-                :mod (s10s1 / spodní
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s10s1 / spodní)
                 :possessor (s10r2 / rozpětí
-                    :possessor s10d1
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                    :refer-number singular
+                    :possessor s10d1)))
         :ARG1 (s10i1 / index
+            :refer-number singular
             :possessor (s10m2 / manažer
-                :mod (s10n1 / nákupní
-                    :refer-number plural)
+                :refer-number plural
+                :mod (s10n1 / nákupní)
                 :possessor (s10u1 / USA
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number plural
-        :aspect process)
+                    :refer-number plural))))
 
 # alignment:
 s10r1: 2-2
@@ -408,66 +382,63 @@ s10u1: 15-15
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1   2          3  4     5      6          7        8  9    10   11
 Words: Ten zaznamenal v  srpnu pokles ekonomické aktivity na 56.2 bodu .
 
 # sentence level graph:
 (s11z1 / zaznamenat-001
-        :ARG0 (s11t1 / ten
-            :refer-number singular)
+        :aspect performance
+        :ARG0 (s11e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
         :temporal (s11s1 / srpen
             :refer-number singular)
         :ARG1 (s11p1 / pokles
+            :refer-number singular
             :ARG0 (s11a1 / aktivita
-                :mod (s11e1 / ekonomický
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s11e2 / ekonomický))
             :goal (s11b1 / bod
-                :mod (s11x1 / 56.2)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                :refer-number singular
+                :mod (s11x1 / 56.2))))
 
 # alignment:
 s11z1: 2-2
-s11t1: 1-1
+s11e1: 1-1
 s11s1: 3-4
 s11p1: 5-5
 s11a1: 7-7
-s11e1: 6-6
+s11e2: 6-6
 s11b1: 8-8,10-10
 s11x1: 9-9
 
 # document level annotation:
 (s11s0 / sentence
-    :coref ((s11t1 :same-entity s10i1)
+    :coref ((s11e1 :same-entity s10i1)
             (s11s1 :same-entity s6s1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1         2        3  4       5  6        7      8    9    10
 Words: Analytici počítali v  průměru s  hodnotou indexu 57.5 bodu .
 
 # sentence level graph:
 (s12p1 / počítat-007
+        :aspect activity
         :ARG0 (s12a1 / analytik
             :refer-number plural)
         :extent (s12p2 / průměr
             :refer-number singular)
         :ARG1 (s12h1 / hodnota
+            :refer-number singular
             :possessor (s12i1 / index
                 :refer-number singular)
             :mod (s12b1 / bod
-                :mod (s12x1 / 57.5)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number plural
-        :aspect activity)
+                :mod (s12x1 / 57.5))))
 
 # alignment:
 s12p1: 2-2
@@ -480,34 +451,32 @@ s12x1: 8-8
 
 # document level annotation:
 (s12s0 / sentence
-    :coref ((s12i1 :same-entity s11t1)))
+    :coref ((s12i1 :same-entity s11e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1  2     3  4      5  6      7  8             9  10  11    12     13      14
 Words: V  pátek v  reakci na zprávu o  zaměstnanosti v  USA dolar prudce oslabil .
 
 # sentence level graph:
 (s13o1 / oslabit-001
+        :aspect performance
         :temporal (s13p1 / pátek
             :refer-number singular)
         :ARG0 (s13d1 / dolar
-            :refer-number singular
-            :refer-person 3rd)
-        :condition (s13r1 / reakce
-            :ARG1 (s13z1 / zpráva
-                :ARG1 (s13z2 / zaměstnanost
-                    :place (s13u1 / USA
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular)
             :refer-number singular)
+        :condition (s13r1 / reakce
+            :refer-number singular
+            :ARG1 (s13z1 / zpráva
+                :refer-number singular
+                :ARG1 (s13z2 / zaměstnanost
+                    :refer-number singular
+                    :place (s13u1 / USA
+                        :refer-number plural))))
         :ARG1 (s13e1 / entity)
-        :manner (s13p2 / prudce)
-        :refer-number singular
-        :aspect performance)
+        :manner (s13p2 / prudce))
 
 # alignment:
 s13o1: 13-13
@@ -529,40 +498,35 @@ s13p2: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1     2  3    4     5  6    7  8  9  10   11     12    13   14    15         16   17 18               19        20      21 22    23      24
 Words: Vedly k  tomu obavy z  toho ,  že by mohl příliš velký růst počtu pracovních míst ve zpracovatelských odvětvích přispět k  vyšší inflaci .
 
 # sentence level graph:
 (s14v1 / vést-001
+        :aspect activity
         :ARG1 (s14t1 / ten
             :refer-number singular)
         :ARG0 (s14o1 / obava
+            :refer-number plural
             :ARG1 (s14p1 / přispět-002
+                :aspect performance
                 :ARG0 (s14r1 / růst
+                    :refer-number singular
                     :mod (s14v2 / velký
-                        :extent (s14p2 / příliš)
-                        :refer-number singular)
+                        :extent (s14p2 / příliš))
                     :ARG0 (s14p3 / počet
+                        :refer-number singular
                         :mod (s14m1 / místo
-                            :mod (s14p4 / pracovní
-                                :refer-number plural)
+                            :refer-number plural
+                            :mod (s14p4 / pracovní)
                             :place (s14o2 / odvětví
-                                :mod (s14z1 / zpracovatelský
-                                    :refer-number plural)
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular)
-                    :refer-number singular)
+                                :refer-number plural
+                                :mod (s14z1 / zpracovatelský)))))
                 :ARG1 (s14i1 / inflace
-                    :mod (s14v3 / vysoký
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect performance)
-            :refer-number plural)
-        :refer-number plural
-        :aspect activity)
+                    :refer-number singular
+                    :mod (s14v3 / vysoký)))))
 
 # alignment:
 s14v1: 1-1
@@ -586,29 +550,26 @@ s14v3: 22-22
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1    2     3  4         5      6  7         8     9       10      11      12
 Words: Ceny zlata na světových trzích v  uplynulém týdnu poměrně výrazně stouply .
 
 # sentence level graph:
 (s15s1 / stoupnout-001
+        :aspect performance
         :ARG0 (s15c1 / cena
+            :refer-number plural
             :ARG1 (s15z1 / zlato
                 :refer-number singular)
             :place (s15t1 / trh
-                :mod (s15s2 / světový
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural)
+                :refer-number plural
+                :mod (s15s2 / světový)))
         :temporal (s15t2 / týden
-            :mod (s15u1 / uplynulý
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s15u1 / uplynulý))
         :extent (s15v1 / výrazně
-            :extent (s15p1 / poměrně))
-        :refer-number plural
-        :aspect performance)
+            :extent (s15p1 / poměrně)))
 
 # alignment:
 s15s1: 11-11
@@ -627,30 +588,27 @@ s15p1: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s16-root
+# meta-info :: sent_id = u_tree-cs-s16-root :: type = partial_conversion
 # :: snt16
 Index: 1           2    3     4         5        6         7   8         9       10
 Words: Obchodování bylo podle analytiků víceméně technické bez čerstvých impulzů .
 
 # sentence level graph:
 (s16b1 / být-007
-        :ARG0 (s16o1 / obchodování
+        :aspect activity
+        :ARG1 (s16o1 / obchodování
+            :refer-number singular
             :ARG0 (s16e1 / entity)
             :ARG1 (s16e2 / entity
                 :refer-number singular
-                :refer-person 3rd)
-            :refer-number singular)
+                :refer-person 3rd))
         :regard (s16a1 / analytik
             :refer-number plural)
-        :ARG1 (s16t1 / technický
-            :extent (s16v1 / víceméně)
-            :refer-number singular)
+        :ARG2 (s16t1 / technický
+            :extent (s16v1 / víceméně))
         :companion (s16i1 / impuls
-            :mod (s16c1 / čerstvý
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number singular
-        :aspect activity)
+            :refer-number plural
+            :mod (s16c1 / čerstvý)))
 
 # alignment:
 s16b1: 2-2
@@ -670,34 +628,29 @@ s16c1: 8-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s17-root
+# meta-info :: sent_id = u_tree-cs-s17-root :: type = partial_conversion
 # :: snt17
 Index: 1      2      3       4           5   6   7   8      9  10     11    12 13  14
 Words: Prudký úterní vzestup londýnských cen byl jen reakcí na cenový pohyb v  USA .
 
 # sentence level graph:
 (s17b1 / být-007
-        :ARG0 (s17v1 / vzestup
+        :aspect activity
+        :ARG1 (s17v1 / vzestup
+            :refer-number singular
             :ARG0 (s17c1 / cena
-                :mod (s17l1 / londýnský
-                    :refer-number plural)
-                :refer-number plural)
-            :mod (s17u1 / úterní
-                :refer-number singular)
-            :mod (s17p1 / prudký
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number plural
+                :mod (s17l1 / londýnský))
+            :mod (s17u1 / úterní)
+            :mod (s17p1 / prudký))
         :clausal-marker (s17j1 / jen)
-        :ARG1 (s17r1 / reakce
+        :ARG2 (s17r1 / reakce
+            :refer-number singular
             :ARG1 (s17p2 / pohyb
-                :mod (s17c2 / cenový
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s17c2 / cenový)
                 :place (s17u2 / USA
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect activity)
+                    :refer-number plural))))
 
 # alignment:
 s17b1: 6-6
@@ -718,25 +671,23 @@ s17u2: 12-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s18-root
+# meta-info :: sent_id = u_tree-cs-s18-root :: type = partial_conversion
 # :: snt18
 Index: 1  2      3 4  5       6    7     8          9
 Words: Ve středu a ve čtvrtek ceny zlata stagnovaly .
 
 # sentence level graph:
 (s18s1 / stagnovat-001
+        :aspect activity
         :temporal (s18a1 / and
             :op1 (s18s2 / středa
                 :refer-number singular)
             :op2 (s18c1 / čtvrtek
                 :refer-number singular))
-        :ARG0 (s18c2 / cena
+        :ARG1 (s18c2 / cena
+            :refer-number plural
             :ARG1 (s18z1 / zlato
-                :refer-number singular
-                :refer-person 3rd)
-            :refer-number plural)
-        :refer-number plural
-        :aspect activity)
+                :refer-number singular)))
 
 # alignment:
 s18s1: 8-8
@@ -754,53 +705,45 @@ s18z1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s19-root
+# meta-info :: sent_id = u_tree-cs-s19-root :: type = partial_conversion
 # :: snt19
 Index: 1       2           3  4         5     6   7  8       9       10   11  12      13       14          15        16 17 18          19      20  21     22 23       24   25
 Words: Páteční obchodování na newyorské COMEX pak v  Londýně vyhnalo ceny při silných nákupech termínových kontraktů až k  rezistenční hranici 388 dolarů za trojskou unci .
 
 # sentence level graph:
 (s19v1 / vyhnat-003
+        :aspect performance
         :ARG0 (s19o1 / obchodování
+            :refer-number singular
             :ARG0 (s19e1 / entity)
             :ARG1 (s19e2 / entity
                 :refer-number singular
                 :refer-person 3rd)
             :place (s19c1 / Comex
-                :mod (s19n1 / newyorský
-                    :refer-number singular)
-                :refer-number singular)
-            :temporal (s19p1 / páteční
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular
+                :mod (s19n1 / newyorský))
+            :temporal (s19p1 / páteční))
         :ARG1 (s19c2 / cena
             :refer-number plural)
-        :start (s19e3 / entity)
+        :ARG2 (s19c3 / concept)
         :temporal (s19p2 / pak)
         :place (s19l1 / Londýn
             :refer-number singular)
         :condition (s19n2 / nákup
+            :refer-number plural
             :ARG1 (s19k1 / kontrakt
-                :mod (s19t1 / termínový
-                    :refer-number plural)
-                :refer-number plural)
-            :mod (s19s1 / silný
-                :refer-number plural)
-            :refer-number plural)
+                :refer-number plural
+                :mod (s19t1 / termínový))
+            :mod (s19s1 / silný))
         :clausal-marker (s19a1 / až)
         :goal (s19h1 / hranice
-            :mod (s19r1 / rezistenční
-                :refer-number singular)
+            :refer-number singular
+            :mod (s19r1 / rezistenční)
             :mod (s19d1 / dolar
                 :regard (s19u1 / unce
-                    :mod (s19t2 / trojský
-                        :refer-number singular)
-                    :refer-number singular)
-                :mod (s19x1 / 388)
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                    :refer-number singular
+                    :mod (s19t2 / trojský))
+                :mod (s19x1 / 388))))
 
 # alignment:
 s19v1: 9-9
@@ -811,7 +754,7 @@ s19c1: 3-3,5-5
 s19n1: 4-4
 s19p1: 1-1
 s19c2: 10-10
-s19e3: 0-0
+s19c3: 0-0
 s19p2: 6-6
 s19l1: 7-8
 s19n2: 11-11,13-13
@@ -833,76 +776,72 @@ s19x1: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s20-root
+# meta-info :: sent_id = u_tree-cs-s20-root :: type = partial_conversion
 # :: snt20
 Index: 1  2    3    4      5     6  7    8  9   10    11  12         13
 Words: Ta však byla příliš pevná k  tomu ,  aby mohla být překročena .
 
 # sentence level graph:
 (s20b1 / být-007
+        :aspect activity
         :clausal-marker (s20v1 / však)
-        :ARG0 (s20t1 / ten
-            :refer-number singular)
-        :ARG1 (s20p1 / pevný
+        :ARG1 (s20e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG2 (s20p1 / pevný
             :extent (s20p2 / příliš)
             :purpose (s20p3 / překročit-001
-                :ARG0 (s20e1 / entity)
-                :ARG1 s20t1
-                :aspect performance)
-            :refer-number singular)
-        :aspect activity)
+                :aspect performance
+                :ARG0 (s20e2 / entity)
+                :ARG1 s20e1)))
 
 # alignment:
 s20b1: 3-3
 s20v1: 2-2
-s20t1: 1-1
+s20e1: 1-1
 s20p1: 5-5
 s20p2: 4-4
 s20p3: 6-7,9-12
-s20e1: 0-0
+s20e2: 0-0
 
 # document level annotation:
 (s20s0 / sentence
-    :coref ((s20t1 :same-entity s19h1)))
+    :coref ((s20e1 :same-entity s19h1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s21-root
+# meta-info :: sent_id = u_tree-cs-s21-root :: type = partial_conversion
 # :: snt21
 Index: 1     2          3   4       5     6        7      8       9  10    11           12       13     14 15    16 17 18   19     20 21       22   23
 Words: Podle obchodníků byl vzestup zlata ovlivněn cenami stříbra ,  které spekulativní poptávka zvedla v  pátek až na 5.50 dolarů za trojskou unci .
 
 # sentence level graph:
 (s21o1 / ovlivnit-001
+        :aspect performance
         :ARG1 (s21v1 / vzestup
+            :refer-number singular
             :ARG0 (s21z1 / zlato
-                :refer-number singular
-                :refer-person 3rd)
-            :refer-number singular)
+                :refer-number singular))
         :regard (s21o2 / obchodník
             :refer-number plural)
         :ARG0 (s21c1 / cena
+            :refer-number plural
             :ARG1 (s21s1 / stříbro
                 :refer-number singular)
             :ARG1-of (s21z2 / zvednout-001
+                :aspect performance
                 :ARG0 (s21p1 / poptávka
-                    :mod (s21s2 / spekulativní
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s21s2 / spekulativní))
                 :temporal (s21p2 / pátek
                     :refer-number singular)
                 :effect (s21d1 / dolar
+                    :refer-number plural
                     :regard (s21u1 / unce
-                        :mod (s21t1 / trojský
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s21t1 / trojský))
                     :clausal-marker (s21a1 / až)
-                    :mod (s21x1 / 5.50)
-                    :refer-number plural)
-                :aspect performance)
-            :refer-number plural)
-        :refer-number singular
-        :aspect performance)
+                    :mod (s21x1 / 5.50)))))
 
 # alignment:
 s21o1: 3-3,6-6
@@ -929,21 +868,21 @@ s21x1: 18-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s22-root
+# meta-info :: sent_id = u_tree-cs-s22-root :: type = partial_conversion
 # :: snt22
 Index: 1    2    3  4       5     6       7     8       9  10    11 12    13  14 15    16 17  18    19 20
 Words: Ceny ropy v  minulém týdnu celkově mírně stouply ze 16.04 na 16.20 USD za barel (  159 litrů )  .
 
 # sentence level graph:
 (s22s1 / stoupnout-001
+        :aspect performance
         :ARG0 (s22c1 / cena
+            :refer-number plural
             :ARG1 (s22r1 / ropa
-                :refer-number singular)
-            :refer-number plural)
+                :refer-number singular))
         :temporal (s22t1 / týden
-            :mod (s22m1 / minulý
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s22m1 / minulý))
         :extent (s22m2 / mírně)
         :extent (s22c2 / celkově)
         :source (s22x1 / 16.04)
@@ -952,11 +891,9 @@ Words: Ceny ropy v  minulém týdnu celkově mírně stouply ze 16.04 na 16.20 U
                 :ARG1 (s22b1 / barel
                     :refer-number singular)
                 :ARG2 (s22l1 / l
-                    :mod (s22x2 / 159)
-                    :refer-number plural))
-            :mod (s22x3 / 16.20))
-        :refer-number plural
-        :aspect performance)
+                    :refer-number plural
+                    :mod (s22x2 / 159)))
+            :mod (s22x3 / 16.20)))
 
 # alignment:
 s22s1: 8-8

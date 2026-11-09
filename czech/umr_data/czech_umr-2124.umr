@@ -1,5 +1,5 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1   2 3  4     5         6       7
 Words: Byl , či nebyl Andreotti mafioso ?
@@ -7,18 +7,16 @@ Words: Byl , či nebyl Andreotti mafioso ?
 # sentence level graph:
 (s1a1 / and
         :op1 (s1b1 / být-007
-            :ARG0 (s1a2 / Andreotti
-                :refer-number singular)
-            :ARG1 (s1m1 / mafiózo
-                :refer-number singular)
-            :refer-number singular
-            :aspect activity)
-        :op2 (s1b2 / být-007
-            :ARG0 s1a2
-            :ARG1 s1m1
-            :refer-number singular
             :aspect activity
-            :polarity -))
+            :ARG1 (s1a2 / Andreotti
+                :refer-number singular)
+            :ARG2 (s1m1 / mafiózo
+                :refer-number singular))
+        :op2 (s1b2 / být-007
+            :aspect activity
+            :polarity -
+            :ARG1 s1a2
+            :ARG2 s1m1))
 
 # alignment:
 s1a1: 3-3
@@ -32,26 +30,24 @@ s1b2: 4-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1       2  3    4      5  6    7      8  9      10   11 12      13
 Words: Odpověď na tuto otázku by měla přijít ze soudní síně v  Palermu :
 
 # sentence level graph:
 (s2p1 / přijít-013
-        :ARG0 (s2o1 / odpověď
+        :aspect performance
+        :ARG1 (s2o1 / odpověď
+            :refer-number singular
             :ARG1 (s2o2 / otázka
-                :mod (s2t1 / tento
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular
+                :mod (s2t1 / tento)))
         :start (s2s1 / síň
-            :mod (s2s2 / soudní
-                :refer-number singular)
+            :refer-number singular
+            :mod (s2s2 / soudní)
             :place (s2p2 / Palermo
-                :refer-number singular)
-            :refer-number singular)
-        :aspect performance)
+                :refer-number singular)))
 
 # alignment:
 s2p1: 5-7
@@ -67,61 +63,49 @@ s2p2: 11-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1  2      3   4   5       6       7        8      9  10    11           12 13            14        15     16 17         18      19  20 21            22        23 24       25         26     27         28         29
 Words: Na dnešní den byl oznámen začátek soudního řízení s  tímto nejznámějším a  nejvlivnějším politikem Itálie za posledních padesát let ,  sedminásobným premiérem a  symbolem mocenského režimu Křesťanské demokracie .
 
 # sentence level graph:
 (s3o1 / oznámit-001
+        :aspect performance
         :duration (s3d1 / den
-            :mod (s3d2 / dnešní
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s3d2 / dnešní))
         :ARG0 (s3e1 / entity)
         :ARG1 (s3z1 / začátek
+            :refer-number singular
             :possessor (s3r1 / řízení
-                :mod (s3s1 / soudní
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s3s1 / soudní)
                 :companion (s3i1 / identity-91
                     :ARG1 (s3p1 / politik
-                        :mod (s3t1 / tento
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s3t1 / tento)
                         :possessor (s3i2 / Itálie
                             :refer-number singular)
                         :mod (s3a1 / and
                             :op1 (s3z2 / známý
                                 :duration (s3r2 / rok
-                                    :mod (s3p2 / padesát
-                                        :refer-number singular)
-                                    :mod (s3p3 / poslední
-                                        :refer-number plural)
-                                    :refer-number plural)
-                                :refer-number singular)
+                                    :refer-number plural
+                                    :mod (s3p2 / padesát)
+                                    :mod (s3p3 / poslední)))
                             :op2 (s3v1 / vlivný
-                                :duration s3r2
-                                :refer-number singular))
-                        :refer-number singular)
+                                :duration s3r2)))
                     :ARG2 (s3a2 / and
                         :op1 (s3p4 / premiér
-                            :mod (s3s2 / sedminásobný
-                                :refer-number singular)
-                            :refer-number singular)
+                            :refer-number singular
+                            :mod (s3s2 / sedminásobný))
                         :op2 (s3s3 / symbol
+                            :refer-number singular
                             :ARG1 (s3r3 / režim
+                                :refer-number singular
                                 :possessor (s3d3 / demokracie
-                                    :mod (s3k1 / křesťanský
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :mod (s3m1 / mocenský
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular))
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                                    :refer-number singular
+                                    :mod (s3k1 / křesťanský))
+                                :mod (s3m1 / mocenský))))))))
 
 # alignment:
 s3o1: 4-5
@@ -156,18 +140,23 @@ s3m1: 25-25
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1     2  3  4    5  6      7      8         9  10       11 12       13 14    15    16  17    18 19        20         21
 Words: Mužem ,  na němž se Italům líbila obratnost ,  chytrost ,  intelekt ,  lehký smysl pro humor ,  schopnost kompromisu .
 
 # sentence level graph:
 (s4o1 / oznámit-001
+        :aspect performance
         :ARG0 (s4e1 / entity)
         :ARG1 (s4z1 / začátek
+            :refer-number singular
             :possessor (s4r1 / řízení
+                :refer-number singular
                 :companion (s4m1 / muž
+                    :refer-number singular
                     :place-of (s4l1 / líbit-se-001
+                        :aspect activity
                         :ARG0 (s4i1 / Ital
                             :refer-number plural)
                         :ARG1 (s4a1 / and
@@ -178,21 +167,14 @@ Words: Mužem ,  na němž se Italům líbila obratnost ,  chytrost ,  intelekt 
                             :op3 (s4i2 / intelekt
                                 :refer-number singular)
                             :op4 (s4s1 / smysl
+                                :refer-number singular
                                 :affectee (s4h1 / humor
                                     :refer-number singular)
-                                :mod (s4l2 / lehký
-                                    :refer-number singular)
-                                :refer-number singular)
+                                :mod (s4l2 / lehký))
                             :op5 (s4s2 / schopnost
+                                :refer-number singular
                                 :ARG1 (s4k1 / kompromis
-                                    :refer-number singular)
-                                :refer-number singular))
-                        :aspect activity)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                                    :refer-number singular))))))))
 
 # alignment:
 s4o1: 0-0
@@ -220,7 +202,7 @@ s4k1: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1  2       3            4  5  6    7        8        9  10 11 12        13 14           15 16
 Words: A  kterého ztotožňovali tu s  érou hmotného vzestupu ,  tu s  hnilobnou "  stranokracií "  .
@@ -228,43 +210,39 @@ Words: A  kterého ztotožňovali tu s  érou hmotného vzestupu ,  tu s  hnilob
 # sentence level graph:
 (s5a1 / and
         :op1 (s5z1 / ztotožňovat-001
+            :aspect activity
             :clausal-marker (s5a2 / a)
-            :ARG1 (s5k1 / který
-                :refer-number singular)
-            :ARG0 (s5e1 / entity
+            :ARG1 (s5e1 / entity
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG0 (s5e2 / entity
                 :refer-number plural
                 :refer-person 3rd)
             :temporal (s5t1 / tu)
-            :effect (s5e2 / éra
+            :effect (s5e3 / éra
+                :refer-number singular
                 :mod (s5v1 / vzestup
-                    :mod (s5h1 / hmotný
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural
-            :aspect activity)
+                    :mod (s5h1 / hmotný))))
         :op2 (s5z2 / ztotožňovat-001
+            :aspect activity
             :clausal-marker s5a2
-            :ARG1 s5k1
-            :ARG0 s5e1
+            :ARG1 s5e1
+            :ARG0 s5e2
             :temporal (s5t2 / tu)
             :effect (s5s1 / stranokracie
-                :mod (s5h2 / hnilobný
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural
-            :aspect activity))
+                :refer-number singular
+                :mod (s5h2 / hnilobný))))
 
 # alignment:
 s5a1: 9-9
 s5z1: 3-3
 s5t1: 4-4
-s5e2: 5-6
+s5e3: 5-6
 s5v1: 8-8
 s5h1: 7-7
 s5a2: 1-1
-s5k1: 2-2
-s5e1: 0-0
+s5e1: 2-2
+s5e2: 0-0
 s5z2: 0-0
 s5t2: 10-10
 s5s1: 11-11,14-14
@@ -272,37 +250,33 @@ s5h2: 12-12
 
 # document level annotation:
 (s5s0 / sentence
-    :coref ((s5k1 :same-entity s4m1)
-            (s5e1 :same-entity s4i1)))
+    :coref ((s5e1 :same-entity s4m1)
+            (s5e2 :same-entity s4i1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1  2  3        4       5  6         7  8   9      10        11 12   13 14   15 16       17 18         19        20 21
 Words: Za "  nejvyšší zásluhy o  republiku "  byl Giulio Andreotti ,  dnes 76 letý ,  jmenován "  doživotním senátorem "  .
 
 # sentence level graph:
 (s6j1 / jmenovat-002
+        :aspect process
         :cause (s6z1 / zásluha
+            :refer-number plural
             :ARG1 (s6r1 / republika
                 :refer-number singular)
-            :mod (s6v1 / vysoký
-                :refer-number plural)
-            :refer-number plural)
+            :mod (s6v1 / vysoký))
         :ARG1 (s6a1 / Andreotti
-            :mod (s6g1 / Giulio
-                :refer-number singular)
+            :refer-number singular
+            :mod (s6g1 / Giulio)
             :mod (s6x1 / 76_letý
-                :temporal (s6d1 / dnes))
-            :refer-number singular)
+                :temporal (s6d1 / dnes)))
         :ARG0 (s6e1 / entity)
-        :effect (s6s1 / senátor
-            :mod (s6d2 / doživotní
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect process)
+        :ARG2 (s6s1 / senátor
+            :refer-number singular
+            :mod (s6d2 / doživotní)))
 
 # alignment:
 s6j1: 8-8,16-16
@@ -320,24 +294,26 @@ s6d2: 18-18
 # document level annotation:
 (s6s0 / sentence
     :coref ((s6r1 :same-entity s3i2)
-            (s6a1 :same-entity s5k1)))
+            (s6a1 :same-entity s5e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1   2   3  4  5   6  7   8          9       10 11      12         13      14 15      16        17          18       19 20     21   22      23    24   25        26          27  28        29 30 31     32 33       34 35        36    37 38 39   40   41 42   43    44 45           46 47       48    49
 Words: Ale byl to on sám ,  kdo neodkladně požádal o  zbavení poslanecké imunity ,  jakmile palermská prokuratura rozhodla v  březnu 1993 zahájit proti němu předběžné vyšetřování pro podezření z  "  účasti na spolčení se zločinným cílem "  a  poté loni v  létě přímo z  příslušnosti k  sicilské mafii .
 
 # sentence level graph:
 (s7b1 / být-007
+        :aspect activity
         :clausal-marker (s7a1 / ale)
-        :ARG1 (s7t1 / ten
-            :refer-number singular)
-        :ARG0 (s7e1 / entity
-            :mod (s7s1 / sám
-                :refer-number singular)
+        :ARG2 (s7t1 / ten)
+        :ARG1 (s7e1 / entity
+            :refer-number singular
+            :refer-person 3rd
+            :mod (s7s1 / sám)
             :mod (s7p1 / požádat-001
+                :aspect performance
                 :ARG0 (s7k1 / kdo
                     :refer-number singular
                     :refer-person 3rd)
@@ -345,45 +321,43 @@ Words: Ale byl to on sám ,  kdo neodkladně požádal o  zbavení poslanecké i
                 :manner (s7o1 / odkladně
                     :polarity -)
                 :ARG1 (s7z1 / zbavení
+                    :refer-number singular
                     :ARG0 (s7e3 / entity)
                     :ARG2 s7k1
                     :ARG1 (s7i1 / imunita
-                        :mod (s7p2 / poslanecký
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
+                        :refer-number singular
+                        :mod (s7p2 / poslanecký)))
                 :temporal (s7r1 / rozhodnout-002
+                    :aspect performance
                     :ARG0 (s7p3 / prokuratura
-                        :mod (s7p4 / palermský
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s7p4 / palermský))
                     :temporal (s7b2 / březen
-                        :possessor (s7x2 / 1993)
-                        :refer-number singular)
+                        :refer-number singular
+                        :possessor (s7x2 / 1993))
                     :ARG1 (s7a2 / and
                         :op1 (s7z2 / zahájit-001
+                            :aspect performance
                             :ARG0 (s7e4 / entity)
                             :affectee s7k1
                             :ARG1 (s7v1 / vyšetřování
+                                :refer-number singular
                                 :ARG0 (s7e5 / entity)
                                 :ARG1 (s7e6 / entity)
-                                :manner (s7p5 / předběžný
-                                    :refer-number singular)
+                                :manner (s7p5 / předběžný)
                                 :cause (s7p6 / podezření
+                                    :refer-number singular
                                     :ARG1 (s7u1 / účast
+                                        :refer-number singular
                                         :ARG1 (s7s2 / spolčení
+                                            :refer-number singular
                                             :ARG0 (s7e7 / entity)
                                             :ARG1 (s7e8 / entity)
                                             :companion (s7c1 / cíl
-                                                :mod (s7z3 / zločinný
-                                                    :refer-number singular)
-                                                :refer-number singular)
-                                            :refer-number singular)
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :aspect performance)
+                                                :refer-number singular
+                                                :mod (s7z3 / zločinný)))))))
                         :op2 (s7z4 / zahájit-001
+                            :aspect performance
                             :ARG0 s7e4
                             :affectee s7k1
                             :temporal (s7p7 / poté)
@@ -391,26 +365,17 @@ Words: Ale byl to on sám ,  kdo neodkladně požádal o  zbavení poslanecké i
                             :temporal (s7l1 / léto
                                 :refer-number singular)
                             :ARG1 (s7v3 / vyšetřování
+                                :refer-number singular
                                 :ARG0 (s7e9 / entity)
                                 :ARG1 (s7e10 / entity)
                                 :cause (s7p8 / podezření
+                                    :refer-number singular
                                     :clausal-marker (s7p9 / přímo)
                                     :ARG1 (s7p10 / příslušnost
+                                        :refer-number singular
                                         :goal (s7m1 / mafie
-                                            :mod (s7s3 / sicilský
-                                                :refer-number singular)
-                                            :refer-number singular)
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :aspect performance))
-                    :aspect performance)
-                :refer-number singular
-                :aspect performance)
-            :refer-number singular
-            :refer-person 3rd)
-        :refer-number singular
-        :aspect activity)
+                                            :refer-number singular
+                                            :mod (s7s3 / sicilský)))))))))))
 
 # alignment:
 s7b1: 2-2
@@ -466,66 +431,57 @@ s7s3: 47-47
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1  2      3    4  5       6          7  8   9       10 11 12  13 14    15        16 17      18 19        20    21       22 23   24  25    26   27          28      29 30   31       32  33      34      35          36      37
 Words: V  soudní síni má padnout rozhodnutí ,  zda indicie ,  o  něž se opírá podezření ,  postačí k  formulaci přímé obžaloby ,  nebo zda budou jako nepodložené pověsti a  fámy zameteny pod koberec archívů zapomětlivé justice .
 
 # sentence level graph:
 (s8p1 / padnout-015
+        :aspect performance
         :place (s8s1 / síň
-            :mod (s8s2 / soudní
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s8s2 / soudní))
         :predicative-noun (s8r1 / rozhodnutí
+            :refer-number singular
             :ARG0 (s8e1 / entity)
             :ARG1 (s8o1 / or
                 :op1 (s8p2 / postačit-001
+                    :aspect performance
                     :ARG0 (s8i1 / indicie
+                        :refer-number plural
                         :ARG1-of (s8o2 / opírat-se-001
+                            :aspect activity
                             :ARG0 (s8p3 / podezření
-                                :ARG1 (s8e2 / entity)
-                                :refer-number singular)
-                            :refer-number singular
-                            :refer-person 3rd
-                            :aspect activity)
-                        :refer-number plural)
+                                :refer-number singular
+                                :ARG1 (s8e2 / entity))))
                     :ARG1 (s8e3 / entity)
                     :purpose (s8f1 / formulace
+                        :refer-number singular
                         :ARG1 (s8o3 / obžaloba
-                            :mod (s8p4 / přímý
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number plural
-                    :refer-person 3rd
-                    :aspect performance)
+                            :refer-number singular
+                            :mod (s8p4 / přímý))))
                 :op2 (s8z1 / zamést-001
+                    :aspect performance
                     :manner (s8a1 / and
                         :op1 (s8p5 / pověst
+                            :refer-number plural
                             :mod-of s8i1
                             :mod (s8p6 / podložený
-                                :refer-number plural
-                                :polarity -)
-                            :refer-number plural)
+                                :polarity -))
                         :op2 (s8f2 / fáma
+                            :refer-number plural
                             :mod s8p6
-                            :mod-of s8i1
-                            :refer-number plural))
+                            :mod-of s8i1))
                     :ARG0 (s8e4 / entity)
                     :ARG1 s8i1
                     :goal (s8k1 / koberec
+                        :refer-number singular
                         :possessor (s8a2 / archív
+                            :refer-number plural
                             :possessor (s8j1 / justice
-                                :mod (s8z2 / zapomětlivý
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number plural)
-                        :refer-number singular)
-                    :refer-number plural
-                    :aspect performance))
-            :refer-number singular)
-        :aspect performance)
+                                :refer-number singular
+                                :mod (s8z2 / zapomětlivý))))))))
 
 # alignment:
 s8p1: 4-5
@@ -560,46 +516,40 @@ s8z2: 35-35
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1   2         3     4     5  6     7  8         9  10      11     12      13 14   15    16 17  18         19 20        21       22 23
 Words: Měl Andreotti přímé styky s  mafií ,  například v  osobách bratrů Ignazia a  Nina Salva ,  zle pověstných "  výběrčích poplatků "  ?
 
 # sentence level graph:
 (s9m1 / mít-030
+        :aspect state
         :ARG0 (s9a1 / Andreotti
-            :refer-number singular
-            :refer-person 3rd)
-        :predicative-noun (s9s1 / styk
+            :refer-number singular)
+        :ARG1 (s9s1 / styk
+            :refer-number plural
             :ARG0 s9a1
             :ARG1 (s9m2 / mafie
                 :refer-number singular)
-            :mod (s9p1 / přímý
-                :refer-number plural)
-            :refer-number plural)
+            :mod (s9p1 / přímý))
         :clausal-marker (s9n1 / například)
         :place (s9o1 / osoba
+            :refer-number plural
             :possessor (s9i1 / identity-91
                 :ARG1 (s9a2 / and
                     :op1 (s9i2 / Ignazio
-                        :mod (s9b1 / bratr
-                            :refer-number plural)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s9b1 / bratr))
                     :op2 (s9s2 / Salvo
+                        :refer-number singular
                         :mod s9b1
-                        :mod (s9n2 / Nino
-                            :refer-number singular)
-                        :refer-number singular))
+                        :mod (s9n2 / Nino)))
                 :ARG2 (s9v1 / výběrčí
+                    :refer-number plural
                     :ARG1 (s9p2 / poplatek
                         :refer-number plural)
                     :mod (s9p3 / pověstný
-                        :manner (s9z1 / zle)
-                        :refer-number plural)
-                    :refer-number plural))
-            :refer-number plural)
-        :refer-number singular
-        :aspect state)
+                        :manner (s9z1 / zle))))))
 
 # alignment:
 s9m1: 1-1
@@ -627,7 +577,7 @@ s9z1: 17-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1         2    3          4        5  6     7  8     9  10 11   12     13   14      15 16      17 18   19
 Words: Přelíčení bylo několikrát odloženo ,  někdy se zdálo ,  že celý případ bude uzavřen a  založen ad acta .
@@ -635,34 +585,28 @@ Words: Přelíčení bylo několikrát odloženo ,  někdy se zdálo ,  že cel�
 # sentence level graph:
 (s10a1 / and
         :op1 (s10o1 / odložit-001
+            :aspect performance
             :ARG1 (s10p1 / přelíčení
                 :refer-number singular)
             :ARG0 (s10e1 / entity)
-            :frequency (s10n1 / několikrát)
-            :refer-number singular
-            :aspect performance)
+            :frequency (s10n1 / několikrát))
         :op2 (s10z1 / zdát-se-004
+            :aspect state
             :temporal (s10n2 / někdy)
             :ARG0 (s10e2 / entity)
             :ARG1 (s10a2 / and
                 :op1 (s10u1 / uzavřít-004
+                    :aspect performance
                     :ARG1 (s10p2 / případ
-                        :mod (s10c1 / celý
-                            :refer-number singular)
-                        :refer-number singular)
-                    :ARG0 (s10e3 / entity)
-                    :refer-number singular
-                    :aspect performance)
+                        :refer-number singular
+                        :mod (s10c1 / celý))
+                    :ARG0 (s10e3 / entity))
                 :op2 (s10z2 / založit-002
+                    :aspect performance
                     :ARG1 s10p2
                     :ARG0 s10e3
-                    :goal (s10x3 / #Forn
-                        :FPHR (s10a3 / ad)
-                        :FPHR (s10a4 / acta))
-                    :refer-number singular
-                    :aspect performance))
-            :refer-number singular
-            :aspect state))
+                    :goal (s10f1 / foreign-phrase
+                        :op1 "ad" :op2 "acta")))))
 
 # alignment:
 s10a1: 5-5
@@ -679,9 +623,7 @@ s10p2: 12-12
 s10c1: 11-11
 s10e3: 0-0
 s10z2: 10-10,13-13,16-16
-s10x3: 0-0
-s10a3: 17-17
-s10a4: 18-18
+s10f1: 17-18
 
 # document level annotation:
 (s10s0 / sentence
@@ -689,7 +631,7 @@ s10a4: 18-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1           2      3      4       5  6        7     8    9  10   11       12 13          14    15 16    17     18 19     20 21  22   23   24     25 26         27          28 29     30 31         32 33       34
 Words: Vyšetřující soudci museli zkoumat a  ověřovat stále nové a  nové výpovědi ,  předvolávat další a  další svědky :  celkem na 200 jich mělo sdělit až miniaturní podrobnosti ze života "  špičkového "  politika .
@@ -698,53 +640,46 @@ Words: Vyšetřující soudci museli zkoumat a  ověřovat stále nové a  nové
 (s11a1 / and
         :op1 (s11a2 / and
             :op1 (s11z1 / zkoumat-001
+                :aspect activity
                 :ARG0 s11s1
                 :ARG1 (s11v1 / výpověď
+                    :refer-number plural
                     :mod (s11a3 / and
                         :op1 (s11n1 / nový
-                            :duration (s11s2 / stále)
-                            :refer-number plural)
+                            :duration (s11s2 / stále))
                         :op2 (s11n2 / nový
-                            :duration s11s2
-                            :refer-number plural))
-                    :refer-number plural)
-                :aspect activity)
+                            :duration s11s2))))
             :op2 (s11o1 / ověřovat-001
+                :aspect activity
                 :ARG0 s11s1
-                :ARG1 s11v1
-                :aspect activity))
+                :ARG1 s11v1))
         :op2 (s11p1 / předvolávat-001
+            :aspect habitual
             :ARG0 (s11s1 / soudce
-                :mod (s11v2 / vyšetřující
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s11v2 / vyšetřující))
             :ARG1 (s11s3 / svědek
+                :refer-number plural
                 :mod (s11a4 / and
-                    :op1 (s11d1 / další
-                        :refer-number plural)
-                    :op2 (s11d2 / další
-                        :refer-number plural))
-                :refer-number plural)
+                    :op1 (s11d1 / další)
+                    :op2 (s11d2 / další)))
             :parenthesis (s11s4 / sdělit-002
+                :aspect performance
                 :ARG0 (s11e1 / entity
-                    :mod (s11x5 / 200
-                        :extent (s11c1 / celkem))
                     :refer-number plural
-                    :refer-person 3rd)
+                    :refer-person 3rd
+                    :mod (s11x5 / 200
+                        :extent (s11c1 / celkem)))
                 :ARG2 (s11e2 / entity)
                 :effect (s11p2 / podrobnost
+                    :refer-number plural
                     :start (s11z2 / život
+                        :refer-number singular
                         :possessor (s11p3 / politik
-                            :mod (s11s5 / špičkový
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular
+                            :mod (s11s5 / špičkový)))
                     :clausal-marker (s11a5 / až)
-                    :mod (s11m1 / miniaturní
-                        :refer-number plural)
-                    :refer-number plural)
-                :aspect performance)
-            :aspect habitual))
+                    :mod (s11m1 / miniaturní)))))
 
 # alignment:
 s11a1: 12-12
@@ -782,47 +717,43 @@ s11v2: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1      2      3  4      5    6     7             8  9  10    11    12       13        14 15 16   17   18 19 20 21 22    23
 Words: Takřka minutu po minutě bylo nutno rekonstruovat ,  co třeba dělal Giuliano Andreotti 20 .  září 1987 od 13 do 18 hodin ?
 
 # sentence level graph:
 (s12b1 / být-159
+        :aspect activity
         :ARG1 (s12n1 / nutný
-            :affectee (s12e1 / entity)
-            :refer-number singular)
+            :refer-number singular
+            :affectee (s12e1 / entity))
         :ARG0 (s12r1 / rekonstruovat-002
+            :aspect process
             :manner (s12m1 / minuta
-                :mod (s12m2 / minuta
-                    :refer-number singular)
-                :extent (s12t1 / takřka)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s12m2 / minuta)
+                :extent (s12t1 / takřka))
             :ARG0 s12e1
             :ARG1 (s12d1 / dělat-010
+                :aspect activity
                 :ARG0 (s12a1 / Andreotti
-                    :mod (s12g1 / Giuliano
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s12g1 / Giuliano))
                 :clausal-marker (s12t2 / třeba)
                 :temporal (s12z1 / září
+                    :refer-number singular
                     :mod (s12x2 / 20)
-                    :possessor (s12x3 / 1987)
-                    :refer-number singular)
+                    :possessor (s12x3 / 1987))
                 :temporal (s12h1 / hodina
-                    :mod (s12x4 / 13)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s12x4 / 13))
                 :temporal (s12h2 / hodina
-                    :mod (s12x5 / 18)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s12x5 / 18))
                 :ARG1 (s12c1 / co
                     :refer-number singular
-                    :refer-person 3rd)
-                :refer-number singular
-                :aspect activity)
-            :aspect process)
-        :refer-number singular
-        :aspect activity)
+                    :refer-person 3rd))))
 
 # alignment:
 s12b1: 5-5
@@ -851,7 +782,7 @@ s12c1: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1      2  3       4  5  6        7          8  9            10        11 12 13    14 15       16 17     18 19        20     21     22
 Words: Přijel do Palerma na "  slavnost přátelství "  křesťanských demokratů ,  po obědě se vytratil z  hotelu a  propustil osobní stráže .
@@ -859,38 +790,33 @@ Words: Přijel do Palerma na "  slavnost přátelství "  křesťanských demokr
 # sentence level graph:
 (s13a1 / and
         :op1 (s13p1 / přijet-001
+            :aspect performance
             :ARG0 (s13e1 / entity
                 :refer-number singular
                 :refer-person 3rd)
             :goal (s13p2 / Palermo
                 :refer-number singular)
             :purpose (s13s1 / slavnost
+                :refer-number singular
                 :ARG1 (s13p3 / přátelství
                     :refer-number singular)
                 :possessor (s13d1 / demokrat
-                    :mod (s13k1 / křesťanský
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
+                    :refer-number plural
+                    :mod (s13k1 / křesťanský))))
         :op2 (s13v1 / vytratit-se-001
+            :aspect performance
             :ARG0 s13e1
             :temporal (s13o1 / oběd
                 :refer-number singular)
             :start (s13h1 / hotel
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
+                :refer-number singular))
         :op3 (s13p4 / propustit-001
+            :aspect performance
             :ARG0 s13e1
-            :start (s13e2 / entity)
+            :ARG2 (s13c1 / concept)
             :ARG1 (s13s2 / stráž
-                :mod (s13o2 / osobní
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number singular
-            :aspect performance))
+                :refer-number plural
+                :mod (s13o2 / osobní))))
 
 # alignment:
 s13a1: 18-18
@@ -905,7 +831,7 @@ s13v1: 14-15
 s13o1: 12-13
 s13h1: 16-17
 s13p4: 19-19
-s13e2: 0-0
+s13c1: 0-0
 s13s2: 21-21
 s13o2: 20-20
 
@@ -916,36 +842,32 @@ s13o2: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1     2    3  4   5   6  7      8  9   10 11     12 13     14
 Words: Nikdo neví ,  kde byl do večera ,  než se vrátil do hotelu .
 
 # sentence level graph:
 (s14v1 / vědět-001
+        :aspect state
+        :polarity -
         :ARG0 (s14n1 / nikdo
+            :polarity -
             :refer-number singular
-            :refer-person 3rd
-            :polarity -)
+            :refer-person 3rd)
         :ARG1 (s14b1 / být-011
-            :ARG0 (s14e1 / entity
+            :aspect activity
+            :ARG1 (s14e1 / entity
                 :refer-number singular
                 :refer-person 3rd)
             :place (s14k1 / kde)
             :temporal (s14v2 / večer
                 :refer-number singular)
             :temporal (s14v3 / vrátit-se-004
+                :aspect performance
                 :goal (s14h1 / hotel
                     :refer-number singular)
-                :ARG0 s14e1
-                :refer-number singular
-                :aspect performance)
-            :refer-number singular
-            :aspect activity)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect state
-        :polarity -)
+                :ARG0 s14e1)))
 
 # alignment:
 s14v1: 2-2
@@ -964,74 +886,61 @@ s14h1: 12-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1      2  3   4  5   6     7  8   9       10     11         12 13     14 15    16 17    18    19 20     21 22   23    24   25       26       27     28  29        30 31     32    33     34 35        36    37
 Words: Jediný ,  kdo o  tom věděl ,  byl hovorný mafián Baldassare Di Maggio ,  který na důkaz svého "  pokání "  před dvěma lety dopomohl zatknout dvacet let hledaného "  kmotra všech kmotrů "  Salvatora Riinu .
 
 # sentence level graph:
 (s15b1 / být-007
-        :ARG1 (s15e1 / entity
-            :mod (s15j1 / jediný
-                :refer-number singular)
+        :aspect activity
+        :ARG2 (s15t1 / thing
+            :refer-number singular
+            :mod (s15j1 / jediný)
             :mod (s15v1 / vědět-001
+                :aspect state
                 :ARG0 (s15k1 / kdo
                     :refer-number singular)
-                :ARG1 (s15t1 / ten
-                    :refer-number singular)
-                :refer-number singular
-                :aspect state)
-            :refer-number singular)
-        :ARG0 (s15d1 / di_Maggio
-            :mod (s15b2 / Baldassare
-                :refer-number singular)
+                :ARG1 (s15t2 / ten
+                    :refer-number singular)))
+        :ARG1 (s15d1 / di_Maggio
+            :refer-number singular
+            :mod (s15b2 / Baldassare)
             :mod (s15m1 / mafián
-                :mod (s15h1 / hovorný
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s15h1 / hovorný))
             :ARG0-of (s15d2 / dopomoci-001
+                :aspect performance
                 :purpose (s15d3 / důkaz
+                    :refer-number singular
                     :ARG1 (s15p1 / pokání
-                        :ARG0 s15d1
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG2 (s15e2 / entity)
+                        :refer-number singular
+                        :ARG0 s15d1))
+                :ARG2 (s15e1 / entity)
                 :temporal (s15r1 / rok
-                    :mod (s15d4 / dva
-                        :refer-number plural)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s15d4 / dva))
                 :ARG1 (s15z1 / zatknout-001
-                    :ARG0 s15e2
+                    :aspect performance
+                    :ARG0 s15e1
                     :ARG1 (s15r2 / Riina
-                        :mod (s15s1 / Salvator
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s15s1 / Salvator)
                         :mod (s15k2 / kmotr
                             :possessor (s15k3 / kmotr
-                                :mod (s15v2 / všechen
-                                    :refer-number plural)
-                                :refer-number plural)
+                                :refer-number plural
+                                :mod (s15v2 / všechen))
                             :mod (s15h2 / hledaný
                                 :duration (s15r3 / rok
-                                    :mod (s15d5 / dvacet
-                                        :refer-number singular)
-                                    :refer-number plural)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect performance)
-                :refer-number singular
-                :aspect performance)
-            :refer-number singular)
-        :refer-number singular
-        :aspect activity)
+                                    :refer-number plural
+                                    :mod (s15d5 / dvacet)))))))))
 
 # alignment:
 s15b1: 8-8
-s15e1: 0-0
+s15t1: 0-0
 s15j1: 1-1
 s15v1: 6-6
 s15k1: 3-3
-s15t1: 4-5
+s15t2: 4-5
 s15d1: 12-13,15-15,18-18
 s15b2: 11-11
 s15m1: 10-10
@@ -1039,7 +948,7 @@ s15h1: 9-9
 s15d2: 25-25
 s15d3: 16-17
 s15p1: 20-20
-s15e2: 0-0
+s15e1: 0-0
 s15r1: 22-22,24-24
 s15d4: 23-23
 s15z1: 26-26
@@ -1054,18 +963,19 @@ s15d5: 27-27
 
 # document level annotation:
 (s15s0 / sentence
-    :coref ((s15k1 :same-entity s15e1)
-            (s15t1 :same-event s14b1)))
+    :coref ((s15k1 :same-entity s15t1)
+            (s15t2 :same-event s14b1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s16-root
+# meta-info :: sent_id = u_tree-cs-s16-root :: type = partial_conversion
 # :: snt16
 Index: 1    2         3  4  5        6       7         8         9  10 11             12 13 14     15       16 17     18    19         20        21    22    23 24    25     26 27   28      29    30 31 32  33 34    35     36 37 38    39        40 41      42       43
 Words: Nyní vypověděl ,  že tehdejší ministr zahraničí Andreotti se v  inkriminovanou -  a  zřejmě klíčovou -  chvíli onoho zářijového odpoledne sešel právě s  tímto Riinou v  domě Ignazia Salva ,  a  jak v  kraji zvykem ,  na závěr rozhovoru se třikrát políbili .
 
 # sentence level graph:
 (s16v1 / vypovědět-003
+        :aspect performance
         :temporal (s16n1 / nyní)
         :ARG0 (s16e1 / entity
             :refer-number singular
@@ -1073,62 +983,49 @@ Words: Nyní vypověděl ,  že tehdejší ministr zahraničí Andreotti se v  i
         :ARG2 (s16e2 / entity)
         :effect (s16a1 / and
             :op1 (s16s1 / sejít-se-001
+                :aspect performance
                 :ARG0 (s16a2 / Andreotti
+                    :refer-number singular
                     :mod (s16m1 / ministr
                         :possessor (s16z1 / zahraničí
                             :refer-number singular)
-                        :mod (s16t1 / tehdejší
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd)
+                        :mod (s16t1 / tehdejší)))
                 :temporal (s16c1 / chvíle
+                    :refer-number singular
                     :possessor (s16o1 / odpoledne
-                        :mod (s16o2 / onen
-                            :refer-number singular)
-                        :mod (s16z2 / zářijový
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s16o2 / onen)
+                        :mod (s16z2 / zářijový))
                     :mod (s16a3 / and
-                        :op1 (s16i1 / inkriminovaný
-                            :refer-number singular)
+                        :op1 (s16i1 / inkriminovaný)
                         :op2 (s16k1 / klíčový
-                            :clausal-marker (s16z3 / zřejmě)
-                            :refer-number singular))
-                    :refer-number singular)
+                            :clausal-marker (s16z3 / zřejmě))))
                 :ARG1 (s16r1 / Riina
+                    :refer-number singular
                     :clausal-marker (s16p1 / právě)
-                    :mod (s16t2 / tento
-                        :refer-number singular)
-                    :refer-number singular)
+                    :mod (s16t2 / tento))
                 :place (s16d1 / dům
+                    :refer-number singular
                     :possessor (s16s2 / Salvo
-                        :mod (s16i2 / Ignazio
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :aspect performance)
+                        :refer-number singular
+                        :mod (s16i2 / Ignazio))))
             :op2 (s16p2 / políbit-001
+                :aspect performance
                 :parenthesis (s16e3 / event
+                    :aspect state
                     :ARG0 s16p2
                     :manner (s16j1 / jak)
                     :place (s16k2 / kraj
                         :refer-number singular)
                     :ARG1 (s16z4 / zvyk
-                        :refer-number singular)
-                    :aspect state)
+                        :refer-number singular))
                 :ARG0 (s16e4 / entity
                     :refer-number plural
                     :refer-person 3rd)
                 :ARG1 s16e4
                 :temporal (s16r2 / rozhovor
                     :refer-number singular)
-                :frequency (s16t3 / třikrát)
-                :refer-number plural
-                :aspect performance))
-        :refer-number singular
-        :aspect performance)
+                :frequency (s16t3 / třikrát))))
 
 # alignment:
 s16v1: 2-2
@@ -1174,28 +1071,31 @@ s16t3: 41-41
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s17-root
+# meta-info :: sent_id = u_tree-cs-s17-root :: type = partial_conversion
 # :: snt17
 Index: 1         2  3         4           5         6        7       8         9  10    11 12    13       14 15         16 17    18           19          20 21    22 23 24 25    26     27 28 29  30       31 32  33 34 35     36 37  38        39     40
 Words: Svědectví a  odposlech telefonních rozhovorů umožnily odhalit tajemství :  Salvo a  Riina hovořili s  Andreottim o  právě probíhajícím maxiprocesu s  mafií ,  a  "  strýc Giulio "  je měl uklidnit :  Vše se "  urovná "  při odvolacím řízení .
 
 # sentence level graph:
 (s17u1 / umožnit-001
+        :aspect performance
         :ARG0 (s17a1 / and
             :op1 (s17s1 / svědectví
                 :refer-number plural)
             :op2 (s17o1 / odposlech
+                :refer-number singular
                 :ARG1 (s17r1 / rozhovor
-                    :mod (s17t1 / telefonní
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular))
+                    :refer-number plural
+                    :mod (s17t1 / telefonní))))
         :ARG2 (s17e1 / entity)
         :ARG1 (s17o2 / odhalit-001
+            :aspect performance
             :ARG0 s17e1
             :ARG1 (s17t2 / tajemství
+                :refer-number singular
                 :name (s17a2 / and
                     :op1 (s17h1 / hovořit-001
+                        :aspect activity
                         :ARG0 (s17a3 / and
                             :op1 (s17s2 / Salvo
                                 :refer-number singular)
@@ -1204,41 +1104,30 @@ Words: Svědectví a  odposlech telefonních rozhovorů umožnily odhalit tajems
                         :ARG2 (s17a4 / Andreotti
                             :refer-number singular)
                         :ARG1 (s17m1 / maxiproces
+                            :refer-number singular
                             :ARG1 (s17m2 / mafie
                                 :refer-number singular)
                             :clausal-marker (s17p1 / právě)
-                            :mod (s17p2 / probíhající
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number plural
-                        :aspect activity)
+                            :mod (s17p2 / probíhající)))
                     :op2 (s17u2 / uklidnit-001
+                        :aspect performance
                         :ARG0 (s17g1 / Giulio
-                            :mod (s17s3 / strýc
-                                :refer-number singular)
-                            :refer-number singular)
+                            :refer-number singular
+                            :mod (s17s3 / strýc))
                         :ARG1 s17a3
                         :manner (s17e2 / event
+                            :aspect state
                             :mod-of s17g1
                             :ARG0 s17g1
                             :effect (s17u3 / urovnat-001
+                                :aspect performance
                                 :ARG1 (s17v1 / všechen
                                     :refer-number singular
                                     :refer-person 3rd)
                                 :ARG0 (s17e3 / entity)
                                 :temporal (s17r3 / řízení
-                                    :mod (s17o3 / odvolací
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular
-                                :refer-person 3rd
-                                :aspect performance)
-                            :aspect state)
-                        :aspect performance))
-                :refer-number singular)
-            :aspect performance)
-        :refer-number plural
-        :aspect performance)
+                                    :refer-number singular
+                                    :mod (s17o3 / odvolací)))))))))
 
 # alignment:
 s17u1: 6-6
@@ -1281,15 +1170,15 @@ s17o3: 38-38
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s18-root
+# meta-info :: sent_id = u_tree-cs-s18-root :: type = partial_conversion
 # :: snt18
 Index: 1   2
 Words: Jak ?
 
 # sentence level graph:
 (s18e1 / event
-        :manner (s18j1 / jak)
-        :aspect state)
+        :aspect state
+        :manner (s18j1 / jak))
 
 # alignment:
 s18e1: 0-0
@@ -1300,51 +1189,46 @@ s18j1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s19-root
+# meta-info :: sent_id = u_tree-cs-s19-root :: type = partial_conversion
 # :: snt19
 Index: 1  2      3       4       5         6  7     8        9       10      11 12     13   14      15    16         17    18 19   20 21  22           23       24       25  26    27
 Words: S  pomocí přítele Corrada Carnevale ,  jehož všemocný politik dosadil do funkce šéfa trestní sekce Apelačního soudu v  Římě ,  kde systematicky anuloval rozsudky nad mafií .
 
 # sentence level graph:
 (s19e1 / event
+        :aspect state
         :companion (s19p1 / pomoc
+            :refer-number singular
             :ARG0 (s19c1 / Carnevale
                 :subtraction (s19c2 / Corrado
                     :refer-number singular)
                 :subtraction (s19p2 / přítel
                     :refer-number singular)
                 :ARG1-of (s19d1 / dosadit-001
+                    :aspect performance
                     :ARG0 (s19p3 / politik
-                        :mod (s19v1 / všemocný
-                            :refer-number singular)
-                        :refer-number singular)
-                    :goal (s19f1 / funkce
+                        :refer-number singular
+                        :mod (s19v1 / všemocný))
+                    :ARG2 (s19f1 / funkce
+                        :refer-number singular
                         :name (s19s1 / šéf
+                            :refer-number singular
                             :possessor (s19s2 / sekce
+                                :refer-number singular
                                 :possessor (s19s3 / soud
-                                    :mod (s19a1 / Apelační
-                                        :refer-number singular)
+                                    :refer-number singular
+                                    :mod (s19a1 / Apelační)
                                     :place (s19r1 / Řím
+                                        :refer-number singular
                                         :place-of (s19a2 / anulovat-001
+                                            :aspect process
                                             :ARG0 s19c1
                                             :manner (s19s4 / systematicky)
                                             :ARG1 (s19r2 / rozsudek
+                                                :refer-number plural
                                                 :ARG1 (s19m1 / mafie
-                                                    :refer-number singular)
-                                                :refer-number plural)
-                                            :refer-number singular
-                                            :aspect process)
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :mod (s19t1 / trestní
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :aspect performance))
-            :refer-number singular)
-        :aspect state)
+                                                    :refer-number singular)))))
+                                :mod (s19t1 / trestní))))))))
 
 # alignment:
 s19e1: 0-0
@@ -1374,7 +1258,7 @@ s19t1: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s20-root
+# meta-info :: sent_id = u_tree-cs-s20-root :: type = partial_conversion
 # :: snt20
 Index: 1  2    3      4  5   6           7        8  9       10   11        12    13 14     15 16      17      18           19 20 21 22        23  24      25       26       27     28       29 30        31 32  33          34         35   36 37   38 39 40      41      42     43
 Words: Na jaké potíže se při vyšetřování naráželo ,  dokládá část obsáhlého spisu s  názvem "  Falešná tvrzení obžalovaného "  :  "  Andreotti měl možnost uniknout kontrole osobní ochranky ,  pohybovat se bez jakýchkoliv doložených stop ,  mohl se s  kýmkoli důvěrně setkat .
@@ -1382,71 +1266,60 @@ Words: Na jaké potíže se při vyšetřování naráželo ,  dokládá část 
 # sentence level graph:
 (s20a1 / and
         :op1 (s20d1 / dokládat-001
+            :aspect activity
             :ARG1 (s20n1 / narážet-003
+                :aspect activity
                 :temporal (s20v1 / vyšetřování
+                    :refer-number singular
                     :ARG0 (s20e1 / entity)
-                    :ARG1 (s20e2 / entity)
-                    :refer-number singular)
+                    :ARG1 (s20e2 / entity))
                 :ARG0 (s20e3 / entity)
                 :ARG1 (s20p1 / potíž
-                    :mod (s20j1 / jaký
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular
-                :aspect activity)
+                    :refer-number plural
+                    :mod (s20j1 / jaký)))
             :ARG0 (s20c1 / část
+                :refer-number singular
                 :possessor (s20s1 / spis
-                    :mod (s20o1 / obsáhlý
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s20o1 / obsáhlý)
                     :companion (s20n2 / název
+                        :refer-number singular
                         :name (s20t1 / tvrzení
+                            :refer-number plural
                             :ARG1 (s20e4 / entity)
-                            :ARG0 (s20o2 / obžalovaný
-                                :refer-number singular)
-                            :mod (s20f1 / falešný
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                            :ARG0 (s20o2 / obžalovaný)
+                            :mod (s20f1 / falešný))))))
         :op2 (s20a2 / and
             :op1 (s20m1 / mít-028
+                :aspect state
                 :ARG0 (s20a3 / Andreotti
                     :refer-number singular)
-                :predicative-noun (s20m2 / možnost
+                :ARG1 (s20m2 / možnost
+                    :refer-number singular
                     :ARG0 s20a3
                     :ARG1 (s20a4 / and
                         :op1 (s20u1 / uniknout-001
+                            :aspect performance
                             :ARG0 s20a3
                             :ARG1 (s20k1 / kontrola
+                                :refer-number singular
                                 :ARG1 (s20o3 / ochranka
-                                    :mod (s20o4 / osobní
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :aspect performance)
+                                    :refer-number singular
+                                    :mod (s20o4 / osobní))))
                         :op2 (s20p2 / pohybovat-se-003
+                            :aspect activity
                             :ARG0 s20a3
                             :companion (s20s2 / stopa
-                                :mod (s20j2 / jakýkoliv
-                                    :refer-number plural)
-                                :mod (s20d2 / doložený
-                                    :refer-number plural)
-                                :refer-number plural)
-                            :aspect activity))
-                    :refer-number singular)
-                :refer-number singular
-                :aspect state)
+                                :refer-number plural
+                                :mod (s20j2 / jakýkoliv)
+                                :mod (s20d2 / doložený))))))
             :op2 (s20s3 / setkat-se-001
+                :aspect performance
                 :ARG0 s20a3
                 :ARG1 (s20k2 / kdokoli
                     :refer-number singular
                     :refer-person 3rd)
-                :manner (s20d3 / důvěrně)
-                :aspect performance)))
+                :manner (s20d3 / důvěrně))))
 
 # alignment:
 s20a1: 20-20
@@ -1491,60 +1364,51 @@ s20d3: 41-41
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s21-root
+# meta-info :: sent_id = u_tree-cs-s21-root :: type = partial_conversion
 # :: snt21
 Index: 1  2  3    4  5  6  7    8     9            10         11 12   13     14     15    16     17      18 19        20      21   22 23    24      25      26 27
 Words: Do té míry ,  že na jeho pokyn nesepisovali karabiníci z  jeho osobní stráže žádná úřední hlášení ,  přijímali peněžní dary ,  lhali soudním orgánům .  "
 
 # sentence level graph:
 (s21e1 / event
+        :aspect state
         :extent (s21m1 / míra
-            :mod (s21t1 / ten
-                :refer-number singular)
+            :refer-number singular
+            :mod (s21t1 / ten)
             :result (s21a1 / and
                 :op1 (s21s1 / sepisovat-001
+                    :aspect activity
+                    :polarity -
                     :ARG0 (s21k1 / karabiník
+                        :refer-number plural
                         :start (s21s2 / stráž
+                            :refer-number singular
                             :ARG1 s21e2
-                            :mod (s21o1 / osobní
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number plural)
+                            :mod (s21o1 / osobní)))
                     :cause (s21p1 / pokyn
+                        :refer-number singular
                         :ARG0 (s21e2 / entity
                             :refer-number singular
-                            :refer-person 3rd)
-                        :refer-number singular)
+                            :refer-person 3rd))
                     :ARG1 (s21h1 / hlášení
+                        :refer-number plural
                         :mod (s21z1 / žádný
-                            :refer-number plural
                             :polarity -)
                         :ARG0 (s21e3 / entity)
                         :ARG1 (s21e4 / entity)
-                        :mod (s21u1 / úřední
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural
-                    :aspect activity
-                    :polarity -)
+                        :mod (s21u1 / úřední)))
                 :op2 (s21p2 / přijímat-001
+                    :aspect activity
                     :ARG0 s21k1
                     :ARG1 (s21d1 / dar
-                        :mod (s21p3 / peněžní
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural
-                    :aspect activity)
+                        :refer-number plural
+                        :mod (s21p3 / peněžní)))
                 :op3 (s21l1 / lhát-001
+                    :aspect activity
                     :ARG0 s21k1
                     :ARG2 (s21o2 / orgán
-                        :mod (s21s3 / soudní
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural
-                    :aspect activity))
-            :refer-number singular)
-        :aspect state)
+                        :refer-number plural
+                        :mod (s21s3 / soudní))))))
 
 # alignment:
 s21e1: 0-0
@@ -1576,23 +1440,20 @@ s21s3: 24-24
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s22-root
+# meta-info :: sent_id = u_tree-cs-s22-root :: type = partial_conversion
 # :: snt22
 Index: 1       2    3        4        5
 Words: Prokáže soud vznesená obvinění ?
 
 # sentence level graph:
 (s22p1 / prokázat-001
+        :aspect performance
         :ARG0 (s22s1 / soud
             :refer-number singular)
         :ARG1 (s22o1 / obvinění
+            :refer-number plural
             :ARG1 (s22e1 / entity)
-            :mod (s22v1 / vznesený
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect performance)
+            :mod (s22v1 / vznesený)))
 
 # alignment:
 s22p1: 1-1
@@ -1607,56 +1468,45 @@ s22v1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s23-root
+# meta-info :: sent_id = u_tree-cs-s23-root :: type = partial_conversion
 # :: snt23
 Index: 1       2  3         4  5  6   7    8      9   10        11 12          13    14 15 16        17        18 19 20    21 22       23 24     25         26     27
 Words: Potvrdí se podezření ,  že pro Cosa nostra byl Andreotti "  referenčním bodem "  ,  nejvyšším ochráncem ,  na něhož se obracela v  dobách největších potíží ?
 
 # sentence level graph:
 (s23p1 / potvrdit-001
+        :aspect performance
         :ARG0 (s23e1 / entity)
         :ARG1 (s23p2 / podezření
+            :refer-number singular
             :ARG1 (s23b1 / být-007
-                :affectee (s23x1 / #Forn
-                    :FPHR (s23c1 / Cosa)
-                    :FPHR (s23n1 / nostra)
-                    :refer-number singular)
-                :ARG0 (s23a1 / Andreotti
+                :aspect activity
+                :affectee (s23f1 / foreign-phrase
+                    :op1 "Cosa" :op2 "nostra")
+                :ARG1 (s23a1 / Andreotti
                     :refer-number singular)
                 :ARG1 (s23a2 / and
                     :op1 (s23b2 / bod
-                        :mod (s23r1 / referenční
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s23r1 / referenční)
                         :ARG2-of (s23o1 / obracet-se-002
-                            :ARG0 s23x1
+                            :aspect activity
+                            :ARG0 s23f1
                             :temporal (s23d1 / doba
+                                :refer-number plural
                                 :mod (s23p3 / potíž
-                                    :mod (s23v1 / velký
-                                        :refer-number plural)
-                                    :refer-number plural)
-                                :refer-number plural)
-                            :aspect activity)
-                        :refer-number singular)
+                                    :mod (s23v1 / velký)))))
                     :op2 (s23o2 / ochránce
+                        :refer-number singular
                         :ARG2-of s23o1
-                        :mod (s23v2 / vysoký
-                            :refer-number singular)
-                        :refer-number singular))
-                :refer-number singular
-                :aspect activity)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect performance)
+                        :mod (s23v2 / vysoký))))))
 
 # alignment:
 s23p1: 1-2
 s23e1: 0-0
 s23p2: 3-3
 s23b1: 5-5,9-9
-s23x1: 0-0
-s23c1: 7-7
-s23n1: 8-8
+s23f1: 7-8
 s23a1: 10-10
 s23a2: 15-15,19-20
 s23b2: 13-13
@@ -1670,26 +1520,27 @@ s23v2: 16-16
 
 # document level annotation:
 (s23s0 / sentence
-    :coref ((s23x1 :same-entity s19m1)
+    :coref ((s23f1 :same-entity s19m1)
             (s23a1 :same-entity s20a3)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s24-root
+# meta-info :: sent_id = u_tree-cs-s24-root :: type = partial_conversion
 # :: snt24
 Index: 1    2  3  4  5       6     7  8     9  10 11 12            13    14        15 16      17 18 19        20  21     22 23    24     25      26    27 28  29   30     31   32 33    34 35 36     37       38
 Words: Jako by mu to ukládal zákon "  omert ?  "  ,  fundamentální norma mafiánské "  kultury "  ,  Andreotti vše popírá :  Nikdy neznal Ignazia Salva ,  ani jeho bratra Nina ,  nikdy se s  Riinou nesetkal .
 
 # sentence level graph:
 (s24p1 / popírat-001
+        :aspect activity
         :ARG0 (s24a1 / Andreotti
-            :refer-number singular
-            :refer-person 3rd)
+            :refer-number singular)
         :ARG1 (s24v1 / všechen
             :refer-number singular
             :refer-person 3rd)
-        :manner (s24x1 / #Equal
+        :manner (s24x1 / %Equal
             :comparison (s24u1 / ukládat-001
+                :aspect activity
                 :ARG1 (s24t1 / ten
                     :refer-number singular)
                 :ARG2 (s24e1 / entity
@@ -1697,54 +1548,42 @@ Words: Jako by mu to ukládal zákon "  omert ?  "  ,  fundamentální norma maf
                     :refer-person 3rd)
                 :ARG0 (s24i1 / identity-91
                     :ARG1 (s24z1 / zákon
+                        :refer-number singular
                         :name (s24o1 / omert
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular))
                     :ARG2 (s24n1 / norma
+                        :refer-number singular
                         :possessor (s24k1 / kultura
-                            :mod (s24m1 / mafiánský
-                                :refer-number singular
-                                :refer-person 3rd)
-                            :refer-number singular)
-                        :mod (s24f1 / fundamentální
-                            :refer-number singular)
-                        :refer-number singular))
-                :refer-number singular
-                :aspect activity))
+                            :refer-number singular
+                            :mod (s24m1 / mafiánský))
+                        :mod (s24f1 / fundamentální)))))
         :manner (s24e2 / event
+            :aspect state
             :mod-of s24a1
             :ARG0 s24a1
             :effect (s24a2 / and
                 :op1 (s24z2 / znát-005
+                    :aspect state
+                    :polarity -
                     :ARG0 s24a1
                     :temporal (s24n2 / nikdy
                         :polarity -)
                     :ARG1 (s24a3 / and
                         :op1 (s24s1 / Salvo
-                            :mod (s24i2 / Ignazio
-                                :refer-number singular)
-                            :refer-number singular)
+                            :refer-number singular
+                            :mod (s24i2 / Ignazio))
                         :op2 (s24n3 / Nino
+                            :refer-number singular
                             :mod (s24b1 / bratr
-                                :possessor s24s1
-                                :refer-number singular)
-                            :refer-number singular))
-                    :refer-number singular
-                    :aspect state
-                    :polarity -)
+                                :possessor s24s1))))
                 :op2 (s24s2 / setkat-se-001
+                    :aspect performance
+                    :polarity -
                     :ARG0 s24a1
                     :temporal (s24n4 / nikdy
                         :polarity -)
                     :ARG1 (s24r1 / Riina
-                        :refer-number singular)
-                    :refer-number singular
-                    :aspect performance
-                    :polarity -))
-            :aspect state)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number singular)))))
 
 # alignment:
 s24p1: 21-21
@@ -1780,45 +1619,40 @@ s24r1: 35-36
             (s24v1 :same-entity s22o1)
             (s24t1 :same-event s23b1)
             (s24e1 :same-entity s23a1)
-            (s24m1 :same-entity s23x1)
+            (s24m1 :same-entity s23f1)
             (s24s1 :same-entity s17s2)
             (s24n3 :same-entity s9s2)
             (s24r1 :same-entity s17r2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s25-root
+# meta-info :: sent_id = u_tree-cs-s25-root :: type = partial_conversion
 # :: snt25
 Index: 1         2       3         4  5      6    7  8  9    10   11  12      13         14    15    16 17
 Words: Poskytuje přívaly interview na jediné téma :  "  Vždy jsem byl úporným bojovníkem proti mafii "  .
 
 # sentence level graph:
 (s25p1 / poskytovat-001
+        :aspect activity
         :ARG0 (s25e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG2 (s25e2 / entity)
         :ARG1 (s25p2 / příval
+            :refer-number plural
             :mod (s25i1 / interview
                 :ARG1 (s25t1 / téma
-                    :mod (s25j1 / jediný
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s25j1 / jediný)
                     :name (s25b1 / být-007
+                        :aspect activity
                         :temporal (s25v1 / vždy)
-                        :ARG0 s25e1
-                        :ARG1 (s25b2 / bojovník
+                        :ARG1 s25e1
+                        :ARG2 (s25b2 / bojovník
+                            :refer-number singular
                             :ARG2 (s25m1 / mafie
                                 :refer-number singular)
-                            :mod (s25u1 / úporný
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular
-                        :aspect activity)
-                    :refer-number singular))
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                            :mod (s25u1 / úporný)))))))
 
 # alignment:
 s25p1: 1-1
@@ -1841,35 +1675,31 @@ s25u1: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s26-root
+# meta-info :: sent_id = u_tree-cs-s26-root :: type = partial_conversion
 # :: snt26
 Index: 1     2  3      4        5      6  7          8      9  10  11 12         13        14
 Words: Mluví o  temném spiknutí soudců ,  výzvědných služeb ,  CIA ,  obchodníků narkotiky .
 
 # sentence level graph:
 (s26m1 / mluvit-002
+        :aspect activity
         :ARG0 (s26e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG1 (s26s1 / spiknutí
+            :refer-number singular
             :ARG0 (s26a1 / and
                 :op1 (s26s2 / soudce
                     :refer-number plural)
                 :op2 (s26s3 / služba
-                    :mod (s26v1 / výzvědný
-                        :refer-number plural)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s26v1 / výzvědný))
                 :op3 (s26c1 / CIA)
                 :op4 (s26o1 / obchodník
+                    :refer-number plural
                     :ARG2 (s26n1 / narkotikum
-                        :refer-number plural)
-                    :refer-number plural))
-            :mod (s26t1 / temný
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number plural)))
+            :mod (s26t1 / temný)))
 
 # alignment:
 s26m1: 1-1
@@ -1890,73 +1720,60 @@ s26t1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s27-root
+# meta-info :: sent_id = u_tree-cs-s27-root :: type = partial_conversion
 # :: snt27
 Index: 1   2  3    4        5    6  7     8  9     10        11 12 13 14  15       16       17      18       19 20  21     22 23       24      25 26        27 28      29   30  31  32      33
 Words: Kdo mu není nakloněn nebo má sklon ho přímo podezírat ,  že to byl největší intrikán italské politiky ,  rád shledá ve výpovědi každého "  kajícného "  mafiána píci pro své pochyby .
 
 # sentence level graph:
 (s27s1 / shledat-002
+        :aspect performance
         :ARG0 (s27o1 / or
             :op1 (s27b1 / být-007
+                :aspect activity
+                :polarity -
                 :ARG0 (s27k1 / kdo
                     :refer-number singular
                     :refer-person 3rd)
-                :ARG1 (s27n1 / nakloněný
+                :ARG2 (s27n1 / nakloněný
                     :ARG1 (s27e1 / entity
                         :refer-number singular
-                        :refer-person 3rd)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity
-                :polarity -)
+                        :refer-person 3rd)))
             :op2 (s27m1 / mít-043
+                :aspect state
                 :ARG0 s27k1
-                :predicative-noun (s27s2 / sklon
+                :ARG1 (s27s2 / sklon
+                    :refer-number singular
                     :ARG0 s27k1
                     :clausal-marker (s27p1 / přímo)
                     :ARG1 (s27p2 / podezírat-001
+                        :aspect activity
                         :ARG0 s27k1
                         :ARG2 s27e1
                         :ARG1 (s27b2 / být-007
-                            :ARG0 (s27t1 / ten
+                            :aspect activity
+                            :ARG1 (s27t1 / ten
                                 :refer-number singular
                                 :refer-person 3rd)
-                            :ARG1 (s27i1 / intrikán
+                            :ARG2 (s27i1 / intrikán
+                                :refer-number singular
                                 :possessor (s27p3 / politika
-                                    :mod (s27i2 / italský
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :mod (s27v1 / velký
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular
-                            :aspect activity)
-                        :aspect activity)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect state))
+                                    :refer-number singular
+                                    :mod (s27i2 / italský))
+                                :mod (s27v1 / velký)))))))
         :manner (s27r1 / rád
-            :mod-of s27k1
-            :refer-number singular)
+            :mod-of s27k1)
         :place (s27v2 / výpověď
+            :refer-number singular
             :ARG0 (s27m2 / mafián
-                :mod (s27k2 / kajícný
-                    :refer-number singular)
-                :mod (s27k3 / každý
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular
+                :mod (s27k2 / kajícný)
+                :mod (s27k3 / každý)))
         :ARG1 (s27p4 / píce
+            :refer-number singular
             :affectee (s27p5 / pochyba
-                :ARG0 s27k1
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect performance)
+                :refer-number plural
+                :ARG0 s27k1)))
 
 # alignment:
 s27s1: 21-21
@@ -1991,7 +1808,7 @@ s27p5: 30-30,32-32
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s28-root
+# meta-info :: sent_id = u_tree-cs-s28-root :: type = partial_conversion
 # :: snt28
 Index: 1     2          3       4  5     6      7      8   9      10    11 12       13 14     15 16    17 18 19     20    21     22 23    24 25 26       27      28 29   30       31         32        33 34 35 36 37       38        39 40 41 42    43   44       45        46     47       48       49
 Words: Třeba Gioacchina Pennina ,  který kotvil dvacet let jednou nohou v  politice a  druhou v  mafii ,  v  těchto dnech poslal za mříže ex -  ministra Mannina (  šéfa sicilské Democrazia Cristiana )  a  ex -  senátora Inzerilla ,  a  je líčen jako zanícený iniciátor očisty sicilské politiky .
@@ -1999,77 +1816,62 @@ Words: Třeba Gioacchina Pennina ,  který kotvil dvacet let jednou nohou v  pol
 # sentence level graph:
 (s28a1 / and
         :op1 (s28p1 / poslat-003
+            :aspect performance
             :clausal-marker (s28t1 / třeba)
             :ARG0 (s28p2 / Pennino
-                :mod (s28g1 / Gioacchino
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s28g1 / Gioacchino)
                 :ARG0-of (s28a2 / and
                     :op1 (s28k1 / kotvit-002
+                        :aspect activity
                         :duration (s28r1 / rok
-                            :mod (s28d1 / dvacet
-                                :refer-number singular)
-                            :refer-number plural)
+                            :refer-number plural
+                            :mod (s28d1 / dvacet))
                         :instrument (s28n1 / noha
-                            :mod (s28j1 / jeden
-                                :refer-number singular)
-                            :refer-number singular)
+                            :refer-number singular
+                            :mod (s28j1 / jeden))
                         :place (s28p3 / politika
-                            :refer-number singular)
-                        :refer-number singular
-                        :aspect activity)
+                            :refer-number singular))
                     :op2 (s28k2 / kotvit-002
+                        :aspect activity
                         :instrument (s28n2 / noha
-                            :mod (s28d2 / druhý
-                                :refer-number singular)
-                            :refer-number singular)
+                            :refer-number singular
+                            :mod (s28d2 / druhý))
                         :place (s28m1 / mafie
-                            :refer-number singular)
-                        :refer-number singular
-                        :aspect activity))
-                :refer-number singular)
+                            :refer-number singular))))
             :temporal (s28d3 / den
-                :mod (s28t2 / tento
-                    :refer-number plural)
-                :refer-number plural)
-            :goal (s28m2 / mříž
+                :refer-number plural
+                :mod (s28t2 / tento))
+            :ARG2 (s28m2 / mříž
                 :refer-number plural)
             :ARG1 (s28a3 / and
                 :op1 (s28i1 / identity-91
                     :ARG1 (s28m3 / Mannino
+                        :refer-number singular
                         :mod (s28m4 / ministr
-                            :mod (s28e1 / ex)
-                            :refer-number singular)
-                        :refer-number singular)
+                            :mod (s28e1 / ex)))
                     :ARG2 (s28s1 / šéf
-                        :possessor (s28x1 / #Forn
-                            :FPHR (s28d4 / Democrazia)
-                            :FPHR (s28c1 / Cristiana)
-                            :mod (s28s2 / sicilský
-                                :refer-number singular))
-                        :refer-number singular))
+                        :refer-number singular
+                        :possessor (s28f1 / foreign-phrase
+                            :op1 "Democrazia" :op2 "Cristiana"
+                            :mod (s28s2 / sicilský))))
                 :op2 (s28i2 / Inzerillo
+                    :refer-number singular
                     :mod (s28s3 / senátor
-                        :mod (s28e2 / ex)
-                        :refer-number singular)
-                    :refer-number singular))
-            :refer-number singular
-            :aspect performance)
+                        :mod (s28e2 / ex)))))
         :op2 (s28l1 / líčit-001
+            :aspect activity
             :ARG0 (s28e3 / entity)
             :ARG1 s28p2
             :manner (s28i3 / iniciátor
+                :refer-number singular
                 :mod-of s28p2
                 :ARG1 (s28o1 / očista
+                    :refer-number singular
                     :ARG1 (s28p4 / politika
-                        :mod (s28s4 / sicilský
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :mod (s28z1 / zanícený
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect activity))
+                        :refer-number singular
+                        :mod (s28s4 / sicilský)))
+                :mod (s28z1 / zanícený))))
 
 # alignment:
 s28a1: 40-40
@@ -2097,9 +1899,7 @@ s28m3: 27-27
 s28m4: 26-26
 s28e1: 24-24
 s28s1: 29-29
-s28x1: 0-0
-s28d4: 31-31
-s28c1: 32-32
+s28f1: 31-32
 s28s2: 30-30
 s28i2: 38-38
 s28s3: 37-37
@@ -2121,7 +1921,7 @@ s28z1: 44-44
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s29-root
+# meta-info :: sent_id = u_tree-cs-s29-root :: type = partial_conversion
 # :: snt29
 Index: 1  2  3      4  5       6         7  8   9      10     11 12     13   14   15        16 17    18 19  20 21        22   23 24 25  26 27    28 29      30 31       32 33       34    35       36     37 38    39   40   41 42     43   44   45 46 47       48 49     50        51 52         53   54    55   56
 Words: Je to proces s  jediným obviněným ,  ale pravou causou je letitý pakt mezi politikou a  mafií ,  ono "  mysterium loci "  ,  jež se táhne od střelby do bezzemků v  Portella della Ginestra krátce po válce přes únos a  vraždu Alda Mora až po atentáty na soudce Falconeho a  Borsellina před třemi roky .
@@ -2129,87 +1929,72 @@ Words: Je to proces s  jediným obviněným ,  ale pravou causou je letitý pakt
 # sentence level graph:
 (s29b1 / but-91
         :ARG1 (s29b2 / být-007
-            :ARG0 (s29t1 / ten
-                :refer-number singular)
-            :ARG1 (s29p1 / proces
+            :aspect activity
+            :ARG1 (s29e1 / entity
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG2 (s29p1 / proces
+                :refer-number singular
                 :ARG1 (s29o1 / obviněný
-                    :mod (s29j1 / jediný
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                    :refer-number singular
+                    :mod (s29j1 / jediný))))
         :ARG2 (s29b3 / být-007
-            :ARG1 (s29k1 / kauza
-                :mod (s29p2 / pravý
-                    :refer-number singular)
-                :refer-number singular)
+            :aspect activity
+            :ARG2 (s29k1 / kauza
+                :refer-number singular
+                :mod (s29p2 / pravý))
             :ARG0 (s29i1 / identity-91
                 :ARG1 (s29p3 / pakt
-                    :ARG1 (s29x1 / #Rcp)
+                    :refer-number singular
+                    :ARG1 (s29x1 / %Rcp)
                     :ARG0 (s29a1 / and
                         :op1 (s29p4 / politika
                             :refer-number singular)
                         :op2 (s29m1 / mafie
                             :refer-number singular))
-                    :mod (s29l1 / letitý
-                        :refer-number singular)
-                    :refer-number singular)
+                    :mod (s29l1 / letitý))
                 :ARG2 (s29m2 / mysterium
-                    :mod (s29o2 / onen
-                        :refer-number singular)
-                    :mod (s29l2 / locus
-                        :refer-number singular)
-                    :ARG0-of (s29t2 / táhnout-se-005
+                    :refer-number singular
+                    :mod (s29o2 / onen)
+                    :mod (s29l2 / locus)
+                    :ARG0-of (s29t1 / táhnout-se-005
+                        :aspect activity
                         :start (s29s1 / střelba
+                            :refer-number singular
                             :goal (s29b4 / bezzemek
-                                :place (s29x2 / #Forn
-                                    :FPHR (s29p5 / Portella)
-                                    :FPHR (s29d1 / della)
-                                    :FPHR (s29g1 / Ginestra))
-                                :refer-number plural)
+                                :refer-number plural
+                                :place (s29f1 / foreign-phrase
+                                    :op1 "Portella" :op2 "della" :op3 "Ginestra"))
                             :temporal (s29k2 / krátce)
                             :temporal (s29v1 / válka
-                                :refer-number singular)
-                            :refer-number singular)
+                                :refer-number singular))
                         :path (s29a2 / and
                             :op1 (s29u1 / únos
+                                :refer-number singular
                                 :ARG1 (s29m3 / Moro
-                                    :mod (s29a3 / Aldo
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular)
+                                    :refer-number singular
+                                    :mod (s29a3 / Aldo)))
                             :op2 (s29v2 / vražda
-                                :ARG1 s29m3
-                                :refer-number singular))
+                                :refer-number singular
+                                :ARG1 s29m3))
                         :clausal-marker (s29a4 / až)
                         :goal (s29a5 / atentát
+                            :refer-number plural
                             :ARG1 (s29a6 / and
-                                :op1 (s29f1 / Falcone
-                                    :mod (s29s2 / soudce
-                                        :refer-number plural)
-                                    :refer-number singular)
+                                :op1 (s29f2 / Falcone
+                                    :refer-number singular
+                                    :mod (s29s2 / soudce))
                                 :op2 (s29b5 / Borsellino
-                                    :mod s29s2
-                                    :refer-number singular))
+                                    :refer-number singular
+                                    :mod s29s2))
                             :temporal (s29r1 / rok
-                                :mod (s29t3 / tři
-                                    :refer-number plural)
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular
-                        :refer-person 3rd
-                        :aspect activity)
-                    :refer-number singular))
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                                :refer-number plural
+                                :mod (s29t2 / tři))))))))
 
 # alignment:
 s29b1: 8-8
 s29b2: 1-1
-s29t1: 2-2
+s29e1: 2-2
 s29p1: 3-3
 s29o1: 4-4,6-6
 s29j1: 5-5
@@ -2226,13 +2011,10 @@ s29l1: 12-12
 s29m2: 21-21,25-25
 s29o2: 19-19
 s29l2: 22-22
-s29t2: 26-27
+s29t1: 26-27
 s29s1: 28-29
 s29b4: 30-31
-s29x2: 0-0
-s29p5: 33-33
-s29d1: 34-34
-s29g1: 35-35
+s29f1: 33-35
 s29k2: 36-36
 s29v1: 37-38
 s29a2: 41-41
@@ -2243,15 +2025,15 @@ s29v2: 39-39,42-42
 s29a4: 45-45
 s29a5: 46-47
 s29a6: 51-51
-s29f1: 48-48,50-50
+s29f2: 48-48,50-50
 s29s2: 49-49
 s29b5: 48-48,52-52
 s29r1: 53-53,55-55
-s29t3: 54-54
+s29t2: 54-54
 
 # document level annotation:
 (s29s0 / sentence
-    :coref ((s29t1 :same-entity s10p1)
+    :coref ((s29e1 :same-entity s10p1)
             (s29o1 :same-entity s27t1)
             (s29x1 :same-entity s29a1)
             (s29p4 :same-entity s28p3)
@@ -2259,40 +2041,32 @@ s29t3: 54-54
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s30-root
+# meta-info :: sent_id = u_tree-cs-s30-root :: type = partial_conversion
 # :: snt30
 Index: 1      2       3  4     5     6       7          8  9           10 11   12 13      14     15 16      17          18       19
 Words: Právní stránka je jenom rámec procesu historicko -  politického ,  jaké se obvykle konají po velkých politických zvratech .
 
 # sentence level graph:
 (s30b1 / být-007
-        :ARG0 (s30s1 / stránka
-            :mod (s30p1 / právní
-                :refer-number singular)
-            :refer-number singular)
+        :aspect activity
+        :ARG1 (s30s1 / stránka
+            :refer-number singular
+            :mod (s30p1 / právní))
         :clausal-marker (s30j1 / jenom)
-        :ARG1 (s30r1 / rámec
+        :ARG2 (s30r1 / rámec
+            :refer-number singular
             :possessor (s30p2 / proces
+                :refer-number singular
                 :mod (s30a1 / and
                     :op1 (s30h1 / historický)
-                    :op2 (s30p3 / politický
-                        :refer-number singular))
-                :ARG0-of (s30k1 / konat-se-001
+                    :op2 (s30p3 / politický))
+                :ARG1-of (s30k1 / konat-se-001
+                    :aspect activity
                     :manner (s30o1 / obvykle)
                     :temporal (s30z1 / zvrat
-                        :mod (s30p4 / politický
-                            :refer-number plural)
-                        :mod (s30v1 / velký
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural
-                    :refer-person 3rd
-                    :aspect activity)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number plural
+                        :mod (s30p4 / politický)
+                        :mod (s30v1 / velký))))))
 
 # alignment:
 s30b1: 3-3
@@ -2315,53 +2089,50 @@ s30v1: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s31-root
+# meta-info :: sent_id = u_tree-cs-s31-root :: type = partial_conversion
 # :: snt31
 Index: 1  2   3        4  5  6  7      8      9        10          11      12 13    14     15     16 17 18    19   20          21       22 23   24    25 26       27       28         29
 Words: S  tím rozdílem ,  že v  Itálii nebyla dovršena dalekosáhlá přeměna a  nikdo nemůže tvrdit ,  že mafie byla definitivně poražena a  její vazby na politiku natrvalo zpřetrhány .
 
 # sentence level graph:
 (s31e1 / event
+        :aspect state
         :companion (s31r1 / rozdíl
-            :mod (s31t1 / ten
-                :refer-number singular)
+            :refer-number singular
+            :mod (s31t1 / ten)
             :ARG1 (s31a1 / and
                 :op1 (s31d1 / dovršit-002
+                    :aspect performance
+                    :polarity -
                     :place (s31i1 / Itálie
                         :refer-number singular)
                     :ARG0 (s31e2 / entity)
                     :ARG1 (s31p1 / přeměna
-                        :mod (s31d2 / dalekosáhlý
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect performance
-                    :polarity -)
-                :op2 (s31t2 / tvrdit-002
-                    :ARG0 (s31n1 / nikdo
                         :refer-number singular
-                        :refer-person 3rd
-                        :polarity -)
+                        :mod (s31d2 / dalekosáhlý)))
+                :op2 (s31t2 / tvrdit-002
+                    :aspect activity
+                    :polarity -
+                    :ARG0 (s31n1 / nikdo
+                        :polarity -
+                        :refer-number singular
+                        :refer-person 3rd)
                     :effect (s31a2 / and
                         :op1 (s31p2 / porazit-001
+                            :aspect performance
                             :ARG0 (s31e3 / entity)
                             :ARG1 (s31m1 / mafie
                                 :refer-number singular)
-                            :manner (s31d3 / definitivně)
-                            :aspect performance)
+                            :manner (s31d3 / definitivně))
                         :op2 (s31z1 / zpřetrhat-001
+                            :aspect performance
                             :ARG0 s31e3
                             :ARG1 (s31v1 / vazba
+                                :refer-number plural
                                 :ARG0 s31m1
                                 :ARG1 (s31p3 / politika
-                                    :refer-number singular)
-                                :refer-number plural)
-                            :duration (s31n2 / natrvalo)
-                            :refer-number plural
-                            :aspect performance))
-                    :aspect activity
-                    :polarity -))
-            :refer-number singular)
-        :aspect state)
+                                    :refer-number singular))
+                            :duration (s31n2 / natrvalo)))))))
 
 # alignment:
 s31e1: 0-0
@@ -2393,74 +2164,62 @@ s31n2: 27-27
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s32-root
+# meta-info :: sent_id = u_tree-cs-s32-root :: type = partial_conversion
 # :: snt32
 Index: 1  2        3         4     5  6      7         8  9    10       11     12     13 14        15 16       17           18 19   20       21      22 23 24        25     26      27      28 29  30   31 32       33   34 35 36  37      38   39 40     41 42      43
 Words: Na tisících stránkách spisu "  Případ Andreotti "  jsou nakupeny tisíce úlomků ,  drobností až zdánlivě malicherných (  jako rituální polibek )  o  hlubinném životě jednoho člověka ,  ale také o  útrobách země ,  v  níž Italové žili a  kterou -  neznali .
 
 # sentence level graph:
 (s32n1 / nakupit-001
+        :aspect performance
         :place (s32t1 / tisíc
             :mod (s32s1 / stránka
+                :refer-number plural
                 :possessor (s32s2 / spis
+                    :refer-number singular
                     :name (s32p1 / případ
+                        :refer-number singular
                         :name (s32a1 / Andreotti
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number plural)
+                            :refer-number singular)))))
         :ARG0 (s32e1 / entity)
         :ARG1 (s32t2 / tisíc
             :mod (s32a2 / and
                 :op1 (s32u1 / úlomek
+                    :refer-number plural
                     :mod (s32g1 / gradation
                         :op1 (s32z1 / život
                             :possessor (s32c1 / člověk
-                                :mod (s32j1 / jeden
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :mod (s32h1 / hlubinný
-                                :refer-number singular)
-                            :refer-number singular)
+                                :refer-number singular
+                                :mod (s32j1 / jeden))
+                            :mod (s32h1 / hlubinný))
                         :clausal-marker (s32t3 / také)
                         :op2 (s32u2 / útroba
                             :possessor (s32z2 / země
+                                :refer-number singular
                                 :mod (s32a3 / and
                                     :op1 (s32z3 / žít-005
+                                        :aspect activity
                                         :ARG0 (s32i1 / Ital
-                                            :refer-number plural
-                                            :refer-person 3rd)
-                                        :place s32z2
-                                        :refer-number plural
-                                        :aspect activity)
+                                            :refer-number plural)
+                                        :place s32z2)
                                     :op2 (s32z4 / znát-005
-                                        :ARG0 s32i1
-                                        :ARG1 s32z2
-                                        :refer-number plural
                                         :aspect state
-                                        :polarity -))
-                                :refer-number singular)
-                            :refer-number plural))
-                    :refer-number plural)
+                                        :polarity -
+                                        :ARG0 s32i1
+                                        :ARG1 s32z2))))))
                 :op2 (s32i2 / identity-91
                     :ARG1 (s32d1 / drobnost
+                        :refer-number plural
                         :mod s32g1
                         :clausal-marker (s32a4 / až)
                         :mod (s32m1 / malicherný
-                            :manner (s32z5 / zdánlivě)
-                            :refer-number plural)
-                        :refer-number plural)
+                            :manner (s32z5 / zdánlivě)))
                     :ARG2 (s32e2 / event
+                        :aspect state
                         :mod s32g1
                         :ARG0 (s32p2 / polibek
-                            :mod (s32r1 / rituální
-                                :refer-number singular)
-                            :refer-number singular)
-                        :aspect state)))
-            :refer-number plural)
-        :refer-number plural
-        :aspect performance)
+                            :refer-number singular
+                            :mod (s32r1 / rituální)))))))
 
 # alignment:
 s32n1: 9-10
@@ -2499,71 +2258,63 @@ s32r1: 20-20
     :coref ((s32s2 :same-entity s20s1)
             (s32c1 :same-entity s29o1)
             (s32z2 :same-entity s31i1)
-            (s32i1 :same-entity s5e1)))
+            (s32i1 :same-entity s5e2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s33-root
+# meta-info :: sent_id = u_tree-cs-s33-root :: type = partial_conversion
 # :: snt33
 Index: 1   2    3      4  5   6  7   8  9      10            11 12      13       14      15 16     17 18  19 20 21    22        23     24
 Words: Tak jako nevědí ,  zda a  kdy z  Paláce spravedlnosti v  Palermu dostanou odpověď na otázku :  Byl ,  či nebyl Andreotti mafián ?
 
 # sentence level graph:
 (s33e1 / event
+        :aspect state
         :manner (s33t1 / tak
             :comparison (s33v1 / vědět-001
+                :aspect state
+                :polarity -
                 :ARG0 (s33e2 / entity
                     :refer-number plural
                     :refer-person 3rd)
                 :ARG1 (s33a1 / and
                     :op1 (s33d1 / dostat-014
-                        :source (s33p1 / palác
+                        :aspect performance
+                        :ARG2 (s33p1 / palác
+                            :refer-number singular
                             :possessor (s33s1 / spravedlnost
                                 :refer-number singular)
                             :place (s33p2 / Palermo
-                                :refer-number singular)
-                            :refer-number singular)
+                                :refer-number singular))
                         :ARG0 s33e2
-                        :predicative-noun (s33o1 / odpověď
+                        :ARG1 (s33o1 / odpověď
+                            :refer-number singular
                             :ARG0 s33p1
                             :ARG2 s33e2
                             :ARG1 (s33o2 / otázka
+                                :refer-number singular
                                 :ARG1 (s33a2 / and
                                     :op1 (s33b1 / být-007
-                                        :ARG0 (s33a3 / Andreotti
-                                            :refer-number singular)
-                                        :ARG1 (s33m1 / mafián
-                                            :refer-number singular)
-                                        :refer-number singular
-                                        :aspect activity)
-                                    :op2 (s33b2 / být-007
-                                        :ARG0 s33a3
-                                        :ARG1 s33m1
-                                        :refer-number singular
                                         :aspect activity
-                                        :polarity -))
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number plural
-                        :refer-person 3rd
-                        :aspect performance)
+                                        :ARG1 (s33a3 / Andreotti
+                                            :refer-number singular)
+                                        :ARG2 (s33m1 / mafián
+                                            :refer-number singular))
+                                    :op2 (s33b2 / být-007
+                                        :aspect activity
+                                        :polarity -
+                                        :ARG1 s33a3
+                                        :ARG2 s33m1)))))
                     :op2 (s33d2 / dostat-014
-                        :source s33p1
+                        :aspect performance
+                        :ARG2 s33p1
                         :ARG0 s33e2
-                        :predicative-noun (s33o3 / odpověď
+                        :ARG1 (s33o3 / odpověď
+                            :refer-number singular
                             :ARG0 s33p1
                             :ARG1 s33o2
-                            :ARG2 s33e2
-                            :refer-number singular)
-                        :temporal (s33k1 / kdy)
-                        :refer-number plural
-                        :refer-person 3rd
-                        :aspect performance))
-                :refer-number plural
-                :refer-person 3rd
-                :aspect state
-                :polarity -))
-        :aspect state)
+                            :ARG2 s33e2)
+                        :temporal (s33k1 / kdy))))))
 
 # alignment:
 s33e1: 0-0
@@ -2594,38 +2345,35 @@ s33k1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s34-root
+# meta-info :: sent_id = u_tree-cs-s34-root :: type = partial_conversion
 # :: snt34
 Index: 1   2     3      4  5  6  7    8       9    10  11       12         13       14 15           16 17
 Words: Leč svítá naděje ,  že to může dopadat jako při odhalení korupčních skandálů "  Tangentopoli "  .
 
 # sentence level graph:
 (s34s1 / svítat-001
+        :aspect activity
         :clausal-marker (s34l1 / leč)
         :ARG0 (s34n1 / naděje
+            :refer-number singular
             :ARG1 (s34d1 / dopadat-003
+                :aspect activity
                 :ARG0 (s34t1 / ten
                     :refer-number singular)
-                :manner (s34x1 / #Equal
+                :manner (s34x1 / %Equal
                     :comparison (s34d2 / dopadat-003
+                        :aspect activity
                         :ARG0 (s34e1 / entity
                             :refer-number singular
                             :refer-person 3rd)
-                        :manner (s34e2 / entity)
+                        :manner (s34c1 / concept)
                         :temporal (s34o1 / odhalení
-                            :ARG0 (s34e3 / entity)
+                            :refer-number singular
+                            :ARG0 (s34e2 / entity)
                             :ARG1 (s34s2 / skandál
+                                :refer-number plural
                                 :name (s34t2 / Tangentopoli)
-                                :mod (s34k1 / korupční
-                                    :refer-number plural)
-                                :refer-number plural)
-                            :refer-number singular)
-                        :aspect activity))
-                :aspect activity)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                                :mod (s34k1 / korupční))))))))
 
 # alignment:
 s34s1: 2-2
@@ -2636,43 +2384,41 @@ s34t1: 6-6
 s34x1: 0-0
 s34d2: 0-0
 s34e1: 0-0
-s34e2: 0-0
+s34c1: 0-0
 s34o1: 10-11
-s34e3: 0-0
+s34e2: 0-0
 s34s2: 13-13
 s34t2: 15-15
 s34k1: 12-12
 
 # document level annotation:
 (s34s0 / sentence
-    :coref ((s34t1 :same-entity s29t1)))
+    :coref ((s34t1 :same-entity s29e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s35-root
+# meta-info :: sent_id = u_tree-cs-s35-root :: type = partial_conversion
 # :: snt35
 Index: 1    2     3       4           5      6      7  8   9      10        11     12
 Words: Také tehdy doznání podnikatelů utrhlo lavinu ,  jež smetla vládnoucí vrstvu .
 
 # sentence level graph:
 (s35u1 / utrhnout-001
+        :aspect performance
         :clausal-marker (s35t1 / také)
         :temporal (s35t2 / tehdy)
         :ARG0 (s35d1 / doznání
+            :refer-number singular
             :ARG1 (s35e1 / entity)
             :ARG0 (s35p1 / podnikatel
-                :refer-number plural)
-            :refer-number singular)
+                :refer-number plural))
         :ARG1 (s35l1 / lavina
+            :refer-number singular
             :ARG0-of (s35s1 / smést-003
+                :aspect performance
                 :ARG1 (s35v1 / vrstva
-                    :mod (s35v2 / vládnoucí
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect performance)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                    :refer-number singular
+                    :mod (s35v2 / vládnoucí)))))
 
 # alignment:
 s35u1: 5-5
@@ -2691,23 +2437,21 @@ s35v2: 10-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s36-root
+# meta-info :: sent_id = u_tree-cs-s36-root :: type = partial_conversion
 # :: snt36
 Index: 1     2  3  4   5     6         7  8  9     10
 Words: Třeba by to tak mohlo dopadnout i  s  mafií .
 
 # sentence level graph:
 (s36d1 / dopadnout-003
+        :aspect performance
         :ARG0 (s36t1 / ten
             :refer-number singular)
-        :manner (s36t2 / tak
-            :refer-number singular)
+        :manner (s36t2 / tak)
         :clausal-marker (s36t3 / třeba)
         :clausal-marker (s36i1 / i)
         :ARG1 (s36m1 / mafie
-            :refer-number singular
-            :refer-person 3rd)
-        :aspect performance)
+            :refer-number singular))
 
 # alignment:
 s36d1: 2-2,5-6

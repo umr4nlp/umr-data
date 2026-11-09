@@ -1,26 +1,24 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1        2   3  4   5   6
 Words: Děkujeme vám za váš čas .
 
 # sentence level graph:
 (s1d1 / děkovat-001
+        :aspect activity
         :ARG0 (s1e1 / entity)
-        :ARG2 (s1e2 / entity
+        :ARG1 (s1p1 / person
             :refer-number plural
             :refer-person 2nd)
-        :ARG1 (s1c1 / čas
-            :mod s1e2
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 1st
-        :aspect activity)
+        :ARG2 (s1c1 / čas
+            :refer-number singular
+            :mod s1p1))
 
 # alignment:
 s1d1: 1-1
 s1e1: 0-0
-s1e2: 2-2,4-4
+s1p1: 2-2,4-4
 s1c1: 3-3,5-5
 
 # document level annotation:
@@ -28,15 +26,13 @@ s1c1: 3-3,5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1      2
 Words: Prosím .
 
 # sentence level graph:
-(s2p1 / Prosím
-        :refer-number singular
-        :refer-person 1st)
+(s2p1 / Prosím)
 
 # alignment:
 s2p1: 1-1
@@ -46,7 +42,7 @@ s2p1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1        2       3 4     5   6       7          8
 Words: Počkejte chvilku , kluci vás přijdou vysvobodit .
@@ -54,73 +50,67 @@ Words: Počkejte chvilku , kluci vás přijdou vysvobodit .
 # sentence level graph:
 (s3a1 / and
         :op1 (s3p1 / počkat-001
-            :ARG0 (s3e1 / entity
+            :aspect performance
+            :ARG0 (s3p2 / person
                 :refer-number plural
                 :refer-person 2nd)
-            :ARG1 s3p2
+            :ARG1 s3p3
             :duration (s3c1 / chvilka
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 2nd
-            :aspect performance)
-        :op2 (s3p2 / přijít-010
+                :refer-number singular))
+        :op2 (s3p3 / přijít-010
+            :aspect performance
             :ARG0 (s3k1 / kluk
                 :refer-number plural)
-            :goal (s3e2 / entity)
+            :goal (s3c2 / concept)
             :purpose (s3v1 / vysvobodit-001
-                :ARG1 s3e1
-                :ARG0 s3k1
-                :aspect performance)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect performance))
+                :aspect performance
+                :ARG1 s3p2
+                :ARG0 s3k1)))
 
 # alignment:
 s3a1: 3-3
 s3p1: 1-1
-s3e1: 5-5
+s3p2: 5-5
 s3c1: 2-2
-s3p2: 6-6
+s3p3: 6-6
 s3k1: 4-4
-s3e2: 0-0
+s3c2: 0-0
 s3v1: 7-7
 
 # document level annotation:
 (s3s0 / sentence
-    :coref ((s3e1 :same-entity s1e2)))
+    :coref ((s3p2 :same-entity s1p1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1   2 3      4
 Words: Ano , děkuju .
 
 # sentence level graph:
 (s4d1 / děkovat-001
+        :aspect activity
         :interjection (s4a1 / ano)
-        :ARG0 (s4e1 / entity
+        :ARG0 (s4p1 / person
             :refer-number plural
             :refer-person 2nd)
-        :ARG2 (s4e2 / entity)
-        :refer-number singular
-        :refer-person 1st
-        :aspect activity)
+        :ARG1 (s4e1 / entity))
 
 # alignment:
 s4d1: 3-3
 s4a1: 1-1
+s4p1: 0-0
 s4e1: 0-0
-s4e2: 0-0
 
 # document level annotation:
 (s4s0 / sentence
-    :coref ((s4e1 :same-entity s3e1)
-            (s4e2 :same-entity s1e1)))
+    :coref ((s4p1 :same-entity s3p2)
+            (s4e1 :same-entity s1e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1           2
 Words: Nashledanou .
@@ -136,7 +126,7 @@ s5n1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1           2
 Words: Nashledanou .

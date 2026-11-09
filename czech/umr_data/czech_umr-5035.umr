@@ -1,23 +1,21 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1    2  3    4        5 6    7        8     9
 Words: Byla to tedy čtvrtina , nebo polovina šálku ?
 
 # sentence level graph:
 (s1b1 / být-007
-        :ARG0 (s1t1 / ten
+        :aspect activity
+        :ARG1 (s1t1 / ten
             :refer-number singular)
         :clausal-marker (s1t2 / tedy)
         :ARG1 (s1o1 / or
             :op1 (s1c1 / čtvrtina
-                :mod (s1s1 / šálek
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s1s1 / šálek))
             :op2 (s1p1 / polovina
-                :mod s1s1
-                :refer-number singular))
-        :aspect activity)
+                :refer-number singular
+                :mod s1s1)))
 
 # alignment:
 s1b1: 1-1
@@ -33,58 +31,47 @@ s1p1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2        3      4  5     6     7      8      9      10         11   12      13 14    15    16 17    18   19        20         21     22         23    24 25      26 27      28
 Words: Nijak důvtipná otázka ,  pokud ovšem nejste vrchní cukrář restaurace Chez Panisse v  tomto městě a  právě jste neztratil drahocenný osobní poznámkový sešit s  recepty na dezerty .
 
 # sentence level graph:
 (s2e1 / event
+        :aspect state
         :ARG0 (s2o1 / otázka
+            :refer-number singular
             :mod (s2d1 / důvtipný
-                :manner (s2n1 / nijak)
-                :refer-number singular)
-            :refer-number singular)
+                :manner (s2n1 / nijak)))
         :condition (s2a1 / and
             :op1 (s2b1 / být-007
-                :ARG0 (s2e2 / entity)
-                :clausal-marker (s2o2 / ovšem)
-                :ARG1 (s2c1 / cukrář
-                    :mod (s2v1 / vrchní
-                        :refer-number singular)
-                    :mod (s2r1 / restaurace
-                        :name (s2x1 / #Forn
-                            :FPHR (s2c2 / Chez)
-                            :FPHR (s2p1 / Panisse))
-                        :place (s2m1 / město
-                            :mod (s2t1 / tento
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural
-                :refer-person 2nd
                 :aspect activity
-                :polarity -)
+                :polarity -
+                :ARG1 (s2e2 / entity)
+                :clausal-marker (s2o2 / ovšem)
+                :ARG2 (s2c1 / cukrář
+                    :refer-number singular
+                    :mod (s2v1 / vrchní)
+                    :mod (s2r1 / restaurace
+                        :name (s2n2 / name
+                            :op1 "Chez" :op2 "Panisse")
+                        :place (s2m1 / město
+                            :refer-number singular
+                            :mod (s2t1 / tento)))))
             :op2 (s2z1 / ztratit-004
-                :ARG0 s2e2
-                :temporal (s2p2 / právě)
-                :ARG1 (s2s1 / sešit
-                    :mod (s2d2 / drahocenný
-                        :refer-number singular)
-                    :mod (s2o3 / osobní
-                        :refer-number singular)
-                    :mod (s2p3 / poznámkový
-                        :refer-number singular)
-                    :companion (s2r2 / recept
-                        :purpose (s2d3 / dezerta
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular
                 :aspect performance
-                :polarity -))
-        :aspect state)
+                :polarity -
+                :ARG0 s2e2
+                :temporal (s2p1 / právě)
+                :ARG1 (s2s1 / sešit
+                    :refer-number singular
+                    :mod (s2d2 / drahocenný)
+                    :mod (s2o3 / osobní)
+                    :mod (s2p2 / poznámkový)
+                    :companion (s2r2 / recept
+                        :refer-number plural
+                        :purpose (s2d3 / dezerta
+                            :refer-number plural))))))
 
 # alignment:
 s2e1: 0-0
@@ -98,17 +85,15 @@ s2o2: 6-6
 s2c1: 9-9
 s2v1: 8-8
 s2r1: 10-10
-s2x1: 0-0
-s2c2: 11-11
-s2p1: 12-12
+s2n2: 11-12
 s2m1: 13-13,15-15
 s2t1: 14-14
 s2z1: 5-5,18-19
-s2p2: 17-17
+s2p1: 17-17
 s2s1: 23-23
 s2d2: 20-20
 s2o3: 21-21
-s2p3: 22-22
+s2p2: 22-22
 s2r2: 24-25
 s2d3: 26-27
 
@@ -117,46 +102,41 @@ s2d3: 26-27
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1          2    3       4    5         6           7     8        9  10     11 12         13         14 15    16
 Words: Restaurace Chez Panisse byla časopisem Connoisseur letos zařazena na seznam 30 nejlepších restaurací na světě .
 
 # sentence level graph:
 (s3z1 / zařadit-001
+        :aspect performance
         :ARG1 (s3r1 / restaurace
-            :name (s3x1 / #Forn
-                :FPHR (s3c1 / Chez)
-                :FPHR (s3p1 / Panisse))
-            :refer-number singular)
-        :ARG0 (s3c2 / časopis
-            :name (s3c3 / Connoisseur
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :name (s3n1 / name
+                :op1 "Chez" :op2 "Panisse"))
+        :ARG0 (s3c1 / časopis
+            :refer-number singular
+            :name (s3c2 / Connoisseur
+                :refer-number singular))
         :temporal (s3l1 / letos)
-        :goal (s3s1 / seznam
+        :ARG2 (s3s1 / seznam
+            :refer-number singular
             :mod (s3r2 / restaurace
-                :mod (s3x2 / 30)
-                :mod (s3d1 / dobrý
-                    :refer-number plural)
+                :mod (s3x1 / 30)
+                :mod (s3d1 / dobrý)
                 :place (s3s2 / svět
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number singular)
-        :aspect performance)
+                    :refer-number singular))))
 
 # alignment:
 s3z1: 4-4,8-8
 s3r1: 1-1
-s3x1: 0-0
-s3c1: 2-2
-s3p1: 3-3
-s3c2: 5-5
-s3c3: 6-6
+s3n1: 2-3
+s3c1: 5-5
+s3c2: 6-6
 s3l1: 7-7
 s3s1: 9-10
 s3r2: 13-13
-s3x2: 11-11
+s3x1: 11-11
 s3d1: 12-12
 s3s2: 14-15
 
@@ -166,53 +146,45 @@ s3s2: 14-15
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1         2     3       4  5           6       7               8  9  10  11 12    13    14        15        16 17  18    19 20      21      22       23 24   25  26      27      28 29     30   31
 Words: Roztrhaný černý pořadač ,  přetékající recepty nashromážděnými za 18 let ,  který držel pohromadě gumičkami ,  byl právě v  kabelce Lindsey Shereové ,  když byl nedávno odcizen z  jejího domu .
 
 # sentence level graph:
 (s4b1 / být-011
-        :ARG0 (s4p1 / pořadač
-            :mod (s4r1 / roztrhaný
-                :refer-number singular)
-            :mod (s4c1 / černý
-                :refer-number singular)
+        :aspect activity
+        :ARG1 (s4p1 / pořadač
+            :refer-number singular
+            :mod (s4r1 / roztrhaný)
+            :mod (s4c1 / černý)
             :mod (s4p2 / přetékající
                 :instrument (s4r2 / recept
+                    :refer-number plural
                     :mod (s4n1 / nashromážděný
                         :duration (s4r3 / rok
-                            :mod (s4x1 / 18)
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular)
-            :ARG0-of (s4d1 / držet-010
+                            :refer-number plural
+                            :mod (s4x1 / 18)))))
+            :ARG1-of (s4d1 / držet-010
+                :aspect activity
                 :manner (s4p3 / pohromadě)
                 :instrument (s4g1 / gumička
-                    :refer-number plural)
-                :refer-number singular
-                :aspect activity)
-            :refer-number singular)
+                    :refer-number plural)))
         :temporal (s4p4 / právě)
         :place (s4k1 / kabelka
+            :refer-number singular
             :mod (s4s1 / Shereová
-                :mod (s4l1 / Lindsey)
-                :refer-number singular)
-            :refer-number singular)
+                :mod (s4l1 / Lindsey)))
         :temporal (s4o1 / odcizit-001
+            :aspect performance
             :ARG1 s4p1
             :ARG2 s4s1
             :ARG0 (s4e1 / entity)
             :temporal (s4d2 / dávno
                 :polarity -)
             :start (s4d3 / dům
-                :mod s4s1
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
-        :refer-number singular
-        :aspect activity)
+                :refer-number singular
+                :mod s4s1)))
 
 # alignment:
 s4b1: 17-17
@@ -242,7 +214,7 @@ s4d3: 28-28,30-30
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1       2  3        4    5     6       7  8     9         10 11  12 13 14 15  16     17        18     19 20          21
 Words: Policie v  Berkeley nemá žádná vodítka ,  ovšem pochybuje o  tom ,  že by byl zločin motivován touhou po sladkostech .
@@ -250,32 +222,25 @@ Words: Policie v  Berkeley nemá žádná vodítka ,  ovšem pochybuje o  tom , 
 # sentence level graph:
 (s5b1 / but-91
         :ARG1 (s5m1 / mít-002
-            :ARG0 (s5p1 / policie
-                :place (s5b2 / Berkeley
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG1 (s5v1 / vodítko
-                :mod (s5z1 / žádný
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number singular
-            :refer-person 3rd
             :aspect state
-            :polarity -)
+            :polarity -
+            :ARG0 (s5p1 / policie
+                :refer-number singular
+                :place (s5b2 / Berkeley
+                    :refer-number singular))
+            :ARG1 (s5v1 / vodítko
+                :refer-number plural
+                :mod (s5z1 / žádný)))
         :ARG2 (s5p2 / pochybovat-001
+            :aspect state
             :ARG0 s5p1
             :ARG1 (s5m2 / motivovat-001
+                :aspect process
                 :ARG1 (s5z2 / zločin
                     :refer-number singular)
                 :ARG0 (s5t1 / touha
-                    :mod (s5s1 / sladkost
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular
-                :aspect process)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect state))
+                    :refer-number singular
+                    :mod (s5s1 / sladkost)))))
 
 # alignment:
 s5b1: 8-8
@@ -297,52 +262,44 @@ s5s1: 19-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1     2  3       4  5  6        7    8  9         10   11       12     13 14      15   16 17       18 19        20 21 22 23    24      25
 Words: Spíše se domnívá ,  že pachatel vzal z  peněženky paní Shereové peníze a  všechny tipy v  pořadači o  rozměrech 5  x  8  palců vyhodil .
 
 # sentence level graph:
 (s6d1 / domnívat-se-001
+        :aspect activity
         :ARG0 (s6e1 / entity
-            :refer-number singular)
+            :refer-number singular
+            :refer-person 3rd)
         :clausal-marker (s6s1 / spíše)
         :ARG1 (s6a1 / and
             :op1 (s6v1 / vzít-005
+                :aspect performance
                 :ARG0 (s6p1 / pachatel
                     :refer-number singular)
-                :start (s6p2 / peněženka
+                :ARG2 (s6p2 / peněženka
+                    :refer-number singular
                     :mod (s6s2 / Shereový
-                        :mod (s6p3 / paní
-                            :refer-number singular)
-                        :refer-number singular
-                        :refer-person 3rd)
-                    :refer-number singular)
+                        :mod (s6p3 / paní)))
                 :ARG1 (s6p4 / peníze
-                    :refer-number plural)
-                :refer-number singular
-                :aspect performance)
+                    :refer-number plural))
             :op2 (s6v2 / vyhodit-001
+                :aspect performance
                 :ARG0 s6p1
                 :ARG1 (s6t1 / tip
-                    :mod (s6v3 / všechen
-                        :refer-number plural)
+                    :refer-number plural
+                    :mod (s6v3 / všechen)
                     :place (s6p5 / pořadač
+                        :refer-number singular
                         :mod (s6r1 / rozměr
                             :extent (s6p6 / palec
-                                :mod (s6m1 / math
+                                :refer-number plural
+                                :mod (s6m1 / math-entity
                                     :op1 (s6x2 / 5)
-                                    :op2 (s6x3 / 8))
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular)
-                    :refer-number plural)
-                :start (s6e2 / entity)
-                :refer-number singular
-                :aspect performance))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                                    :op2 (s6x3 / 8))))))
+                :ARG2 (s6c1 / concept))))
 
 # alignment:
 s6d1: 2-3
@@ -364,7 +321,7 @@ s6p6: 23-23
 s6m1: 21-21
 s6x2: 20-20
 s6x3: 22-22
-s6e2: 0-0
+s6c1: 0-0
 
 # document level annotation:
 (s6s0 / sentence
@@ -374,78 +331,63 @@ s6e2: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1          2    3       4  5     6            7     8         9  10         11 12        13          14    15      16   17          18      19 20    21    22        23 24        25    26    27     28 29       30    31      32       33         34         35       36
 Words: Restaurace Chez Panisse ,  jejíž zakladatelka Alice Watersová je považována za vynálezce kuchařského umění známého jako kalifornská kuchyně a  jejíž stálí zákazníci si rezervují místa měsíc předem ,  prozatím kvůli krádeži nenabízí strávníkům vanilkovou zmrzlinu .
 
 # sentence level graph:
 (s7n1 / nabízet-001
+        :aspect activity
+        :polarity -
         :ARG0 (s7r1 / restaurace
-            :name (s7x1 / #Forn
-                :FPHR (s7c1 / Chez)
-                :FPHR (s7p1 / Panisse))
+            :refer-number singular
+            :name (s7n2 / name
+                :op1 "Chez" :op2 "Panisse")
             :mod (s7a1 / and
-                :op1 (s7p2 / považovat-001
+                :op1 (s7p1 / považovat-001
+                    :aspect activity
                     :ARG0 (s7e1 / entity)
                     :ARG1 (s7w1 / Watersová
+                        :refer-number singular
                         :mod (s7z1 / zakladatelka
-                            :mod s7r1
-                            :refer-number singular)
-                        :mod (s7a2 / Alice
-                            :refer-number singular)
-                        :refer-number singular)
+                            :mod s7r1)
+                        :mod (s7a2 / Alice))
                     :effect (s7v1 / vynálezce
+                        :refer-number plural
                         :mod (s7u1 / umění
-                            :mod (s7k1 / kuchařský
-                                :refer-number singular)
+                            :mod (s7k1 / kuchařský)
                             :mod (s7z2 / známý
                                 :effect (s7k2 / kuchyně
-                                    :mod (s7k3 / kalifornský
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number plural)
-                    :aspect activity)
+                                    :refer-number singular
+                                    :mod (s7k3 / kalifornský))))))
                 :op2 (s7r2 / rezervovat-001
+                    :aspect process
                     :ARG0 (s7z3 / zákazník
+                        :refer-number plural
                         :mod s7r1
-                        :mod (s7s1 / stálý
-                            :refer-number plural)
-                        :refer-number plural)
+                        :mod (s7s1 / stálý))
                     :ARG2 s7z3
                     :ARG1 (s7m1 / místo
                         :refer-number plural)
-                    :temporal (s7p3 / předem
+                    :temporal (s7p2 / předem
                         :duration (s7m2 / měsíc
-                            :refer-number singular))
-                    :refer-number plural
-                    :refer-person 3rd
-                    :aspect process))
-            :refer-number singular)
-        :temporal (s7p4 / prozatím)
+                            :refer-number singular)))))
+        :temporal (s7p3 / prozatím)
         :cause (s7k4 / krádež
             :refer-number singular)
-        :ARG2 (s7s2 / strávník
+        :ARG3 (s7s2 / strávník
             :refer-number plural)
         :ARG1 (s7z4 / zmrzlina
-            :mod (s7v2 / vanilkový
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity
-        :polarity -)
+            :refer-number singular
+            :mod (s7v2 / vanilkový)))
 
 # alignment:
 s7n1: 32-32
 s7r1: 1-1,5-5,20-20
-s7x1: 0-0
-s7c1: 2-2
-s7p1: 3-3
+s7n2: 2-3
 s7a1: 19-19
-s7p2: 9-10
+s7p1: 9-10
 s7e1: 0-0
 s7w1: 8-8
 s7z1: 6-6
@@ -460,9 +402,9 @@ s7r2: 24-24
 s7z3: 22-23
 s7s1: 21-21
 s7m1: 25-25
-s7p3: 27-27
+s7p2: 27-27
 s7m2: 26-26
-s7p4: 29-29
+s7p3: 29-29
 s7k4: 30-31
 s7s2: 33-33
 s7z4: 35-35
@@ -475,73 +417,57 @@ s7v2: 34-34
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1       2        3      4    5        6  7   8        9  10          11   12     13   14              15     16    17 18    19     20      21 22     23         24   25     26 27   28 29         30       31 32        33        34 35           36       37       38 39 40 41    42 43 44    45 46 47        48     49
 Words: Lindsey Shereová jednak může vycházet ze své kuchařky ,  publikované před čtyřmi lety nakladatelstvím Random House ,  která oplývá recepty na takové speciality jako šerbet z  kiwi ,  angreštový blázínek (  smetanová pochoutka z  rozmačkaných dušených angreštů )  a  "  oeufs a  la neige "  z  lískových oříšků .
 
 # sentence level graph:
 (s8v1 / vycházet-007
-        :ARG0 (s8s1 / Shereová
-            :mod (s8l1 / Lindsey)
-            :refer-number singular)
+        :aspect activity
+        :ARG1 (s8s1 / Shereová
+            :refer-number singular
+            :mod (s8l1 / Lindsey))
         :clausal-marker (s8j1 / jednak)
-        :ARG1 (s8k1 / kuchařka
+        :ARG2 (s8k1 / kuchařka
+            :refer-number singular
             :mod s8s1
             :mod (s8p1 / publikovaný
                 :temporal (s8r1 / rok
-                    :mod (s8c1 / čtyři
-                        :refer-number plural)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s8c1 / čtyři))
                 :ARG0 (s8n1 / nakladatelství
-                    :name (s8x2 / #Forn
-                        :FPHR (s8r2 / Random)
-                        :FPHR (s8h1 / House))
-                    :refer-number singular)
-                :refer-number singular)
+                    :refer-number singular
+                    :name (s8n2 / name
+                        :op1 "Random" :op2 "House")))
             :ARG0-of (s8o1 / oplývat-001
-                :ARG1 (s8r3 / recept
+                :aspect activity
+                :ARG1 (s8r2 / recept
+                    :refer-number plural
                     :purpose (s8i1 / identity-91
                         :ARG1 (s8s2 / specialita
-                            :mod (s8t1 / takový
-                                :refer-number plural)
-                            :refer-number plural)
+                            :refer-number plural
+                            :mod (s8t1 / takový))
                         :ARG2 (s8e1 / event
+                            :aspect state
                             :ARG0 (s8a1 / and
                                 :op1 (s8s3 / šerbet
-                                    :mod (s8k2 / kiwi)
-                                    :refer-number singular)
+                                    :refer-number singular
+                                    :mod (s8k2 / kiwi))
                                 :op2 (s8i2 / identity-91
                                     :ARG1 (s8b1 / blázínek
-                                        :mod (s8a2 / angreštový
-                                            :refer-number singular)
-                                        :refer-number singular)
+                                        :refer-number singular
+                                        :mod (s8a2 / angreštový))
                                     :ARG2 (s8p2 / pochoutka
-                                        :mod (s8s4 / smetanový
-                                            :refer-number singular)
+                                        :refer-number singular
+                                        :mod (s8s4 / smetanový)
                                         :mod (s8a3 / angrešt
-                                            :mod (s8r4 / rozmačkaný
-                                                :refer-number plural)
-                                            :mod (s8d1 / dušený
-                                                :refer-number plural)
-                                            :refer-number plural)
-                                        :refer-number singular))
-                                :op3 (s8x3 / #Forn
-                                    :FPHR (s8o2 / oeufs)
-                                    :FPHR (s8a4 / a)
-                                    :FPHR (s8l2 / la)
-                                    :FPHR (s8n2 / neige)
-                                    :mod (s8o3 / oříšek
-                                        :mod (s8l3 / lískový
-                                            :refer-number plural)
-                                        :refer-number plural)))
-                            :aspect state))
-                    :refer-number plural)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number singular)
-        :aspect activity)
+                                            :mod (s8r3 / rozmačkaný)
+                                            :mod (s8d1 / dušený))))
+                                :op3 (s8f1 / foreign-phrase
+                                    :op1 "oeufs" :op2 "a" :op3 "la" :op4 "neige"
+                                    :mod (s8o2 / oříšek
+                                        :mod (s8l2 / lískový))))))))))
 
 # alignment:
 s8v1: 4-5
@@ -553,11 +479,9 @@ s8p1: 10-10
 s8r1: 11-11,13-13
 s8c1: 12-12
 s8n1: 14-14
-s8x2: 0-0
-s8r2: 15-15
-s8h1: 16-16
+s8n2: 15-16
 s8o1: 19-19
-s8r3: 20-20
+s8r2: 20-20
 s8i1: 24-24
 s8s2: 21-21,23-23
 s8t1: 22-22
@@ -571,15 +495,11 @@ s8a2: 29-29
 s8p2: 33-33
 s8s4: 32-32
 s8a3: 34-34,37-37
-s8r4: 35-35
+s8r3: 35-35
 s8d1: 36-36
-s8x3: 0-0
-s8o2: 41-41
-s8a4: 42-42
-s8l2: 43-43
-s8n2: 44-44
-s8o3: 46-46,48-48
-s8l3: 47-47
+s8f1: 41-44
+s8o2: 46-46,48-48
+s8l2: 47-47
 
 # document level annotation:
 (s8s0 / sentence
@@ -587,45 +507,38 @@ s8l3: 47-47
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1  2  3     4  5        6  7     8  9  10      11 12      13      14       15    16     17      18 19  20 21    22  23        24 25       26
 Words: A  za druhé ,  fanoušci ,  kteří s  ní soucítí ,  poslali Lindsey Shereové kopie jejích receptů ,  jež si během let vystřihli z  časopisů .
 
 # sentence level graph:
 (s9p1 / poslat-001
+        :aspect performance
         :clausal-marker (s9a1 / a)
-        :clausal-marker (s9d1 / dva
-            :refer-number singular)
+        :clausal-marker (s9d1 / dva)
         :ARG0 (s9f1 / fanoušek
+            :refer-number plural
             :ARG0-of (s9s1 / soucítit-001
+                :aspect activity
                 :ARG1 (s9e1 / entity
                     :refer-number singular
-                    :refer-person 3rd)
-                :refer-number plural
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number plural)
+                    :refer-person 3rd)))
         :ARG2 (s9s2 / Shereová
-            :mod (s9l1 / Lindsey)
             :refer-number singular
-            :refer-person 3rd)
+            :mod (s9l1 / Lindsey))
         :ARG1 (s9k1 / kopie
+            :refer-number plural
             :mod (s9r1 / recept
                 :mod s9s2
                 :ARG1-of (s9v1 / vystřihnout-001
+                    :aspect performance
                     :ARG0 s9f1
                     :temporal (s9r2 / rok
                         :refer-number plural)
                     :affectee s9f1
-                    :start (s9c1 / časopis
-                        :refer-number plural)
-                    :refer-number plural
-                    :aspect performance)
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number plural
-        :aspect performance)
+                    :ARG2 (s9c1 / časopis
+                        :refer-number plural)))))
 
 # alignment:
 s9p1: 12-12
@@ -649,52 +562,43 @@ s9c1: 24-25
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1     2          3    4        5     6  7    8       9  10 11       12 13   14   15 16     17          18     19    20 21     22       23        24          25
 Words: Stále obměňované menu hlavních jídel o  pěti chodech -  od otevření v  roce 1971 se údajně neopakovalo jediné jídlo -  přesto vyžaduje neustálou improvizaci .
 
 # sentence level graph:
 (s10v1 / vyžadovat-001
+        :aspect activity
         :ARG0 (s10m1 / menu
             :mod (s10o1 / obměňovaný
-                :duration (s10s1 / stále)
-                :refer-number singular)
+                :duration (s10s1 / stále))
             :mod (s10j1 / jídlo
-                :mod (s10h1 / hlavní
-                    :refer-number plural)
+                :mod (s10h1 / hlavní)
                 :mod (s10c1 / chod
-                    :mod (s10p1 / pět
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural)
+                    :mod (s10p1 / pět)))
             :parenthesis (s10o2 / opakovat-se-001
+                :aspect activity
+                :polarity -
                 :temporal (s10o3 / otevření
+                    :refer-number singular
                     :ARG0 (s10e1 / entity
-                        :refer-number singular)
+                        :refer-number singular
+                        :refer-person 3rd)
                     :ARG1 (s10e2 / entity
-                        :refer-number plural
+                        :refer-number singular
                         :refer-person 3rd)
                     :temporal (s10r1 / rok
-                        :name (s10x1 / 1971)
-                        :refer-number singular)
-                    :refer-number singular)
+                        :refer-number singular
+                        :name (s10x1 / 1971)))
                 :clausal-marker (s10u1 / údajně)
-                :ARG0 (s10j2 / jídlo
-                    :mod (s10j3 / jediný
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :aspect activity
-                :polarity -))
+                :ARG1 (s10j2 / jídlo
+                    :refer-number singular
+                    :mod (s10j3 / jediný))))
         :clausal-marker (s10p2 / přesto)
         :ARG1 (s10i1 / improvizace
-            :mod (s10n1 / neustálý
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number singular
+            :mod (s10n1 / neustálý)))
 
 # alignment:
 s10v1: 22-22
@@ -725,32 +629,25 @@ s10n1: 23-23
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1  2  3      4     5     6    7  8        9        10 11   12      13
 Words: A  to vyvíjí ještě větší tlak na přípravu moučníků v  Chez Panisse .
 
 # sentence level graph:
 (s11v1 / vyvíjet-002
+        :aspect activity
         :clausal-marker (s11a1 / a)
         :ARG0 (s11t1 / ten
-            :refer-number singular
-            :refer-person 3rd)
-        :predicative-noun (s11t2 / tlak
-            :mod (s11v2 / velký
-                :extent (s11j1 / ještě)
-                :refer-number singular)
-            :mod (s11p1 / příprava
-                :place (s11x1 / #Forn
-                    :FPHR (s11c1 / Chez)
-                    :FPHR (s11p2 / Panisse))
-                :mod (s11m1 / moučník
-                    :refer-number plural)
-                :refer-number singular)
             :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :ARG1 (s11t2 / tlak
+            :refer-number singular
+            :mod (s11v2 / velký
+                :extent (s11j1 / ještě))
+            :mod (s11p1 / příprava
+                :place (s11f1 / foreign-phrase
+                    :op1 "Chez" :op2 "Panisse")
+                :mod (s11m1 / moučník))))
 
 # alignment:
 s11v1: 3-3
@@ -760,50 +657,39 @@ s11t2: 6-6
 s11v2: 5-5
 s11j1: 4-4
 s11p1: 7-8
-s11x1: 0-0
-s11c1: 11-11
-s11p2: 12-12
+s11f1: 11-12
 s11m1: 9-9
 
 # document level annotation:
 (s11s0 / sentence
     :coref ((s11t1 :same-event s10v1)
-            (s11x1 :same-entity s10e2)))
+            (s11f1 :same-entity s10e2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1  2            3  4  5  6  7     8      9  10 11   12       13      14      15      16
 Words: "  Připravujeme to ,  na co známe postup ,  "  říká obchodní manažer Richard Mazzera .
 
 # sentence level graph:
 (s12r1 / říkat-007
-        :effect (s12p1 / připravovat-003
+        :aspect activity
+        :ARG1 (s12p1 / připravovat-003
+            :aspect activity
             :ARG0 (s12e1 / entity)
             :ARG1 (s12z1 / znát-002
+                :aspect state
                 :ARG0 s12e1
                 :ARG1 (s12c1 / co)
                 :effect (s12p2 / postup
-                    :refer-number singular)
-                :refer-number plural
-                :refer-person 1st
-                :aspect state)
-            :refer-number plural
-            :refer-person 1st
-            :aspect activity)
+                    :refer-number singular)))
         :ARG2 (s12e2 / entity)
         :ARG0 (s12m1 / Mazzera
+            :refer-number singular
             :mod (s12m2 / manažer
-                :mod (s12o1 / obchodní
-                    :refer-number singular)
-                :refer-number singular)
-            :mod (s12r2 / Richard
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :mod (s12o1 / obchodní))
+            :mod (s12r2 / Richard)))
 
 # alignment:
 s12r1: 11-11
@@ -820,11 +706,11 @@ s12r2: 14-14
 
 # document level annotation:
 (s12s0 / sentence
-    :coref ((s12e1 :same-entity s11x1)))
+    :coref ((s12e1 :same-entity s11f1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1    2    3  4          5     6  7       8      9   10        11     12 13 14 15 16      17       18    19  20     21       22  23      24       25 26     27       28      29      30 31    32 33 34    35 36      37            38         39 40    41 42         43      44 45  46             47     48   49  50      51        52       53      54 55  56      57        58       59      60        61      62    63
 Words: Řada lidí v  cukrářském oboru v  oblasti zátoky San Francisco nevěří ,  že by si Lindsey Shereová vedla jen jediný exemplář tak cenných poznámek ,  přesto obdržela morální podporu od Baker '  s  Dozen ,  skupiny kalifornských šéfcukrářů ,  která se pravidelně setkává ,  aby prodiskutovala otázky typu jak zamezit roztékání pěnových pusinek a  jak jídelní zvyklosti hovězího dobytka ovlivňují složení másla .
@@ -832,108 +718,82 @@ Words: Řada lidí v  cukrářském oboru v  oblasti zátoky San Francisco nevě
 # sentence level graph:
 (s13b1 / but-91
         :ARG1 (s13v1 / věřit-001
+            :aspect state
+            :polarity -
             :ARG0 (s13r1 / řada
+                :refer-number singular
                 :mod (s13c1 / člověk
                     :place (s13o1 / obor
-                        :mod (s13c2 / cukrářský
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number plural)
+                        :refer-number singular
+                        :mod (s13c2 / cukrářský)))
                 :place (s13o2 / oblast
-                    :mod (s13z1 / zátoka
-                        :mod (s13x1 / #Forn
-                            :FPHR (s13s1 / San)
-                            :FPHR (s13f1 / Francisco))
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG1 (s13v2 / vést-006
-                :ARG0 (s13s2 / Shereová
-                    :mod (s13l1 / Lindsey)
                     :refer-number singular
-                    :refer-person 3rd)
-                :affectee s13s2
+                    :mod (s13z1 / zátoka
+                        :mod (s13f1 / foreign-phrase
+                            :op1 "San" :op2 "Francisco"))))
+            :ARG1 (s13v2 / vést-006
+                :aspect activity
+                :ARG0 (s13s1 / Shereová
+                    :refer-number singular
+                    :mod (s13l1 / Lindsey))
+                :affectee s13s1
                 :ARG1 (s13e1 / exemplář
+                    :refer-number singular
                     :clausal-marker (s13j1 / jen)
-                    :mod (s13j2 / jediný
-                        :refer-number singular)
+                    :mod (s13j2 / jediný)
                     :mod (s13p1 / poznámka
                         :mod (s13c3 / cenný
-                            :extent (s13t1 / tak)
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular)
-                :aspect activity)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect state
-            :polarity -)
+                            :extent (s13t1 / tak))))))
         :clausal-marker (s13p2 / přesto)
         :ARG2 (s13o3 / obdržet-001
-            :ARG0 s13s2
+            :aspect performance
+            :ARG0 s13s1
             :ARG1 (s13p3 / podpora
-                :mod (s13m1 / morální
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s13m1 / morální))
             :source (s13i1 / identity-91
-                :ARG1 (s13x4 / #Forn
-                    :FPHR (s13b2 / Baker)
-                    :FPHR (s13x5 / ')
-                    :FPHR (s13s3 / s)
-                    :FPHR (s13d1 / Dozen))
-                :ARG2 (s13s4 / skupina
-                    :mod (s13s5 / šéfcukrář
-                        :mod (s13k1 / kalifornský
-                            :refer-number plural)
-                        :refer-number plural)
-                    :mod (s13s6 / setkávat-se-002
+                :ARG1 (s13f2 / foreign-phrase
+                    :op1 "Baker's" :op2 "Dozen")
+                :ARG2 (s13s2 / skupina
+                    :refer-number singular
+                    :mod (s13s3 / šéfcukrář
+                        :mod (s13k1 / kalifornský))
+                    :mod (s13s4 / setkávat-se-002
+                        :aspect habitual
                         :ARG0 s13i1
                         :frequency (s13p4 / pravidelně)
-                        :ARG1 (s13x7 / #Rcp
-                            :refer-number singular)
+                        :ARG1 (s13x4 / %Rcp)
                         :purpose (s13p5 / prodiskutovat-001
-                            :ARG2 (s13x8 / #Rcp)
-                            :ARG0 s13x7
+                            :aspect performance
+                            :ARG2 (s13x5 / %Rcp)
+                            :ARG0 s13x4
                             :ARG1 (s13o4 / otázka
+                                :refer-number plural
                                 :mod (s13t2 / typ
                                     :name (s13o5 / otázka
+                                        :refer-number plural
                                         :mod (s13a1 / and
                                             :op1 (s13z2 / zamezit-002
+                                                :aspect performance
                                                 :ARG0 (s13e2 / entity)
                                                 :manner (s13j3 / jak)
                                                 :ARG1 (s13r2 / roztékání
+                                                    :refer-number singular
                                                     :ARG0 (s13p6 / pusinka
-                                                        :mod (s13p7 / pěnový
-                                                            :refer-number plural)
-                                                        :refer-number plural)
-                                                    :refer-number singular)
-                                                :aspect performance)
+                                                        :refer-number plural
+                                                        :mod (s13p7 / pěnový))))
                                             :op2 (s13o6 / ovlivňovat-001
+                                                :aspect activity
                                                 :ARG0 (s13z3 / zvyklost
-                                                    :mod (s13j4 / jídelní
-                                                        :refer-number plural)
-                                                    :mod (s13d2 / dobytek
-                                                        :mod (s13h1 / hovězí
-                                                            :refer-number singular)
-                                                        :refer-number singular)
-                                                    :refer-number plural)
+                                                    :refer-number plural
+                                                    :mod (s13j4 / jídelní)
+                                                    :mod (s13d1 / dobytek
+                                                        :mod (s13h1 / hovězí)))
                                                 :manner (s13j5 / jak)
-                                                :ARG1 (s13s7 / složení
+                                                :ARG1 (s13s5 / složení
+                                                    :refer-number singular
                                                     :ARG0 (s13m2 / máslo
-                                                        :refer-number singular)
-                                                    :refer-number singular)
-                                                :refer-number plural
-                                                :refer-person 3rd
-                                                :aspect activity))
-                                        :refer-number plural)
-                                    :refer-number singular)
-                                :refer-number plural)
-                            :aspect performance)
-                        :refer-number singular
-                        :refer-person 3rd
-                        :aspect habitual)
-                    :refer-number singular))
-            :aspect performance))
+                                                        :refer-number singular)))))))))))))
 
 # alignment:
 s13b1: 25-25
@@ -944,11 +804,9 @@ s13o1: 3-3,5-5
 s13c2: 4-4
 s13o2: 6-7
 s13z1: 8-8
-s13x1: 0-0
-s13s1: 9-9
-s13f1: 10-10
+s13f1: 9-10
 s13v2: 13-14,18-18
-s13s2: 15-15,17-17
+s13s1: 15-15,17-17
 s13l1: 16-16
 s13e1: 21-21
 s13j1: 19-19
@@ -961,19 +819,15 @@ s13o3: 27-27
 s13p3: 29-29
 s13m1: 28-28
 s13i1: 35-35,40-40
-s13x4: 0-0
-s13b2: 31-31
-s13x5: 32-32
-s13s3: 33-33
-s13d1: 34-34
-s13s4: 30-30,36-36
-s13s5: 38-38
+s13f2: 31-34
+s13s2: 30-30,36-36
+s13s3: 38-38
 s13k1: 37-37
-s13s6: 41-41,43-43
+s13s4: 41-41,43-43
 s13p4: 42-42
-s13x7: 0-0
+s13x4: 0-0
 s13p5: 45-46
-s13x8: 0-0
+s13x5: 0-0
 s13o4: 47-47
 s13t2: 48-48
 s13o5: 0-0
@@ -987,21 +841,21 @@ s13p7: 52-52
 s13o6: 60-60
 s13z3: 57-57
 s13j4: 56-56
-s13d2: 59-59
+s13d1: 59-59
 s13h1: 58-58
 s13j5: 55-55
-s13s7: 61-61
+s13s5: 61-61
 s13m2: 62-62
 
 # document level annotation:
 (s13s0 / sentence
-    :coref ((s13s2 :same-entity s9s2)
-            (s13x7 :same-entity s13i1)
-            (s13x8 :same-entity s13x7)))
+    :coref ((s13s1 :same-entity s9s2)
+            (s13x4 :same-entity s13i1)
+            (s13x5 :same-entity s13x4)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1       2        3       4      5  6    7   8      9  10        11     12 13    14          15 16 17   18      19   20    21    22       23 24      25
 Words: Lindsey Shereová nabídla odměnu ve výši 500 dolarů za navrácení sešitu ,  avšak předpokládá ,  že řadu receptů bude muset znovu vymyslet od začátku .
@@ -1009,39 +863,36 @@ Words: Lindsey Shereová nabídla odměnu ve výši 500 dolarů za navrácení s
 # sentence level graph:
 (s14b1 / but-91
         :ARG1 (s14n1 / nabídnout-001
+            :aspect performance
             :ARG2 (s14e1 / entity)
             :ARG0 (s14s1 / Shereová
-                :mod (s14l1 / Lindsey)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s14l1 / Lindsey))
             :ARG1 (s14o1 / odměna
+                :refer-number singular
                 :extent (s14v1 / výše
+                    :refer-number singular
                     :extent (s14d1 / dolar
-                        :mod (s14x1 / 500)
-                        :refer-number plural)
-                    :refer-number singular)
+                        :refer-number plural
+                        :mod (s14x1 / 500)))
                 :cause (s14n2 / navrácení
+                    :refer-number singular
                     :ARG2 s14s1
                     :ARG0 (s14e2 / entity)
                     :ARG1 (s14s2 / sešit
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance)
+                        :refer-number singular))))
         :ARG2 (s14p1 / předpokládat-001
+            :aspect activity
             :ARG0 s14s1
             :ARG1 (s14v2 / vymyslet-001
+                :aspect performance
                 :ARG0 s14s1
                 :ARG1 (s14r1 / řada
-                    :mod (s14r2 / recept
-                        :refer-number plural)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s14r2 / recept))
                 :temporal (s14z1 / znovu)
                 :temporal (s14z2 / začátek
-                    :refer-number singular)
-                :aspect performance)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                    :refer-number singular))))
 
 # alignment:
 s14b1: 13-13
@@ -1066,32 +917,27 @@ s14z2: 23-24
 # document level annotation:
 (s14s0 / sentence
     :coref ((s14s2 :same-entity s6p5)
-            (s14s1 :same-entity s13s2)))
+            (s14s1 :same-entity s13s1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1 2  3  4        5     6 7 8    9
 Words: " Je to obrovská práce , " říká .
 
 # sentence level graph:
 (s15r1 / říkat-007
+        :aspect activity
         :ARG2 (s15e1 / entity)
         :ARG0 (s15e2 / entity)
-        :effect (s15b1 / být-007
-            :ARG0 (s15t1 / ten
+        :ARG1 (s15b1 / být-007
+            :aspect activity
+            :ARG1 (s15t1 / ten
                 :refer-number singular)
-            :ARG1 (s15p1 / práce
-                :mod (s15o1 / obrovský
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :ARG2 (s15p1 / práce
+                :refer-number singular
+                :mod (s15o1 / obrovský))))
 
 # alignment:
 s15r1: 8-8
@@ -1109,41 +955,34 @@ s15o1: 4-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s16-root
+# meta-info :: sent_id = u_tree-cs-s16-root :: type = partial_conversion
 # :: snt16
 Index: 1  2        3     4       5      6  7       8  9  10 11    12   13 14     15 16    17 18    19 20    21 22
 Words: "  Existuje tolik možných poměrů ,  uvážíte -  li ,  kolik věcí se vyrábí z  vajec ,  másla a  mléka .  "
 
 # sentence level graph:
 (s16e1 / existovat-001
-        :ARG0 (s16p1 / poměr
+        :aspect activity
+        :ARG1 (s16p1 / poměr
+            :refer-number plural
             :mod (s16t1 / tolik)
-            :mod (s16m1 / možný
-                :refer-number plural)
-            :refer-number plural)
+            :mod (s16m1 / možný))
         :condition (s16u1 / uvážit-001
+            :aspect performance
             :ARG0 (s16e2 / entity)
             :ARG1 (s16v1 / vyrábět-001
+                :aspect activity
                 :ARG0 (s16e3 / entity)
                 :ARG1 (s16v2 / věc
-                    :mod (s16k1 / kolik)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s16k1 / kolik))
                 :source (s16a1 / and
                     :op1 (s16v3 / vejce
                         :refer-number plural)
                     :op2 (s16m2 / máslo
                         :refer-number singular)
                     :op3 (s16m3 / mléko
-                        :refer-number singular))
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number plural
-            :refer-person 2nd
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number singular)))))
 
 # alignment:
 s16e1: 2-2

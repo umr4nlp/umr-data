@@ -1,22 +1,20 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1  2            3      4   5    6
 Words: Za dvojnásobnou vraždu tři roky vězení
 
 # sentence level graph:
 (s1e1 / event
+        :aspect state
         :cause (s1v1 / vražda
-            :mod (s1d1 / dvojnásobný
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s1d1 / dvojnásobný))
         :ARG0 (s1r1 / rok
+            :refer-number plural
             :possessor (s1v2 / vězení
                 :refer-number singular)
-            :mod (s1t1 / tři
-                :refer-number plural)
-            :refer-number plural)
-        :aspect state)
+            :mod (s1t1 / tři)))
 
 # alignment:
 s1e1: 0-0
@@ -31,16 +29,15 @@ s1t1: 4-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1      2
 Words: Soudní síň
 
 # sentence level graph:
 (s2s1 / síň
-        :mod (s2s2 / soudní
-            :refer-number singular)
-        :refer-number singular)
+        :refer-number singular
+        :mod (s2s2 / soudní))
 
 # alignment:
 s2s1: 2-2
@@ -51,15 +48,15 @@ s2s2: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2 3   4 5
 Words: Písek ( dan ) -
 
 # sentence level graph:
 (s3p1 / Písek
-        :parenthesis (s3d1 / dan)
-        :refer-number singular)
+        :refer-number singular
+        :parenthesis (s3d1 / dan))
 
 # alignment:
 s3p1: 1-1
@@ -70,47 +67,39 @@ s3d1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1    2        3      4  5     6  7      8      9      10 11   12                13         14 15 16 17    18   19 20    21        22 23       24     25   26  27   28
 Words: Před Okresním soudem v  Písku se konalo hlavní líčení ve věci pětatřicetiletého Stanislava H  .  ,  který loni v  dubnu zastřelil v  píseckém Tropio baru dva muže .
 
 # sentence level graph:
 (s4k1 / konat-se-001
+        :aspect activity
         :place (s4s1 / soud
-            :mod (s4o1 / okresní
-                :refer-number singular)
+            :refer-number singular
+            :mod (s4o1 / okresní)
             :place (s4p1 / Písek
-                :refer-number singular)
-            :refer-number singular)
-        :ARG0 (s4l1 / líčení
-            :mod (s4h1 / hlavní
-                :refer-number singular)
+                :refer-number singular))
+        :ARG1 (s4l1 / líčení
+            :refer-number singular
+            :mod (s4h1 / hlavní)
             :regard (s4h2 / H
-                :mod (s4s2 / Stanislav
-                    :refer-number singular)
-                :mod (s4p2 / pětatřicetiletý
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s4s2 / Stanislav)
+                :mod (s4p2 / pětatřicetiletý)
                 :ARG0-of (s4z1 / zastřelit-001
+                    :aspect performance
                     :temporal (s4v1 / vloni)
                     :temporal (s4d1 / duben
                         :refer-number singular)
                     :place (s4b1 / bar
+                        :refer-number singular
                         :name (s4t1 / Tropio
                             :refer-number singular)
-                        :mod (s4p3 / písecký
-                            :refer-number singular)
-                        :refer-number singular)
+                        :mod (s4p3 / písecký))
                     :ARG1 (s4m1 / muž
-                        :mod (s4d2 / dva
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular
-                    :aspect performance)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect activity)
+                        :refer-number plural
+                        :mod (s4d2 / dva))))))
 
 # alignment:
 s4k1: 6-7
@@ -138,7 +127,7 @@ s4d2: 26-26
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1      2         3  4             5            6  7     8   9  10 11          12     13      14
 Words: Líčení probíhalo v  nepřítomnosti obžalovaného ,  neboť ten se ze zdravotních důvodů omluvil .
@@ -146,25 +135,23 @@ Words: Líčení probíhalo v  nepřítomnosti obžalovaného ,  neboť ten se z
 # sentence level graph:
 (s5h1 / have-cause-91
         :ARG1 (s5p1 / probíhat-002
-            :ARG0 (s5l1 / líčení
+            :aspect activity
+            :ARG1 (s5l1 / líčení
                 :refer-number singular)
             :condition (s5p2 / přítomnost
-                :ARG0 (s5o1 / obžalovaný
-                    :refer-number singular)
+                :polarity -
                 :refer-number singular
-                :polarity -)
-            :refer-number singular
-            :aspect activity)
+                :ARG0 (s5o1 / obžalovaný
+                    :refer-number singular)))
         :ARG2 (s5o2 / omluvit-001
-            :ARG0 (s5t1 / ten
-                :refer-number singular)
+            :aspect performance
+            :ARG0 (s5e1 / entity
+                :refer-number singular
+                :refer-person 3rd)
             :cause (s5d1 / důvod
-                :mod (s5z1 / zdravotní
-                    :refer-number plural)
-                :refer-number plural)
-            :ARG1 s5t1
-            :refer-number singular
-            :aspect performance))
+                :refer-number plural
+                :mod (s5z1 / zdravotní))
+            :ARG1 s5e1))
 
 # alignment:
 s5h1: 7-7
@@ -173,18 +160,18 @@ s5l1: 1-1
 s5p2: 3-4
 s5o1: 5-5
 s5o2: 13-13
-s5t1: 8-9
+s5e1: 8-9
 s5d1: 10-10,12-12
 s5z1: 11-11
 
 # document level annotation:
 (s5s0 / sentence
     :coref ((s5o1 :same-entity s4h2)
-            (s5t1 :same-entity s5o1)))
+            (s5e1 :same-entity s5o1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1     2        3         4  5  6         7   8          9     10 11      12   13      14      15      16 17      18 19 20    21    22       23 24    25         26    27 28 29      30      31      32 33     34        35      36
 Words: Podle obžaloby Stanislav H  .  uvedeného dne bezdůvodně vyňal z  pouzdra svou legálně drženou pistoli ,  zamířil jí na hlavu svého kamaráda ,  jemuž prostřelil hlavu ,  a  stejnou střelou usmrtil i  opodál stojícího barmana .
@@ -192,60 +179,51 @@ Words: Podle obžaloby Stanislav H  .  uvedeného dne bezdůvodně vyňal z  pou
 # sentence level graph:
 (s6a1 / and
         :op1 (s6v1 / vyjmout-001
+            :aspect performance
             :regard (s6o1 / obžaloba
                 :refer-number singular)
             :ARG0 (s6h1 / H
-                :mod (s6s1 / Stanislav
-                    :refer-number singular))
+                :mod (s6s1 / Stanislav))
             :temporal (s6d1 / den
-                :mod (s6u1 / uvedený
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s6u1 / uvedený))
             :manner (s6b1 / bezdůvodně)
-            :start (s6p1 / pouzdro
+            :ARG2 (s6p1 / pouzdro
                 :refer-number singular)
             :ARG1 (s6p2 / pistole
+                :refer-number singular
                 :possessor s6h1
                 :mod (s6d2 / držený
-                    :manner (s6l1 / legálně)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
+                    :manner (s6l1 / legálně))))
         :op2 (s6z1 / zamířit-003
+            :aspect performance
             :regard s6o1
             :ARG0 s6h1
             :temporal s6d1
             :instrument s6p2
             :goal (s6h2 / hlava
+                :refer-number singular
                 :possessor (s6k1 / kamarád
+                    :refer-number singular
                     :possessor s6h1
                     :affectee-of (s6p3 / prostřelit-001
+                        :aspect performance
                         :ARG0 s6h1
                         :ARG1 (s6h3 / hlava
-                            :refer-number singular)
-                        :refer-number singular
-                        :aspect performance)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
+                            :refer-number singular)))))
         :op3 (s6u2 / usmrtit-001
+            :aspect performance
             :regard s6o1
             :ARG0 s6h1
             :temporal s6d1
             :instrument (s6s2 / střela
-                :mod (s6s3 / stejný
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s6s3 / stejný))
             :clausal-marker (s6i1 / i)
             :ARG1 (s6b2 / barman
+                :refer-number singular
                 :mod (s6s4 / stojící
-                    :place (s6o2 / opodál)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance))
+                    :place (s6o2 / opodál)))))
 
 # alignment:
 s6a1: 28-28
@@ -275,62 +253,55 @@ s6o2: 33-33
 
 # document level annotation:
 (s6s0 / sentence
-    :coref ((s6h1 :same-entity s5t1)))
+    :coref ((s6h1 :same-entity s5e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1          2  3     4       5    6     7  8         9  10       11 12         13     14 15 16       17    18 19 20    21     22              23 24    25        26    27       28 29     30 31       32       33
 Words: Obžalovaný ,  jehož výpověď byla čtena z  protokolu o  výslechu v  předběžném řízení ,  k  události uvedl ,  že zbraň vytáhl bezmyšlenkovitě a  chtěl zmáčknout pouze pojistku ,  kterou se vyhazuje zásobník .
 
 # sentence level graph:
 (s7u1 / uvést-007
+        :aspect performance
         :ARG0 (s7o1 / obžalovaný
+            :refer-number singular
             :mod (s7c1 / číst-002
+                :aspect activity
                 :ARG1 (s7v1 / výpověď
-                    :ARG0 s7o1
-                    :refer-number singular)
+                    :refer-number singular
+                    :ARG0 s7o1)
                 :ARG0 (s7e1 / entity)
                 :start (s7p1 / protokol
+                    :refer-number singular
                     :ARG1 (s7v2 / výslech
+                        :refer-number singular
                         :place (s7r1 / řízení
-                            :mod (s7p2 / předběžný
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect activity)
-            :refer-number singular
-            :refer-person 3rd)
+                            :refer-number singular
+                            :mod (s7p2 / předběžný))))))
         :regard (s7u2 / událost
             :refer-number singular)
         :effect (s7a1 / and
             :op1 (s7v3 / vytáhnout-001
+                :aspect performance
                 :ARG0 s7o1
                 :ARG1 (s7z1 / zbraň
-                    :refer-number singular
-                    :refer-person 3rd)
-                :start (s7e2 / entity)
-                :manner (s7b1 / bezmyšlenkovitě)
-                :refer-number singular
-                :aspect performance)
+                    :refer-number singular)
+                :ARG2 (s7c2 / concept)
+                :manner (s7b1 / bezmyšlenkovitě))
             :op2 (s7z2 / zmáčknout-001
+                :aspect performance
                 :ARG0 s7o1
                 :clausal-marker (s7p3 / pouze)
                 :ARG1 (s7p4 / pojistka
+                    :refer-number singular
                     :instrument-of (s7v4 / vyhazovat-001
-                        :ARG0 (s7e3 / entity)
-                        :start (s7e4 / entity)
+                        :aspect activity
+                        :ARG0 (s7e2 / entity)
+                        :ARG2 (s7c3 / concept)
                         :ARG1 (s7z3 / zásobník
-                            :refer-number singular)
-                        :refer-number singular
-                        :refer-person 3rd
-                        :aspect activity)
-                    :refer-number singular)
-                :aspect performance))
-        :refer-number singular
-        :aspect performance)
+                            :refer-number singular))))))
 
 # alignment:
 s7u1: 17-17
@@ -346,14 +317,14 @@ s7u2: 15-16
 s7a1: 23-23
 s7v3: 19-19,21-21
 s7z1: 20-20
-s7e2: 0-0
+s7c2: 0-0
 s7b1: 22-22
 s7z2: 19-19,24-25
 s7p3: 26-26
 s7p4: 27-27,29-29
 s7v4: 30-31
-s7e3: 0-0
-s7e4: 0-0
+s7e2: 0-0
+s7c3: 0-0
 s7z3: 32-32
 
 # document level annotation:
@@ -364,13 +335,14 @@ s7z3: 32-32
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1       2   3      4   5      6        7
 Words: Náhodou prý přitom asi zmáčkl kohoutek .
 
 # sentence level graph:
 (s8z1 / zmáčknout-001
+        :aspect performance
         :cause (s8n1 / náhodou)
         :clausal-marker (s8p1 / prý)
         :ARG0 (s8e1 / entity
@@ -379,9 +351,7 @@ Words: Náhodou prý přitom asi zmáčkl kohoutek .
         :temporal (s8p2 / přitom)
         :clausal-marker (s8a1 / asi)
         :ARG1 (s8k1 / kohoutek
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+            :refer-number singular))
 
 # alignment:
 s8z1: 5-5
@@ -398,52 +368,43 @@ s8k1: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1       2  3  4  5  6       7        8          9     10 11 12   13 14 15 16 17 18   19
 Words: Přiznal ,  že si s  pistolí pohrával několikrát denně ,  i  když ví ,  že se to nemá .
 
 # sentence level graph:
 (s9p1 / přiznat-002
-        :ARG1 (s9b1 / but-91
-            :ARG1 (s9p2 / pohrávat-si-001
-                :ARG1 (s9p3 / pistole
-                    :refer-number singular)
-                :ARG0 s9e1
-                :frequency (s9n1 / několikrát)
-                :frequency (s9d1 / denně)
-                :refer-number singular
-                :aspect activity)
-            :ARG2 (s9v1 / vědět-004
-                :ARG0 s9e1
-                :effect (s9m1 / mít-010
-                    :ARG1 (s9e2 / event
-                        :ARG1 (s9t1 / ten
-                            :refer-number singular)
-                        :aspect state)
-                    :ARG0 (s9e3 / entity)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect state
-                    :polarity -)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect state))
+        :aspect performance
         :ARG0 (s9e1 / entity
             :refer-number singular
             :refer-person 3rd)
-        :refer-number singular
-        :aspect performance)
+        :ARG1 (s9p2 / pohrávat-si-001
+            :aspect activity
+            :ARG1 (s9p3 / pistole
+                :refer-number singular)
+            :ARG0 s9e1
+            :frequency (s9n1 / několikrát)
+            :frequency (s9d1 / denně)
+            :concession (s9v1 / vědět-004
+                :aspect state
+                :ARG0 s9e1
+                :effect (s9m1 / mít-010
+                    :aspect state
+                    :polarity -
+                    :ARG1 (s9e2 / event
+                        :aspect state
+                        :ARG1 (s9t1 / ten))
+                    :ARG0 (s9e3 / entity)))))
 
 # alignment:
 s9p1: 1-1
 s9e1: 0-0
-s9b1: 12-12
 s9p2: 3-4,7-7
 s9p3: 5-6
 s9n1: 8-8
 s9d1: 9-9
-s9v1: 11-11,13-13
+s9v1: 11-13
 s9m1: 15-16,18-18
 s9e2: 0-0
 s9t1: 17-17
@@ -457,67 +418,56 @@ s9e3: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1     2  3      4  5     6  7  8  9  10     11  12    13          14        15     16 17       18 19 20 21         22    23       24        25 26 27     28      29 30     31   32  33  34         35 36  37  38 39 40        41 42   43   44
 Words: Jeden ze svědků ,  které S  .  H  .  rovněž již dříve zastrašoval namířenou zbraní ,  potvrdil ,  že se obžalovaný tímto způsobem předváděl i  na jiných místech a  jednou před ním měl poznamenat ,  jak rád by si vystřelil na živý terč .
 
 # sentence level graph:
 (s10p1 / potvrdit-001
+        :aspect performance
         :ARG0 (s10j1 / jeden
             :start (s10s1 / svědek
+                :refer-number plural
                 :ARG1-of (s10z1 / zastrašovat-001
+                    :aspect activity
                     :ARG0 (s10h1 / H
-                        :mod (s10s2 / S)
                         :refer-number singular
-                        :refer-person 3rd)
+                        :mod (s10s2 / S))
                     :temporal (s10j2 / již)
                     :temporal (s10b1 / brzy)
                     :clausal-marker (s10r1 / rovněž)
                     :instrument (s10z2 / zbraň
-                        :mod (s10n1 / namířený
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :aspect activity)
-                :refer-number plural)
-            :refer-number singular)
+                        :refer-number singular
+                        :mod (s10n1 / namířený)))))
         :ARG1 (s10a1 / and
             :op1 (s10p2 / předvádět-se-001
+                :aspect activity
                 :ARG0 (s10o1 / obžalovaný
                     :refer-number singular)
                 :manner (s10z3 / způsob
-                    :mod (s10t1 / tento
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s10t1 / tento))
                 :place (s10m1 / místo
+                    :refer-number plural
                     :clausal-marker (s10i1 / i)
-                    :mod (s10j3 / jiný
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular
-                :aspect activity)
+                    :mod (s10j3 / jiný)))
             :op2 (s10p3 / poznamenat-003
+                :aspect performance
                 :ARG0 s10o1
                 :frequency (s10j4 / jednou)
                 :place s10s1
                 :effect (s10v1 / vystřelit-001
+                    :aspect performance
                     :ARG0 s10o1
                     :ARG1 (s10e1 / entity)
                     :affectee s10o1
                     :manner (s10r2 / rád
                         :mod-of s10o1
-                        :extent (s10j5 / jak)
-                        :refer-number singular)
+                        :extent (s10j5 / jak))
                     :goal (s10t2 / terč
-                        :mod (s10z4 / živý
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :aspect performance)
-                :aspect performance))
-        :refer-number singular
-        :aspect performance)
+                        :refer-number singular
+                        :mod (s10z4 / živý))))))
 
 # alignment:
 s10p1: 17-17
@@ -555,40 +505,37 @@ s10z4: 42-42
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1      2  3   4    5         6      7  8     9       10       11      12 13     14 15  16 17           18
 Words: Choval se prý jako pistolový maniak ,  jemuž pistole sloužila nikoliv k  obraně ,  ale k  zastrašování .
 
 # sentence level graph:
 (s11c1 / chovat-se-001
+        :aspect activity
         :ARG0 (s11e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :clausal-marker (s11p1 / prý)
-        :manner (s11x1 / #Equal
+        :manner (s11x1 / %Equal
             :comparison (s11c2 / chovat-se-001
-                :manner (s11e2 / entity)
+                :aspect activity
+                :manner (s11c3 / concept)
                 :ARG0 (s11m1 / maniak
-                    :mod (s11p2 / pistolový
-                        :refer-number singular)
-                    :ARG1-of (s11s1 / sloužit-001
-                        :ARG0 (s11p3 / pistole
+                    :refer-number singular
+                    :mod (s11p2 / pistolový)
+                    :ARG2-of (s11s1 / sloužit-001
+                        :aspect activity
+                        :ARG1 (s11p3 / pistole
                             :refer-number singular)
                         :purpose (s11b1 / but-91
                             :ARG1 (s11o1 / obrana
-                                :refer-number singular
-                                :polarity -)
+                                :polarity -
+                                :refer-number singular)
                             :ARG2 (s11z1 / zastrašování
-                                :ARG0 (s11e3 / entity)
-                                :ARG1 (s11e4 / entity)
-                                :refer-number singular))
-                        :aspect activity)
-                    :refer-number singular)
-                :refer-number singular
-                :aspect activity))
-        :refer-number singular
-        :aspect activity)
+                                :refer-number singular
+                                :ARG0 (s11e2 / entity)
+                                :ARG1 (s11e3 / entity))))))))
 
 # alignment:
 s11c1: 1-2
@@ -596,7 +543,7 @@ s11e1: 0-0
 s11p1: 3-3
 s11x1: 0-0
 s11c2: 0-0
-s11e2: 0-0
+s11c3: 0-0
 s11m1: 6-6,8-8
 s11p2: 5-5
 s11s1: 10-10
@@ -604,8 +551,8 @@ s11p3: 9-9
 s11b1: 15-15
 s11o1: 11-13
 s11z1: 16-17
+s11e2: 0-0
 s11e3: 0-0
-s11e4: 0-0
 
 # document level annotation:
 (s11s0 / sentence
@@ -615,58 +562,46 @@ s11e4: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1          2       3  4      5  6  7  8     9  10    11            12 13     14           15 16      17 18         19      20      21 22 23 24 25 26 27   28       29        30    31          32   33          34
 Words: Psychiatři dospěli k  závěru ,  že se jedná o  osobu nezdrženlivou a  vysoce vztahovačnou ,  přičemž z  doložených posudků vyplývá ,  že S  .  H  .  trpí poruchou osobnosti dříve označovanou jako psychopatie .
 
 # sentence level graph:
 (s12d1 / dospět-002
+        :aspect performance
         :ARG0 (s12p1 / psychiatr
             :refer-number plural)
         :ARG1 (s12z1 / závěr
+            :refer-number singular
             :ARG1 (s12a1 / and
                 :op1 (s12j1 / jednat-se-002
-                    :ARG0 (s12o1 / osoba
+                    :aspect activity
+                    :ARG2 (s12o1 / osoba
+                        :refer-number singular
                         :mod (s12a2 / and
                             :op1 (s12z2 / zdrženlivý
-                                :refer-number singular
                                 :polarity -)
                             :op2 (s12v1 / vztahovačný
-                                :extent (s12v2 / vysoce)
-                                :refer-number singular))
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity)
+                                :extent (s12v2 / vysoce)))))
                 :op2 (s12v3 / vyplývat-001
+                    :aspect activity
                     :ARG1 (s12p2 / posudek
-                        :mod (s12d2 / doložený
-                            :refer-number plural)
-                        :refer-number plural)
+                        :refer-number plural
+                        :mod (s12d2 / doložený))
                     :ARG0 (s12t1 / trpět-002
+                        :aspect activity
                         :ARG0 (s12h1 / H
-                            :mod (s12s1 / S)
                             :refer-number singular
-                            :refer-person 3rd)
+                            :mod (s12s1 / S))
                         :ARG1 (s12p3 / porucha
+                            :refer-number singular
                             :ARG0 (s12o2 / osobnost
                                 :refer-number singular)
                             :mod (s12o3 / označovaný
                                 :temporal (s12b1 / brzy)
                                 :effect (s12p4 / psychopatie
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular
-                        :refer-person 3rd
-                        :aspect activity)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity))
-            :refer-number singular)
-        :refer-number plural
-        :aspect performance)
+                                    :refer-number singular))))))))
 
 # alignment:
 s12d1: 2-2
@@ -697,32 +632,28 @@ s12p4: 32-33
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1   2     3      4  5  6          7  8  9      10     11   12     13    14
 Words: Jak dodal znalec ,  je katastrofa ,  že takový člověk mohl dostat zbraň .
 
 # sentence level graph:
 (s13b1 / být-007
+        :aspect activity
         :parenthesis (s13d1 / dodat-005
+            :aspect performance
             :effect s13b1
             :ARG0 (s13z1 / znalec
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
-        :ARG1 (s13k1 / katastrofa
+                :refer-number singular))
+        :ARG2 (s13k1 / katastrofa
             :refer-number singular)
-        :ARG0 (s13d2 / dostat-001
+        :ARG1 (s13d2 / dostat-001
+            :aspect performance
             :ARG0 (s13c1 / člověk
-                :mod (s13t1 / takový
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s13t1 / takový))
             :ARG1 (s13z2 / zbraň
-                :refer-number singular)
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number singular)))
 
 # alignment:
 s13b1: 5-5
@@ -740,7 +671,7 @@ s13z2: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1          2        3         4  5  6  7     8  9      10 11      12 13    14    15    16         17      18     19 20  21    22     23 24        25   26       27 28     29 30       31 32   33    34          35 36      37 38       39
 Words: Několikrát trestaný Stanislav H  .  (  který je stíhán na svobodě ,  neboť podle soudu nenaplňuje vazební důvody )  byl uznán vinným z  trestného činu ublížení na zdraví a  odsouzen ke třem rokům nepodmíněně do věznice s  dohledem .
@@ -748,63 +679,52 @@ Words: Několikrát trestaný Stanislav H  .  (  který je stíhán na svobodě 
 # sentence level graph:
 (s14a1 / and
         :op1 (s14u1 / uznat-001
+            :aspect performance
             :ARG1 (s14h1 / H
-                :mod (s14s1 / Stanislav
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s14s1 / Stanislav)
                 :mod (s14t1 / trestaný
-                    :extent (s14n1 / několikrát)
-                    :refer-number singular)
+                    :extent (s14n1 / několikrát))
                 :mod (s14h2 / have-cause-91
                     :ARG1 (s14s2 / stíhat-001
+                        :aspect activity
                         :ARG1 s14h1
                         :ARG0 (s14e1 / entity)
                         :place (s14s3 / svoboda
-                            :refer-number singular)
-                        :refer-number singular
-                        :aspect activity)
+                            :refer-number singular))
                     :ARG2 (s14n2 / naplňovat-002
+                        :aspect activity
+                        :polarity -
                         :regard (s14s4 / soud
                             :refer-number singular)
                         :ARG0 s14h1
                         :ARG1 (s14d1 / důvod
-                            :mod (s14v1 / vazební
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular
-                        :refer-person 3rd
-                        :aspect activity
-                        :polarity -))
-                :refer-number singular)
+                            :refer-number plural
+                            :mod (s14v1 / vazební)))))
             :ARG0 (s14e2 / entity)
             :effect (s14v2 / vinný
                 :ARG1 (s14c1 / čin
+                    :refer-number singular
                     :ARG1 (s14u2 / ublížení
+                        :refer-number singular
                         :ARG0 (s14e3 / entity)
                         :ARG1 (s14e4 / entity)
                         :regard (s14z1 / zdraví
-                            :refer-number singular)
-                        :refer-number singular)
-                    :mod (s14t2 / trestný
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
+                            :refer-number singular))
+                    :mod (s14t2 / trestný))))
         :op2 (s14o1 / odsoudit-001
+            :aspect performance
             :ARG1 s14h1
             :ARG0 s14e2
-            :effect (s14r1 / rok
-                :mod (s14t3 / tři
-                    :refer-number plural)
-                :refer-number plural)
+            :ARG2 (s14r1 / rok
+                :refer-number plural
+                :mod (s14t3 / tři))
             :manner (s14p1 / podmíněně
                 :polarity -)
             :goal (s14v3 / věznice
+                :refer-number singular
                 :companion (s14d2 / dohled
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance))
+                    :refer-number singular))))
 
 # alignment:
 s14a1: 29-29

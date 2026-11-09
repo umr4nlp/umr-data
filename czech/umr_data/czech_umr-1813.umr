@@ -1,5 +1,5 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1      2     3       4       5  6       7     8      9           10     11     12
 Words: Výkony říční dopravy klesají ,  nicméně platy jejích zaměstnanců svižně rostou .
@@ -7,25 +7,20 @@ Words: Výkony říční dopravy klesají ,  nicméně platy jejích zaměstnanc
 # sentence level graph:
 (s1b1 / but-91
         :ARG1 (s1k1 / klesat-001
-            :ARG0 (s1v1 / výkon
+            :aspect activity
+            :ARG1 (s1v1 / výkon
+                :refer-number plural
                 :possessor (s1d1 / doprava
-                    :mod (s1r1 / říční
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                    :refer-number singular
+                    :mod (s1r1 / říční))))
         :ARG2 (s1r2 / růst-002
-            :ARG0 (s1p1 / plat
+            :aspect activity
+            :ARG1 (s1p1 / plat
+                :refer-number plural
                 :possessor (s1z1 / zaměstnanec
-                    :possessor s1d1
-                    :refer-number plural)
-                :refer-number plural)
-            :manner (s1s1 / svižně)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity))
+                    :refer-number plural
+                    :possessor s1d1))
+            :manner (s1s1 / svižně)))
 
 # alignment:
 s1b1: 6-6
@@ -43,35 +38,33 @@ s1s1: 10-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1    2   3       4  5    6      7    8   9  10      11   12 13       14
 Words: Dnes lze vydělat na řece mnohem více než na silnici nebo na kolejích .
 
 # sentence level graph:
 (s2l1 / lze-001
+        :aspect state
         :temporal (s2d1 / dnes)
         :affectee (s2e1 / entity)
-        :ARG0 (s2v1 / vydělat-001
+        :ARG2 (s2v1 / vydělat-001
+            :aspect performance
             :ARG0 s2e1
             :place (s2r1 / řeka
                 :refer-number singular)
-            :ARG1 (s2e2 / entity
+            :ARG1 (s2t1 / thing
                 :mod (s2h1 / hodně
                     :extent (s2m1 / mnohem)
                     :comparison (s2v2 / vydělat-001
-                        :ARG0 (s2e3 / entity)
-                        :ARG1 (s2e4 / entity)
+                        :aspect performance
+                        :ARG0 (s2e2 / entity)
+                        :ARG1 (s2e3 / entity)
                         :place (s2o1 / or
                             :op1 (s2s1 / silnice
                                 :refer-number singular)
                             :op2 (s2k1 / kolej
-                                :refer-number singular))
-                        :aspect performance)))
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect state)
+                                :refer-number singular)))))))
 
 # alignment:
 s2l1: 2-2
@@ -79,12 +72,12 @@ s2d1: 1-1
 s2e1: 0-0
 s2v1: 3-3
 s2r1: 4-5
-s2e2: 0-0
+s2t1: 0-0
 s2h1: 7-7
 s2m1: 6-6
 s2v2: 0-0
+s2e2: 0-0
 s2e3: 0-0
-s2e4: 0-0
 s2o1: 11-11
 s2s1: 9-10
 s2k1: 12-13

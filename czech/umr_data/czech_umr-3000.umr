@@ -1,5 +1,5 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1
 Words: fotbal
@@ -16,62 +16,53 @@ s1f1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1    2       3 4   5     6 7 8 9
 Words: Boca Juniors - Sao Paulo 1 : 0 .
 
 # sentence level graph:
 (s2e1 / event
+        :aspect state
         :ARG0 (s2c1 / contra-entity
-            :op1 (s2x1 / #Forn
-                :FPHR (s2b1 / Boca
-                    :refer-number singular)
-                :FPHR (s2j1 / Juniors))
-            :op2 (s2x2 / #Forn
-                :FPHR (s2s1 / Sao)
-                :FPHR (s2p1 / Paulo)))
-        :extent (s2m1 / math
-            :op1 (s2x3 / 1)
-            :op2 (s2x4 / 0))
-        :aspect state)
+            :op1 (s2f1 / foreign-phrase
+                :op1 "Boca" :op2 "Juniors")
+            :op2 (s2f2 / foreign-phrase
+                :op1 "Sao" :op2 "Paulo"))
+        :extent (s2m1 / math-entity
+            :op1 (s2x1 / 1)
+            :op2 (s2x2 / 0)))
 
 # alignment:
 s2e1: 0-0
 s2c1: 3-3
-s2x1: 0-0
-s2b1: 1-1
-s2j1: 2-2
-s2x2: 0-0
-s2s1: 4-4
-s2p1: 5-5
+s2f1: 1-2
+s2f2: 4-5
 s2m1: 7-7
-s2x3: 6-6
-s2x4: 8-8
+s2x1: 6-6
+s2x2: 8-8
 
 # document level annotation:
 (s2s0 / sentence)
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2      3 4     5     6 7      8     9
 Words: První utkání o Zlatý pohár v Buenos Aires .
 
 # sentence level graph:
 (s3u1 / utkání
+        :refer-number singular
         :ARG0 (s3e1 / entity)
         :ARG2 (s3e2 / entity)
-        :mod (s3p1 / první
-            :refer-number singular)
+        :mod (s3p1 / první)
         :ARG1 (s3p2 / pohár
-            :mod (s3z1 / Zlatý
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s3z1 / Zlatý))
         :place (s3a1 / Aires
-            :mod (s3b1 / Buenos))
-        :refer-number singular)
+            :mod (s3b1 / Buenos)))
 
 # alignment:
 s3u1: 2-2
@@ -88,7 +79,7 @@ s3b1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1  2     3  4      5  6   7     8  9       10    11       12 13     14
 Words: Za týden je odveta v  Sao Paulu a  celkový vítěz postoupí do finále .
@@ -96,26 +87,21 @@ Words: Za týden je odveta v  Sao Paulu a  celkový vítěz postoupí do finále
 # sentence level graph:
 (s4a1 / and
         :op1 (s4b1 / být-011
+            :aspect activity
             :duration (s4t1 / týden
                 :refer-number singular)
-            :ARG0 (s4o1 / odveta
+            :ARG1 (s4o1 / odveta
                 :refer-number singular)
             :place (s4p1 / Paulo
-                :mod (s4s1 / Sao)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                :refer-number singular
+                :mod (s4s1 / Sao)))
         :op2 (s4p2 / postoupit-003
+            :aspect performance
             :ARG0 (s4v1 / vítěz
-                :mod (s4c1 / celkový
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s4c1 / celkový))
             :goal (s4f1 / finále
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect performance))
+                :refer-number singular)))
 
 # alignment:
 s4a1: 8-8
@@ -134,32 +120,28 @@ s4f1: 12-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1      2       3     4         5     6       7 8        9
 Words: Druhou dvojici tvoří brazilské kluby Mineiro a Cruzeiro .
 
 # sentence level graph:
 (s5t1 / tvořit-001
+        :aspect activity
         :ARG1 (s5d1 / dvojice
-            :mod (s5d2 / druhý
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s5d2 / druhý))
         :ARG0 (s5a1 / and
             :op1 (s5k1 / klub
+                :refer-number plural
                 :name (s5m1 / Mineiro
                     :refer-number singular)
-                :mod (s5b1 / brazilský
-                    :refer-number plural)
-                :refer-number plural)
+                :mod (s5b1 / brazilský))
             :op2 (s5k2 / klub
+                :refer-number plural
                 :mod s5b1
                 :name (s5c1 / Cruzeiro
-                    :refer-number singular)
-                :refer-number plural))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number singular))))
 
 # alignment:
 s5t1: 3-3
@@ -177,43 +159,37 @@ s5c1: 8-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1  2     3     4  5          6        7    8              9       10 11     12           13 14          15 16      17 18     19       20
 Words: O  Zlatý pohár se střetávají vítězové čtyř jihoamerických soutěží -  Poháru osvoboditelů ,  Superpoháru ,  Masters a  Poháru CONMEBOL .
 
 # sentence level graph:
 (s6s1 / střetávat-se-002
+        :aspect habitual
         :ARG1 (s6p1 / pohár
-            :mod (s6z1 / zlatý
-                :refer-number singular)
-            :refer-number singular)
-        :ARG2 (s6x1 / #Rcp
-            :refer-number plural)
+            :refer-number singular
+            :mod (s6z1 / zlatý))
+        :ARG2 (s6x1 / %Rcp)
         :ARG0 (s6v1 / vítěz
+            :refer-number plural
             :possessor (s6i1 / identity-91
                 :ARG1 (s6s2 / soutěž
-                    :mod (s6j1 / jihoamerický
-                        :refer-number plural)
-                    :mod (s6c1 / čtyři
-                        :refer-number plural)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s6j1 / jihoamerický)
+                    :mod (s6c1 / čtyři))
                 :ARG2 (s6a1 / and
                     :op1 (s6p2 / Pohár
+                        :refer-number singular
                         :possessor (s6o1 / osvoboditel
-                            :refer-number plural)
-                        :refer-number singular)
+                            :refer-number plural))
                     :op2 (s6s3 / Superpohár
                         :refer-number singular)
-                    :op3 (s6x2 / #Forn
-                        :FPHR (s6m1 / Masters))
+                    :op3 (s6f1 / foreign-phrase
+                        :op1 "Masters")
                     :op4 (s6p3 / pohár
-                        :name (s6c2 / CONMEBOL)
-                        :refer-number singular)))
-            :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect habitual)
+                        :refer-number singular
+                        :name (s6c2 / CONMEBOL))))))
 
 # alignment:
 s6s1: 4-5
@@ -229,8 +205,7 @@ s6a1: 17-17
 s6p2: 11-11
 s6o1: 12-12
 s6s3: 14-14
-s6x2: 0-0
-s6m1: 16-16
+s6f1: 16-16
 s6p3: 18-18
 s6c2: 19-19
 
@@ -241,21 +216,20 @@ s6c2: 19-19
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1      2     3             4   5  6   7
 Words: Pelého pohár reprezentantů nad 35 let :
 
 # sentence level graph:
 (s7p1 / pohár
+        :refer-number singular
         :possessor (s7p2 / Pelé
             :refer-number singular)
         :possessor (s7r1 / reprezentant
+            :refer-number plural
             :mod (s7r2 / rok
-                :mod (s7x1 / 35)
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number singular)
+                :mod (s7x1 / 35))))
 
 # alignment:
 s7p1: 2-2
@@ -269,26 +243,26 @@ s7x1: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1       2  3         4  5  6  7  8  9  10 11 12
 Words: Německo -  Argentina 5  :  2  (  2  :  1  )  .
 
 # sentence level graph:
 (s8e1 / event
+        :aspect state
         :ARG0 (s8c1 / contra-entity
             :op1 (s8n1 / Německo
                 :refer-number singular)
             :op2 (s8a1 / Argentina
                 :refer-number singular))
-        :extent (s8m1 / math
+        :extent (s8m1 / math-entity
             :op1 (s8x1 / 5
-                :parenthesis (s8m2 / math
+                :parenthesis (s8m2 / math-entity
                     :op1 (s8x2 / 2)
                     :op2 (s8x3 / 1)))
             :op2 (s8x4 / 2
-                :parenthesis s8m2))
-        :aspect state)
+                :parenthesis s8m2)))
 
 # alignment:
 s8e1: 0-0
@@ -307,28 +281,25 @@ s8x4: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1     2          3  4          5  6   7  8        9  10     11 12     13
 Words: Němci postoupili do semifinále ,  kde se střetnou v  Terstu s  Itálií .
 
 # sentence level graph:
 (s9p1 / postoupit-003
+        :aspect performance
         :ARG0 (s9n1 / Němec
             :refer-number plural)
         :goal (s9s1 / semifinále
+            :refer-number singular
             :place-of (s9s2 / střetnout-se-001
+                :aspect performance
                 :ARG0 s9n1
                 :place (s9t1 / Terst
                     :refer-number singular)
                 :ARG2 (s9i1 / Itálie
-                    :refer-number singular)
-                :refer-number plural
-                :refer-person 3rd
-                :aspect performance)
-            :refer-number singular)
-        :refer-number plural
-        :aspect performance)
+                    :refer-number singular))))
 
 # alignment:
 s9p1: 2-2

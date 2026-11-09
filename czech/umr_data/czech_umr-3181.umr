@@ -1,16 +1,15 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1    2     3 4
 Words: Nová banka v Rusku
 
 # sentence level graph:
 (s1b1 / banka
-        :mod (s1n1 / nový
-            :refer-number singular)
+        :refer-number singular
+        :mod (s1n1 / nový)
         :place (s1r1 / Rusko
-            :refer-number singular)
-        :refer-number singular)
+            :refer-number singular))
 
 # alignment:
 s1b1: 2-2
@@ -22,7 +21,7 @@ s1r1: 3-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1      2
 Words: Moskva -
@@ -39,34 +38,31 @@ s2m1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1  2     3  4    5         6        7  8        9     10 11    12   13         14         15     16 17         18     19
 Words: V  Rusku by měla vzniknout Exportní a  importní banka ,  která bude financovat zahraniční obchod a  stimulovat export .
 
 # sentence level graph:
 (s3v1 / vzniknout-002
+        :aspect performance
         :place (s3r1 / Rusko
             :refer-number singular)
-        :ARG0 (s3b1 / banka
+        :ARG1 (s3b1 / banka
+            :refer-number singular
             :mod (s3a1 / and
-                :op1 (s3e1 / exportní
-                    :refer-number singular)
-                :op2 (s3i1 / importní
-                    :refer-number singular))
+                :op1 (s3e1 / exportní)
+                :op2 (s3i1 / importní))
             :ARG0-of (s3a2 / and
                 :op1 (s3f1 / financovat-001
+                    :aspect activity
                     :ARG1 (s3o1 / obchod
-                        :mod (s3z1 / zahraniční
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect activity)
+                        :refer-number singular
+                        :mod (s3z1 / zahraniční)))
                 :op2 (s3s1 / stimulovat-002
+                    :aspect process
                     :ARG1 (s3e2 / export
-                        :refer-number singular)
-                    :aspect process))
-            :refer-number singular)
-        :aspect performance)
+                        :refer-number singular)))))
 
 # alignment:
 s3v1: 3-5
@@ -89,7 +85,7 @@ s3e2: 18-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1  2   3        4       5  6       7   8  9    10   11    12    13 14  15 16 17       18
 Words: Má mít základní kapitál 50 milionů USD ,  není však zatím jasné ,  kdo jí ho poskytne .
@@ -97,35 +93,28 @@ Words: Má mít základní kapitál 50 milionů USD ,  není však zatím jasné
 # sentence level graph:
 (s4b1 / but-91
         :ARG1 (s4m1 / mít-002
+            :aspect state
             :ARG0 (s4e1 / entity
                 :refer-number singular
                 :refer-person 3rd)
             :ARG1 (s4k1 / kapitál
-                :mod (s4z1 / základní
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s4z1 / základní)
                 :mod (s4m2 / milión
                     :mod (s4u1 / USD)
-                    :mod (s4x1 / 50)
-                    :refer-number plural)
-                :refer-number singular)
-            :aspect state)
+                    :mod (s4x1 / 50))))
         :ARG2 (s4b2 / být-007
+            :aspect activity
+            :polarity -
             :temporal (s4z2 / zatím)
-            :ARG1 (s4j1 / jasný
-                :refer-number singular)
-            :ARG0 (s4p1 / poskytnout-001
+            :ARG2 (s4j1 / jasný)
+            :ARG1 (s4p1 / poskytnout-001
+                :aspect performance
                 :ARG1 s4k1
                 :ARG2 s4e1
                 :ARG0 (s4k2 / kdo
                     :refer-number singular
-                    :refer-person 3rd)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect performance)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity
-            :polarity -))
+                    :refer-person 3rd))))
 
 # alignment:
 s4b1: 10-10
@@ -148,47 +137,42 @@ s4k2: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1       2  3    4       5          6      7        8              9  10    11      12   13      14 15      16      17           18 19       20    21
 Words: Převzít by měla většinu povinností bývalé sovětské Vněšekonombank ,  jejíž činnost byla omezena na obsluhu ruského zahraničního a  domácího dluhu .
 
 # sentence level graph:
 (s5p1 / převzít-002
+        :aspect performance
         :ARG0 (s5e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG1 (s5v1 / většina
+            :refer-number singular
             :mod (s5p2 / povinnost
+                :refer-number plural
                 :possessor (s5v2 / Vněšekonombank
-                    :mod (s5s1 / sovětský
-                        :refer-number singular)
-                    :mod (s5b1 / bývalý
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s5s1 / sovětský)
+                    :mod (s5b1 / bývalý)
                     :mod (s5o1 / omezit-001
+                        :aspect performance
                         :ARG1 (s5c1 / činnost
-                            :ARG0 s5v2
-                            :refer-number singular)
+                            :refer-number singular
+                            :ARG0 s5v2)
                         :ARG0 (s5e2 / entity)
                         :effect (s5o2 / obsluha
+                            :refer-number singular
                             :ARG1 (s5a1 / and
                                 :op1 (s5d1 / dluh
-                                    :mod (s5r1 / ruský
-                                        :refer-number singular)
-                                    :mod (s5z1 / zahraniční
-                                        :refer-number singular)
-                                    :refer-number singular)
+                                    :refer-number singular
+                                    :mod (s5r1 / ruský)
+                                    :mod (s5z1 / zahraniční))
                                 :op2 (s5d2 / dluh
+                                    :refer-number singular
                                     :mod s5r1
-                                    :mod (s5d3 / domácí
-                                        :refer-number singular)
-                                    :refer-number singular))
-                            :refer-number singular)
-                        :aspect performance)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number singular)
-        :aspect performance)
+                                    :mod (s5d3 / domácí)))))))))
 
 # alignment:
 s5p1: 1-3

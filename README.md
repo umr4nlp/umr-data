@@ -26,7 +26,7 @@ The `parse_umr_to_json.py` script extracts content from UMR files and converts i
   1. Meta info (with `::` separators)
   2. Sentence information (index, words, morphemes, etc.)
   3. Sentence level UMR annotation (after `# sentence level graph:`)
-  4. Alignment information (after `# alignment:`) 
+  4. Alignment information (after `# alignment:`)
   5. Document level annotation (after `# document level annotation:`)
 
 ### Usage
@@ -98,92 +98,135 @@ The script outputs a JSON file containing an array of UMR documents. Each docume
 }
 ```
 
-## UMR 3.0 Data format Description
+## UMR 3.0 Data Format Description
 
-This dataset is organized in **blocks**, each corresponding to a single sentence.  
-Blocks are separated by a line of 80 hash signs:
+(See also [here](https://ufal.mff.cuni.cz/umr-parsing/umr-file-format).)
 
-### Block Structure
+Each UMR file corresponds to one **document** (document-level annotation thus does not refer to other files).
 
-Within each block, there are **five parts**, separated by a single hash sign (`#`):
+The document is organized in **segments**, each corresponding to a single sentence.
+Each sentence segment starts with a line of 80 hash signs and ends with two empty lines.
+
+### Sentence Structure
+
+Within each sentence segment, there are **four parts**.
+Each of them starts with a comment line (a line whose first character is a hash sign)
+and ends with one empty line (except the last part of the sentence, which ends with two empty lines).
+The four parts are as follows:
 
 ---
 
-### 1. Meta Information
+### 1. Sentence Information
+
+#### Meta Information
 
 - Entries are separated by two colons (`::`).
 - Example entries:
-  - `type = partial_conversion`: Indicates that the UMR annotation for this sentence was converted from AMR.
+  - `type = partial_conversion`: Indicates that the UMR annotation for this sentence was converted from AMR or from PDT.
   - `sent_id = u_tree-cs-s1-root`: Maps to the original sentence ID from the source workset.
 
----
-
-### 2. Sentence Information
+#### Tokens, Morphemes, Translation
 
 This section may include the following fields:
 
-- **Index**: Token indices  
-- **Words**: Tokens of the sentence  
-- **Morphemes**: Morphological breakdown of words  
-- **Morpheme Gloss (English)**: English glosses of morphemes  
-- **Morpheme Gloss (Spanish)**: Spanish glosses of morphemes  
-- **Morpheme Category**: Categories or grammatical roles of morphemes  
-- **Words (English)**: English translation of the individual words  
-- **Part of Speech**: POS tags  
-- **Sentence**: Original sentence  
-- **Translation (English)**: English translation of the sentence  
-- **Translation (Spanish)**: Spanish translation of the sentence  
+- **Index**: Token indices (to be used in the alignment block below)
+- **Words**: Tokens of the sentence (separated by one or more spaces, same number of elements as in Index)
+- **Word Gloss (en)**: English translation of the individual words
+- **Word Gloss (es)**: Spanish translation of the individual words
+- **Morphemes**: Morphological breakdown of words
+- **Morpheme Gloss (en)**: English glosses of morphemes
+- **Morpheme Gloss (es)**: Spanish glosses of morphemes
+- **Morpheme Category**: Categories or grammatical roles of morphemes
+- **Part of Speech**: Part-of-speech tags
+- **Sentence**: Original untokenized sentence
+- **Translation (en)**: English translation of the sentence
+- **Translation (es)**: Spanish translation of the sentence
 
 ---
 
-### 3. Sentence-Level UMR Annotation
+### 2. Sentence-Level UMR Annotation
 
 - UMR structure is represented in **Penman notation**.
 
 ---
 
-### 4. Alignment Information
+### 3. Alignment Information
 
 - Alignments between UMR concepts and token indices.
 
 ---
 
-### 5. Document-Level Annotation
+### 4. Document-Level Annotation
 
-- UMR structure is represented by temporal/model/coreference relation triples. 
+- UMR structure is represented by temporal/model/coreference relation triples.
 
 
 ---
 
-### Language Coverage
+## Language Coverage
 
-This dataset includes annotated data from the following languages:
+This dataset includes annotated data from the following languages (ISO 639-3 codes):
 
-#### Unchanged from UMR 1.0 Release
+- Arapaho (arp)
+- Chinese (zho)
+- Czech (ces)
+- English (eng)
+- Italian (ita)
+- Kukama (cod)
+- Latin (lat)
+- Navajo (nav)
+- Portuguese (por)
+- Sanapaná (spn)
 
-- Arapaho  
-- Kukama  
-- Navajo  
-- Sanapaná  
+### Changelog
 
-#### Extended from UMR 1.0 Release
+#### [UMR 3.0 Release](http://hdl.handle.net/11234/1-6224)
 
-- English  
-- Chinese  
-
-#### Added in UMR 2.0 Release
-
-- Czech  
-- Latin  
-
-#### Newly Added in UMR 3.0 Release
-
+- Added PUD dataset for Portuguese
 - More English and Chinese files
+- Format fixes in previously released data (now also in Kukama and Sanapaná)
+
+#### [UMR 2.2 Release](http://hdl.handle.net/11234/1-6132) (2026-04-01)
+
+- Added parallel PUD datasets of Czech, English, and Italian
+- Numerous format fixes in English, Chinese, Arapaho, and Navajo
+- New annotated data in Chinese
+- Specific only to this release (not preserved in the subsequent one):
+  - Training-test splits as used in UMR Parsing Shared Task at DMR 2026
+  - System outputs on test data from the shared task
+
+#### [UMR 2.1 Release](http://hdl.handle.net/11234/1-5951) (2025-06-30)
+
+- Improved annotation of Czech and Latin
+
+#### [UMR 2.0 Release](http://hdl.handle.net/11234/1-5902) (2025-05-17)
+
+- Added Czech (converted from Prague Dependency Treebank) and Latin (manual annotation)
+- More English data (partial annotation, automatically converted from AMR)
+
+#### [UMR 1.0 Release](http://hdl.handle.net/11234/1-5198) (2023-07-31)
+
+- Initial annotation of 6 languages: English, Chinese, Arapaho, Kukama, Navajo, Sanapaná
+
 ---
 
 ### Notes
 
 For detailed mapping between the current file names and their original workset names, refer to the provided **umr_file_name_mapping.txt**.
+
+The file **validation.log** contains output of the [UMR validation script](https://github.com/ufal/umrtools),
+invoked as follows:
+
+```bash
+for i in */umr_data/*.umr ; do \
+    echo $i ; \
+    /net/work/people/zeman/umr/umrtools/validate.py \
+        --no-check-ilg --allow-forward-references --allow-cycles --allow-duplicate-roles \
+        --optional-aspect-modstr --no-check-wiki --optional-alignments --no-warn-unaligned-token \
+        --allow-coref-entity-event-mismatch \
+        $i ; \
+done 2>&1 | tee validation.log
+```
 
 ## Statistics Tables Description
 
@@ -191,7 +234,7 @@ Run `statistics.py` to generate the `umr_statistics.txt` file, which contains su
 
 ### Notes:
 - The following descriptions explain the metrics used in the three types of tables.
-- **Partial-conversion data** refers to data that have been partially converted from AMR.
+- **Partial-conversion data** refers to data that have been partially converted from AMR or PDT.
 - **Non-partial-conversion data** includes data that were manually annotated.
 
 

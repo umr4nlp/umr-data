@@ -1,18 +1,17 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1        2     3
 Words: Pachatel zatím neznámý
 
 # sentence level graph:
 (s1e1 / event
+        :aspect state
         :ARG0 (s1p1 / pachatel
             :refer-number singular)
         :temporal (s1z1 / zatím)
         :ARG1 (s1z2 / známý
-            :refer-number singular
-            :polarity -)
-        :aspect state)
+            :polarity -))
 
 # alignment:
 s1e1: 0-0
@@ -25,34 +24,29 @@ s1z2: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1       2  3      4    5  6   7  8        9  10        11         12 13 14
 Words: ŘEDITEL SK SLAVIA NEVÍ ,  KDO MU PŘISPÍVÁ DO KLUBOVÉHO ZPRAVODAJE .  .  .
 
 # sentence level graph:
 (s2v1 / vědět-001
+        :aspect state
+        :polarity -
         :ARG0 (s2r1 / ředitel
+            :refer-number singular
             :possessor (s2s1 / SK
                 :name (s2s2 / Slavia
-                    :refer-number singular))
-            :refer-number singular)
+                    :refer-number singular)))
         :ARG1 (s2p1 / přispívat-003
+            :aspect activity
             :affectee s2r1
             :goal (s2z1 / zpravodaj
-                :mod (s2k1 / klubový
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG0 (s2k2 / kdo
                 :refer-number singular
-                :refer-person 3rd)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect state
-        :polarity -)
+                :mod (s2k1 / klubový))
+            :ARG0 (s2e1 / entity
+                :refer-number singular
+                :refer-person 3rd)))
 
 # alignment:
 s2v1: 4-4
@@ -62,24 +56,24 @@ s2s2: 3-3
 s2p1: 8-8
 s2z1: 9-9,11-11
 s2k1: 10-10
-s2k2: 6-6
+s2e1: 6-6
 
 # document level annotation:
 (s2s0 / sentence
     :coref ((s2k1 :same-entity s2s1)
-            (s2k2 :same-entity s1p1)))
+            (s2e1 :same-entity s1p1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2 3  4 5
 Words: Praha ( mn ) -
 
 # sentence level graph:
 (s3p1 / Praha
-        :parenthesis (s3m1 / mn)
-        :refer-number singular)
+        :refer-number singular
+        :parenthesis (s3m1 / mn))
 
 # alignment:
 s3p1: 1-1
@@ -90,71 +84,57 @@ s3m1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1      2  3     4        5         6          7  8      9  10     11 12 13 14 15 16 17 18   19 20       21         22 23     24     25      26 27      28       29     30       31         32 33        34    35 36    37    38   39     40
 Words: Článek ,  který pomlouvá Korbelovu Společnost SK Slavia -  fotbal s  r  .  o  .  ,  a  jenž je součástí Zpravodaje SK Slavia minulý čtvrtek na desátém pražském obvodu pokoutně vkládaného do Večerníku Praha ,  stále ještě nemá autora .
 
 # sentence level graph:
 (s4m1 / mít-009
+        :aspect state
+        :polarity -
         :ARG0 (s4c1 / článek
+            :refer-number singular
             :mod (s4a1 / and
                 :op1 (s4p1 / pomlouvat-001
+                    :aspect activity
                     :ARG0 s4c1
                     :ARG1 (s4s1 / společnost
+                        :refer-number singular
                         :name (s4s2 / SK
-                            :mod (s4s3 / Slavia
-                                :refer-number singular)
-                            :mod (s4f1 / fotbal
-                                :refer-number singular))
+                            :mod (s4s3 / Slavia)
+                            :mod (s4f1 / fotbal))
                         :companion (s4r1 / ručení
-                            :mod (s4o1 / omezený
-                                :refer-number singular)
-                            :refer-number singular)
+                            :refer-number singular
+                            :mod (s4o1 / omezený))
                         :possessor (s4k1 / Korbela
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity)
+                            :refer-number singular)))
                 :op2 (s4b1 / být-007
-                    :ARG0 s4c1
-                    :ARG1 (s4s4 / součást
+                    :aspect activity
+                    :ARG1 s4c1
+                    :ARG2 (s4s4 / součást
+                        :refer-number singular
                         :mod (s4z1 / zpravodaj
+                            :refer-number singular
                             :name (s4s5 / SK
-                                :mod (s4s6 / Slavia
-                                    :refer-number singular))
+                                :mod (s4s6 / Slavia))
                             :mod (s4v1 / vkládaný
                                 :temporal (s4c2 / čtvrtek
-                                    :mod (s4m2 / minulý
-                                        :refer-number singular)
-                                    :refer-number singular)
+                                    :refer-number singular
+                                    :mod (s4m2 / minulý))
                                 :place (s4o2 / obvod
-                                    :mod (s4p2 / pražský
-                                        :refer-number singular)
-                                    :mod (s4d1 / desátý
-                                        :refer-number singular)
-                                    :refer-number singular)
+                                    :refer-number singular
+                                    :mod (s4p2 / pražský)
+                                    :mod (s4d1 / desátý))
                                 :manner (s4p3 / pokoutně)
                                 :goal (s4v2 / večerník
+                                    :refer-number singular
                                     :name (s4p4 / Praha
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity))
-            :refer-number singular)
+                                        :refer-number singular))))))))
         :duration (s4s7 / stále)
         :temporal (s4j1 / ještě)
         :ARG1 (s4a2 / autor
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect state
-        :polarity -)
+            :refer-number singular))
 
 # alignment:
 s4m1: 38-38
@@ -194,61 +174,46 @@ s4a2: 39-39
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1       2  3      4     5   6     7      8    9  10  11      12     13   14 15       16        17     18    19 20    21 22        23
 Words: Ředitel SK Slavia Praha pan Ammer údajně neví ,  kdo zmíněný článek psal ,  přestože Zpravodaj vydává orgán ,  jehož je ředitelem .
 
 # sentence level graph:
-(s5b1 / but-91
-        :ARG1 (s5v1 / vědět-001
-            :ARG0 (s5a1 / Ammer
-                :mod (s5p1 / pan
-                    :refer-number singular)
-                :mod (s5r1 / ředitel
-                    :possessor (s5s1 / SK
-                        :name (s5s2 / Slavia
-                            :mod (s5p2 / Praha
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd)
-            :clausal-marker (s5u1 / údajně)
-            :ARG1 (s5p3 / psát-007
-                :effect (s5c1 / článek
-                    :mod (s5z1 / zmíněný
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG0 (s5k1 / kdo
-                    :refer-number singular
-                    :refer-person 3rd)
-                :refer-number singular
-                :aspect activity)
+(s5v1 / vědět-001
+        :aspect state
+        :polarity -
+        :ARG0 (s5a1 / Ammer
             :refer-number singular
-            :refer-person 3rd
-            :aspect state
-            :polarity -)
-        :ARG2 (s5v2 / vydávat-006
+            :mod (s5p1 / pan)
+            :mod (s5r1 / ředitel
+                :possessor (s5s1 / SK
+                    :name (s5s2 / Slavia
+                        :refer-number singular
+                        :mod (s5p2 / Praha)))))
+        :clausal-marker (s5u1 / údajně)
+        :ARG1 (s5p3 / psát-007
+            :aspect activity
+            :ARG1 (s5c1 / článek
+                :refer-number singular
+                :mod (s5z1 / zmíněný))
+            :ARG0 (s5k1 / kdo
+                :refer-number singular
+                :refer-person 3rd))
+        :concession (s5v2 / vydávat-006
+            :aspect habitual
             :ARG1 (s5z2 / zpravodaj
                 :refer-number singular)
             :ARG0 (s5o1 / orgán
-                :mod (s5b2 / být-007
-                    :ARG0 s5a1
-                    :ARG1 (s5r2 / ředitel
-                        :possessor s5o1
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect habitual))
+                :refer-number singular
+                :mod (s5b1 / být-007
+                    :aspect activity
+                    :ARG1 s5a1
+                    :ARG2 (s5r2 / ředitel
+                        :refer-number singular
+                        :possessor s5o1)))))
 
 # alignment:
-s5b1: 15-15
 s5v1: 8-8
 s5a1: 6-6
 s5p1: 5-5
@@ -261,10 +226,10 @@ s5p3: 13-13
 s5c1: 12-12
 s5z1: 11-11
 s5k1: 10-10
-s5v2: 17-17
+s5v2: 15-15,17-17
 s5z2: 16-16
 s5o1: 18-18,20-20
-s5b2: 21-21
+s5b1: 21-21
 s5r2: 22-22
 
 # document level annotation:
@@ -277,80 +242,63 @@ s5r2: 22-22
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1  2       3  4       5     6  7  8    9           10    11    12     13      14 15 16      17  18 19 20    21      22   23 24 25     26    27       28    29 30 31   32    33     34 35            36          37    38 39     40    41
 Words: "  Bohužel ,  ředitel Ammer se k  této záležitosti staví zatím velice liknavě ,  v  pondělí nám už na druhé schůzce řekl ,  že autora onoho pamfletu nezná ,  "  říká Miloš Krucký ,  místopředseda fotbalového klubu SK Slavia Praha .
 
 # sentence level graph:
 (s6r1 / říkat-007
+        :aspect activity
         :ARG0 (s6i1 / identity-91
             :ARG1 (s6k1 / Krucký
-                :mod (s6m1 / Miloš
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s6m1 / Miloš))
             :ARG2 (s6m2 / místopředseda
+                :refer-number singular
                 :possessor (s6k2 / klub
+                    :refer-number singular
                     :name (s6s1 / SK
                         :name (s6s2 / Slavia
-                            :mod (s6p1 / Praha
-                                :refer-number singular)
-                            :refer-number singular))
-                    :mod (s6f1 / fotbalový
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 1st)
-                :refer-number singular))
+                            :refer-number singular
+                            :mod (s6p1 / Praha)))
+                    :mod (s6f1 / fotbalový))))
         :ARG2 (s6e1 / entity)
         :effect (s6a1 / and
             :op1 (s6s3 / stavět-se-001
+                :aspect activity
                 :clausal-marker (s6b1 / bohužel)
                 :ARG0 (s6a2 / Ammer
-                    :mod (s6r2 / ředitel
-                        :refer-number singular)
                     :refer-number singular
-                    :refer-person 3rd)
+                    :mod (s6r2 / ředitel))
                 :ARG1 (s6z1 / záležitost
-                    :mod (s6t1 / tento
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s6t1 / tento))
                 :temporal (s6z2 / zatím)
                 :manner (s6l1 / liknavě
-                    :extent (s6v1 / velice))
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
+                    :extent (s6v1 / velice)))
             :op2 (s6r3 / říci-008
+                :aspect performance
                 :clausal-marker s6b1
                 :ARG0 s6a2
                 :temporal (s6p2 / pondělí
                     :refer-number singular)
                 :place (s6s4 / schůzka
+                    :refer-number singular
                     :clausal-marker (s6u1 / už)
-                    :mod (s6d1 / druhý
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG2 (s6e2 / entity
+                    :mod (s6d1 / druhý))
+                :ARG2 (s6p3 / person
                     :refer-number plural
                     :refer-person 1st)
-                :effect (s6z3 / znát-001
-                    :ARG1 (s6a3 / autor
-                        :ARG1 (s6p3 / pamflet
-                            :mod (s6o1 / onen
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular
-                        :refer-person 3rd)
-                    :ARG0 s6a2
-                    :refer-number singular
-                    :refer-person 3rd
+                :ARG1 (s6z3 / znát-001
                     :aspect state
-                    :polarity -)
-                :refer-number singular
-                :aspect performance))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :polarity -
+                    :ARG1 (s6a3 / autor
+                        :refer-number singular
+                        :ARG1 (s6p4 / pamflet
+                            :refer-number singular
+                            :mod (s6o1 / onen)))
+                    :ARG0 s6a2))))
 
 # alignment:
 s6r1: 31-31
@@ -379,76 +327,70 @@ s6p2: 15-16
 s6s4: 19-19,21-21
 s6u1: 18-18
 s6d1: 20-20
-s6e2: 17-17
+s6p3: 17-17
 s6z3: 24-24,28-28
 s6a3: 25-25
-s6p3: 27-27
+s6p4: 27-27
 s6o1: 26-26
 
 # document level annotation:
 (s6s0 / sentence
-    :coref ((s6k2 :same-entity s6e2)
+    :coref ((s6k2 :same-entity s6p3)
             (s6p1 :same-entity s5p2)
             (s6a2 :same-entity s5a1)
-            (s6e2 :same-entity s5s1)
-            (s6a3 :same-entity s2k2)
-            (s6p3 :same-entity s5c1)))
+            (s6p3 :same-entity s5s1)
+            (s6a3 :same-entity s2e1)
+            (s6p4 :same-entity s5c1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1  2      3      4     5  6    7        8          9       10        11 12      13      14    15      16       17  18      19
 Words: "  Jménem našeho klubu na panu Ammerovi požadujeme písemné vyjádření ,  protože hodláme podat trestní oznámení pro pomluvu .
 
 # sentence level graph:
 (s7p1 / požadovat-001
+        :aspect activity
         :substitute (s7k1 / klub
-            :possessor (s7e1 / entity
-                :refer-number plural
-                :refer-person 1st)
-            :refer-number singular)
-        :source (s7a1 / Ammer
-            :mod (s7p2 / pan
-                :refer-number singular)
             :refer-number singular
-            :refer-person 3rd)
-        :ARG0 s7e1
+            :possessor (s7p2 / person
+                :refer-number plural
+                :refer-person 1st))
+        :ARG2 (s7a1 / Ammer
+            :refer-number singular
+            :mod (s7p3 / pan))
+        :ARG0 s7p2
         :ARG1 (s7v1 / vyjádření
-            :ARG0 (s7e2 / entity)
-            :ARG1 (s7e3 / entity)
-            :manner (s7p3 / písemný
-                :refer-number singular)
-            :refer-number singular)
-        :cause (s7p4 / podat-002
-            :ARG0 s7e1
-            :ARG2 (s7e4 / entity)
+            :refer-number singular
+            :ARG0 (s7e1 / entity)
+            :ARG1 (s7e2 / entity)
+            :manner (s7p4 / písemný))
+        :cause (s7p5 / podat-002
+            :aspect performance
+            :ARG0 s7p2
+            :ARG2 (s7e3 / entity)
             :ARG1 (s7o1 / oznámení
-                :mod (s7t1 / trestní
-                    :refer-number singular)
-                :cause (s7p5 / pomluva
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance)
-        :refer-number plural
-        :refer-person 1st
-        :aspect activity)
+                :refer-number singular
+                :mod (s7t1 / trestní)
+                :cause (s7p6 / pomluva
+                    :refer-number singular))))
 
 # alignment:
 s7p1: 8-8
 s7k1: 2-2,4-4
-s7e1: 3-3
+s7p2: 3-3
 s7a1: 5-5,7-7
-s7p2: 6-6
+s7p3: 6-6
 s7v1: 10-10
+s7e1: 0-0
 s7e2: 0-0
+s7p4: 9-9
+s7p5: 12-14
 s7e3: 0-0
-s7p3: 9-9
-s7p4: 12-14
-s7e4: 0-0
 s7o1: 16-16
 s7t1: 15-15
-s7p5: 17-18
+s7p6: 17-18
 
 # document level annotation:
 (s7s0 / sentence
@@ -457,77 +399,70 @@ s7p5: 17-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1     2   3     4  5  6  7        8     9       10 11        12        13 14 15 16    17            18    19 20    21  22    23 24
 Words: Pořád ale věřím ,  že ho nebudeme muset podávat na neznámého pachatele ,  a  že autor pomlouvačných řádek se přece jen najde .  "
 
 # sentence level graph:
 (s8v1 / věřit-001
+        :aspect state
         :clausal-marker (s8a1 / ale)
-        :ARG0 (s8e1 / entity
+        :ARG0 (s8p1 / person
             :refer-number singular
             :refer-person 1st)
-        :duration (s8p1 / pořád)
+        :duration (s8p2 / pořád)
         :ARG1 (s8a2 / and
-            :op1 (s8p2 / podávat-003
-                :ARG0 (s8e2 / entity
+            :op1 (s8p3 / podávat-003
+                :aspect habitual
+                :polarity -
+                :ARG0 (s8p4 / person
                     :refer-number plural
                     :refer-person 1st)
-                :ARG2 (s8e3 / entity)
-                :ARG1 (s8e4 / entity
-                    :mod (s8p3 / pachatel
-                        :mod (s8z1 / známý
-                            :refer-number singular
-                            :polarity -)
-                        :refer-number singular)
+                :ARG2 (s8e1 / entity)
+                :ARG1 (s8e2 / entity
                     :refer-number singular
-                    :refer-person 3rd)
-                :aspect habitual
-                :polarity -)
+                    :refer-person 3rd
+                    :mod (s8p5 / pachatel
+                        :mod (s8z1 / známý
+                            :polarity -))))
             :op2 (s8n1 / najít-002
-                :clausal-marker (s8p4 / přece
+                :aspect performance
+                :clausal-marker (s8p6 / přece
                     :part-of-phraseme (s8j1 / jen))
                 :ARG1 (s8a3 / autor
+                    :refer-number singular
                     :ARG1 (s8r1 / řádek
-                        :mod (s8p5 / pomlouvačný
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular)
-                :ARG0 (s8e5 / entity)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect performance))
-        :refer-number singular
-        :refer-person 1st
-        :aspect state)
+                        :refer-number plural
+                        :mod (s8p7 / pomlouvačný)))
+                :ARG0 (s8e3 / entity))))
 
 # alignment:
 s8v1: 3-3
 s8a1: 2-2
-s8e1: 0-0
-s8p1: 1-1
+s8p1: 0-0
+s8p2: 1-1
 s8a2: 14-14
-s8p2: 5-5,7-9
-s8e2: 0-0
-s8e3: 0-0
-s8e4: 6-6
-s8p3: 10-10,12-12
+s8p3: 5-5,7-9
+s8p4: 0-0
+s8e1: 0-0
+s8e2: 6-6
+s8p5: 10-10,12-12
 s8z1: 11-11
 s8n1: 15-15,19-19,22-22
-s8p4: 20-20
+s8p6: 20-20
 s8j1: 21-21
 s8a3: 16-16
 s8r1: 18-18
-s8p5: 17-17
-s8e5: 0-0
+s8p7: 17-17
+s8e3: 0-0
 
 # document level annotation:
 (s8s0 / sentence
-    :coref ((s8e1 :same-entity s6i1)
-            (s8e2 :same-entity s7e1)
-            (s8e4 :same-entity s7o1)
+    :coref ((s8p1 :same-entity s6i1)
+            (s8p4 :same-entity s7p2)
+            (s8e2 :same-entity s7o1)
             (s8a3 :same-entity s6a3)
-            (s8r1 :same-entity s6p3)))
+            (s8r1 :same-entity s6p4)))
 
 

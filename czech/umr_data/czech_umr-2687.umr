@@ -1,14 +1,14 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1    2   3
 Words: Půda pro Prahu
 
 # sentence level graph:
 (s1p1 / půda
+        :refer-number singular
         :affectee (s1p2 / Praha
-            :refer-number singular)
-        :refer-number singular)
+            :refer-number singular))
 
 # alignment:
 s1p1: 1-1
@@ -19,15 +19,15 @@ s1p2: 2-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2 3   4 5
 Words: Praha ( sob ) -
 
 # sentence level graph:
 (s2p1 / Praha
-        :parenthesis (s2s1 / sob)
-        :refer-number singular)
+        :refer-number singular
+        :parenthesis (s2s1 / sob))
 
 # alignment:
 s2p1: 1-1
@@ -39,52 +39,48 @@ s2s1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2       3       4        5      6        7     8     9  10          11    12           13 14   15       16      17             18
 Words: Záměr převést majetek Státního statku hlavního města Prahy do vlastnictví města odsouhlasili na svém zasedání členové zastupitelstva .
 
 # sentence level graph:
 (s3o1 / odsouhlasit-001
+        :aspect performance
         :ARG1 (s3z1 / záměr
+            :refer-number singular
             :ARG0 (s3e1 / entity)
             :ARG1 (s3p1 / převést-004
+                :aspect performance
                 :ARG0 s3e1
-                :start (s3e2 / entity)
+                :ARG3 (s3c1 / concept)
                 :ARG1 (s3m1 / majetek
+                    :refer-number singular
                     :possessor (s3s1 / statek
-                        :mod (s3s2 / Státní
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s3s2 / Státní)
                         :possessor (s3m2 / město
-                            :mod (s3p2 / Praha
-                                :refer-number singular)
-                            :mod (s3h1 / hlavní
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :goal (s3v1 / vlastnictví
+                            :refer-number singular
+                            :mod (s3p2 / Praha)
+                            :mod (s3h1 / hlavní))))
+                :ARG2 (s3v1 / vlastnictví
+                    :refer-number singular
                     :possessor (s3m3 / město
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect performance)
-            :refer-number singular)
+                        :refer-number singular))))
         :place (s3z2 / zasedání
-            :ARG0 s3c1
-            :refer-number singular)
-        :ARG0 (s3c1 / člen
+            :refer-number singular
+            :ARG0 s3c2)
+        :ARG0 (s3c2 / člen
+            :refer-number plural
             :possessor (s3z3 / zastupitelstvo
-                :refer-number singular)
-            :refer-number plural)
-        :refer-number plural
-        :aspect performance)
+                :refer-number singular)))
 
 # alignment:
 s3o1: 12-12
 s3z1: 1-1
 s3e1: 0-0
 s3p1: 2-2
-s3e2: 0-0
+s3c1: 0-0
 s3m1: 3-3
 s3s1: 5-5
 s3s2: 4-4
@@ -94,7 +90,7 @@ s3h1: 6-6
 s3v1: 9-10
 s3m3: 11-11
 s3z2: 13-13,15-15
-s3c1: 14-14,16-16
+s3c2: 14-14,16-16
 s3z3: 17-17
 
 # document level annotation:
@@ -104,7 +100,7 @@ s3z3: 17-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1   2    3     4    5      6  7      8  9        10     11 12 13   14       15 16       17     18
 Words: Jak řekl radní Jiří Mrázek ,  dotace do státního statku by se měly snižovat a  postupně zrušit .
@@ -112,31 +108,27 @@ Words: Jak řekl radní Jiří Mrázek ,  dotace do státního statku by se měl
 # sentence level graph:
 (s4a1 / and
         :op1 (s4s1 / snižovat-001
+            :aspect activity
             :parenthesis (s4r1 / říci-008
+                :aspect performance
                 :ARG2 (s4e1 / entity)
-                :effect s4a1
+                :ARG1 s4a1
                 :ARG0 (s4m1 / Mrázek
-                    :mod (s4j1 / Jiří
-                        :refer-number singular)
-                    :mod (s4r2 / radní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :aspect performance)
+                    :refer-number singular
+                    :mod (s4j1 / Jiří)
+                    :mod (s4r2 / radní)))
             :ARG1 (s4d1 / dotace
+                :refer-number plural
                 :goal (s4s2 / statek
-                    :mod (s4s3 / státní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :ARG0 (s4e2 / entity)
-            :aspect activity)
+                    :refer-number singular
+                    :mod (s4s3 / státní)))
+            :ARG0 (s4e2 / entity))
         :op2 (s4z1 / zrušit-001
+            :aspect performance
             :parenthesis s4r1
             :ARG1 s4d1
             :ARG0 s4e2
-            :manner (s4p1 / postupně)
-            :aspect performance))
+            :manner (s4p1 / postupně)))
 
 # alignment:
 s4a1: 15-15
@@ -159,45 +151,42 @@ s4p1: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1    2      3  4    5   6         7  8  9   10        11 12       13   14    15 16         17   18 19       20       21     22 23      24       25
 Words: Půda statku by měla být využívána mj .  pro vytváření "  zelených plic Prahy "  zakládáním lesů ,  výstavbu shopping center a  bytovou výstavbu .
 
 # sentence level graph:
 (s5v1 / využívat-001
+        :aspect activity
         :ARG1 (s5p1 / půda
+            :refer-number singular
             :possessor (s5s1 / statek
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular))
         :ARG0 (s5e1 / entity)
         :subtraction (s5m1 / mj)
         :purpose (s5a1 / and
             :op1 (s5v2 / vytváření
+                :refer-number singular
                 :ARG0 (s5e2 / entity)
                 :ARG1 (s5p2 / plíce
+                    :refer-number singular
                     :possessor (s5p3 / Praha
                         :refer-number singular)
-                    :mod (s5z1 / zelený
-                        :refer-number plural)
-                    :refer-number singular)
+                    :mod (s5z1 / zelený))
                 :instrument (s5z2 / zakládání
+                    :refer-number singular
                     :ARG0 (s5e3 / entity)
                     :ARG1 (s5l1 / les
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular)
+                        :refer-number plural)))
             :op2 (s5v3 / výstavba
+                :refer-number singular
                 :ARG1 (s5c1 / centrum
-                    :mod (s5s2 / shopping
-                        :refer-number singular)
-                    :refer-number plural)
-                :refer-number singular)
+                    :refer-number plural
+                    :mod (s5s2 / shopping)))
             :op3 (s5v4 / výstavba
-                :mod (s5b1 / bytový
-                    :refer-number singular)
-                :refer-number singular))
-        :aspect activity)
+                :refer-number singular
+                :mod (s5b1 / bytový))))
 
 # alignment:
 s5v1: 3-6
@@ -228,7 +217,7 @@ s5b1: 23-23
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1  2        3       4    5          6      7         8  9   10      11   12      13        14        15         16             17           18     19
 Words: V  určitých místech bude zemědělská výroba zachována a  dle potřeby bude radnice iniciovat zakládání privátních mechanizačních zemědělských stanic .
@@ -236,33 +225,28 @@ Words: V  určitých místech bude zemědělská výroba zachována a  dle potř
 # sentence level graph:
 (s6a1 / and
         :op1 (s6z1 / zachovat-003
+            :aspect performance
             :ARG1 (s6v1 / výroba
-                :mod (s6z2 / zemědělský
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s6z2 / zemědělský))
             :ARG0 (s6e1 / entity)
             :place (s6m1 / místo
-                :mod (s6u1 / určitý
-                    :refer-number plural)
-                :refer-number plural)
-            :aspect performance)
+                :refer-number plural
+                :mod (s6u1 / určitý)))
         :op2 (s6i1 / iniciovat-001
+            :aspect process
             :ARG0 (s6r1 / radnice
                 :refer-number singular)
             :condition (s6p1 / potřeba
                 :refer-number singular)
             :ARG1 (s6z3 / zakládání
+                :refer-number singular
                 :ARG0 (s6e2 / entity)
                 :ARG1 (s6s1 / stanice
-                    :mod (s6z4 / zemědělský
-                        :refer-number plural)
-                    :mod (s6m2 / mechanizační
-                        :refer-number plural)
-                    :mod (s6p2 / privátní
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular)
-            :aspect process))
+                    :refer-number plural
+                    :mod (s6z4 / zemědělský)
+                    :mod (s6m2 / mechanizační)
+                    :mod (s6p2 / privátní)))))
 
 # alignment:
 s6a1: 8-8
@@ -287,7 +271,7 @@ s6p2: 15-15
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1  2  3  4      5  6    7  8         9     10      11      12 13     14       15     16      17    18 19 20        21 22         23       24  25      26
 Words: K  31 .  květnu 92 bylo z  celkových 10476 hektarů pozemků ve správě Státního statku předáno městu a  je využíváno k  zemědělské činnosti 220 hektarů .
@@ -295,41 +279,36 @@ Words: K  31 .  květnu 92 bylo z  celkových 10476 hektarů pozemků ve správ�
 # sentence level graph:
 (s7a1 / and
         :op1 (s7p1 / předat-001
+            :aspect performance
             :temporal (s7k1 / květen
+                :refer-number singular
                 :mod (s7x1 / 31)
-                :mod (s7x2 / 92)
-                :refer-number singular)
+                :mod (s7x2 / 92))
             :ARG2 (s7m1 / město
                 :refer-number singular)
             :ARG0 (s7e1 / entity)
             :ARG1 (s7h1 / ha
+                :refer-number plural
                 :start (s7h2 / ha
+                    :refer-number plural
                     :possessor (s7p2 / pozemek
+                        :refer-number plural
                         :place (s7s1 / správa
+                            :refer-number singular
                             :ARG0 (s7s2 / statek
-                                :mod (s7s3 / Státní
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number plural)
+                                :refer-number singular
+                                :mod (s7s3 / Státní))))
                     :mod (s7x3 / 10476
-                        :mod (s7c1 / celkový
-                            :refer-number plural))
-                    :refer-number plural)
-                :mod (s7x4 / 220)
-                :refer-number plural)
-            :refer-number singular
-            :aspect performance)
+                        :mod (s7c1 / celkový)))
+                :mod (s7x4 / 220)))
         :op2 (s7v1 / využívat-001
+            :aspect activity
             :temporal s7k1
             :ARG1 s7h1
             :ARG0 (s7e2 / entity)
             :purpose (s7c2 / činnost
-                :mod (s7z1 / zemědělský
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect activity))
+                :refer-number singular
+                :mod (s7z1 / zemědělský))))
 
 # alignment:
 s7a1: 18-18
@@ -361,29 +340,24 @@ s7z1: 22-22
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1      2       3  4  5     6       7      8  9    10   11      12
 Words: Státní majetek (  z  velké většiny obecní )  činí 2506 hektarů .
 
 # sentence level graph:
 (s8c1 / činit-007
-        :ARG0 (s8m1 / majetek
-            :mod (s8s1 / státní
-                :refer-number singular)
+        :aspect activity
+        :ARG1 (s8m1 / majetek
+            :refer-number singular
+            :mod (s8s1 / státní)
             :mod (s8o1 / obecní
                 :start (s8v1 / většina
-                    :mod (s8v2 / velký
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number singular)
-        :extent (s8h1 / ha
-            :mod (s8x1 / 2506)
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number singular
+                    :mod (s8v2 / velký))))
+        :ARG2 (s8h1 / ha
+            :refer-number plural
+            :mod (s8x1 / 2506)))
 
 # alignment:
 s8c1: 9-9

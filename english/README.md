@@ -29,6 +29,11 @@ The following additional conversions were applied for the 3.0 release:
 | `:refer-number plural` | 3,756 |
 | `:refer-number singular` | 7,377 |
 
+# Changes from UMR 2.0 to UMR 2.2
+
+Added 100 sentences from English PUD (part of the Parallel UD dataset from Universal Dependencies).
+This is manual Stage 0 annotation.
+
 # Acknowledgments
 
 The creators of the English UMRs wish to express their gratitude to Matt Buchholz, Skatje Myers, Alexis Palmer, Martha Palmer, Jin Zhao, Claire Bonial, Tim O’Gorman, Kristin Wright-Bettner, Benét Post, Alvin Chen, Marie MacGregor, Ahmed Elsayed, Carlos Gomez, Loden Havenmeier, and Ath Kilgore for their assistance.

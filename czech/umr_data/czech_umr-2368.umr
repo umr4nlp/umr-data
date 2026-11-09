@@ -1,20 +1,18 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1        2      3
 Words: Evidence papírů nevyhovuje
 
 # sentence level graph:
 (s1v1 / vyhovovat-002
-        :ARG0 (s1e1 / evidence
-            :ARG1 (s1p1 / papír
-                :refer-number plural)
-            :refer-number singular)
-        :ARG1 (s1e2 / entity)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity
-        :polarity -)
+        :polarity -
+        :ARG0 (s1e1 / evidence
+            :refer-number singular
+            :ARG1 (s1p1 / papír
+                :refer-number plural))
+        :ARG1 (s1e2 / entity))
 
 # alignment:
 s1v1: 3-3
@@ -27,16 +25,15 @@ s1e2: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1   2 3     4
 Words: Řež u Prahy -
 
 # sentence level graph:
 (s2r1 / řež
-        :mod (s2p1 / Praha
-            :refer-number singular)
-        :refer-number singular)
+        :refer-number singular
+        :mod (s2p1 / Praha))
 
 # alignment:
 s2r1: 1-1
@@ -47,58 +44,49 @@ s2p1: 2-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1        2  3      4   5           6  7       8      9      10 11         12     13     14      15 16   17       18     19        20     21       22 23        24      25     26 27           28      29
 Words: Jestliže se chceme při obchodování s  cennými papíry dostat na standardní způsob jejich převodů ,  bude nezbytné změnit centrální způsob evidence ve Středisku cenných papírů na vícestupňový registr .
 
 # sentence level graph:
 (s3b1 / být-007
+        :aspect activity
         :condition (s3d1 / dostat-se-008
+            :aspect performance
             :temporal (s3o1 / obchodování
+                :refer-number singular
                 :ARG0 (s3e1 / entity)
                 :ARG1 (s3p1 / papír
-                    :mod (s3c1 / cenný
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular)
-            :ARG0 (s3e2 / entity
+                    :refer-number plural
+                    :mod (s3c1 / cenný)))
+            :ARG0 (s3p2 / person
                 :refer-number plural
                 :refer-person 1st)
             :goal (s3z1 / způsob
-                :possessor (s3p2 / převod
-                    :possessor s3p1
-                    :refer-number plural)
-                :mod (s3s1 / standardní
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance)
-        :ARG1 (s3z2 / zbytný
-            :affectee (s3e3 / entity)
-            :refer-number singular
-            :polarity -)
-        :ARG0 (s3z3 / změnit-001
-            :ARG0 s3e3
+                :refer-number singular
+                :possessor (s3p3 / převod
+                    :refer-number plural
+                    :possessor s3p1)
+                :mod (s3s1 / standardní)))
+        :ARG2 (s3z2 / zbytný
+            :polarity -
+            :affectee (s3e2 / entity))
+        :ARG1 (s3z3 / změnit-001
+            :aspect performance
+            :ARG0 s3e2
             :ARG1 (s3z4 / způsob
-                :possessor (s3e4 / evidence
+                :refer-number singular
+                :possessor (s3e3 / evidence
+                    :refer-number singular
                     :place (s3s2 / středisko
-                        :mod (s3p3 / papír
-                            :mod (s3c2 / cenný
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular)
-                    :refer-number singular)
-                :mod (s3c3 / centrální
-                    :refer-number singular)
-                :refer-number singular)
+                        :refer-number singular
+                        :mod (s3p4 / papír
+                            :mod (s3c2 / cenný))))
+                :mod (s3c3 / centrální))
             :effect (s3r1 / registr
-                :mod (s3v1 / vícestupňový
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number singular
+                :mod (s3v1 / vícestupňový))))
 
 # alignment:
 s3b1: 16-16
@@ -107,17 +95,17 @@ s3o1: 4-5
 s3e1: 0-0
 s3p1: 6-6,8-8,13-13
 s3c1: 7-7
-s3e2: 0-0
+s3p2: 0-0
 s3z1: 10-10,12-12
-s3p2: 14-14
+s3p3: 14-14
 s3s1: 11-11
 s3z2: 17-17
-s3e3: 0-0
+s3e2: 0-0
 s3z3: 18-18
 s3z4: 20-20
-s3e4: 21-21
+s3e3: 21-21
 s3s2: 22-23
-s3p3: 25-25
+s3p4: 25-25
 s3c2: 24-24
 s3c3: 19-19
 s3r1: 26-26,28-28
@@ -126,52 +114,41 @@ s3v1: 27-27
 # document level annotation:
 (s3s0 / sentence
     :coref ((s3p1 :same-entity s1p1)
-            (s3e4 :same-entity s1e1)))
+            (s3e3 :same-entity s1e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1   2    3       4  5          6  7       8        9      10    11 12   13 14    15 16 17        18      19     20       21         22        23
 Words: Jak dále zaznělo na konferenci o  cenných papírech minulý týden v  Řeži u  Prahy ,  je středisko cenných papírů typickým centrálním registrem .
 
 # sentence level graph:
 (s4b1 / být-007
+        :aspect activity
         :parenthesis (s4z1 / zaznít-001
+            :aspect performance
             :clausal-marker (s4d1 / dále)
-            :ARG0 s4b1
+            :ARG1 s4b1
             :place (s4k1 / konference
+                :refer-number singular
                 :ARG1 (s4p1 / papír
-                    :mod (s4c1 / cenný
-                        :refer-number plural)
                     :refer-number plural
-                    :refer-person 3rd)
-                :refer-number singular)
+                    :mod (s4c1 / cenný)))
             :temporal (s4t1 / týden
-                :mod (s4m1 / minulý
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s4m1 / minulý))
             :place (s4r1 / Řež
-                :mod (s4p2 / Praha
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s4p2 / Praha)))
+        :ARG1 (s4s1 / středisko
             :refer-number singular
-            :aspect performance)
-        :ARG0 (s4s1 / středisko
             :mod (s4p3 / papír
-                :mod (s4c2 / cenný
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number singular)
-        :ARG1 (s4r2 / registr
-            :mod (s4c3 / centrální
-                :refer-number singular)
-            :mod (s4t2 / typický
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :mod (s4c2 / cenný)))
+        :ARG2 (s4r2 / registr
+            :refer-number singular
+            :mod (s4c3 / centrální)
+            :mod (s4t2 / typický)))
 
 # alignment:
 s4b1: 16-16
@@ -200,25 +177,21 @@ s4t2: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1     2             3      4         5   6         7           8
 Words: Tento jednostupňový systém vyhovoval pro kupónovou privatizaci .
 
 # sentence level graph:
 (s5v1 / vyhovovat-001
-        :ARG0 (s5s1 / systém
-            :mod (s5t1 / tento
-                :refer-number singular)
-            :mod (s5j1 / jednostupňový
-                :refer-number singular)
-            :refer-number singular)
-        :ARG1 (s5p1 / privatizace
-            :mod (s5k1 / kupónový
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect activity)
+        :aspect activity
+        :ARG1 (s5s1 / systém
+            :refer-number singular
+            :mod (s5t1 / tento)
+            :mod (s5j1 / jednostupňový))
+        :ARG2 (s5p1 / privatizace
+            :refer-number singular
+            :mod (s5k1 / kupónový)))
 
 # alignment:
 s5v1: 4-4
@@ -234,48 +207,41 @@ s5k1: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1  2        3  4   5  6       7  8       9      10         11   12         13       14    15 16    17 18             19
 Words: V  okamžiku ,  kdy je potřeba s  cennými papíry obchodovat nebo jakýmkoliv způsobem hýbat ,  stává se nedostačujícím .
 
 # sentence level graph:
 (s6s1 / stávat-se-001
+        :aspect activity
         :temporal (s6o1 / okamžik
+            :refer-number singular
             :temporal-of (s6b1 / být-020
-                :predicative-noun (s6p1 / potřeba
-                    :affectee (s6e1 / entity)
-                    :refer-number singular)
+                :aspect activity
+                :ARG2 (s6p1 / potřeba
+                    :refer-number singular
+                    :affectee (s6e1 / entity))
                 :ARG0 (s6o2 / or
                     :op1 (s6o3 / obchodovat-001
+                        :aspect activity
                         :ARG1 (s6p2 / papír
-                            :mod (s6c1 / cenný
-                                :refer-number plural)
-                            :refer-number plural)
+                            :refer-number plural
+                            :mod (s6c1 / cenný))
                         :ARG0 s6e1
-                        :ARG2 (s6e2 / entity)
-                        :aspect activity)
+                        :ARG2 (s6e2 / entity))
                     :op2 (s6h1 / hýbat-001
+                        :aspect activity
                         :ARG1 s6p2
                         :ARG0 s6e1
                         :manner (s6z1 / způsob
-                            :mod (s6j1 / jakýkoliv
-                                :refer-number plural)
-                            :refer-number singular)
-                        :aspect activity))
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number singular)
-        :ARG0 (s6e3 / entity
+                            :refer-number singular
+                            :mod (s6j1 / jakýkoliv))))))
+        :ARG1 (s6e3 / entity
             :refer-number singular
             :refer-person 3rd)
-        :ARG1 (s6d1 / dostačující
-            :refer-number singular
-            :polarity -)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :ARG2 (s6d1 / dostačující
+            :polarity -))
 
 # alignment:
 s6s1: 16-17
@@ -301,23 +267,23 @@ s6d1: 18-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1    2      3      4           5          6     7    8  9       10   11 12    13  14         15      16       17    18        19
 Words: Mezi hlavní výhody vícenásobné registrace patří např .  snížení chyb a  omylů při vypořádání obchodů omezením počtu transakcí .
 
 # sentence level graph:
 (s7p1 / patřit-003
-        :goal (s7v1 / výhoda
+        :aspect state
+        :ARG2 (s7v1 / výhoda
+            :refer-number plural
             :possessor (s7r1 / registrace
-                :mod (s7v2 / vícenásobný
-                    :refer-number singular)
-                :refer-number singular)
-            :mod (s7h1 / hlavní
-                :refer-number plural)
-            :refer-number plural)
+                :refer-number singular
+                :mod (s7v2 / vícenásobný))
+            :mod (s7h1 / hlavní))
         :clausal-marker (s7n1 / například)
-        :ARG0 (s7s1 / snížení
+        :ARG1 (s7s1 / snížení
+            :refer-number singular
             :ARG0 (s7e1 / entity)
             :ARG1 (s7a1 / and
                 :op1 (s7c1 / chyba
@@ -325,21 +291,17 @@ Words: Mezi hlavní výhody vícenásobné registrace patří např .  snížen�
                 :op2 (s7o1 / omyl
                     :refer-number plural))
             :temporal (s7v3 / vypořádání
+                :refer-number singular
                 :ARG0 (s7e2 / entity)
                 :ARG1 (s7o2 / obchod
-                    :refer-number plural)
-                :refer-number singular)
+                    :refer-number plural))
             :instrument (s7o3 / omezení
+                :refer-number singular
                 :ARG0 (s7e3 / entity)
                 :ARG1 (s7p2 / počet
+                    :refer-number singular
                     :mod (s7t1 / transakce
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect state)
+                        :refer-number plural)))))
 
 # alignment:
 s7p1: 6-6

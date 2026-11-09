@@ -1,5 +1,5 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1      2 3
 Words: štoček : Názor
@@ -21,45 +21,39 @@ s1n1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2  3     4  5   6        7        8     9  10      11     12      13     14
 Words: Firmy ,  které u  nás vyrábějí stavební hmoty ,  zásadně nemají vlastní prodej .
 
 # sentence level graph:
 (s2m1 / mít-009
+        :aspect state
+        :polarity -
         :ARG0 (s2f1 / firma
+            :refer-number plural
             :ARG0-of (s2v1 / vyrábět-001
-                :place (s2e1 / entity
+                :aspect activity
+                :place (s2p1 / person
                     :refer-number plural
                     :refer-person 1st)
                 :ARG1 (s2h1 / hmota
-                    :mod (s2s1 / stavební
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number plural)
+                    :refer-number plural
+                    :mod (s2s1 / stavební))))
         :cause (s2z1 / zásadně)
-        :ARG1 (s2p1 / prodej
-            :mod (s2v2 / vlastní
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect state
-        :polarity -)
+        :ARG1 (s2p2 / prodej
+            :refer-number singular
+            :mod (s2v2 / vlastní)))
 
 # alignment:
 s2m1: 11-11
 s2f1: 1-1,3-3
 s2v1: 6-6
-s2e1: 4-5
+s2p1: 4-5
 s2h1: 8-8
 s2s1: 7-7
 s2z1: 10-10
-s2p1: 13-13
+s2p2: 13-13
 s2v2: 12-12
 
 # document level annotation:
@@ -67,39 +61,34 @@ s2v2: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2         3    4            5  6  7       8        9            10       11 12   13     14 15   16
 Words: Odbyt realizují přes velkoobchody ,  se kterými průběžně projednávají poptávku a  nové trendy na trhu .
 
 # sentence level graph:
 (s3r1 / realizovat-001
+        :aspect process
         :ARG1 (s3o1 / odbyt
             :refer-number singular)
         :ARG0 (s3e1 / entity
             :refer-number plural
             :refer-person 3rd)
         :instrument (s3v1 / velkoobchod
+            :refer-number plural
             :ARG2-of (s3p1 / projednávat-001
+                :aspect habitual
                 :ARG0 s3e1
                 :temporal (s3p2 / průběžně)
                 :ARG1 (s3a1 / and
                     :op1 (s3p3 / poptávka
+                        :refer-number singular
                         :place (s3t1 / trh
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular))
                     :op2 (s3t2 / trend
+                        :refer-number plural
                         :place s3t1
-                        :mod (s3n1 / nový
-                            :refer-number plural)
-                        :refer-number plural))
-                :refer-number plural
-                :refer-person 3rd
-                :aspect habitual)
-            :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect process)
+                        :mod (s3n1 / nový))))))
 
 # alignment:
 s3r1: 2-2
@@ -120,38 +109,34 @@ s3n1: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1       2       3  4  5  6             7    8               9          10         11     12 13    14      15     16         17
 Words: Výhodou systému je ,  že velkoprodejce může maloodběratelům poskytnout poradenské služby ,  které výrobce nemůže zabezpečit .
 
 # sentence level graph:
 (s4b1 / být-007
-        :ARG1 (s4v1 / výhoda
+        :aspect activity
+        :ARG2 (s4v1 / výhoda
+            :refer-number singular
             :possessor (s4s1 / systém
-                :refer-number singular)
-            :refer-number singular)
-        :ARG0 (s4p1 / poskytnout-002
+                :refer-number singular))
+        :ARG1 (s4p1 / poskytnout-002
+            :aspect performance
             :ARG0 (s4v2 / velkoprodejce
                 :refer-number singular)
             :ARG2 (s4m1 / maloodběratel
                 :refer-number plural)
-            :predicative-noun (s4s2 / služba
+            :ARG1 (s4s2 / služba
+                :refer-number plural
                 :ARG0 s4v2
                 :ARG1 s4m1
-                :mod (s4p2 / poradenský
-                    :refer-number plural)
+                :mod (s4p2 / poradenský)
                 :ARG1-of (s4z1 / zabezpečit-002
-                    :ARG0 (s4v3 / výrobce
-                        :refer-number singular
-                        :refer-person 3rd)
                     :aspect performance
-                    :polarity -)
-                :refer-number plural)
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :polarity -
+                    :ARG0 (s4v3 / výrobce
+                        :refer-number singular)))))
 
 # alignment:
 s4b1: 3-3
@@ -172,7 +157,7 @@ s4v3: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1      2      3      4         5         6  7   8       9     10         11 12    13     14    15     16
 Words: Nabízí rovněž široký sortiment stavebnin ,  což zvyšuje zájem odběratelů a  šanci rychle zboží prodat .
@@ -180,42 +165,35 @@ Words: Nabízí rovněž široký sortiment stavebnin ,  což zvyšuje zájem od
 # sentence level graph:
 (s5a1 / and
         :op1 (s5n1 / nabízet-001
+            :aspect activity
             :ARG0 (s5e1 / entity
                 :refer-number singular
                 :refer-person 3rd)
-            :ARG2 (s5e2 / entity)
+            :ARG3 (s5e2 / entity)
             :clausal-marker (s5r1 / rovněž)
             :ARG1 (s5s1 / sortiment
+                :refer-number singular
                 :possessor (s5s2 / stavebnina
                     :refer-number plural)
-                :mod (s5s3 / široký
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                :mod (s5s3 / široký)))
         :op2 (s5z1 / zvyšovat-001
-            :ARG0 (s5c1 / což
-                :refer-number singular
-                :refer-person 3rd)
+            :aspect activity
+            :ARG0 (s5c1 / což)
             :ARG1 (s5a2 / and
                 :op1 (s5z2 / zájem
+                    :refer-number singular
                     :ARG0 (s5o1 / odběratel
-                        :refer-number plural)
-                    :refer-number singular)
+                        :refer-number plural))
                 :op2 (s5s4 / šance
+                    :refer-number singular
                     :ARG0 (s5e3 / entity)
                     :ARG1 (s5p1 / prodat-001
+                        :aspect performance
                         :ARG1 (s5z3 / zboží
                             :refer-number singular)
                         :ARG0 s5e3
                         :ARG2 (s5e4 / entity)
-                        :manner (s5r2 / rychle)
-                        :aspect performance)
-                    :refer-number singular))
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                        :manner (s5r2 / rychle))))))
 
 # alignment:
 s5a1: 6-6
@@ -248,7 +226,7 @@ s5r2: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1    2  3      4         5  6   7       8  9            10 11 12     13 14      15 16 17 18  19 20    21    22  23   24 25       26 27        28
 Words: Není to systém převratný ,  ale funkční a  perspektivní ,  na rozdíl od běžného v  ČR ,  kdy se každý snaží být vším -  výrobcem i  prodejcem .
@@ -256,63 +234,52 @@ Words: Není to systém převratný ,  ale funkční a  perspektivní ,  na rozd
 # sentence level graph:
 (s6b1 / but-91
         :ARG1 (s6b2 / být-007
-            :ARG0 (s6t1 / ten
-                :refer-number singular)
-            :ARG1 (s6s1 / systém
-                :mod (s6p1 / převratný
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity
-            :polarity -)
+            :polarity -
+            :ARG1 (s6e1 / entity
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG2 (s6s1 / systém
+                :refer-number singular
+                :mod (s6p1 / převratný)))
         :ARG2 (s6b3 / být-007
-            :ARG0 (s6t2 / ten
+            :aspect activity
+            :ARG1 (s6t1 / ten
                 :refer-number singular)
-            :ARG1 (s6s2 / systém
+            :ARG2 (s6s2 / systém
+                :refer-number singular
                 :mod (s6a1 / and
-                    :op1 (s6f1 / funkční
-                        :refer-number singular)
-                    :op2 (s6p2 / perspektivní
-                        :refer-number singular))
-                :refer-number singular)
+                    :op1 (s6f1 / funkční)
+                    :op2 (s6p2 / perspektivní)))
             :comparison (s6s3 / systém
+                :refer-number singular
                 :mod (s6b4 / běžný
                     :place (s6c1 / ČR
-                        :refer-number singular
-                        :refer-person 1st)
-                    :refer-number singular)
+                        :refer-number singular))
                 :temporal-of (s6s4 / snažit-se-001
+                    :aspect activity
                     :ARG0 (s6k1 / každý
                         :refer-number singular
                         :refer-person 3rd)
                     :ARG1 (s6b5 / být-007
-                        :ARG0 s6k1
+                        :aspect activity
+                        :ARG1 s6k1
                         :ARG1 (s6i1 / identity-91
-                            :ARG1 (s6v1 / všechen
-                                :refer-number singular)
+                            :ARG1 (s6v1 / všechen)
                             :ARG2 (s6a2 / and
                                 :op1 (s6v2 / výrobce
                                     :refer-number singular)
                                 :op2 (s6p3 / prodejce
-                                    :refer-number singular)))
-                        :aspect activity)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                                    :refer-number singular))))))))
 
 # alignment:
 s6b1: 6-6
 s6b2: 1-1
-s6t1: 2-2
+s6e1: 2-2
 s6s1: 3-3
 s6p1: 4-4
 s6b3: 0-0
-s6t2: 0-0
+s6t1: 0-0
 s6s2: 0-0
 s6a1: 8-8
 s6f1: 7-7
@@ -331,14 +298,14 @@ s6p3: 27-27
 
 # document level annotation:
 (s6s0 / sentence
-    :coref ((s6t1 :same-entity s4s1)
-            (s6t2 :same-entity s6t1)
-            (s6c1 :same-entity s2e1)
+    :coref ((s6e1 :same-entity s4s1)
+            (s6t1 :same-entity s6e1)
+            (s6c1 :same-entity s2p1)
             (s6v2 :same-entity s4v3)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1      2       3 4       5       6        7     8        9
 Words: Ulrich Neumann , ředitel Saského zemského svazu prodejců stavebnin
@@ -346,21 +313,18 @@ Words: Ulrich Neumann , ředitel Saského zemského svazu prodejců stavebnin
 # sentence level graph:
 (s7i1 / identity-91
         :ARG1 (s7n1 / Neumann
-            :mod (s7u1 / Ulrich
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s7u1 / Ulrich))
         :ARG2 (s7r1 / ředitel
+            :refer-number singular
             :possessor (s7s1 / svaz
+                :refer-number singular
                 :possessor (s7p1 / prodejce
+                    :refer-number plural
                     :ARG1 (s7s2 / stavebnina
-                        :refer-number plural)
-                    :refer-number plural)
-                :mod (s7z1 / zemský
-                    :refer-number singular)
-                :mod (s7s3 / Saský
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular))
+                        :refer-number plural))
+                :mod (s7z1 / zemský)
+                :mod (s7s3 / Saský))))
 
 # alignment:
 s7i1: 3-3

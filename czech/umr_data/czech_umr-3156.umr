@@ -1,18 +1,16 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1      2           3
 Words: Poprav podnikatelů přibývá
 
 # sentence level graph:
 (s1p1 / přibývat-002
-        :ARG0 (s1p2 / poprava
+        :aspect activity
+        :ARG1 (s1p2 / poprava
+            :refer-number plural
             :ARG1 (s1p3 / podnikatel
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number plural)))
 
 # alignment:
 s1p1: 3-3
@@ -24,15 +22,15 @@ s1p3: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2 3   4 5
 Words: Praha ( ina ) -
 
 # sentence level graph:
 (s2p1 / Praha
-        :parenthesis (s2i1 / ina)
-        :refer-number singular)
+        :refer-number singular
+        :parenthesis (s2i1 / ina))
 
 # alignment:
 s2p1: 1-1
@@ -43,35 +41,33 @@ s2i1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1          2    3    4           5  6   7        8        9  10       11 12          13
 Words: Vyřizování účtů mezi podnikateli se již přestalo omezovat na vydírání a  vyhrožování .
 
 # sentence level graph:
 (s3p1 / přestat-001
+        :aspect performance
         :ARG0 (s3v1 / vyřizování
-            :ARG2 (s3x1 / #Rcp
-                :refer-number plural)
+            :refer-number singular
+            :ARG2 (s3x1 / %Rcp)
             :ARG1 (s3u1 / účet
                 :refer-number plural)
             :ARG0 (s3p2 / podnikatel
-                :refer-number plural)
-            :refer-number singular)
+                :refer-number plural))
         :clausal-marker (s3j1 / již)
         :ARG1 (s3o1 / omezovat-se-001
-            :ARG0 s3v1
+            :aspect activity
+            :ARG1 s3v1
             :ARG1 (s3a1 / and
                 :op1 (s3v2 / vydírání
+                    :refer-number singular
                     :ARG0 (s3e1 / entity)
-                    :ARG1 (s3e2 / entity)
-                    :refer-number singular)
+                    :ARG1 (s3e2 / entity))
                 :op2 (s3v3 / vyhrožování
-                    :ARG0 s3e1
-                    :refer-number singular))
-            :aspect activity)
-        :refer-number singular
-        :aspect performance)
+                    :refer-number singular
+                    :ARG0 s3e1))))
 
 # alignment:
 s3p1: 7-7
@@ -94,34 +90,28 @@ s3v3: 9-9,12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1     2       3       4  5         6      7  8     9  10       11   12       13 14      15        16     17
 Words: Stále častěji dochází k  otevřeným útokům ,  které v  poslední době vyústily v  několik veřejných poprav .
 
 # sentence level graph:
 (s4d1 / docházet-008
+        :aspect activity
         :clausal-marker (s4s1 / stále)
         :frequency (s4c1 / často)
-        :ARG0 (s4u1 / útok
-            :mod (s4o1 / otevřený
-                :refer-number plural)
+        :ARG1 (s4u1 / útok
+            :refer-number plural
+            :mod (s4o1 / otevřený)
             :ARG0-of (s4v1 / vyústit-001
+                :aspect performance
                 :temporal (s4d2 / doba
-                    :mod (s4p1 / poslední
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s4p1 / poslední))
                 :ARG1 (s4p2 / poprava
-                    :mod (s4v2 / veřejný
-                        :refer-number plural)
-                    :mod (s4n1 / několik)
-                    :refer-number plural)
-                :refer-number plural
-                :aspect performance)
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number plural
+                    :mod (s4v2 / veřejný)
+                    :mod (s4n1 / několik)))))
 
 # alignment:
 s4d1: 3-3
@@ -142,7 +132,7 @@ s4n1: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1      2        3         4        5  6         7   8  9     10          11 12    13
 Words: Najatí zabijáci zpravidla střílejí z  jedoucích aut a  oběti zanechávají na místě .
@@ -150,28 +140,22 @@ Words: Najatí zabijáci zpravidla střílejí z  jedoucích aut a  oběti zanec
 # sentence level graph:
 (s5a1 / and
         :op1 (s5s1 / střílet-001
+            :aspect activity
             :ARG0 (s5z1 / zabiják
-                :mod (s5n1 / najatý
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s5n1 / najatý))
             :frequency (s5z2 / zpravidla)
             :ARG1 (s5e1 / entity)
             :start (s5a2 / auto
-                :mod (s5j1 / jedoucí
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                :refer-number plural
+                :mod (s5j1 / jedoucí)))
         :op2 (s5z3 / zanechávat-001
+            :aspect habitual
             :ARG0 s5z1
             :ARG1 (s5o1 / oběť
                 :refer-number plural)
-            :place (s5m1 / místo
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect habitual))
+            :ARG2 (s5m1 / místo
+                :refer-number singular)))
 
 # alignment:
 s5a1: 8-8
@@ -191,37 +175,34 @@ s5m1: 11-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1    2       3    4    5    6       7  8    9        10  11 12    13         14    15
 Words: Tyto popravy mají mimo jiné sloužit i  jako varování těm ,  kteří nesplácejí dluhy .
 
 # sentence level graph:
 (s6s1 / sloužit-001
-        :ARG0 (s6p1 / poprava
-            :mod (s6t1 / tento
-                :refer-number plural)
-            :refer-number plural)
+        :aspect activity
+        :ARG1 (s6p1 / poprava
+            :refer-number plural
+            :mod (s6t1 / tento))
         :subtraction (s6j1 / jiný
             :refer-number singular)
-        :ARG1 (s6e1 / entity)
+        :ARG2 (s6e1 / entity)
         :clausal-marker (s6i1 / i)
         :manner (s6v1 / varování
+            :refer-number singular
             :mod-of s6p1
             :ARG0 (s6e2 / entity)
             :ARG1 (s6e3 / entity)
             :ARG2 (s6t2 / ten
+                :refer-number plural
                 :ARG0-of (s6s2 / splácet-001
+                    :aspect activity
+                    :polarity -
                     :ARG2 (s6e4 / entity)
                     :ARG1 (s6d1 / dluh
-                        :refer-number plural)
-                    :refer-number plural
-                    :refer-person 3rd
-                    :aspect activity
-                    :polarity -)
-                :refer-number plural)
-            :refer-number singular)
-        :aspect activity)
+                        :refer-number plural)))))
 
 # alignment:
 s6s1: 3-3,6-6
@@ -244,23 +225,21 @@ s6d1: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1  2        3  4   5         6      7      8        9          10
 Words: "  Popraven "  byl například koncem května plzeňský podnikatel .
 
 # sentence level graph:
 (s7p1 / popravit-001
+        :aspect performance
         :ARG0 (s7e1 / entity)
         :clausal-marker (s7n1 / například)
         :temporal (s7k1 / květen
             :refer-number singular)
         :ARG1 (s7p2 / podnikatel
-            :mod (s7p3 / plzeňský
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+            :refer-number singular
+            :mod (s7p3 / plzeňský)))
 
 # alignment:
 s7p1: 2-2,4-4
@@ -275,27 +254,25 @@ s7p3: 8-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1      2     3          4 5     6    7        8
 Words: Najatí vrazi zastřelili i člena jeho ochranky .
 
 # sentence level graph:
 (s8z1 / zastřelit-001
+        :aspect performance
         :ARG0 (s8v1 / vrah
-            :mod (s8n1 / najatý
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s8n1 / najatý))
         :clausal-marker (s8i1 / i)
         :ARG1 (s8c1 / člen
+            :refer-number singular
             :possessor (s8o1 / ochranka
+                :refer-number singular
                 :possessor (s8e1 / entity
                     :refer-number singular
-                    :refer-person 3rd)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number plural
-        :aspect performance)
+                    :refer-person 3rd))))
 
 # alignment:
 s8z1: 3-3
@@ -312,31 +289,26 @@ s8e1: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1         2        3        4    5  6       7          8       9            10
 Words: Klasickou veřejnou popravou bylo i  páteční zastřelení pražské podnikatelky .
 
 # sentence level graph:
 (s9b1 / být-007
-        :ARG1 (s9p1 / poprava
-            :mod (s9v1 / veřejný
-                :refer-number singular)
-            :mod (s9k1 / klasický
-                :refer-number singular)
-            :refer-number singular)
+        :aspect activity
+        :ARG2 (s9p1 / poprava
+            :refer-number singular
+            :mod (s9v1 / veřejný)
+            :mod (s9k1 / klasický))
         :clausal-marker (s9i1 / i)
-        :ARG0 (s9z1 / zastřelení
-            :temporal (s9p2 / páteční
-                :refer-number singular)
+        :ARG1 (s9z1 / zastřelení
+            :refer-number singular
+            :temporal (s9p2 / páteční)
             :ARG0 (s9e1 / entity)
             :ARG1 (s9p3 / podnikatelka
-                :mod (s9p4 / pražský
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect activity)
+                :refer-number singular
+                :mod (s9p4 / pražský))))
 
 # alignment:
 s9b1: 4-4
@@ -356,41 +328,33 @@ s9p4: 8-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1         2   3    4  5     6      7  8   9      10   11      12 13      14     15 16     17  18 19    20    21
 Words: Tentokrát jde však o  první případ ,  kdy najatý vrah střílel na českého občana za bílého dne na rušné ulici .
 
 # sentence level graph:
 (s10j1 / jít-035
+        :aspect activity
         :clausal-marker (s10v1 / však)
         :temporal (s10t1 / tentokrát)
-        :ARG0 (s10p1 / případ
-            :mod (s10p2 / první
-                :refer-number singular)
+        :ARG2 (s10p1 / případ
+            :refer-number singular
+            :mod (s10p2 / první)
             :temporal-of (s10s1 / střílet-003
+                :aspect activity
                 :ARG0 (s10v2 / vrah
-                    :mod (s10n1 / najatý
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s10n1 / najatý))
                 :goal (s10o1 / občan
-                    :mod (s10c1 / český
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s10c1 / český))
                 :temporal (s10d1 / den
-                    :mod (s10b1 / bílý
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s10b1 / bílý))
                 :place (s10u1 / ulice
-                    :mod (s10r1 / rušný
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :aspect activity)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number singular
+                    :mod (s10r1 / rušný)))))
 
 # alignment:
 s10j1: 2-2

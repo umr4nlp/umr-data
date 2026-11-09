@@ -1,28 +1,21 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1  2         3  4        5          6    7  8      9         10       11   12
 Words: "  Seismická "  aktivita finančního trhu se podobá seismické aktivitě země .
 
 # sentence level graph:
 (s1p1 / podobat-se-001
+        :aspect activity
         :ARG0 (s1a1 / aktivita
-            :mod (s1s1 / seismický
-                :refer-number singular)
+            :refer-number singular
+            :mod (s1s1 / seismický)
             :mod (s1t1 / trh
-                :mod (s1f1 / finanční
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                :mod (s1f1 / finanční)))
         :ARG1 (s1a2 / aktivita
-            :mod (s1s2 / seismický
-                :refer-number singular)
-            :mod (s1z1 / země
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number singular
+            :mod (s1s2 / seismický)
+            :mod (s1z1 / země)))
 
 # alignment:
 s1p1: 7-8
@@ -39,7 +32,7 @@ s1z1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1    2  3    4  5     6           7  8  9   10        11 12 13    14  15    16 17    18  19      20          21 22 23     24         25   26  27     28
 Words: Když je klid (  nízká nestabilita )  ,  pak struktury ,  na nichž trh stojí ,  mohou být poměrně neefektivní ,  a  přesto dostatečně plní své funkce .
@@ -47,42 +40,34 @@ Words: Když je klid (  nízká nestabilita )  ,  pak struktury ,  na nichž trh
 # sentence level graph:
 (s2b1 / but-91
         :ARG1 (s2b2 / být-007
+            :aspect activity
             :condition (s2b3 / být-011
+                :aspect activity
                 :ARG0 (s2i1 / identity-91
                     :ARG1 (s2k1 / klid
                         :refer-number singular)
                     :ARG2 (s2n1 / nestabilita
-                        :mod (s2n2 / nízký
-                            :refer-number singular)
-                        :refer-number singular))
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
+                        :refer-number singular
+                        :mod (s2n2 / nízký))))
             :clausal-marker (s2p1 / potom)
-            :ARG0 (s2s1 / struktura
-                :ARG1-of (s2s2 / stát-005
-                    :ARG0 (s2t1 / trh
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity)
-                :refer-number plural)
-            :ARG1 (s2e1 / efektivní
-                :extent (s2p2 / poměrně)
+            :ARG1 (s2s1 / struktura
                 :refer-number plural
-                :polarity -)
-            :aspect activity)
+                :ARG0-of (s2s2 / stát-005
+                    :aspect activity
+                    :ARG1 (s2t1 / trh
+                        :refer-number singular)))
+            :ARG2 (s2e1 / efektivní
+                :polarity -
+                :extent (s2p2 / poměrně)))
         :clausal-marker (s2p3 / přesto)
         :ARG2 (s2p4 / plnit-002
+            :aspect activity
             :condition s2b3
-            :ARG0 s2s1
+            :ARG1 s2s1
             :extent (s2d1 / dostatečně)
             :ARG1 (s2f1 / funkce
-                :mod s2s1
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity))
+                :refer-number plural
+                :mod s2s1)))
 
 # alignment:
 s2b1: 22-22
@@ -109,51 +94,40 @@ s2f1: 27-27
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1    2    3          4    5      6       7       8    9  10  11 12   13    14 15      16  17    18 19  20 21 22        23    24          25 26
 Words: Když však strukturou trhu začnou otřásat mohutné síly ,  pak je jeho šance na přežití tím vyšší ,  čím je "  odolnější proti zemětřesení "  .
 
 # sentence level graph:
 (s3b1 / být-007
+        :aspect activity
         :condition (s3z1 / začít-001
+            :aspect performance
             :clausal-marker (s3v1 / však)
             :ARG1 (s3o1 / otřásat-002
+                :aspect activity
                 :ARG1 (s3s1 / struktura
-                    :mod (s3t1 / trh
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG0 s3s2
-                :aspect activity)
+                    :refer-number singular
+                    :mod (s3t1 / trh))
+                :ARG0 s3s2)
             :ARG0 (s3s2 / síla
-                :mod (s3m1 / mohutný
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect performance)
+                :refer-number plural
+                :mod (s3m1 / mohutný)))
         :temporal (s3p1 / pak)
-        :ARG0 (s3s3 / šance
+        :ARG1 (s3s3 / šance
+            :refer-number singular
             :mod s3t1
             :mod (s3p2 / přežití
-                :ARG0 s3t1
-                :refer-number singular)
-            :refer-number singular)
-        :ARG1 (s3v2 / vysoký
+                :ARG0 s3t1))
+        :ARG2 (s3v2 / vysoký
             :extent (s3b2 / být-007
-                :ARG0 s3t1
-                :ARG1 (s3o2 / odolný
+                :aspect activity
+                :ARG1 s3t1
+                :ARG2 (s3o2 / odolný
                     :extent (s3c1 / co)
                     :ARG1 (s3z2 / zemětřesení
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number singular)))))
 
 # alignment:
 s3b1: 11-11
@@ -179,43 +153,32 @@ s3z2: 23-24
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1        2        3    4     5      6       7        8       9          10    11 12   13 14        15    16        17      18 19
 Words: Americké finanční trhy ještě nemají všechny nezbytné moderní vlastnosti nutné k  plné "  odolnosti proti následným otřesům "  .
 
 # sentence level graph:
 (s4m1 / mít-008
+        :aspect state
+        :polarity -
         :ARG0 (s4t1 / trh
-            :mod (s4a1 / americký
-                :refer-number plural)
-            :mod (s4f1 / finanční
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s4a1 / americký)
+            :mod (s4f1 / finanční))
         :temporal (s4j1 / ještě)
         :ARG1 (s4v1 / vlastnost
-            :mod (s4v2 / všechen
-                :refer-number plural)
+            :refer-number plural
+            :mod (s4v2 / všechen)
             :mod (s4z1 / zbytný
-                :refer-number plural
                 :polarity -)
-            :mod (s4m2 / moderní
-                :refer-number plural)
+            :mod (s4m2 / moderní)
             :mod (s4n1 / nutný
                 :purpose (s4o1 / odolnost
-                    :mod (s4p1 / plný
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s4p1 / plný)
                     :mod (s4o2 / otřes
-                        :mod (s4n2 / následný
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect state
-        :polarity -)
+                        :mod (s4n2 / následný))))))
 
 # alignment:
 s4m1: 5-5
@@ -238,34 +201,29 @@ s4n2: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1         2      3          4     5       6  7        8     9    10 11 12    13         14
 Words: Investoři nemají dostatečně rovný přístup do obchodní arény trhů a  k  jejím informacím .
 
 # sentence level graph:
 (s5m1 / mít-028
+        :aspect state
+        :polarity -
         :ARG0 (s5i1 / investor
             :refer-number plural)
-        :predicative-noun (s5p1 / přístup
+        :ARG1 (s5p1 / přístup
+            :refer-number singular
             :mod (s5r1 / rovný
-                :extent (s5d1 / dostatečně)
-                :refer-number singular)
+                :extent (s5d1 / dostatečně))
             :goal (s5a1 / and
                 :op1 (s5a2 / aréna
-                    :mod (s5o1 / obchodní
-                        :refer-number singular)
-                    :mod (s5t1 / trh
-                        :refer-number plural)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s5o1 / obchodní)
+                    :mod (s5t1 / trh))
                 :op2 (s5i2 / informace
-                    :mod s5a2
-                    :refer-number plural))
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect state
-        :polarity -)
+                    :refer-number plural
+                    :mod s5a2))))
 
 # alignment:
 s5m1: 2-2
@@ -284,39 +242,28 @@ s5i2: 11-11,13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1     2            3          4  5       6  7       8         9    10      11      12        13   14
 Words: Tento strukturální nedostatek je zásadní ,  protože investoři jsou jediným zdrojem likvidity trhu .
 
 # sentence level graph:
 (s6b1 / být-007
-        :ARG0 (s6n1 / nedostatek
-            :mod (s6t1 / tento
-                :refer-number singular)
-            :mod (s6s1 / strukturální
-                :refer-number singular)
+        :aspect activity
+        :ARG1 (s6n1 / nedostatek
             :refer-number singular
-            :refer-person 3rd)
-        :ARG1 (s6z1 / zásadní
-            :refer-number singular)
+            :mod (s6t1 / tento)
+            :mod (s6s1 / strukturální))
+        :ARG2 (s6z1 / zásadní)
         :cause (s6b2 / být-007
-            :ARG0 (s6i1 / investor
+            :aspect activity
+            :ARG1 (s6i1 / investor
                 :refer-number plural)
-            :ARG1 (s6z2 / zdroj
-                :mod (s6j1 / jediný
-                    :refer-number singular)
+            :ARG2 (s6z2 / zdroj
+                :refer-number singular
+                :mod (s6j1 / jediný)
                 :mod (s6l1 / likvidita
-                    :mod (s6t2 / trh
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :mod (s6t2 / trh)))))
 
 # alignment:
 s6b1: 4-4
@@ -338,33 +285,29 @@ s6t2: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1  2     3         4    5         6  7   8        9           10 11       12     13
 Words: A  právě likviditu trhy potřebují ,  aby oslabily zemětřesení a  následné otřesy .
 
 # sentence level graph:
 (s7p1 / potřebovat-002
+        :aspect activity
         :clausal-marker (s7a1 / a)
         :ARG1 (s7l1 / likvidita
-            :clausal-marker (s7p2 / právě)
-            :refer-number singular)
+            :refer-number singular
+            :clausal-marker (s7p2 / právě))
         :ARG0 (s7t1 / trh
             :refer-number plural)
         :purpose (s7o1 / oslabit-001
+            :aspect performance
             :ARG0 s7t1
             :ARG1 (s7a2 / and
                 :op1 (s7z1 / zemětřesení
                     :refer-number singular)
                 :op2 (s7o2 / otřes
-                    :mod (s7n1 / následný
-                        :refer-number plural)
-                    :refer-number plural))
-            :refer-number plural
-            :aspect performance)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number plural
+                    :mod (s7n1 / následný)))))
 
 # alignment:
 s7p1: 5-5
@@ -383,66 +326,51 @@ s7n1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1  2        3      4    5        6         7    8  9      10 11       12   13 14      15       16  17     18    19 20          21 22 23        24    25      26     27 28 29 30     31        32 33     34   35 36 37            38   39 40
 Words: Na dnešních trzích jsou jedinými účastníky trhu ,  kterým je dovoleno hrát v  procesu určování cen přímou úlohu ,  specialisté (  na Newyorské burze cenných papírů )  a  "  vysoce postavení "  tvůrci trhu (  na mimoburzovním trhu )  .
 
 # sentence level graph:
 (s8b1 / být-007
+        :aspect activity
         :place (s8t1 / trh
-            :mod (s8d1 / dnešní
-                :refer-number plural)
-            :refer-number plural)
-        :ARG1 (s8u1 / účastník
-            :mod (s8j1 / jediný
-                :refer-number plural)
-            :mod (s8t2 / trh
-                :refer-number singular)
+            :refer-number plural
+            :mod (s8d1 / dnešní))
+        :ARG2 (s8u1 / účastník
+            :refer-number plural
+            :mod (s8j1 / jediný)
+            :mod (s8t2 / trh)
             :ARG2-of (s8d2 / dovolit-001
+                :aspect performance
                 :ARG0 (s8e1 / entity)
                 :ARG1 (s8h1 / hrát-010
+                    :aspect activity
                     :ARG0 s8u1
                     :regard (s8p1 / proces
+                        :refer-number singular
                         :mod (s8u2 / určování
                             :ARG0 (s8e2 / entity)
                             :ARG1 (s8c1 / cena
-                                :refer-number plural)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :part-of-phraseme (s8u3 / úlohu
-                        :mod (s8p2 / přímý
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect activity)
-                :refer-number singular
-                :aspect performance)
-            :refer-number plural)
+                                :refer-number plural)))
+                    :ARG1 (s8u3 / úlohu
+                        :mod (s8p2 / přímý)))))
         :ARG0 (s8a1 / and
             :op1 (s8s1 / specialista
+                :refer-number plural
                 :place (s8b2 / burza
-                    :mod (s8n1 / Newyorský
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s8n1 / Newyorský)
                     :mod (s8p3 / papír
-                        :mod (s8c2 / cenný
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number plural)
+                        :mod (s8c2 / cenný))))
             :op2 (s8t3 / tvůrce
+                :refer-number plural
                 :mod (s8p4 / postavený
-                    :place (s8v1 / vysoce)
-                    :refer-number plural)
-                :mod (s8t4 / trh
-                    :refer-number singular)
+                    :place (s8v1 / vysoce))
+                :mod (s8t4 / trh)
                 :place (s8t5 / trh
-                    :mod (s8m1 / mimoburzovní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number singular
+                    :mod (s8m1 / mimoburzovní)))))
 
 # alignment:
 s8b1: 4-4
@@ -480,32 +408,26 @@ s8m1: 37-37
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1    2         3          4  5       6         7    8  9       10
 Words: Když přestanou obchodovat ,  veškerá likvidita trhu se vytratí .
 
 # sentence level graph:
 (s9v1 / vytratit-se-001
+        :aspect performance
         :condition (s9p1 / přestat-001
+            :aspect performance
             :ARG0 (s9e1 / entity)
             :ARG1 (s9o1 / obchodovat-001
+                :aspect activity
                 :ARG1 (s9e2 / entity)
                 :ARG2 (s9e3 / entity)
-                :ARG0 s9e1
-                :aspect activity)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect performance)
-        :ARG0 (s9l1 / likvidita
-            :mod (s9v2 / veškerý
-                :refer-number singular)
-            :mod (s9t1 / trh
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect performance)
+                :ARG0 s9e1))
+        :ARG1 (s9l1 / likvidita
+            :refer-number singular
+            :mod (s9v2 / veškerý)
+            :mod (s9t1 / trh)))
 
 # alignment:
 s9v1: 8-9
@@ -525,7 +447,7 @@ s9t1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1  2    3         4      5    6  7      8  9         10      11   12   13 14     15        16 17     18          19 20     21 22     23   24       25   26 27 28     29   30 31 32  33    34      35
 Words: A  když kterákoli složka trhu -  peníze ,  termínové obchody nebo opce -  ztratí likviditu ,  cenový mechanismus (  způsob ,  kterým jsou určovány ceny )  se naruší nebo se na čas zcela vytratí .
@@ -533,57 +455,46 @@ Words: A  když kterákoli složka trhu -  peníze ,  termínové obchody nebo o
 # sentence level graph:
 (s10o1 / or
         :op1 (s10n1 / narušit-001
+            :aspect performance
             :clausal-marker (s10a1 / a)
             :condition (s10z1 / ztratit-003
+                :aspect performance
                 :ARG0 (s10i1 / identity-91
                     :ARG1 (s10s1 / složka
-                        :mod (s10k1 / kterýkoli
-                            :refer-number singular)
-                        :mod (s10t1 / trh
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s10k1 / kterýkoli)
+                        :mod (s10t1 / trh))
                     :ARG2 (s10o2 / or
                         :op1 (s10p1 / peníze
                             :refer-number plural)
                         :op2 (s10o3 / obchod
-                            :mod (s10t2 / termínový
-                                :refer-number plural)
-                            :refer-number plural)
+                            :refer-number plural
+                            :mod (s10t2 / termínový))
                         :op3 (s10o4 / opce
                             :refer-number plural)))
                 :ARG1 (s10l1 / likvidita
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect performance)
+                    :refer-number singular))
             :ARG1 (s10i2 / identity-91
                 :ARG1 (s10m1 / mechanismus
-                    :mod (s10c1 / cenový
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s10c1 / cenový))
                 :ARG2 (s10z2 / způsob
+                    :refer-number singular
                     :mod (s10u1 / určovat-005
+                        :aspect activity
                         :instrument s10i2
                         :ARG0 (s10e1 / entity)
                         :ARG1 (s10c2 / cena
-                            :refer-number plural)
-                        :refer-number plural
-                        :aspect activity)
-                    :refer-number singular))
-            :ARG0 (s10e2 / entity)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect performance)
+                            :refer-number plural))))
+            :ARG0 (s10e2 / entity))
         :op2 (s10v1 / vytratit-se-001
+            :aspect performance
             :clausal-marker s10a1
             :condition s10z1
             :duration (s10c3 / čas
                 :refer-number singular)
             :extent (s10z3 / zcela)
-            :ARG0 s10i2
-            :refer-number singular
-            :refer-person 3rd
-            :aspect performance))
+            :ARG1 s10i2))
 
 # alignment:
 s10o1: 29-29
@@ -618,65 +529,59 @@ s10z3: 33-33
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1      2     3  4     5  6  7  8    9         10 11     12   13   14    15   16 17    18    19 20
 Words: Minulý týden v  pátek 13 .  se trhy rozpojily (  stejně jako před dvěma roky v  témže týdnu )  .
 
 # sentence level graph:
 (s11r1 / rozpojit-se-001
+        :aspect performance
         :temporal (s11t1 / týden
-            :mod (s11m1 / minulý
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s11m1 / minulý))
         :temporal (s11p1 / pátek
-            :mod (s11e1 / entity
-                :mod (s11x1 / 13))
-            :refer-number singular)
-        :ARG0 (s11t2 / trh
+            :refer-number singular
+            :mod (s11t2 / thing
+                :mod (s11x1 / 13)))
+        :ARG0 (s11t3 / trh
             :refer-number plural)
-        :ARG1 (s11x2 / #Rcp
-            :refer-number plural)
+        :ARG1 (s11x2 / %Rcp)
         :manner (s11s1 / stejně
             :comparison (s11r2 / rozpojit-se-001
-                :ARG1 s11t2
-                :ARG0 s11t2
+                :aspect performance
+                :ARG1 s11t3
+                :ARG0 s11t3
                 :temporal (s11r3 / rok
-                    :mod (s11d1 / dva
-                        :refer-number plural)
-                    :refer-number plural)
-                :temporal (s11t3 / týden
-                    :mod (s11t4 / týž
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural
-                :aspect performance))
-        :refer-number plural
-        :aspect performance)
+                    :refer-number plural
+                    :mod (s11d1 / dva))
+                :temporal (s11t4 / týden
+                    :refer-number singular
+                    :mod (s11t5 / týž)))))
 
 # alignment:
 s11r1: 7-7,9-9
 s11t1: 2-2
 s11m1: 1-1
 s11p1: 3-4
-s11e1: 0-0
+s11t2: 0-0
 s11x1: 5-6
-s11t2: 8-8
+s11t3: 8-8
 s11x2: 0-0
 s11s1: 11-11
 s11r2: 0-0
 s11r3: 13-13,15-15
 s11d1: 14-14
-s11t3: 16-16,18-18
-s11t4: 17-17
+s11t4: 16-16,18-18
+s11t5: 17-17
 
 # document level annotation:
 (s11s0 / sentence
-    :coref ((s11x2 :same-entity s11t2)))
+    :coref ((s11x2 :same-entity s11t3)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1    2  3  4     5  6     7        8  9         10 11     12      13 14    15      16     17          18           19 20 21      22          23   24
 Words: Když se to stalo ,  trhem proběhly "  seismické "  otřesy strachu -  velmi podobné chvění způsobenému zemětřesením -  a  zvýšily nestabilitu trhu .
@@ -684,39 +589,31 @@ Words: Když se to stalo ,  trhem proběhly "  seismické "  otřesy strachu -  
 # sentence level graph:
 (s12a1 / and
         :op1 (s12p1 / proběhnout-002
+            :aspect performance
             :temporal (s12s1 / stát-se-005
-                :ARG0 (s12t1 / ten
-                    :refer-number singular)
-                :refer-number singular
-                :aspect performance)
+                :aspect performance
+                :ARG1 (s12t1 / ten
+                    :refer-number singular))
             :path (s12t2 / trh
                 :refer-number singular)
             :ARG0 (s12o1 / otřes
-                :mod (s12s2 / seismický
-                    :refer-number plural)
-                :mod (s12s3 / strach
-                    :refer-number singular)
+                :refer-number plural
+                :mod (s12s2 / seismický)
+                :mod (s12s3 / strach)
                 :mod (s12p2 / podobný
                     :extent (s12v1 / velmi)
                     :ARG1 (s12c1 / chvění
+                        :refer-number singular
                         :mod (s12z1 / způsobený
                             :ARG0 (s12z2 / zemětřesení
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :aspect performance)
+                                :refer-number singular))))))
         :op2 (s12z3 / zvýšit-001
+            :aspect performance
             :temporal s12s1
             :ARG0 s12o1
             :ARG1 (s12n1 / nestabilita
-                :mod (s12t3 / trh
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural
-            :aspect performance))
+                :refer-number singular
+                :mod (s12t3 / trh))))
 
 # alignment:
 s12a1: 20-20
@@ -744,26 +641,23 @@ s12t3: 23-23
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1          2          3 4          5         6    7       8      9
 Words: Nedostatek důležitých , potřebných informací může vyvolat strach .
 
 # sentence level graph:
 (s13v1 / vyvolat-004
+        :aspect performance
         :ARG0 (s13n1 / nedostatek
+            :refer-number singular
             :mod (s13i1 / informace
                 :mod (s13a1 / and
-                    :op1 (s13d1 / důležitý
-                        :refer-number plural)
-                    :op2 (s13p1 / potřebný
-                        :refer-number plural))
-                :refer-number plural)
-            :refer-number singular)
-        :place (s13e1 / entity)
+                    :op1 (s13d1 / důležitý)
+                    :op2 (s13p1 / potřebný))))
+        :place (s13c1 / concept)
         :predicative-noun (s13s1 / strach
-            :refer-number singular)
-        :aspect performance)
+            :refer-number singular))
 
 # alignment:
 s13v1: 6-7
@@ -772,7 +666,7 @@ s13i1: 5-5
 s13a1: 3-3
 s13d1: 2-2
 s13p1: 4-4
-s13e1: 0-0
+s13c1: 0-0
 s13s1: 8-8
 
 # document level annotation:
@@ -780,22 +674,19 @@ s13s1: 8-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1      2  3     4      5
 Words: Strach je otcem paniky .
 
 # sentence level graph:
 (s14b1 / být-007
-        :ARG0 (s14s1 / Strach
+        :aspect activity
+        :ARG1 (s14s1 / Strach
             :refer-number singular)
-        :ARG1 (s14o1 / otec
-            :mod (s14p1 / panika
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :ARG2 (s14o1 / otec
+            :refer-number singular
+            :mod (s14p1 / panika)))
 
 # alignment:
 s14b1: 2-2
@@ -808,24 +699,21 @@ s14p1: 4-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1      2     3    4 5             6       7
 Words: Panika často vede k iracionálnímu chování .
 
 # sentence level graph:
 (s15v1 / vést-001
+        :aspect activity
         :ARG0 (s15p1 / panika
             :refer-number singular)
         :frequency (s15c1 / často)
         :ARG1 (s15c2 / chování
+            :refer-number singular
             :ARG0 (s15e1 / entity)
-            :manner (s15i1 / iracionální
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :manner (s15i1 / iracionální)))
 
 # alignment:
 s15v1: 3-3
@@ -840,29 +728,25 @@ s15i1: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s16-root
+# meta-info :: sent_id = u_tree-cs-s16-root :: type = partial_conversion
 # :: snt16
 Index: 1  2  3          4      5  6           7       8     9       10 11         12
 Words: A  na finančních trzích se iracionální chování občas promění v  katastrofu .
 
 # sentence level graph:
 (s16p1 / proměnit-se-001
+        :aspect performance
         :clausal-marker (s16a1 / a)
         :place (s16t1 / trh
-            :mod (s16f1 / finanční
-                :refer-number plural)
-            :refer-number plural)
-        :ARG0 (s16c1 / chování
+            :refer-number plural
+            :mod (s16f1 / finanční))
+        :ARG1 (s16c1 / chování
+            :refer-number singular
             :ARG0 (s16e1 / entity)
-            :manner (s16i1 / iracionální
-                :refer-number singular)
-            :refer-number singular)
+            :manner (s16i1 / iracionální))
         :frequency (s16o1 / občas)
-        :ARG1 (s16k1 / katastrofa
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect performance)
+        :ARG2 (s16k1 / katastrofa
+            :refer-number singular))
 
 # alignment:
 s16p1: 5-5,9-9
@@ -880,70 +764,52 @@ s16k1: 10-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s17-root
+# meta-info :: sent_id = u_tree-cs-s17-root :: type = partial_conversion
 # :: snt17
 Index: 1    2  3   4     5       6  7  8           9  10  11     12       13        14 15     16        17 18       19      20 21       22 23      24 25    26 27      28  29      30     31 32   33           34   35 36     37    38      39   40
 Words: Když se trh začne otřásat ,  je rozhodující ,  aby stejné množství informací o  cenách transakcí a  křivkách nabídky a  poptávky (  příkazů ke koupi a  prodeji při různých cenách )  bylo zpřístupněno všem ,  nikoli pouze tvůrcům trhu .
 
 # sentence level graph:
 (s17b1 / být-007
+        :aspect activity
         :condition (s17z1 / začít-001
+            :aspect performance
             :ARG0 (s17t1 / trh
                 :refer-number singular)
             :ARG1 (s17o1 / otřásat-se-001
-                :ARG0 s17t1
-                :aspect activity)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect performance)
-        :ARG1 (s17r1 / rozhodující
-            :refer-number singular)
-        :ARG0 (s17z2 / zpřístupnit-001
+                :aspect activity
+                :ARG1 s17t1))
+        :ARG2 (s17r1 / rozhodující)
+        :ARG1 (s17z2 / zpřístupnit-001
+            :aspect performance
             :ARG1 (s17m1 / množství
-                :mod (s17s1 / stejný
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s17s1 / stejný)
                 :mod (s17i1 / identity-91
                     :ARG1 (s17i2 / informace
                         :mod (s17a1 / and
                             :op1 (s17c1 / cena
-                                :mod (s17t2 / transakce
-                                    :refer-number plural)
-                                :refer-number plural)
+                                :mod (s17t2 / transakce))
                             :op2 (s17k1 / křivka
                                 :mod (s17a2 / and
-                                    :op1 (s17n1 / nabídka
-                                        :refer-number singular)
-                                    :op2 (s17p1 / poptávka
-                                        :refer-number singular))
-                                :refer-number plural))
-                        :refer-number plural)
+                                    :op1 (s17n1 / nabídka)
+                                    :op2 (s17p1 / poptávka)))))
                     :ARG2 (s17p2 / příkaz
                         :mod (s17a3 / and
-                            :op1 (s17k2 / koupě
-                                :refer-number singular)
-                            :op2 (s17p3 / prodej
-                                :refer-number singular))
+                            :op1 (s17k2 / koupě)
+                            :op2 (s17p3 / prodej))
                         :condition (s17c2 / cena
-                            :mod (s17r2 / různý
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number plural))
-                :refer-number singular)
+                            :refer-number plural
+                            :mod (s17r2 / různý)))))
             :ARG0 (s17e1 / entity)
             :ARG2 (s17b2 / but-91
                 :ARG1 (s17v1 / všechen
                     :refer-number plural)
                 :clausal-marker (s17p4 / pouze)
                 :ARG2 (s17t3 / tvůrce
-                    :mod (s17t4 / trh
-                        :refer-number singular)
+                    :polarity -
                     :refer-number plural
-                    :polarity -))
-            :refer-number singular
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :mod (s17t4 / trh)))))
 
 # alignment:
 s17b1: 7-7
@@ -983,7 +849,7 @@ s17t4: 39-39
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s18-root
+# meta-info :: sent_id = u_tree-cs-s18-root :: type = partial_conversion
 # :: snt18
 Index: 1     2          3         4  5        6  7   8    9     10        11 12     13    14   15 16      17    18   19 20    21      22        23 24     25          26 27     28   29      30 31   32   33      34      35 36    37     38        39        40 41   42
 Words: Kvůli nedostatku informací a  přístupu k  nim jsou mnozí investoři -  včetně právě těch ,  jejichž kupní síla by mohla obnovit stabilitu a  snížit nestabilitu -  nuceni stát stranou ,  když jsou nejvíce potřeba ,  neboť nemají podstatné informace o  trhu .
@@ -991,62 +857,52 @@ Words: Kvůli nedostatku informací a  přístupu k  nim jsou mnozí investoři 
 # sentence level graph:
 (s18h1 / have-cause-91
         :ARG1 (s18n1 / nutit-002
+            :aspect activity
             :cause (s18a1 / and
                 :op1 (s18n2 / nedostatek
-                    :mod (s18i1 / informace
-                        :refer-number plural)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s18i1 / informace))
                 :op2 (s18p1 / přístup
-                    :goal s18i1
-                    :refer-number singular))
+                    :refer-number singular
+                    :goal s18i1))
             :ARG2 (s18i2 / investor
-                :mod (s18m1 / mnohý
-                    :refer-number plural)
+                :refer-number plural
+                :mod (s18m1 / mnohý)
                 :companion (s18t1 / ten
+                    :refer-number plural
                     :clausal-marker (s18p2 / právě)
                     :mod (s18a2 / and
                         :op1 (s18o1 / obnovit-001
+                            :aspect performance
                             :ARG0 (s18s1 / síla
+                                :refer-number singular
                                 :mod s18t1
-                                :mod (s18k1 / kupní
-                                    :refer-number singular)
-                                :refer-number singular)
+                                :mod (s18k1 / kupní))
                             :ARG1 (s18s2 / stabilita
-                                :refer-number singular)
-                            :aspect performance)
+                                :refer-number singular))
                         :op2 (s18s3 / snížit-001
+                            :aspect performance
                             :ARG0 s18s1
                             :ARG1 (s18n3 / nestabilita
-                                :refer-number singular)
-                            :aspect performance))
-                    :refer-number plural)
-                :refer-number plural)
+                                :refer-number singular)))))
             :ARG0 (s18e1 / entity)
             :ARG1 (s18s4 / stát-012
+                :aspect activity
                 :ARG0 s18i2
                 :place (s18s5 / stranou)
                 :temporal (s18b1 / být-020
-                    :ARG0 s18i2
+                    :aspect activity
+                    :ARG1 s18i2
                     :extent (s18h2 / hodně)
-                    :predicative-noun (s18p3 / potřeba)
-                    :refer-number plural
-                    :refer-person 3rd
-                    :aspect activity)
-                :aspect activity)
-            :refer-number plural
-            :aspect activity)
+                    :ARG2 (s18p3 / potřeba))))
         :ARG2 (s18m2 / mít-002
+            :aspect state
+            :polarity -
             :ARG0 s18i2
             :ARG1 (s18i3 / informace
-                :mod (s18p4 / podstatný
-                    :refer-number plural)
-                :mod (s18t2 / trh
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect state
-            :polarity -))
+                :refer-number plural
+                :mod (s18p4 / podstatný)
+                :mod (s18t2 / trh))))
 
 # alignment:
 s18h1: 36-36
@@ -1083,73 +939,57 @@ s18t2: 40-41
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s19-root
+# meta-info :: sent_id = u_tree-cs-s19-root :: type = partial_conversion
 # :: snt19
 Index: 1   2  3  4      5       6            7      8           9  10    11       12    13      14        15 16      17                18        19 20 21       22    23 24 25 26         27 28    29 30       31      32          33          34 35 36  37       38   39      40 41         42     43       44     45
 Words: Měl by se zavést moderní elektronický systém obchodování ,  který umožňuje rovný přístup investorů -  zejména institucionálních investorů -  do obchodní arény (  a  k  informacím ,  které by takovýto přístup automaticky doprovázely )  ,  aby americké trhy získaly na schopnosti tlumit následné otřesy .
 
 # sentence level graph:
 (s19z1 / zavést-003
+        :aspect performance
         :ARG0 (s19e1 / entity)
         :ARG1 (s19s1 / systém
-            :mod (s19m1 / moderní
-                :refer-number singular)
-            :mod (s19e2 / elektronický
-                :refer-number singular)
+            :refer-number singular
+            :mod (s19m1 / moderní)
+            :mod (s19e2 / elektronický)
             :mod (s19o1 / obchodování
                 :ARG1 (s19e3 / entity)
-                :ARG0 (s19e4 / entity)
-                :refer-number singular)
+                :ARG0 (s19e4 / entity))
             :ARG0-of (s19u1 / umožňovat-002
+                :aspect activity
                 :ARG1 (s19p1 / přístup
-                    :mod (s19r1 / rovný
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s19r1 / rovný)
                     :mod (s19i1 / identity-91
-                        :ARG1 (s19i2 / investor
-                            :refer-number plural)
+                        :ARG1 (s19i2 / investor)
                         :clausal-marker (s19z2 / zejména)
                         :ARG2 (s19i3 / investor
-                            :mod (s19i4 / institucionální
-                                :refer-number plural)
-                            :refer-number plural))
+                            :mod (s19i4 / institucionální)))
                     :goal (s19a1 / and
                         :op1 (s19a2 / aréna
-                            :mod (s19o2 / obchodní
-                                :refer-number singular)
                             :refer-number singular
-                            :refer-person 3rd)
+                            :mod (s19o2 / obchodní))
                         :op2 (s19i5 / informace
+                            :refer-number plural
                             :ARG0-of (s19d1 / doprovázet-004
+                                :aspect activity
                                 :ARG1 (s19p2 / přístup
-                                    :mod (s19t1 / takovýto
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :manner (s19a3 / automaticky)
-                                :refer-number plural
-                                :aspect activity)
-                            :refer-number plural))
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number singular)
+                                    :refer-number singular
+                                    :mod (s19t1 / takovýto))
+                                :manner (s19a3 / automaticky)))))))
         :purpose (s19z3 / získat-005
+            :aspect performance
             :ARG0 (s19t2 / trh
-                :mod (s19a4 / americký
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s19a4 / americký))
             :ARG1 (s19s2 / schopnost
+                :refer-number singular
                 :mod (s19t3 / tlumit-001
+                    :aspect activity
                     :ARG0 s19t2
                     :ARG1 (s19o3 / otřes
-                        :mod (s19n1 / následný
-                            :refer-number plural)
-                        :refer-number plural)
-                    :aspect activity)
-                :refer-number singular)
-            :refer-number plural
-            :aspect performance)
-        :aspect performance)
+                        :refer-number plural
+                        :mod (s19n1 / následný))))))
 
 # alignment:
 s19z1: 1-4
@@ -1191,40 +1031,33 @@ s19n1: 43-43
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s20-root
+# meta-info :: sent_id = u_tree-cs-s20-root :: type = partial_conversion
 # :: snt20
 Index: 1  2       3  4         5      6        7        8           9  10      11     12   13          14        15   16   17    18
 Words: V  rozporu s  některými názory obchodní aktivity specialistů a  dalších tvůrců trhu nepřinášejí likviditu trhu jako celku .
 
 # sentence level graph:
 (s20p1 / přinášet-003
+        :aspect activity
+        :polarity -
         :regard (s20n1 / názor
-            :mod (s20n2 / některý
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s20n2 / některý))
         :ARG0 (s20a1 / aktivita
-            :mod (s20o1 / obchodní
-                :refer-number plural)
+            :refer-number plural
+            :mod (s20o1 / obchodní)
             :mod (s20a2 / and
-                :op1 (s20s1 / specialista
-                    :refer-number plural)
+                :op1 (s20s1 / specialista)
                 :op2 (s20t1 / tvůrce
-                    :mod (s20d1 / další
-                        :refer-number plural)
-                    :mod (s20t2 / trh
-                        :refer-number singular)
-                    :refer-number plural))
-            :refer-number plural)
+                    :mod (s20d1 / další)
+                    :mod (s20t2 / trh))))
         :ARG1 (s20l1 / likvidita
             :refer-number singular)
         :affectee (s20t3 / trh
+            :refer-number singular
             :mod (s20c1 / celek
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity
-        :polarity -)
+                :refer-number singular
+                :mod-of s20t3)))
 
 # alignment:
 s20p1: 13-13
@@ -1248,39 +1081,32 @@ s20c1: 16-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s21-root
+# meta-info :: sent_id = u_tree-cs-s21-root :: type = partial_conversion
 # :: snt21
 Index: 1  2      3    4         5  6  7        8  9   10 11    12    13     14
 Words: Co tvůrci trhu přinášejí ,  je rychlost ,  což je velmi cenná služba .
 
 # sentence level graph:
 (s21b1 / být-007
-        :ARG1 (s21p1 / přinášet-003
+        :aspect activity
+        :ARG2 (s21p1 / přinášet-003
+            :aspect activity
             :ARG1 (s21c1 / co)
             :ARG0 (s21t1 / tvůrce
-                :mod (s21t2 / trh
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                :refer-number plural
+                :mod (s21t2 / trh)))
         :ARG0 (s21i1 / identity-91
             :ARG1 (s21r1 / rychlost
                 :refer-number singular)
             :ARG2 (s21b2 / být-007
-                :ARG0 (s21c2 / což
-                    :refer-number singular)
-                :ARG1 (s21s1 / služba
-                    :mod (s21c3 / cenný
-                        :extent (s21v1 / velmi)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :aspect activity
+                :ARG1 (s21e1 / entity
+                    :refer-number singular
+                    :refer-person 3rd)
+                :ARG2 (s21s1 / služba
+                    :refer-number singular
+                    :mod (s21c2 / cenný
+                        :extent (s21v1 / velmi))))))
 
 # alignment:
 s21b1: 6-6
@@ -1291,33 +1117,31 @@ s21t2: 3-3
 s21i1: 8-8
 s21r1: 7-7
 s21b2: 10-10
-s21c2: 9-9
+s21e1: 9-9
 s21s1: 13-13
-s21c3: 12-12
+s21c2: 12-12
 s21v1: 11-11
 
 # document level annotation:
 (s21s0 / sentence
     :coref ((s21t2 :same-entity s20t3)
-            (s21c2 :same-entity s21r1)))
+            (s21e1 :same-entity s21r1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s22-root
+# meta-info :: sent_id = u_tree-cs-s22-root :: type = partial_conversion
 # :: snt22
 Index: 1         2    3      4
 Words: Likvidita není služba .
 
 # sentence level graph:
 (s22b1 / být-007
-        :ARG0 (s22l1 / likvidita
-            :refer-number singular)
-        :ARG1 (s22s1 / služba
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity
-        :polarity -)
+        :polarity -
+        :ARG1 (s22l1 / likvidita
+            :refer-number singular)
+        :ARG2 (s22s1 / služba
+            :refer-number singular))
 
 # alignment:
 s22b1: 2-2
@@ -1329,60 +1153,52 @@ s22s1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s23-root
+# meta-info :: sent_id = u_tree-cs-s23-root :: type = partial_conversion
 # :: snt23
 Index: 1  2  3         4    5  6         7        8       9  10      11 12   13 14  15         16     17        18    19 20       21     22  23
 Words: Je to vlastnost trhu -  schopnost vstřebat příkazy k  prodeji ,  aniž by při nedostatku nových informací došlo k  výrazným změnám cen .
 
 # sentence level graph:
 (s23b1 / být-007
-        :ARG0 (s23t1 / ten
-            :refer-number singular)
+        :aspect activity
+        :ARG1 (s23e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
         :ARG1 (s23i1 / identity-91
             :ARG1 (s23v1 / vlastnost
-                :mod (s23t2 / trh
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s23t1 / trh))
             :ARG2 (s23s1 / schopnost
+                :refer-number singular
                 :mod (s23b2 / but-91
                     :ARG1 (s23v2 / vstřebat-001
-                        :ARG0 (s23e1 / entity)
-                        :ARG1 (s23p1 / příkaz
-                            :mod (s23p2 / prodej
-                                :refer-number singular)
-                            :refer-number plural)
-                        :aspect performance)
-                    :ARG2 (s23d1 / dojít-009
-                        :temporal (s23n1 / nedostatek
-                            :mod (s23i2 / informace
-                                :mod (s23n2 / nový
-                                    :refer-number plural)
-                                :refer-number plural)
-                            :refer-number singular)
-                        :ARG0 (s23z1 / změna
-                            :mod (s23v3 / výrazný
-                                :refer-number plural)
-                            :mod (s23c1 / cena
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular
                         :aspect performance
-                        :polarity -))
-                :refer-number singular))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :ARG0 (s23e2 / entity)
+                        :ARG1 (s23p1 / příkaz
+                            :refer-number plural
+                            :mod (s23p2 / prodej)))
+                    :ARG2 (s23d1 / dojít-009
+                        :aspect performance
+                        :polarity -
+                        :temporal (s23n1 / nedostatek
+                            :refer-number singular
+                            :mod (s23i2 / informace
+                                :mod (s23n2 / nový)))
+                        :ARG1 (s23z1 / změna
+                            :refer-number plural
+                            :mod (s23v3 / výrazný)
+                            :mod (s23c1 / cena)))))))
 
 # alignment:
 s23b1: 1-1
-s23t1: 2-2
+s23e1: 2-2
 s23i1: 5-5
 s23v1: 3-3
-s23t2: 4-4
+s23t1: 4-4
 s23s1: 6-6
 s23b2: 12-12
 s23v2: 7-7
-s23e1: 0-0
+s23e2: 0-0
 s23p1: 8-8
 s23p2: 9-10
 s23d1: 13-13,18-18
@@ -1395,12 +1211,12 @@ s23c1: 22-22
 
 # document level annotation:
 (s23s0 / sentence
-    :coref ((s23t1 :same-entity s22l1)
-            (s23t2 :same-entity s21t2)))
+    :coref ((s23e1 :same-entity s22l1)
+            (s23t1 :same-entity s21t2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s24-root
+# meta-info :: sent_id = u_tree-cs-s24-root :: type = partial_conversion
 # :: snt24
 Index: 1      2    3      4  5  6  7  8         9     10     11 12 13     14     15 16   17       18     19 20          21 22     23     24    25         26
 Words: Tvůrci trhu kupují to ,  co si investoři přejí prodat ,  a  jejich úkolem je tyto nechtěné pozice co nejrychleji se ziskem prodat jiným investorům .
@@ -1408,50 +1224,39 @@ Words: Tvůrci trhu kupují to ,  co si investoři přejí prodat ,  a  jejich �
 # sentence level graph:
 (s24a1 / and
         :op1 (s24k1 / kupovat-001
+            :aspect activity
             :ARG0 (s24t1 / tvůrce
-                :mod (s24t2 / trh
-                    :refer-number singular)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s24t2 / trh))
             :ARG1 (s24p1 / přát-si-002
+                :aspect state
                 :ARG0 (s24i1 / investor
                     :refer-number plural)
                 :ARG1 (s24p2 / prodat-001
+                    :aspect performance
                     :ARG0 s24i1
                     :ARG1 (s24c1 / co)
-                    :ARG2 (s24e1 / entity)
-                    :aspect performance)
-                :refer-number plural
-                :refer-person 3rd
-                :aspect state)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                    :ARG2 (s24e1 / entity))))
         :op2 (s24b1 / být-007
-            :ARG1 (s24u1 / úkol
-                :mod s24t1
-                :refer-number singular)
-            :ARG0 (s24p3 / prodat-001
+            :aspect activity
+            :ARG2 (s24u1 / úkol
+                :refer-number singular
+                :mod s24t1)
+            :ARG1 (s24p3 / prodat-001
+                :aspect performance
                 :ARG1 (s24p4 / pozice
-                    :mod (s24t3 / tento
-                        :refer-number plural)
-                    :mod (s24c2 / chtěný
-                        :refer-number plural
-                        :polarity -)
                     :refer-number plural
-                    :refer-person 3rd)
+                    :mod (s24t3 / tento)
+                    :mod (s24c2 / chtěný
+                        :polarity -))
                 :ARG0 s24t1
                 :manner (s24r1 / rychle
                     :extent (s24c3 / co))
                 :companion (s24z1 / zisk
                     :refer-number singular)
                 :ARG2 (s24i2 / investor
-                    :mod (s24j1 / jiný
-                        :refer-number plural)
-                    :refer-number plural)
-                :aspect performance)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                    :refer-number plural
+                    :mod (s24j1 / jiný)))))
 
 # alignment:
 s24a1: 12-12
@@ -1477,12 +1282,12 @@ s24j1: 24-24
 
 # document level annotation:
 (s24s0 / sentence
-    :coref ((s24t2 :same-entity s23t2)
+    :coref ((s24t2 :same-entity s23t1)
             (s24p4 :same-event s24p1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s25-root
+# meta-info :: sent_id = u_tree-cs-s25-root :: type = partial_conversion
 # :: snt25
 Index: 1  2        3    4  5    6         7        8    9        10       11       12     13   14 15  16  17        18          19    20 21        22 23 24  25  26   27    28      29 30      31    32 33 34    35  36   37        38 39       40     41 42    43       44     45 46      47 48    49       50            51
 Words: V  důsledku toho si sice kterýkoli zákazník může zakoupit rychlost prodejem tvůrci trhu (  což pro investora představuje mikro -  likviditu )  ,  ale trh jako celek zůstává ve stejném stavu ,  v  jakém byl před transakcí :  Nechtěná pozice je stále nechtěná pozice ,  změnila se pouze identita prodávajícího .
@@ -1492,74 +1297,60 @@ Words: V  důsledku toho si sice kterýkoli zákazník může zakoupit rychlost 
         :clausal-marker (s25s1 / sice)
         :ARG1 (s25i1 / identity-91
             :ARG1 (s25z1 / zakoupit-001
-                :cause (s25t1 / ten
-                    :refer-number singular)
+                :aspect performance
+                :cause (s25t1 / ten)
                 :ARG0 (s25z2 / zákazník
-                    :mod (s25k1 / kterýkoli
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s25k1 / kterýkoli))
                 :ARG2 s25z2
                 :ARG1 (s25r1 / rychlost
                     :refer-number singular)
                 :instrument (s25p1 / prodej
+                    :refer-number singular
                     :mod (s25t2 / tvůrce
-                        :mod (s25t3 / trh
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect performance)
+                        :mod (s25t3 / trh))))
             :ARG2 (s25p2 / představovat-003
+                :aspect activity
                 :ARG0 (s25c1 / což)
                 :affectee (s25i2 / investor
                     :refer-number singular)
                 :ARG1 (s25l1 / likvidita
-                    :mod (s25m1 / mikro)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity))
+                    :refer-number singular
+                    :mod (s25m1 / mikro))))
         :ARG2 (s25i3 / identity-91
             :ARG1 (s25z3 / zůstávat-006
+                :aspect habitual
                 :ARG0 (s25t4 / trh
+                    :refer-number singular
                     :mod (s25c2 / celek
-                        :refer-number singular)
-                    :refer-number singular)
-                :place (s25s2 / stav
-                    :mod (s25s3 / stejný
-                        :refer-number singular)
-                    :place-of (s25b2 / být-011
-                        :ARG0 s25t4
-                        :temporal (s25t5 / transakce
-                            :refer-number singular)
                         :refer-number singular
-                        :aspect activity)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect habitual)
+                        :mod-of s25t4))
+                :place (s25s2 / stav
+                    :refer-number singular
+                    :mod (s25s3 / stejný)
+                    :place-of (s25b2 / být-011
+                        :aspect activity
+                        :ARG1 s25t4
+                        :temporal (s25t5 / transakce
+                            :refer-number singular))))
             :ARG2 (s25a1 / and
                 :op1 (s25b3 / být-007
-                    :ARG0 (s25p3 / pozice
+                    :aspect activity
+                    :ARG1 (s25p3 / pozice
+                        :refer-number singular
                         :mod (s25c3 / chtěný
-                            :refer-number singular
-                            :polarity -)
-                        :refer-number singular)
+                            :polarity -))
                     :duration (s25s4 / stále)
-                    :ARG1 (s25p4 / pozice
+                    :ARG2 (s25p4 / pozice
+                        :refer-number singular
                         :mod (s25c4 / chtěný
-                            :refer-number singular
-                            :polarity -)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity)
+                            :polarity -)))
                 :op2 (s25z4 / změnit-se-001
-                    :ARG0 (s25i4 / identita
+                    :aspect performance
+                    :ARG1 (s25i4 / identita
+                        :refer-number singular
                         :clausal-marker (s25p5 / pouze)
-                        :mod (s25p6 / prodávající
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect performance))))
+                        :mod (s25p6 / prodávající))))))
 
 # alignment:
 s25b1: 24-24
@@ -1607,93 +1398,74 @@ s25p6: 50-50
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s26-root
+# meta-info :: sent_id = u_tree-cs-s26-root :: type = partial_conversion
 # :: snt26
 Index: 1   2       3         4  5  6       7            8       9      10   11 12       13        14     15 16     17 18   19   20 21   22      23          24   25 26      27  28  29      30     31 32    33       34   35     36   37 38  39    40   41 42     43 44  45    46     47
 Words: Lze dokonce prohlásit ,  že zvýšení kapitálových závazků tvůrců trhu (  výsledek některých studií po krachu v  roce 1987 )  také zvyšuje nestabilitu trhu ,  protože čím víc cenných papírů v  daném okamžiku drží tvůrci trhu ,  tím větší tlak na prodej se nad trhem vznáší .
 
 # sentence level graph:
 (s26l1 / lze-001
-        :affectee (s26e1 / entity)
+        :aspect state
+        :affectee (s26p1 / person)
         :clausal-marker (s26d1 / dokonce)
-        :ARG0 (s26p1 / prohlásit-003
-            :ARG0 s26e1
+        :ARG2 (s26p2 / prohlásit-003
+            :aspect performance
+            :ARG0 s26p1
             :effect (s26z1 / zvyšovat-001
+                :aspect activity
                 :ARG0 (s26i1 / identity-91
                     :ARG1 (s26z2 / zvýšení
-                        :ARG0 (s26e2 / entity)
+                        :refer-number singular
+                        :ARG0 (s26e1 / entity)
                         :ARG1 (s26z3 / závazek
-                            :mod (s26k1 / kapitálový
-                                :refer-number plural)
+                            :refer-number plural
+                            :mod (s26k1 / kapitálový)
                             :mod (s26t1 / tvůrce
-                                :mod (s26t2 / trh
-                                    :refer-number singular)
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular)
+                                :mod (s26t2 / trh))))
                     :ARG2 (s26v1 / výsledek
+                        :refer-number singular
                         :mod (s26s1 / studie
-                            :mod (s26n1 / některý
-                                :refer-number plural)
+                            :mod (s26n1 / některý)
                             :temporal (s26k2 / krach
+                                :refer-number singular
                                 :temporal (s26r1 / rok
-                                    :name (s26x2 / 1987)
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number plural)
-                        :refer-number singular))
+                                    :refer-number singular
+                                    :name (s26x2 / 1987))))))
                 :clausal-marker (s26t3 / také)
                 :ARG1 (s26n2 / nestabilita
-                    :mod (s26t4 / trh
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s26t4 / trh))
                 :cause (s26v2 / vznášet-se-001
+                    :aspect activity
                     :ARG0 (s26t5 / tlak
+                        :refer-number singular
                         :mod (s26v3 / velký
                             :extent (s26d2 / držet-005
-                                :ARG1 (s26p2 / papír
+                                :aspect activity
+                                :ARG1 (s26p3 / papír
+                                    :refer-number plural
                                     :mod (s26h1 / hodně
                                         :extent (s26c1 / co))
-                                    :mod (s26c2 / cenný
-                                        :refer-number plural)
-                                    :refer-number plural)
-                                :place (s26o1 / okamžik
-                                    :mod (s26d3 / daný
-                                        :refer-number singular)
-                                    :refer-number singular)
+                                    :mod (s26c2 / cenný))
+                                :temporal (s26o1 / okamžik
+                                    :refer-number singular
+                                    :mod (s26d3 / daný))
                                 :ARG0 (s26t6 / tvůrce
-                                    :mod (s26t7 / trh
-                                        :refer-number singular)
-                                    :refer-number plural)
-                                :refer-number plural
-                                :refer-person 3rd
-                                :aspect activity)
-                            :refer-number singular)
-                        :mod (s26p3 / prodej
-                            :refer-number singular)
-                        :refer-number singular)
+                                    :refer-number plural
+                                    :mod (s26t7 / trh))))
+                        :mod (s26p4 / prodej))
                     :place (s26t8 / trh
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect state)
+                        :refer-number singular)))))
 
 # alignment:
 s26l1: 1-1
-s26e1: 0-0
+s26p1: 0-0
 s26d1: 2-2
-s26p1: 3-3
+s26p2: 3-3
 s26z1: 5-5,22-22
 s26i1: 11-11
 s26z2: 6-6
-s26e2: 0-0
+s26e1: 0-0
 s26z3: 8-8
 s26k1: 7-7
 s26t1: 9-9
@@ -1711,7 +1483,7 @@ s26v2: 26-26,43-43,46-46
 s26t5: 40-40
 s26v3: 39-39
 s26d2: 34-34,38-38
-s26p2: 30-30
+s26p3: 30-30
 s26h1: 28-28
 s26c1: 27-27
 s26c2: 29-29
@@ -1719,7 +1491,7 @@ s26o1: 31-31,33-33
 s26d3: 32-32
 s26t6: 35-35
 s26t7: 36-36
-s26p3: 41-42
+s26p4: 41-42
 s26t8: 44-45
 
 # document level annotation:
@@ -1730,7 +1502,7 @@ s26t8: 44-45
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s27-root
+# meta-info :: sent_id = u_tree-cs-s27-root :: type = partial_conversion
 # :: snt27
 Index: 1  2         3             4       5  6         7        8  9     10 11 12    13       14 15      16 17       18    19 20      21   22              23             24      25 26   27    28    29     30      31 32       33 34      35 36    37 38      39  40    41   42 43 44       45      46 47        48 49 50   51 52      53 54       55      56
 Words: V  otevřeném elektronickém systému by kterýkoli investor ,  který by si chtěl zaplatit za přístup do obchodní arény v  reálném čase prostřednictvím registrovaného makléře ,  mohl vidět úplné křivky nabídky a  poptávky (  příkazy ke koupi a  prodeji při každé ceně )  ,  vkládané makléři i  investory ,  a  mohl by zadávat a  provádět příkazy .
@@ -1738,77 +1510,64 @@ Words: V  otevřeném elektronickém systému by kterýkoli investor ,  který b
 # sentence level graph:
 (s27a1 / and
         :op1 (s27v1 / vidět-007
+            :aspect state
             :place (s27s1 / systém
-                :mod (s27o1 / otevřený
-                    :refer-number singular)
-                :mod (s27e1 / elektronický
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s27o1 / otevřený)
+                :mod (s27e1 / elektronický))
             :ARG0 (s27i1 / investor
-                :mod (s27k1 / kterýkoli
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s27k1 / kterýkoli)
                 :ARG0-of (s27z1 / zaplatit-001
+                    :aspect performance
                     :ARG1 (s27e2 / entity)
                     :affectee s27i1
-                    :effect (s27p1 / přístup
+                    :ARG3 (s27p1 / přístup
+                        :refer-number singular
                         :goal (s27a2 / aréna
-                            :mod (s27o2 / obchodní
-                                :refer-number singular)
-                            :refer-number singular)
+                            :refer-number singular
+                            :mod (s27o2 / obchodní))
                         :temporal (s27c1 / čas
-                            :mod (s27r1 / reálný
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular
+                            :mod (s27r1 / reálný)))
                     :instrument (s27m1 / makléř
-                        :mod (s27r2 / registrovaný
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect performance)
-                :refer-number singular)
+                        :refer-number singular
+                        :mod (s27r2 / registrovaný))))
             :ARG1 (s27i2 / identity-91
                 :ARG1 (s27k2 / křivka
-                    :mod (s27u1 / úplný
-                        :refer-number plural)
+                    :refer-number plural
+                    :mod (s27u1 / úplný)
                     :mod (s27a3 / and
-                        :op1 (s27n1 / nabídka
-                            :refer-number singular)
-                        :op2 (s27p2 / poptávka
-                            :refer-number singular))
+                        :op1 (s27n1 / nabídka)
+                        :op2 (s27p2 / poptávka))
                     :mod (s27v2 / vkládaný
                         :ARG0 (s27a4 / and
                             :op1 (s27m2 / makléř
                                 :refer-number plural)
                             :op2 (s27i3 / investor
-                                :refer-number plural))
-                        :refer-number plural)
-                    :refer-number plural)
+                                :refer-number plural))))
                 :ARG2 (s27p3 / příkaz
+                    :refer-number plural
                     :mod s27v2
                     :mod (s27a5 / and
-                        :op1 (s27k3 / koupě
-                            :refer-number singular)
-                        :op2 (s27p4 / prodej
-                            :refer-number singular))
+                        :op1 (s27k3 / koupě)
+                        :op2 (s27p4 / prodej))
                     :condition (s27c2 / cena
-                        :mod (s27k4 / každý
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number plural))
-            :aspect state)
+                        :refer-number singular
+                        :mod (s27k4 / každý)))))
         :op2 (s27a6 / and
             :op1 (s27z2 / zadávat-001
+                :aspect habitual
                 :place s27s1
                 :ARG0 s27i1
                 :ARG2 (s27e3 / entity)
-                :ARG1 s27p5
-                :aspect habitual)
+                :ARG1 s27p5)
             :op2 (s27p6 / provádět-006
+                :aspect activity
                 :place s27s1
                 :ARG0 s27i1
-                :predicative-noun (s27p5 / příkaz
-                    :refer-number plural)
-                :aspect activity)))
+                :ARG1 (s27p5 / příkaz
+                    :refer-number plural))))
 
 # alignment:
 s27a1: 49-49
@@ -1855,49 +1614,37 @@ s27p5: 55-55
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s28-root
+# meta-info :: sent_id = u_tree-cs-s28-root :: type = partial_conversion
 # :: snt28
 Index: 1     2      3  4        5        6        7      8     9         10   11 12     13  14  15 16                17 18    19 20 21   22    23   24        25 26     27   28      29
 Words: Běžné kotace by odrážely společný finanční úsudek všech účastníků trhu -  nikoli jen ten od zprostředkovatelů ,  kteří se v  době krize mají mimořádně na pozoru před rizikem .
 
 # sentence level graph:
 (s28o1 / odrážet-001
+        :aspect activity
         :ARG0 (s28k1 / kotace
-            :mod (s28b1 / běžný
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s28b1 / běžný))
         :ARG1 (s28b2 / but-91
             :ARG1 (s28u1 / úsudek
-                :mod (s28s1 / společný
-                    :refer-number singular)
-                :mod (s28f1 / finanční
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s28s1 / společný)
+                :mod (s28f1 / finanční)
                 :mod (s28u2 / účastník
-                    :mod (s28v1 / všechen
-                        :refer-number plural)
-                    :mod (s28t1 / trh
-                        :refer-number singular)
-                    :refer-number plural)
-                :refer-number singular)
+                    :mod (s28v1 / všechen)
+                    :mod (s28t1 / trh)))
             :clausal-marker (s28j1 / jen)
             :ARG2 (s28t2 / ten
+                :polarity -
                 :mod (s28z1 / zprostředkovatel
                     :ARG0-of (s28m1 / mít-se-003
+                        :aspect activity
                         :temporal (s28k2 / krize
                             :refer-number singular)
                         :extent (s28m2 / mimořádně)
-                        :part-of-phraseme (s28n1 / na_pozoru
-                            :refer-number singular)
+                        :part-of-phraseme (s28n1 / na_pozoru)
                         :ARG1 (s28r1 / riziko
-                            :refer-number singular)
-                        :refer-number plural
-                        :refer-person 3rd
-                        :aspect activity)
-                    :refer-number plural)
-                :refer-number singular
-                :polarity -))
-        :refer-number plural
-        :aspect activity)
+                            :refer-number singular))))))
 
 # alignment:
 s28o1: 3-4
@@ -1925,13 +1672,14 @@ s28r1: 27-28
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s29-root
+# meta-info :: sent_id = u_tree-cs-s29-root :: type = partial_conversion
 # :: snt29
 Index: 1         2  3              4  5  6           7  8        9        10 11 12  13      14       15 16     17 18 19       20     21       22 23 24    25   26     27       28 29   30    31 32   33 34   35 36   37   38       39    40 41      42      43     44
 Words: Investoři i  profesionálové by si konkurovali za stejných pravidel ,  o  něž Kongres usiloval a  nazval je "  národním tržním systémem "  (  ještě jich nebylo dosaženo )  před téměř 15 lety ,  když v  roce 1975 schválil zákon o  reformě cenných papírů .
 
 # sentence level graph:
 (s29k1 / konkurovat-001
+        :aspect activity
         :ARG0 (s29a1 / and
             :op1 (s29i1 / investor
                 :refer-number plural)
@@ -1939,58 +1687,46 @@ Words: Investoři i  profesionálové by si konkurovali za stejných pravidel , 
                 :refer-number plural))
         :ARG1 s29a1
         :condition (s29p2 / pravidlo
-            :mod (s29s1 / stejný
-                :refer-number plural)
+            :refer-number plural
+            :mod (s29s1 / stejný)
             :mod (s29a2 / and
                 :op1 (s29u1 / usilovat-001
+                    :aspect activity
                     :ARG1 s29p2
                     :ARG0 (s29k2 / Kongres
                         :refer-number singular)
                     :parenthesis (s29d1 / dosáhnout-001
+                        :aspect performance
+                        :polarity -
                         :ARG0 (s29e1 / entity)
                         :temporal (s29j1 / ještě)
-                        :ARG1 s29p2
-                        :refer-number singular
-                        :aspect performance
-                        :polarity -)
+                        :ARG1 s29p2)
                     :temporal (s29r1 / rok
+                        :refer-number plural
                         :mod (s29x4 / 15
-                            :extent (s29t1 / téměř))
-                        :refer-number plural)
+                            :extent (s29t1 / téměř)))
                     :temporal (s29s2 / schválit-002
+                        :aspect performance
                         :temporal (s29r2 / rok
-                            :name (s29x5 / 1975)
-                            :refer-number singular)
+                            :refer-number singular
+                            :name (s29x5 / 1975))
                         :ARG0 s29k2
                         :ARG1 (s29z1 / zákon
+                            :refer-number singular
                             :mod (s29r3 / reforma
                                 :mod (s29p3 / papír
-                                    :mod (s29c1 / cenný
-                                        :refer-number plural)
-                                    :refer-number plural)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular
-                        :aspect performance)
-                    :refer-number singular
-                    :aspect activity)
+                                    :mod (s29c1 / cenný))))))
                 :op2 (s29n1 / nazvat-001
+                    :aspect performance
                     :ARG0 s29k2
                     :parenthesis s29d1
                     :temporal s29r1
                     :temporal s29s2
                     :ARG1 s29p2
-                    :effect (s29s3 / systém
-                        :mod (s29n2 / národní
-                            :refer-number singular)
-                        :mod (s29t2 / tržní
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :aspect performance))
-            :refer-number plural)
-        :refer-number plural
-        :aspect activity)
+                    :ARG2 (s29s3 / systém
+                        :refer-number singular
+                        :mod (s29n2 / národní)
+                        :mod (s29t2 / tržní))))))
 
 # alignment:
 s29k1: 4-4,6-6
@@ -2025,30 +1761,26 @@ s29t2: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s30-root
+# meta-info :: sent_id = u_tree-cs-s30-root :: type = partial_conversion
 # :: snt30
 Index: 1      2  3    4  5        6     7          8  9       10 11       12     13 14
 Words: Výkyvy na trhu z  minulého pátku nevyústily v  závažné "  následné otřesy "  .
 
 # sentence level graph:
 (s30v1 / vyústit-001
+        :aspect performance
+        :polarity -
         :ARG0 (s30v2 / výkyv
+            :refer-number plural
             :place (s30t1 / trh
                 :refer-number singular)
             :temporal (s30p1 / pátek
-                :mod (s30m1 / minulý
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural)
+                :refer-number singular
+                :mod (s30m1 / minulý)))
         :ARG1 (s30o1 / otřes
-            :mod (s30z1 / závažný
-                :refer-number plural)
-            :mod (s30n1 / následný
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number plural
-        :aspect performance
-        :polarity -)
+            :refer-number plural
+            :mod (s30z1 / závažný)
+            :mod (s30n1 / následný)))
 
 # alignment:
 s30v1: 7-7
@@ -2067,7 +1799,7 @@ s30n1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s31-root
+# meta-info :: sent_id = u_tree-cs-s31-root :: type = partial_conversion
 # :: snt31
 Index: 1    2    3   4      5  6    7    8   9    10     11
 Words: Byli jsme tak chytří ,  nebo jsme jen měli štěstí ?
@@ -2075,19 +1807,16 @@ Words: Byli jsme tak chytří ,  nebo jsme jen měli štěstí ?
 # sentence level graph:
 (s31o1 / or
         :op1 (s31b1 / být-007
-            :ARG0 (s31e1 / entity)
-            :ARG1 (s31c1 / chytrý
-                :extent (s31t1 / tak)
-                :refer-number plural)
-            :refer-number plural
-            :aspect activity)
+            :aspect activity
+            :ARG1 (s31e1 / entity)
+            :ARG2 (s31c1 / chytrý
+                :extent (s31t1 / tak)))
         :clausal-marker (s31j1 / jen)
         :op2 (s31m1 / mít-040
-            :ARG0 s31e1
-            :predicative-noun (s31s1 / štěstí
-                :refer-number singular)
-            :refer-number plural
-            :aspect state))
+            :aspect state
+            :ARG1 s31e1
+            :ARG2 (s31s1 / štěstí
+                :refer-number singular)))
 
 # alignment:
 s31o1: 6-6
@@ -2104,20 +1833,17 @@ s31s1: 10-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s32-root
+# meta-info :: sent_id = u_tree-cs-s32-root :: type = partial_conversion
 # :: snt32
 Index: 1      2  3    4
 Words: Nejsem si jist .
 
 # sentence level graph:
 (s32b1 / být-007
-        :ARG0 (s32e1 / entity)
-        :ARG1 (s32j1 / jist_si
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 1st
         :aspect activity
-        :polarity -)
+        :polarity -
+        :ARG1 (s32e1 / entity)
+        :ARG2 (s32j1 / jist_si))
 
 # alignment:
 s32b1: 1-1
@@ -2129,64 +1855,55 @@ s32j1: 2-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s33-root
+# meta-info :: sent_id = u_tree-cs-s33-root :: type = partial_conversion
 # :: snt33
 Index: 1    2  3    4    5  6  7      8             9       10    11 12          13 14  15 16 17        18 19  20   21    22        23       24         25       26   27 28    29    30 31    32       33        34     35   36
 Words: Jsem si však jist ,  že musíme maximalizovat ochranu proti "  zemětřesení "  tím ,  že zajistíme ,  aby naše tržní struktury umožnily investorům obohatit trhy v  našem státě o  svojí výraznou schopnost tlumit šoky .
 
 # sentence level graph:
 (s33b1 / být-007
-        :ARG0 (s33e1 / entity)
+        :aspect activity
+        :ARG1 (s33e1 / entity)
         :clausal-marker (s33v1 / však)
-        :ARG1 (s33j1 / jistý_si
+        :ARG2 (s33j1 / jistý_si
             :ARG1 (s33m1 / maximalizovat-001
+                :aspect process
                 :ARG0 (s33e2 / entity)
                 :ARG1 (s33o1 / ochrana
-                    :mod (s33z1 / zemětřesení
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s33z1 / zemětřesení))
                 :instrument (s33z2 / zajistit-001
+                    :aspect performance
                     :ARG0 (s33e3 / entity)
                     :ARG1 (s33u1 / umožnit-001
+                        :aspect performance
                         :ARG0 (s33s1 / struktura
-                            :mod (s33e4 / entity
+                            :refer-number plural
+                            :mod (s33p1 / person
                                 :refer-number plural
                                 :refer-person 1st)
-                            :mod (s33t1 / tržní
-                                :refer-number plural)
-                            :refer-number plural)
+                            :mod (s33t1 / tržní))
                         :ARG2 (s33i1 / investor
                             :refer-number plural)
                         :ARG1 (s33o2 / obohatit-001
+                            :aspect performance
                             :ARG0 s33i1
                             :ARG1 (s33t2 / trh
+                                :refer-number plural
                                 :place (s33s2 / stát
-                                    :mod (s33e5 / entity
-                                        :refer-number singular
-                                        :refer-person 1st)
-                                    :refer-number singular)
-                                :refer-number plural)
+                                    :refer-number singular
+                                    :mod (s33p2 / person
+                                        :refer-number plural
+                                        :refer-person 1st)))
                             :effect (s33s3 / schopnost
+                                :refer-number singular
                                 :mod s33i1
-                                :mod (s33v2 / výrazný
-                                    :refer-number singular)
+                                :mod (s33v2 / výrazný)
                                 :mod (s33t3 / tlumit-001
+                                    :aspect activity
                                     :ARG0 s33i1
                                     :ARG1 (s33s4 / šok
-                                        :refer-number plural)
-                                    :aspect activity)
-                                :refer-number singular)
-                            :aspect performance)
-                        :refer-number plural
-                        :aspect performance)
-                    :refer-number plural
-                    :refer-person 1st
-                    :aspect performance)
-                :aspect process)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 1st
-        :aspect activity)
+                                        :refer-number plural)))))))))
 
 # alignment:
 s33b1: 1-1
@@ -2201,13 +1918,13 @@ s33z2: 14-14,16-17
 s33e3: 0-0
 s33u1: 19-19,23-23
 s33s1: 22-22
-s33e4: 20-20
+s33p1: 20-20
 s33t1: 21-21
 s33i1: 24-24,31-31
 s33o2: 25-25
 s33t2: 26-26
 s33s2: 27-27,29-29
-s33e5: 28-28
+s33p2: 28-28
 s33s3: 30-30,33-33
 s33v2: 32-32
 s33t3: 34-34
@@ -2219,36 +1936,28 @@ s33s4: 35-35
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s34-root
+# meta-info :: sent_id = u_tree-cs-s34-root :: type = partial_conversion
 # :: snt34
 Index: 1   2     3  4         5              6   7       8          9           10 11         12 13  14     15
 Words: Pan Peake je předsedou představenstva své vlastní poradenské společnosti v  Englewoodu v  New Jersey .
 
 # sentence level graph:
 (s34b1 / být-007
-        :ARG0 (s34p1 / Peake
-            :mod (s34p2 / Pan
-                :refer-number singular)
-            :refer-number singular)
-        :ARG1 (s34p3 / předseda
+        :aspect activity
+        :ARG1 (s34p1 / Peake
+            :refer-number singular
+            :mod (s34p2 / Pan))
+        :ARG2 (s34p3 / předseda
+            :refer-number singular
             :mod (s34p4 / představenstvo
                 :mod (s34s1 / společnost
                     :mod s34p1
-                    :mod (s34v1 / vlastní
-                        :refer-number singular)
-                    :mod (s34p5 / poradenský
-                        :refer-number singular)
+                    :mod (s34v1 / vlastní)
+                    :mod (s34p5 / poradenský)
                     :place (s34e1 / Englewood
-                        :place (s34x2 / #Forn
-                            :FPHR (s34n1 / New)
-                            :FPHR (s34j1 / Jersey))
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number singular
+                        :place (s34f1 / foreign-phrase
+                            :op1 "New" :op2 "Jersey"))))))
 
 # alignment:
 s34b1: 3-3
@@ -2260,9 +1969,7 @@ s34s1: 9-9
 s34v1: 7-7
 s34p5: 8-8
 s34e1: 10-11
-s34x2: 0-0
-s34n1: 13-13
-s34j1: 14-14
+s34f1: 13-14
 
 # document level annotation:
 (s34s0 / sentence

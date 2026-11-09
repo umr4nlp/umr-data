@@ -1,20 +1,19 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1           2     3    4       5
 Words: Nechranická nádrž před opravou hráze
 
 # sentence level graph:
 (s1e1 / event
+        :aspect state
         :ARG0 (s1n1 / nádrž
-            :mod (s1n2 / nechranický
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s1n2 / nechranický))
         :temporal (s1o1 / oprava
+            :refer-number singular
             :ARG1 (s1h1 / hráz
-                :refer-number singular)
-            :refer-number singular)
-        :aspect state)
+                :refer-number singular)))
 
 # alignment:
 s1e1: 0-0
@@ -28,7 +27,7 @@ s1h1: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1        2
 Words: Chomutov -
@@ -45,50 +44,41 @@ s2c1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1  2           3        4  5    6  7     8     9  10        11     12      13 14        15 16   17        18     19   20    21     22     23    24       25      26     27
 Words: Na Nechranické přehradě na Ohři ,  která patří k  největším vodním nádržím v  republice ,  bude provedena oprava 3280 metrů dlouhé sypané hráze narušené vodními vlnami .
 
 # sentence level graph:
 (s3p1 / provést-002
+        :aspect performance
         :place (s3p2 / přehrada
-            :mod (s3n1 / nechranický
-                :refer-number singular)
+            :refer-number singular
+            :mod (s3n1 / nechranický)
             :place (s3o1 / Ohře
                 :refer-number singular)
-            :ARG0-of (s3p3 / patřit-003
-                :goal (s3n2 / nádrž
+            :ARG1-of (s3p3 / patřit-003
+                :aspect state
+                :ARG2 (s3n2 / nádrž
+                    :refer-number plural
                     :place (s3r1 / republika
                         :refer-number singular)
-                    :mod (s3v1 / vodní
-                        :refer-number plural)
-                    :mod (s3v2 / velký
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect state)
-            :refer-number singular)
+                    :mod (s3v1 / vodní)
+                    :mod (s3v2 / velký))))
         :ARG0 (s3e1 / entity)
         :ARG1 (s3o2 / oprava
+            :refer-number singular
             :ARG1 (s3h1 / hráz
-                :mod (s3s1 / sypaný
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s3s1 / sypaný)
                 :mod (s3d1 / dlouhý
                     :extent (s3m1 / metr
-                        :mod (s3x1 / 3280)
-                        :refer-number plural)
-                    :refer-number singular)
+                        :refer-number plural
+                        :mod (s3x1 / 3280)))
                 :mod (s3n3 / narušený
                     :ARG0 (s3v3 / vlna
-                        :mod (s3v4 / vodní
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :aspect performance)
+                        :refer-number plural
+                        :mod (s3v4 / vodní))))))
 
 # alignment:
 s3p1: 16-17
@@ -120,29 +110,25 @@ s3v4: 25-25
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1     2  3      4  5  6  7  8      9    10   11  12
 Words: Uvedl to mluvčí a  .  s  .  Povodí Ohře Petr Vít .
 
 # sentence level graph:
 (s4u1 / uvést-007
-        :effect (s4t1 / ten
-            :refer-number singular)
+        :aspect performance
+        :effect (s4t1 / ten)
         :ARG0 (s4v1 / Vít
-            :mod (s4p1 / Petr
-                :refer-number singular)
+            :refer-number singular
+            :mod (s4p1 / Petr)
             :mod (s4m1 / mluvčí
                 :possessor (s4s1 / společnost
                     :mod (s4a1 / akciový)
                     :name (s4p2 / povodí
+                        :refer-number singular
                         :possessor (s4o1 / Ohře
-                            :refer-number singular)
-                        :refer-number singular))
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                            :refer-number singular))))))
 
 # alignment:
 s4u1: 1-1
@@ -162,7 +148,7 @@ s4o1: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1      2    3     4    5        6  7    8   9         10    11   12 13     14            15 16       17   18
 Words: Oprava bude podle Víta zahájena v  létě při nejnižším stavu vody a  potrvá pravděpodobně do příštího roku .
@@ -170,6 +156,7 @@ Words: Oprava bude podle Víta zahájena v  létě při nejnižším stavu vody 
 # sentence level graph:
 (s5a1 / and
         :op1 (s5z1 / zahájit-001
+            :aspect performance
             :ARG1 (s5o1 / oprava
                 :refer-number singular)
             :regard (s5v1 / Vít
@@ -178,22 +165,17 @@ Words: Oprava bude podle Víta zahájena v  létě při nejnižším stavu vody 
             :temporal (s5l1 / léto
                 :refer-number singular)
             :condition (s5s1 / stav
+                :refer-number singular
                 :possessor (s5v2 / voda
                     :refer-number singular)
-                :mod (s5n1 / nízký
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance)
+                :mod (s5n1 / nízký)))
         :op2 (s5p1 / potrvat-001
+            :aspect performance
             :ARG0 s5o1
             :clausal-marker (s5p2 / pravděpodobně)
             :temporal (s5r1 / rok
-                :mod (s5p3 / příští
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect performance))
+                :refer-number singular
+                :mod (s5p3 / příští))))
 
 # alignment:
 s5a1: 12-12
@@ -217,26 +199,24 @@ s5p3: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1           2     3     4    5         6  7      8    9  10   11
 Words: Nechranická vodní nádrž byla postavena v  letech 1961 až 1968 .
 
 # sentence level graph:
 (s6p1 / postavit-008
+        :aspect performance
         :ARG1 (s6n1 / nádrž
-            :mod (s6n2 / nechranický
-                :refer-number singular)
-            :mod (s6v1 / vodní
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s6n2 / nechranický)
+            :mod (s6v1 / vodní))
         :ARG0 (s6e1 / entity)
         :temporal (s6r1 / rok
-            :mod (s6m1 / math
+            :refer-number plural
+            :mod (s6m1 / math-entity
                 :op1 (s6x1 / 1961)
-                :op2 (s6x2 / 1968))
-            :refer-number plural)
-        :aspect performance)
+                :op2 (s6x2 / 1968))))
 
 # alignment:
 s6p1: 4-5
@@ -256,32 +236,27 @@ s6x2: 10-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1   2         3    4       5  6         7      8    9       10
 Words: Při maximální výši hladiny má zatopenou plochu 1338 hektarů .
 
 # sentence level graph:
 (s7m1 / mít-009
+        :aspect state
         :condition (s7v1 / výše
+            :refer-number singular
             :possessor (s7h1 / hladina
                 :refer-number singular)
-            :mod (s7m2 / maximální
-                :refer-number singular)
-            :refer-number singular)
+            :mod (s7m2 / maximální))
         :ARG0 (s7e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG1 (s7p1 / plocha
-            :mod (s7z1 / zatopený
-                :refer-number singular)
+            :refer-number singular
+            :mod (s7z1 / zatopený)
             :mod (s7h2 / hektar
-                :mod (s7x1 / 1338)
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect state)
+                :mod (s7x1 / 1338))))
 
 # alignment:
 s7m1: 5-5
@@ -300,7 +275,7 @@ s7x1: 8-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1     2  3      4   5          6        7  8           9  10     11   12   13    14    15   16
 Words: Nádrž je určena pro zásobování průmyslu a  zemědělství ,  slouží také jako zdroj pitné vody .
@@ -308,32 +283,28 @@ Words: Nádrž je určena pro zásobování průmyslu a  zemědělství ,  slou�
 # sentence level graph:
 (s8a1 / and
         :op1 (s8u1 / určit-001
+            :aspect performance
             :ARG1 (s8n1 / nádrž
-                :refer-number singular
-                :refer-person 3rd)
+                :refer-number singular)
             :ARG0 (s8e1 / entity)
             :purpose (s8z1 / zásobování
+                :refer-number singular
                 :ARG0 s8n1
                 :ARG1 (s8a2 / and
                     :op1 (s8p1 / průmysl
                         :refer-number singular)
                     :op2 (s8z2 / zemědělství
-                        :refer-number singular))
-                :refer-number singular)
-            :aspect performance)
+                        :refer-number singular))))
         :op2 (s8s1 / sloužit-005
+            :aspect activity
             :ARG0 s8n1
             :clausal-marker (s8t1 / také)
             :manner (s8z3 / zdroj
+                :refer-number singular
                 :mod-of s8n1
                 :possessor (s8v1 / voda
-                    :mod (s8p2 / pitný
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                    :refer-number singular
+                    :mod (s8p2 / pitný)))))
 
 # alignment:
 s8a1: 9-9
@@ -356,24 +327,24 @@ s8p2: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1         2  3 4   5        6      7    8
 Words: Osvědčila se i při regulaci povodí Ohře .
 
 # sentence level graph:
 (s9o1 / osvědčit-se-001
+        :aspect performance
         :ARG0 (s9e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :clausal-marker (s9i1 / i)
         :temporal (s9r1 / regulace
+            :refer-number singular
             :ARG1 (s9p1 / povodí
+                :refer-number singular
                 :possessor (s9o2 / Ohře
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :aspect performance)
+                    :refer-number singular))))
 
 # alignment:
 s9o1: 1-2
@@ -390,25 +361,22 @@ s9o2: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1        2      3        4       5    6        7    8
 Words: Přehrada prošla podobnou opravou před dvanácti lety .
 
 # sentence level graph:
 (s10p1 / projít-003
+        :aspect performance
         :ARG0 (s10p2 / přehrada
-            :refer-number singular
-            :refer-person 3rd)
-        :ARG1 (s10o1 / oprava
-            :mod (s10p3 / podobný
-                :refer-number singular)
             :refer-number singular)
+        :ARG1 (s10o1 / oprava
+            :refer-number singular
+            :mod (s10p3 / podobný))
         :temporal (s10r1 / rok
-            :mod (s10d1 / dvanáct
-                :refer-number plural)
-            :refer-number plural)
-        :aspect performance)
+            :refer-number plural
+            :mod (s10d1 / dvanáct)))
 
 # alignment:
 s10p1: 2-2
@@ -424,41 +392,34 @@ s10d1: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1  2           3  4      5     6            7      8  9     10    11 12   13         14  15        16        17    18      19
 Words: Ta nastávající ,  kterou budou zabezpečovat polské a  české firmy ,  musí proběhnout bez úmyslného snižování vodní hladiny .
 
 # sentence level graph:
 (s11p1 / proběhnout-003
-        :ARG0 (s11o1 / oprava
-            :mod (s11t1 / ten
-                :refer-number singular)
-            :mod (s11n1 / nastávající
-                :refer-number singular)
+        :aspect performance
+        :ARG1 (s11o1 / oprava
+            :refer-number singular
+            :mod (s11t1 / ten)
+            :mod (s11n1 / nastávající)
             :ARG1-of (s11z1 / zabezpečovat-002
+                :aspect activity
                 :ARG0 (s11a1 / and
                     :op1 (s11f1 / firma
-                        :mod (s11p2 / polský
-                            :refer-number plural)
-                        :refer-number plural)
+                        :refer-number plural
+                        :mod (s11p2 / polský))
                     :op2 (s11f2 / firma
-                        :mod (s11c1 / český
-                            :refer-number plural)
-                        :refer-number plural))
-                :aspect activity)
-            :refer-number singular
-            :refer-person 3rd)
+                        :refer-number plural
+                        :mod (s11c1 / český)))))
         :companion (s11s1 / snižování
+            :refer-number singular
             :ARG0 (s11e1 / entity)
             :ARG1 (s11h1 / hladina
-                :mod (s11v1 / vodní
-                    :refer-number singular)
-                :refer-number singular)
-            :manner (s11u1 / úmyslný
-                :refer-number singular)
-            :refer-number singular)
-        :aspect performance)
+                :refer-number singular
+                :mod (s11v1 / vodní))
+            :manner (s11u1 / úmyslný)))
 
 # alignment:
 s11p1: 12-13

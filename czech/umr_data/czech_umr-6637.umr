@@ -1,90 +1,75 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1     2           3       4     5   6  7  8     9    10 11     12        13 14     15 16 17 18 19 20    21   22      23
 Words: AKCIE společnosti Applied Power Inc .  ,  které byly v  květnu rozděleny v  poměru 2  za 1  ,  od srpna 1988 stouply .
 
 # sentence level graph:
 (s1s1 / stoupnout-001
+        :aspect performance
         :ARG0 (s1a1 / akcie
+            :refer-number singular
             :mod (s1s2 / společnost
-                :name (s1x1 / #Forn
-                    :FPHR (s1a2 / Applied)
-                    :FPHR (s1p1 / Power)
-                    :FPHR (s1i1 / Inc)
-                    :FPHR (s1x2 / .))
-                :refer-number singular)
+                :name (s1n1 / name
+                    :op1 "Applied" :op2 "Power" :op3 "Inc."))
             :ARG1-of (s1r1 / rozdělit-003
+                :aspect performance
                 :ARG0 (s1e1 / entity)
                 :temporal (s1k1 / květen
                     :refer-number singular)
-                :manner (s1p2 / poměr
-                    :extent (s1m1 / math
-                        :op1 (s1x3 / 2)
-                        :op2 (s1x4 / 1))
-                    :refer-number singular)
-                :refer-number plural
-                :aspect performance)
-            :refer-number singular)
+                :manner (s1p1 / poměr
+                    :refer-number singular
+                    :extent (s1m1 / math-entity
+                        :op1 (s1x1 / 2)
+                        :op2 (s1x2 / 1)))))
         :temporal (s1s3 / srpen
-            :mod (s1x5 / 1988)
-            :refer-number singular)
-        :refer-number plural
-        :aspect performance)
+            :refer-number singular
+            :mod (s1x3 / 1988)))
 
 # alignment:
 s1s1: 22-22
 s1a1: 1-1,8-8
 s1s2: 2-2
-s1x1: 0-0
-s1a2: 3-3
-s1p1: 4-4
-s1i1: 5-5
-s1x2: 6-6
+s1n1: 3-6
 s1r1: 9-9,12-12
 s1e1: 0-0
 s1k1: 10-11
-s1p2: 13-14
+s1p1: 13-14
 s1m1: 16-16
-s1x3: 15-15
-s1x4: 17-17
+s1x1: 15-15
+s1x2: 17-17
 s1s3: 19-20
-s1x5: 21-21
+s1x3: 21-21
 
 # document level annotation:
 (s1s0 / sentence)
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1  2         3      4    5         6       7  8  9    10    11   12          13 14    15   16     17
 Words: Ve včerejším vydání bylo nesprávně uvedeno ,  že cena akcií této společnosti od srpna 1988 klesla .
 
 # sentence level graph:
 (s2u1 / uvést-007
+        :aspect performance
         :ARG0 (s2e1 / entity)
         :place (s2v1 / vydání
-            :mod (s2v2 / včerejší
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s2v2 / včerejší))
         :manner (s2s1 / správně
             :polarity -)
         :effect (s2k1 / klesnout-001
+            :aspect performance
             :ARG0 (s2c1 / cena
+                :refer-number singular
                 :mod (s2a1 / akcie
                     :mod (s2s2 / společnost
-                        :mod (s2t1 / tento
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number plural)
-                :refer-number singular)
+                        :mod (s2t1 / tento))))
             :temporal (s2s3 / srpen
-                :mod (s2x1 / 1988)
-                :refer-number singular)
-            :aspect performance)
-        :refer-number singular
-        :aspect performance)
+                :refer-number singular
+                :mod (s2x1 / 1988))))
 
 # alignment:
 s2u1: 4-4,6-6
@@ -104,6 +89,6 @@ s2x1: 15-15
 (s2s0 / sentence
     :coref ((s2s2 :same-entity s1s2)
             (s2s3 :same-entity s1s3)
-            (s2x1 :same-entity s1x5)))
+            (s2x1 :same-entity s1x3)))
 
 

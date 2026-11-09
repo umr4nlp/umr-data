@@ -1,18 +1,17 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1       2        3       4
 Words: Třetina populace dostala žihadlo
 
 # sentence level graph:
 (s1d1 / dostat-012
+        :aspect performance
         :ARG0 (s1t1 / třetina
             :mod (s1p1 / populace
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular))
         :ARG1 (s1z1 / žihadlo
-            :refer-number singular)
-        :aspect performance)
+            :refer-number singular))
 
 # alignment:
 s1d1: 3-3
@@ -25,7 +24,7 @@ s1z1: 4-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2
 Words: Praha -
@@ -42,13 +41,14 @@ s2p1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2    3    4        5     6       7       8      9     10        11       12       13  14
 Words: Včely nebo vosy pobodaly letos každého třetího občana České republiky staršího čtrnácti let .
 
 # sentence level graph:
 (s3p1 / pobodat-001
+        :aspect performance
         :ARG0 (s3o1 / or
             :op1 (s3v1 / včela
                 :refer-number plural)
@@ -56,23 +56,16 @@ Words: Včely nebo vosy pobodaly letos každého třetího občana České repub
                 :refer-number plural))
         :temporal (s3l1 / letos)
         :ARG1 (s3o2 / občan
+            :refer-number singular
             :possessor (s3r1 / republika
-                :mod (s3c1 / Český
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s3c1 / Český))
             :mod (s3s1 / starý
                 :comparison (s3r2 / rok
-                    :mod (s3c2 / čtrnáct
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular)
-            :mod (s3k1 / každý
-                :refer-number singular)
-            :mod (s3t1 / třetí
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number plural
-        :aspect performance)
+                    :refer-number plural
+                    :mod (s3c2 / čtrnáct)))
+            :mod (s3k1 / každý)
+            :mod (s3t1 / třetí)))
 
 # alignment:
 s3p1: 4-4
@@ -95,76 +88,70 @@ s3t1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1      2    3  4 5       6        7
 Words: Klíště mělo 15 % dospělé populace .
 
 # sentence level graph:
 (s4m1 / mít-009
+        :aspect state
         :ARG1 (s4k1 / klíště
             :refer-number singular)
-        :ARG0 (s4x1 / #Percnt
-            :mod (s4p1 / populace
-                :mod (s4d1 / dospělý
-                    :refer-number singular)
-                :refer-number singular)
-            :mod (s4x2 / 15))
-        :refer-number singular
-        :aspect state)
+        :ARG0 (s4p1 / percentage-entity
+            :value "15"
+            :mod (s4p2 / populace
+                :refer-number singular
+                :mod (s4d1 / dospělý))))
 
 # alignment:
 s4m1: 2-2
 s4k1: 1-1
-s4x1: 4-4
-s4p1: 6-6
+s4p1: 3-4
+s4p2: 6-6
 s4d1: 5-5
-s4x2: 3-3
 
 # document level annotation:
 (s4s0 / sentence
-    :coref ((s4p1 :same-entity s1p1)))
+    :coref ((s4p2 :same-entity s1p1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1         2  3  4       5  6     7  8     9        10   11   12  13     14          15       16  17     18   19 20        21     22   23
 Words: Vyplynulo to z  šetření ,  které v  srpnu provedla mezi více než tisíci respondenty agentura pro výzkum trhu a  veřejného mínění AISA .
 
 # sentence level graph:
 (s5v1 / vyplynout-001
-        :ARG0 (s5t1 / ten
+        :aspect performance
+        :ARG1 (s5t1 / ten
             :refer-number singular)
-        :ARG1 (s5s1 / šetření
+        :ARG2 (s5s1 / šetření
+            :refer-number singular
             :ARG0 (s5e1 / entity)
             :ARG1 (s5e2 / entity)
             :ARG1-of (s5p1 / provést-002
+                :aspect performance
                 :temporal (s5s2 / srpen
                     :refer-number singular)
                 :place (s5h1 / hodně
                     :comparison (s5t2 / tisíc
                         :mod (s5r1 / respondent
-                            :refer-number plural)
-                        :refer-number plural))
+                            :refer-number plural)))
                 :ARG0 (s5a1 / agentura
+                    :refer-number singular
                     :name (s5a2 / AISA)
                     :affectee (s5v2 / výzkum
+                        :refer-number singular
                         :ARG1 (s5a3 / and
                             :op1 (s5t3 / trh
                                 :refer-number singular)
                             :op2 (s5m1 / mínění
+                                :refer-number singular
                                 :ARG0 (s5e3 / entity)
                                 :ARG1 (s5e4 / entity)
-                                :mod (s5v3 / veřejný
-                                    :refer-number singular)
-                                :refer-number singular))
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect performance)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                                :mod (s5v3 / veřejný))))))))
 
 # alignment:
 s5v1: 1-1
@@ -192,30 +179,26 @@ s5v3: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1       2      3            4       5        6      7        8  9  10  11
 Words: Nejvíce těchto nepříjemných zážitků postihlo mladou populaci do 20 let .
 
 # sentence level graph:
 (s6p1 / postihnout-002
+        :aspect performance
         :ARG0 (s6z1 / zážitek
+            :refer-number plural
             :mod (s6h1 / hodně)
-            :mod (s6t1 / tento
-                :refer-number plural)
+            :mod (s6t1 / tento)
             :mod (s6p2 / příjemný
-                :refer-number plural
-                :polarity -)
-            :refer-number plural)
+                :polarity -))
         :ARG1 (s6p3 / populace
-            :mod (s6m1 / mladý
-                :refer-number singular)
+            :refer-number singular
+            :mod (s6m1 / mladý)
             :temporal (s6r1 / rok
-                :mod (s6x1 / 20)
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                :refer-number plural
+                :mod (s6x1 / 20))))
 
 # alignment:
 s6p1: 5-5
@@ -233,53 +216,47 @@ s6x1: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1        2         3  4     5         6           7     8       9          10 11      12        13 14 15 16      17 18    19    20   21 22      23      24      25         26         27      28     29
 Words: Kousnutí klíštětem je podle informací zdravotníků letos zvláště nebezpečné ,  protože například až 15 %  klíšťat na území Prahy může na člověka přenést lymskou borreliózu napadající nervový systém .
 
 # sentence level graph:
 (s7b1 / být-007
-        :ARG0 (s7k1 / kousnutí
+        :aspect activity
+        :ARG1 (s7k1 / kousnutí
+            :refer-number singular
             :ARG0 (s7k2 / klíště
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular))
         :regard (s7i1 / informace
+            :refer-number plural
             :ARG0 (s7z1 / zdravotník
-                :refer-number plural)
-            :refer-number plural)
+                :refer-number plural))
         :temporal (s7l1 / letos)
         :clausal-marker (s7z2 / zvláště)
-        :ARG1 (s7b2 / bezpečný
-            :refer-number singular
+        :ARG2 (s7b2 / bezpečný
             :polarity -)
         :cause (s7p1 / přenést-002
+            :aspect performance
             :clausal-marker (s7n1 / například)
-            :ARG0 (s7x1 / #Percnt
+            :ARG0 (s7p2 / percentage-entity
+                :value "15"
                 :mod (s7k3 / klíště
+                    :refer-number plural
                     :place (s7u1 / území
-                        :possessor (s7p2 / Praha
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number plural)
-                :clausal-marker (s7a1 / až)
-                :mod (s7x2 / 15))
+                        :refer-number singular
+                        :possessor (s7p3 / Praha
+                            :refer-number singular)))
+                :clausal-marker (s7a1 / až))
             :ARG2 (s7c1 / člověk
                 :refer-number singular)
             :ARG1 (s7b3 / borrelióza
-                :mod (s7l2 / lymský
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s7l2 / lymský)
                 :mod (s7n2 / napadající
                     :ARG1 (s7s1 / systém
-                        :mod (s7n3 / nervový
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number singular
+                        :mod (s7n3 / nervový))))))
 
 # alignment:
 s7b1: 3-3
@@ -292,12 +269,11 @@ s7z2: 8-8
 s7b2: 9-9
 s7p1: 11-11,20-20,23-23
 s7n1: 12-12
-s7x1: 15-15
+s7p2: 14-15
 s7k3: 16-16
 s7u1: 17-18
-s7p2: 19-19
+s7p3: 19-19
 s7a1: 13-13
-s7x2: 14-14
 s7c1: 21-22
 s7b3: 25-25
 s7l2: 24-24
@@ -309,47 +285,41 @@ s7n3: 27-27
 (s7s0 / sentence
     :coref ((s7k2 :same-entity s4k1)
             (s7l1 :same-entity s3l1)
-            (s7p2 :same-entity s2p1)))
+            (s7p3 :same-entity s2p1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1  2     3        4         5    6    7  8     9         10       11 12      13       14           15 16  17      18     19         20
 Words: Za první pololetí letošního roku bylo v  České republice zjištěno 44 případů klíšťové encefalitidy a  455 případů lymské borreliózy .
 
 # sentence level graph:
 (s8z1 / zjistit-002
+        :aspect performance
         :duration (s8p1 / pololetí
+            :refer-number singular
             :mod (s8r1 / rok
-                :mod (s8l1 / letošní
-                    :refer-number singular)
-                :refer-number singular)
-            :mod (s8p2 / první
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular
+                :mod (s8l1 / letošní))
+            :mod (s8p2 / první))
         :place (s8r2 / republika
-            :mod (s8c1 / Český
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s8c1 / Český))
         :ARG0 (s8e1 / entity)
         :ARG1 (s8a1 / and
             :op1 (s8p3 / případ
+                :refer-number plural
                 :name (s8e2 / encefalitida
-                    :mod (s8k1 / klíšťový
-                        :refer-number singular)
-                    :refer-number singular)
-                :mod (s8x1 / 44)
-                :refer-number plural)
+                    :refer-number singular
+                    :mod (s8k1 / klíšťový))
+                :mod (s8x1 / 44))
             :op2 (s8p4 / případ
+                :refer-number plural
                 :name (s8b1 / borrelióza
-                    :mod (s8l2 / lymský
-                        :refer-number singular)
-                    :refer-number singular)
-                :mod (s8x2 / 455)
-                :refer-number plural))
-        :refer-number singular
-        :aspect performance)
+                    :refer-number singular
+                    :mod (s8l2 / lymský))
+                :mod (s8x2 / 455))))
 
 # alignment:
 s8z1: 6-6,10-10
@@ -378,7 +348,7 @@ s8x2: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1    2   3    4     5        6         7       8  9          10   11 12  13       14       15         16 17    18     19
 Words: Vosí jed zase často obsahuje pesticidy užívané k  ošetřování polí ,  což vyvolává chemické podráždění v  místě vpichu .
@@ -386,40 +356,31 @@ Words: Vosí jed zase často obsahuje pesticidy užívané k  ošetřování pol
 # sentence level graph:
 (s9a1 / and
         :op1 (s9o1 / obsahovat-001
+            :aspect activity
             :clausal-marker (s9z1 / zase)
             :ARG0 (s9j1 / jed
-                :mod (s9v1 / vosí
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s9v1 / vosí))
             :frequency (s9c1 / často)
             :ARG1 (s9p1 / pesticid
+                :refer-number plural
                 :mod (s9u1 / užívaný
                     :purpose (s9o2 / ošetřování
+                        :refer-number singular
                         :ARG0 (s9e1 / entity)
                         :ARG1 (s9p2 / pole
-                            :refer-number plural)
-                        :refer-number singular)
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                            :refer-number plural)))))
         :op2 (s9v2 / vyvolávat-002
-            :ARG0 (s9c2 / což
-                :refer-number singular
-                :refer-person 3rd)
+            :aspect habitual
+            :ARG0 (s9c2 / což)
             :ARG1 (s9p3 / podráždění
+                :refer-number singular
                 :ARG0 (s9e2 / entity)
-                :mod (s9c3 / chemický
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s9c3 / chemický))
             :place (s9m1 / místo
+                :refer-number singular
                 :possessor (s9v3 / vpich
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect habitual))
+                    :refer-number singular))))
 
 # alignment:
 s9a1: 11-11

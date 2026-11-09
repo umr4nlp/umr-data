@@ -1,16 +1,16 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1 2       3
 Words: O prodeji kraslic
 
 # sentence level graph:
 (s1e1 / event
+        :aspect state
         :ARG1 (s1p1 / prodej
+            :refer-number singular
             :ARG1 (s1k1 / kraslice
-                :refer-number plural)
-            :refer-number singular)
-        :aspect state)
+                :refer-number plural)))
 
 # alignment:
 s1e1: 0-0
@@ -22,46 +22,42 @@ s1k1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2   3    4  5            6         7  8     9    10 11     12      13      14       15
 Words: Každý rok jsme o  velikonocích prodávali v  Praze nebo v  jiných velkých městech kraslice .
 
 # sentence level graph:
 (s2p1 / prodávat-001
+        :aspect habitual
         :frequency (s2r1 / rok
-            :mod (s2k1 / každý
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s2k1 / každý))
         :temporal (s2v1 / velikonoce
             :refer-number plural)
-        :ARG0 (s2e1 / entity
+        :ARG0 (s2p2 / person
             :refer-number plural
             :refer-person 1st)
-        :ARG2 (s2e2 / entity)
+        :ARG2 (s2e1 / entity)
         :place (s2o1 / or
-            :op1 (s2p2 / Praha
+            :op1 (s2p3 / Praha
                 :refer-number singular)
             :op2 (s2m1 / město
-                :mod (s2v2 / velký
-                    :refer-number plural)
-                :mod (s2j1 / jiný
-                    :refer-number plural)
-                :refer-number plural))
+                :refer-number plural
+                :mod (s2v2 / velký)
+                :mod (s2j1 / jiný)))
         :ARG1 (s2k2 / kraslice
-            :refer-number plural)
-        :refer-number plural
-        :aspect habitual)
+            :refer-number plural))
 
 # alignment:
 s2p1: 3-3,6-6
 s2r1: 2-2
 s2k1: 1-1
 s2v1: 4-5
+s2p2: 0-0
 s2e1: 0-0
-s2e2: 0-0
 s2o1: 9-9
-s2p2: 7-8
+s2p3: 7-8
 s2m1: 10-10,13-13
 s2v2: 12-12
 s2j1: 11-11
@@ -73,40 +69,40 @@ s2k2: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1      2  3        4 5     6
 Words: Můžeme je prodávat i letos ?
 
 # sentence level graph:
 (s3p1 / prodávat-001
-        :ARG0 (s3e1 / entity
+        :aspect habitual
+        :ARG0 (s3p2 / person
             :refer-number plural
             :refer-person 1st)
-        :ARG2 (s3e2 / entity)
-        :ARG1 (s3e3 / entity
+        :ARG2 (s3e1 / entity)
+        :ARG1 (s3e2 / entity
             :refer-number plural
             :refer-person 3rd)
         :clausal-marker (s3i1 / i)
-        :temporal (s3l1 / letos)
-        :aspect habitual)
+        :temporal (s3l1 / letos))
 
 # alignment:
 s3p1: 1-1,3-3
+s3p2: 0-0
 s3e1: 0-0
-s3e2: 0-0
-s3e3: 2-2
+s3e2: 2-2
 s3i1: 4-4
 s3l1: 5-5
 
 # document level annotation:
 (s3s0 / sentence
-    :coref ((s3e1 :same-entity s2e1)
-            (s3e3 :same-entity s2k2)))
+    :coref ((s3p2 :same-entity s2p2)
+            (s3e2 :same-entity s2k2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1     2        3 4      5  6
 Words: Cyril Hraboský , Veselí na Moravě
@@ -114,13 +110,11 @@ Words: Cyril Hraboský , Veselí na Moravě
 # sentence level graph:
 (s4a1 / and
         :op1 (s4h1 / Hraboský
-            :mod (s4c1 / Cyril
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s4c1 / Cyril))
         :op2 (s4v1 / Veselí
-            :mod (s4m1 / Morava
-                :refer-number singular)
-            :refer-number singular))
+            :refer-number singular
+            :mod (s4m1 / Morava)))
 
 # alignment:
 s4a1: 3-3
@@ -134,39 +128,32 @@ s4m1: 5-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1  2     3  4  5      6       7       8  9          10 11       12     13 14      15       16
 Words: V  Praze i  v  jiných velkých městech je pochůzkový a  stolkový prodej na ulicích zakázaný .
 
 # sentence level graph:
 (s5b1 / být-007
+        :aspect activity
         :place (s5a1 / and
             :op1 (s5p1 / Praha
                 :refer-number singular)
             :op2 (s5m1 / město
-                :mod (s5v1 / velký
-                    :refer-number plural)
-                :mod (s5j1 / jiný
-                    :refer-number plural)
-                :refer-number plural))
+                :refer-number plural
+                :mod (s5v1 / velký)
+                :mod (s5j1 / jiný)))
         :ARG0 (s5a2 / and
             :op1 (s5p2 / prodej
-                :mod (s5p3 / pochůzkový
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s5p3 / pochůzkový)
                 :place (s5u1 / ulice
-                    :refer-number plural)
-                :refer-number singular)
+                    :refer-number plural))
             :op2 (s5p4 / prodej
+                :refer-number singular
                 :place s5u1
-                :mod (s5s1 / stolkový
-                    :refer-number singular)
-                :refer-number singular))
-        :ARG1 (s5z1 / zakázaný
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :mod (s5s1 / stolkový)))
+        :ARG2 (s5z1 / zakázaný))
 
 # alignment:
 s5b1: 8-8
@@ -186,12 +173,12 @@ s5z1: 15-15
 # document level annotation:
 (s5s0 / sentence
     :coref ((s5a1 :same-entity s2o1)
-            (s5p1 :same-entity s2p2)
+            (s5p1 :same-entity s2p3)
             (s5m1 :same-entity s2m1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1       2  3         4     5   6      7             8     9  10 11 12           13      14    15 16       17 18      19     20
 Words: Výjimky ,  například právě pro prodej velikonočního zboží ,  se v  jednotlivých městech různí a  povolují je městské správy .
@@ -199,35 +186,27 @@ Words: Výjimky ,  například právě pro prodej velikonočního zboží ,  se 
 # sentence level graph:
 (s6a1 / and
         :op1 (s6r1 / různit-se-001
+            :aspect activity
             :ARG0 (s6v1 / výjimka
+                :refer-number plural
                 :clausal-marker (s6n1 / například)
                 :clausal-marker (s6p1 / právě)
                 :affectee (s6p2 / prodej
+                    :refer-number singular
                     :ARG1 (s6z1 / zboží
-                        :mod (s6v2 / velikonoční
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :ARG1 (s6x1 / #Rcp
-                :refer-number plural)
+                        :refer-number singular
+                        :mod (s6v2 / velikonoční))))
+            :ARG1 (s6x1 / %Rcp)
             :place (s6m1 / město
-                :mod (s6j1 / jednotlivý
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                :refer-number plural
+                :mod (s6j1 / jednotlivý)))
         :op2 (s6p3 / povolovat-001
+            :aspect activity
             :ARG2 (s6e1 / entity)
             :ARG1 s6x1
             :ARG0 (s6s1 / správa
-                :mod (s6m2 / městský
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity))
+                :refer-number plural
+                :mod (s6m2 / městský))))
 
 # alignment:
 s6a1: 15-15
@@ -255,34 +234,31 @@ s6m2: 18-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1  2     3         4          5       6       7  8            9  10      11      12     13 14      15       16
 Words: *  Praha vyhradila stánkovému prodeji tržnici v  Holešovicích a  několik menších tržišť v  dalších čtvrtích .
 
 # sentence level graph:
 (s7v1 / vyhradit-001
+        :aspect performance
         :ARG0 (s7p1 / Praha
             :refer-number singular)
         :ARG2 (s7p2 / prodej
-            :mod (s7s1 / stánkový
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s7s1 / stánkový))
         :ARG1 (s7a1 / and
             :op1 (s7t1 / tržnice
+                :refer-number singular
                 :place (s7h1 / Holešovice
-                    :refer-number plural)
-                :refer-number singular)
+                    :refer-number plural))
             :op2 (s7t2 / tržiště
-                :mod (s7m1 / malý
-                    :refer-number plural)
+                :refer-number plural
+                :mod (s7m1 / malý)
                 :mod (s7n1 / několik)
                 :place (s7c1 / čtvrť
-                    :mod (s7d1 / další
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural))
-        :aspect performance)
+                    :refer-number plural
+                    :mod (s7d1 / další)))))
 
 # alignment:
 s7v1: 3-3
@@ -305,28 +281,24 @@ s7d1: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1          2  3    4  5  6       7     8           9  10      11   12
 Words: Několikrát do roka se v  hlavním městě uskutečňují i  sezónní trhy .
 
 # sentence level graph:
 (s8u1 / uskutečňovat-se-001
+        :aspect activity
         :frequency (s8n1 / několikrát
             :duration (s8r1 / rok
                 :refer-number singular))
         :place (s8m1 / město
-            :mod (s8h1 / hlavní
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s8h1 / hlavní))
         :clausal-marker (s8i1 / i)
-        :ARG0 (s8t1 / trh
-            :mod (s8s1 / sezónní
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+        :ARG1 (s8t1 / trh
+            :refer-number plural
+            :mod (s8s1 / sezónní)))
 
 # alignment:
 s8u1: 4-4,8-8
@@ -344,7 +316,7 @@ s8s1: 10-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1         2       3        4   5 6    7           8    9
 Words: Například nedávný Josefský trh a nyní Velikonoční trhy .
@@ -352,26 +324,19 @@ Words: Například nedávný Josefský trh a nyní Velikonoční trhy .
 # sentence level graph:
 (s9a1 / and
         :op1 (s9u1 / uskutečňovat-se-001
-            :ARG0 (s9t1 / trh
+            :aspect activity
+            :ARG1 (s9t1 / trh
+                :refer-number singular
                 :clausal-marker (s9n1 / například)
-                :mod (s9j1 / Josefský
-                    :refer-number singular)
+                :mod (s9j1 / Josefský)
                 :mod (s9d1 / dávný
-                    :refer-number singular
-                    :polarity -)
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                    :polarity -)))
         :op2 (s9u2 / uskutečňovat-se-001
+            :aspect activity
             :temporal (s9n2 / nyní)
-            :ARG0 (s9t2 / trh
-                :mod (s9v1 / Velikonoční
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity))
+            :ARG1 (s9t2 / trh
+                :refer-number plural
+                :mod (s9v1 / Velikonoční))))
 
 # alignment:
 s9a1: 5-5
@@ -390,70 +355,58 @@ s9v1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1      2  3  4  5          6  7          8          9     10 11 12  13 14 15 16 17 18     19 20  21 22 23 24 25     26 27 28 29        30      31 32         33       34  35     36 37     38       39      40 41     42 43        44 45 46    47 48 49  50 51 52 53 54     55
 Words: Konají se :  Na Výstavišti -  organizuje Výstaviště Praha 7  ,  tel .  :  (  02 )  371043 ,  FAX :  (  02 )  371351 ,  a  na Havelském tržišti -  organizuje Sdružení pro obnovu a  rozvoj lidových řemesel a  tradic ,  Vojtěšská 13 ,  Praha 1  ,  tel :  (  02 )  291591 .
 
 # sentence level graph:
 (s10k1 / konat-se-001
-        :ARG0 (s10e1 / entity
+        :aspect activity
+        :ARG1 (s10e1 / entity
             :refer-number plural
             :refer-person 3rd)
         :place (s10a1 / and
             :op1 (s10v1 / výstaviště
+                :refer-number singular
                 :parenthesis (s10o1 / organizovat-001
+                    :aspect process
                     :ARG1 s10e1
                     :ARG0 (s10v2 / výstaviště
+                        :refer-number singular
                         :mod (s10p1 / Praha
-                            :mod (s10x2 / 7)
-                            :refer-number singular)
+                            :mod (s10x2 / 7))
                         :mod (s10a2 / and
                             :op1 (s10t1 / telefon
                                 :mod (s10x3 / 02_371043))
                             :op2 (s10f1 / fax
-                                :mod (s10x4 / 02_371351)
-                                :refer-number singular))
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect process)
-                :refer-number singular)
+                                :mod (s10x4 / 02_371351))))))
             :op2 (s10t2 / tržiště
-                :mod (s10h1 / havelský
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s10h1 / havelský)
                 :parenthesis (s10o2 / organizovat-001
+                    :aspect process
                     :ARG1 s10e1
                     :ARG0 (s10s1 / Sdružení
+                        :refer-number singular
                         :purpose (s10a3 / and
                             :op1 (s10o3 / obnova
+                                :refer-number singular
                                 :ARG1 (s10a4 / and
                                     :op1 (s10r1 / řemeslo
-                                        :mod (s10l1 / lidový
-                                            :refer-number plural)
-                                        :refer-number plural)
+                                        :refer-number plural
+                                        :mod (s10l1 / lidový))
                                     :op2 (s10t3 / tradice
-                                        :refer-number plural))
-                                :refer-number singular)
+                                        :refer-number plural)))
                             :op2 (s10r2 / rozvoj
-                                :ARG1 s10a4
-                                :refer-number singular))
+                                :refer-number singular
+                                :ARG1 s10a4))
                         :mod (s10p2 / Praha
                             :mod (s10x7 / 1)
                             :mod (s10v3 / Vojtěšský
-                                :mod (s10x8 / 13)
-                                :refer-number singular)
-                            :refer-number singular)
+                                :mod (s10x8 / 13)))
                         :mod (s10t4 / telefon
-                            :mod (s10x9 / 02_291591))
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect process)
-                :refer-number singular))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                            :mod (s10x9 / 02_291591)))))))
 
 # alignment:
 s10k1: 1-2
@@ -494,44 +447,39 @@ s10x9: 52-52,54-54
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1       2  3      4       5    6       7  8      9       10   11    12 13  14  15        16 17    18 19    20        21         22
 Words: Výjimku ze zákazu prodeje mimo tržiště ,  udělil obvodní úřad Prahy 1  jen těm prodejcům ,  kteří v  Praze prodávají každoročně .
 
 # sentence level graph:
 (s11u1 / udělit-001
+        :aspect performance
         :ARG1 (s11v1 / výjimka
+            :refer-number singular
             :start (s11z1 / zákaz
+                :refer-number singular
                 :ARG1 (s11p1 / prodej
+                    :refer-number singular
                     :place (s11t1 / tržiště
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                        :refer-number singular))))
         :ARG0 (s11u2 / úřad
-            :mod (s11o1 / obvodní
-                :refer-number singular)
+            :refer-number singular
+            :mod (s11o1 / obvodní)
             :possessor (s11p2 / Praha
-                :mod (s11x1 / 1)
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular
+                :mod (s11x1 / 1)))
         :ARG2 (s11p3 / prodejce
-            :mod (s11t2 / ten
-                :refer-number plural)
+            :refer-number plural
+            :mod (s11t2 / ten)
             :clausal-marker (s11j1 / jen)
             :ARG0-of (s11p4 / prodávat-001
+                :aspect habitual
                 :ARG1 (s11e1 / entity)
                 :ARG2 (s11e2 / entity)
                 :place (s11p5 / Praha
                     :refer-number singular)
-                :frequency (s11k1 / každoročně)
-                :refer-number plural
-                :refer-person 3rd
-                :aspect habitual)
-            :refer-number plural)
-        :refer-number singular
-        :aspect performance)
+                :frequency (s11k1 / každoročně))))
 
 # alignment:
 s11u1: 8-8
@@ -561,34 +509,28 @@ s11k1: 21-21
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1  2  3     4  5         6  7         8       9         10       11    12     13      14
 Words: *  V  Plzni je stánkařům k  dispozici tržnice pronajatá soukromé firmě Bratři Flaxové .
 
 # sentence level graph:
 (s12b1 / být-041
+        :aspect activity
         :place (s12p1 / Plzeň
             :refer-number singular)
         :affectee (s12s1 / stánkař
             :refer-number plural)
-        :part-of-phraseme (s12k1 / k_dispozici
-            :refer-number singular)
-        :ARG0 (s12t1 / tržnice
+        :ARG2 (s12k1 / k_dispozici)
+        :ARG1 (s12t1 / tržnice
+            :refer-number singular
             :mod (s12p2 / pronajatý
                 :ARG1 (s12f1 / firma
-                    :mod (s12s2 / soukromý
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s12s2 / soukromý)
                     :name (s12b2 / Bratr
-                        :mod (s12f2 / Flaxa
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number plural
+                        :mod (s12f2 / Flaxa))))))
 
 # alignment:
 s12b1: 4-4
@@ -607,7 +549,7 @@ s12f2: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1       2  3    4  5       6  7  8        9      10       11    12   13      14      15
 Words: Prodává se také na náměstí ,  od prodejců vybírá poplatek každé ráno správce tržiště .
@@ -615,31 +557,26 @@ Words: Prodává se také na náměstí ,  od prodejců vybírá poplatek každ�
 # sentence level graph:
 (s13a1 / and
         :op1 (s13p1 / prodávat-001
+            :aspect habitual
             :ARG0 (s13e1 / entity)
             :ARG1 (s13e2 / entity)
             :ARG2 (s13e3 / entity)
             :clausal-marker (s13t1 / také)
             :place (s13n1 / náměstí
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect habitual)
+                :refer-number singular))
         :op2 (s13v1 / vybírat-002
+            :aspect activity
             :source (s13p2 / prodejce
                 :refer-number plural)
             :ARG1 (s13p3 / poplatek
                 :refer-number singular)
             :frequency (s13r1 / ráno
-                :mod (s13k1 / každý
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s13k1 / každý))
             :ARG0 (s13s1 / správce
+                :refer-number singular
                 :ARG1 (s13t2 / tržiště
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                    :refer-number singular))))
 
 # alignment:
 s13a1: 6-6
@@ -663,7 +600,7 @@ s13t2: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1         2      3  4    5    6        7       8    9     10 11 12        13 14 15  16 17 18 19  20 21     22     23  24 25        26   27     28      29
 Words: Mimořádný prodej na pěší zóně povoluje obvodní úřad Plzeň 3  ,  Klatovská 10 ,  tel .  :  (  019 )  220745 klapka 206 ,  informace paní Blanka Šobrová .
@@ -671,43 +608,34 @@ Words: Mimořádný prodej na pěší zóně povoluje obvodní úřad Plzeň 3  
 # sentence level graph:
 (s14a1 / and
         :op1 (s14p1 / povolovat-001
+            :aspect activity
             :ARG1 (s14p2 / prodej
-                :mod (s14m1 / mimořádný
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s14m1 / mimořádný)
                 :place (s14z1 / zóna
-                    :mod (s14p3 / pěší
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
+                    :refer-number singular
+                    :mod (s14p3 / pěší)))
             :ARG2 (s14e1 / entity)
             :ARG0 (s14u1 / úřad
-                :mod (s14o1 / obvodní
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s14o1 / obvodní)
                 :name (s14p4 / Plzeň
+                    :refer-number singular
                     :mod (s14x1 / 3)
                     :mod (s14k1 / Klatovský
-                        :mod (s14x2 / 10)
-                        :refer-number singular)
-                    :refer-number singular)
+                        :mod (s14x2 / 10)))
                 :mod (s14t1 / telefon
                     :mod (s14x3 / 019_220745)
                     :mod (s14k2 / klapka
-                        :mod (s14x4 / 206)
-                        :refer-number singular))
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                        :mod (s14x4 / 206)))))
         :op2 (s14e2 / event
+            :aspect state
             :ARG1 (s14i1 / informace
                 :refer-number plural)
             :ARG0 (s14s1 / Šobrová
-                :mod (s14b1 / Blanka
-                    :refer-number singular)
-                :mod (s14p5 / paní
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect state))
+                :refer-number singular
+                :mod (s14b1 / Blanka)
+                :mod (s14p5 / paní))))
 
 # alignment:
 s14a1: 24-24
@@ -738,7 +666,7 @@ s14p5: 26-26
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1  2  3       4            5        6       7  8      9       10   11        12    13         14    15    16    17 18  19 20 21 22  23 24     25 26        27   28   29       30
 Words: *  V  Českých Budějovicích povoluje výjimky ze zákazu prodeje mimo vyhražená místa ekonomický odbor úřadu města ,  tel .  :  (  038 )  861208 ,  informace paní Anna Holovská .
@@ -746,44 +674,37 @@ Words: *  V  Českých Budějovicích povoluje výjimky ze zákazu prodeje mimo 
 # sentence level graph:
 (s15a1 / and
         :op1 (s15p1 / povolovat-001
+            :aspect activity
             :place (s15b1 / Budějovice
-                :mod (s15c1 / Český
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s15c1 / Český))
             :ARG1 (s15v1 / výjimka
+                :refer-number plural
                 :start (s15z1 / zákaz
+                    :refer-number singular
                     :ARG1 (s15p2 / prodej
+                        :refer-number singular
                         :place (s15m1 / místo
-                            :mod (s15v2 / vyhražený
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
+                            :refer-number plural
+                            :mod (s15v2 / vyhražený)))))
             :ARG2 (s15e1 / entity)
             :ARG0 (s15o1 / odbor
-                :mod (s15e2 / ekonomický
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s15e2 / ekonomický)
                 :possessor (s15u1 / úřad
+                    :refer-number singular
                     :possessor (s15m2 / město
-                        :refer-number singular)
-                    :refer-number singular)
+                        :refer-number singular))
                 :parenthesis (s15t1 / telefon
-                    :mod (s15x1 / 038_861208))
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                    :mod (s15x1 / 038_861208))))
         :op2 (s15e3 / event
+            :aspect state
             :ARG1 (s15i1 / informace
                 :refer-number plural)
             :ARG0 (s15h1 / Holovská
-                :mod (s15a2 / Anna
-                    :refer-number singular)
-                :mod (s15p3 / paní
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect state))
+                :refer-number singular
+                :mod (s15a2 / Anna)
+                :mod (s15p3 / paní))))
 
 # alignment:
 s15a1: 25-25
@@ -815,7 +736,7 @@ s15p3: 27-27
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s16-root
+# meta-info :: sent_id = u_tree-cs-s16-root :: type = partial_conversion
 # :: snt16
 Index: 1         2  3    4  5      6    7  8       9       10 11            12   13      14       15   16 17  18 19 20 21  22 23  24 25 26        27   28      29
 Words: Čtyřikrát do roka se konají trhy na Hlavním náměstí ,  organizátorem jsou Městské kulturní domy ,  tel .  :  (  038 )  370 01 ,  informace paní Dušková .
@@ -823,41 +744,33 @@ Words: Čtyřikrát do roka se konají trhy na Hlavním náměstí ,  organizát
 # sentence level graph:
 (s16a1 / and
         :op1 (s16k1 / konat-se-001
+            :aspect activity
             :frequency (s16c1 / čtyřikrát
                 :duration (s16r1 / rok
                     :refer-number singular))
-            :ARG0 (s16t1 / trh
+            :ARG1 (s16t1 / trh
+                :refer-number plural
                 :place (s16n1 / náměstí
-                    :mod (s16h1 / Hlavní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                    :refer-number singular
+                    :mod (s16h1 / Hlavní))))
         :op2 (s16a2 / and
             :op1 (s16b1 / být-007
-                :ARG1 (s16o1 / organizátor
+                :aspect activity
+                :ARG2 (s16o1 / organizátor
                     :refer-number singular)
-                :ARG0 (s16d1 / dům
-                    :mod (s16k2 / kulturní
-                        :refer-number plural)
-                    :mod (s16m1 / Městský
-                        :refer-number plural)
+                :ARG1 (s16d1 / dům
+                    :refer-number plural
+                    :mod (s16k2 / kulturní)
+                    :mod (s16m1 / Městský)
                     :parenthesis (s16t2 / telefon
-                        :mod (s16x1 / 038_370_01))
-                    :refer-number plural)
-                :refer-number plural
-                :refer-person 3rd
-                :aspect activity)
+                        :mod (s16x1 / 038_370_01))))
             :op2 (s16e1 / event
+                :aspect state
                 :ARG1 (s16i1 / informace
                     :refer-number plural)
                 :ARG0 (s16d2 / Dušková
-                    :mod (s16p1 / paní
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect state)))
+                    :refer-number singular
+                    :mod (s16p1 / paní)))))
 
 # alignment:
 s16a1: 10-10
@@ -886,40 +799,35 @@ s16p1: 27-27
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s17-root
+# meta-info :: sent_id = u_tree-cs-s17-root :: type = partial_conversion
 # :: snt17
 Index: 1  2    3   4     5  6   7        8      9         10  11    12 13      14 15         16       17    18     19 20  21 22 23 24  25 26  27 28
 Words: *  Ústí nad Labem má pro stánkový prodej vyhražena dvě místa :  Tržnici ,  pronajatou soukromé firmě Dvořák ,  tel .  :  (  047 )  273 03 .
 
 # sentence level graph:
 (s17v1 / vyhradit-001
+        :aspect performance
         :ARG0 (s17u1 / Ústí
-            :mod (s17l1 / Labe
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s17l1 / Labe))
         :purpose (s17p1 / prodej
-            :mod (s17s1 / stánkový
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s17s1 / stánkový))
         :ARG2 (s17e1 / entity)
         :ARG1 (s17i1 / identity-91
             :ARG1 (s17m1 / místo
-                :mod (s17d1 / dva
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s17d1 / dva))
             :ARG2 (s17t1 / tržnice
+                :refer-number singular
                 :mod (s17p2 / pronajatý
                     :ARG1 (s17f1 / firma
-                        :mod (s17s2 / soukromý
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s17s2 / soukromý)
                         :name (s17d2 / Dvořák
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
+                            :refer-number singular)))
                 :parenthesis (s17t2 / telefon
-                    :mod (s17x1 / 047_273_03))
-                :refer-number singular))
-        :aspect performance)
+                    :mod (s17x1 / 047_273_03)))))
 
 # alignment:
 s17v1: 5-5,9-9
@@ -945,7 +853,7 @@ s17x1: 24-24,26-27
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s18-root
+# meta-info :: sent_id = u_tree-cs-s18-root :: type = partial_conversion
 # :: snt18
 Index: 1     2       3  4  5      6     7  8         9   10     11 12  13 14 15 16  17 18  19 20 21   22         23
 Words: Staré tržiště je ve správě města a  informace lze získat na tel .  :  (  047 )  265 95 u  pana Berovského .
@@ -953,33 +861,27 @@ Words: Staré tržiště je ve správě města a  informace lze získat na tel .
 # sentence level graph:
 (s18a1 / and
         :op1 (s18b1 / být-011
-            :ARG0 (s18t1 / tržiště
-                :mod (s18s1 / starý
-                    :refer-number singular)
-                :refer-number singular)
+            :aspect activity
+            :ARG1 (s18t1 / tržiště
+                :refer-number singular
+                :mod (s18s1 / starý))
             :place (s18s2 / správa
+                :refer-number singular
                 :ARG0 (s18m1 / město
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                    :refer-number singular)))
         :op2 (s18l1 / lze-001
+            :aspect state
             :affectee (s18e1 / entity)
-            :ARG0 (s18z1 / získat-001
+            :ARG2 (s18z1 / získat-001
+                :aspect performance
                 :ARG1 (s18i1 / informace
                     :refer-number plural)
                 :ARG0 s18e1
                 :place (s18t2 / telefon
                     :mod (s18x2 / 047_265_95))
                 :place (s18b2 / Berovský
-                    :mod (s18p1 / pan
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect performance)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect state))
+                    :refer-number singular
+                    :mod (s18p1 / pan)))))
 
 # alignment:
 s18a1: 7-7
@@ -1003,24 +905,22 @@ s18p1: 21-21
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s19-root
+# meta-info :: sent_id = u_tree-cs-s19-root :: type = partial_conversion
 # :: snt19
 Index: 1  2      3       4  5   6        7         8    9       10
 Words: *  Hradec Králové má pro stánkaře vyhrazeno také tržiště .
 
 # sentence level graph:
 (s19v1 / vyhradit-001
+        :aspect performance
         :ARG0 (s19h1 / Hradec
-            :mod (s19k1 / Králové
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s19k1 / Králové))
         :ARG2 (s19s1 / stánkař
             :refer-number plural)
         :clausal-marker (s19t1 / také)
         :ARG1 (s19t2 / tržiště
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+            :refer-number singular))
 
 # alignment:
 s19v1: 4-4,7-7
@@ -1036,44 +936,36 @@ s19t2: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s20-root
+# meta-info :: sent_id = u_tree-cs-s20-root :: type = partial_conversion
 # :: snt20
 Index: 1        2      3  4      5       6       7        8     9       10        11    12 13  14 15 16 17  18 19    20 21  22  23      24
 Words: Případný prodej na jiných tržních místech povoluje odbor dopravy městského úřadu ,  tel .  :  (  049 )  33157 ,  pan Jan Maňaska .
 
 # sentence level graph:
 (s20p1 / povolovat-001
+        :aspect activity
         :ARG1 (s20p2 / prodej
-            :mod (s20p3 / případný
-                :refer-number singular)
+            :refer-number singular
+            :mod (s20p3 / případný)
             :place (s20m1 / místo
-                :mod (s20t1 / tržní
-                    :refer-number plural)
-                :mod (s20j1 / jiný
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number singular)
+                :refer-number plural
+                :mod (s20t1 / tržní)
+                :mod (s20j1 / jiný)))
         :ARG2 (s20e1 / entity)
         :ARG0 (s20i1 / identity-91
             :ARG1 (s20o1 / odbor
+                :refer-number singular
                 :possessor (s20d1 / doprava
                     :refer-number singular)
                 :possessor (s20u1 / úřad
-                    :mod (s20m2 / městský
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s20m2 / městský))
                 :parenthesis (s20t2 / telefon
-                    :mod (s20x1 / 049_33157))
-                :refer-number singular)
+                    :mod (s20x1 / 049_33157)))
             :ARG2 (s20m3 / Maňaska
-                :mod (s20j2 / Jan
-                    :refer-number singular)
-                :mod (s20p4 / pan
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number singular
+                :mod (s20j2 / Jan)
+                :mod (s20p4 / pan))))
 
 # alignment:
 s20p1: 7-7
@@ -1100,7 +992,7 @@ s20p4: 21-21
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s21-root
+# meta-info :: sent_id = u_tree-cs-s21-root :: type = partial_conversion
 # :: snt21
 Index: 1  2  3           4        5      6    7       8     9        10           11 12      13 14  15 16 17 18  19 20     21 22        23   24   25           26
 Words: *  V  Pardubicích povoluje prodej mimo tržnice odbor místního hospodářství a  obchodu ,  tel .  :  (  040 )  511457 ,  informace paní Hana Šnajbergrová .
@@ -1108,37 +1000,32 @@ Words: *  V  Pardubicích povoluje prodej mimo tržnice odbor místního hospod�
 # sentence level graph:
 (s21a1 / and
         :op1 (s21p1 / povolovat-001
+            :aspect activity
             :place (s21p2 / Pardubice
                 :refer-number singular)
             :ARG1 (s21p3 / prodej
+                :refer-number singular
                 :place (s21t1 / tržnice
-                    :refer-number plural)
-                :refer-number singular)
+                    :refer-number plural))
             :ARG2 (s21e1 / entity)
             :ARG0 (s21o1 / odbor
+                :refer-number singular
                 :possessor (s21a2 / and
                     :op1 (s21h1 / hospodářství
-                        :mod (s21m1 / místní
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s21m1 / místní))
                     :op2 (s21o2 / obchod
                         :refer-number singular))
                 :parenthesis (s21t2 / telefon
-                    :mod (s21x1 / 040_511457))
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                    :mod (s21x1 / 040_511457))))
         :op2 (s21e2 / event
+            :aspect state
             :ARG1 (s21i1 / informace
                 :refer-number plural)
             :ARG0 (s21s1 / Šnajbergrová
-                :mod (s21h2 / Hana
-                    :refer-number singular)
-                :mod (s21p4 / paní
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect state))
+                :refer-number singular
+                :mod (s21h2 / Hana)
+                :mod (s21p4 / paní))))
 
 # alignment:
 s21a1: 21-21
@@ -1167,35 +1054,30 @@ s21p4: 23-23
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s22-root
+# meta-info :: sent_id = u_tree-cs-s22-root :: type = partial_conversion
 # :: snt22
 Index: 1  2  3    4        5        6      7     8      9             10    11   12 13    14
 Words: *  V  Brně povoluje stánkový prodej odbor služeb magistrátního úřadu Brno -  střed .
 
 # sentence level graph:
 (s22p1 / povolovat-001
+        :aspect activity
         :place (s22b1 / Brno
             :refer-number singular)
         :ARG1 (s22p2 / prodej
-            :mod (s22s1 / stánkový
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s22s1 / stánkový))
         :ARG2 (s22e1 / entity)
         :ARG0 (s22o1 / odbor
+            :refer-number singular
             :possessor (s22s2 / služba
                 :refer-number plural)
             :possessor (s22u1 / úřad
-                :mod (s22m1 / magistrátní
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s22m1 / magistrátní)
                 :name (s22b2 / Brno
-                    :mod (s22s3 / střed
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number singular
+                    :mod (s22s3 / střed)))))
 
 # alignment:
 s22p1: 4-4
@@ -1216,7 +1098,7 @@ s22s3: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s23-root
+# meta-info :: sent_id = u_tree-cs-s23-root :: type = partial_conversion
 # :: snt23
 Index: 1    2       3  4         5    6       7    8  9         10 11 12 13 14     15 16 17     18  19 20 21 22    23
 Words: Jako tržiště je vyhražena část Zelného trhu ,  informace :  (  05 )  421341 11 ,  klapka 479 ,  dr .  Kaláb .
@@ -1224,31 +1106,29 @@ Words: Jako tržiště je vyhražena část Zelného trhu ,  informace :  (  05 
 # sentence level graph:
 (s23a1 / and
         :op1 (s23v1 / vyhradit-001
+            :aspect performance
             :manner (s23t1 / tržiště
-                :mod-of s23c1
-                :refer-number singular)
+                :refer-number singular
+                :mod-of s23c1)
             :ARG0 (s23e1 / entity)
             :ARG2 (s23e2 / entity)
             :ARG1 (s23c1 / část
+                :refer-number singular
                 :mod (s23t2 / trh
-                    :mod (s23z1 / Zelný
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance)
+                    :refer-number singular
+                    :mod (s23z1 / Zelný))))
         :op2 (s23e3 / event
+            :aspect state
             :ARG1 (s23i1 / informace
                 :refer-number plural)
             :ARG0 (s23i2 / identity-91
-                :ARG1 (s23e4 / entity
+                :ARG1 (s23t3 / thing
                     :mod (s23x2 / 05_421341_11)
                     :mod (s23k1 / klapka
-                        :mod (s23x3 / 479)
-                        :refer-number singular))
+                        :mod (s23x3 / 479)))
                 :ARG2 (s23k2 / Kaláb
-                    :mod (s23d1 / doktor)
-                    :refer-number singular))
-            :aspect state))
+                    :refer-number singular
+                    :mod (s23d1 / doktor)))))
 
 # alignment:
 s23a1: 8-8
@@ -1262,7 +1142,7 @@ s23z1: 6-6
 s23e3: 0-0
 s23i1: 9-9
 s23i2: 19-19
-s23e4: 0-0
+s23t3: 0-0
 s23x2: 12-12,14-15
 s23k1: 17-17
 s23x3: 18-18
@@ -1274,30 +1154,27 @@ s23d1: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s24-root
+# meta-info :: sent_id = u_tree-cs-s24-root :: type = partial_conversion
 # :: snt24
 Index: 1  2        3  4       5  6     7  8       9  10   11    12
 Words: Se žádostmi o  výjimku je nutné se obrátit na radu města .
 
 # sentence level graph:
 (s24b1 / být-159
+        :aspect activity
         :ARG1 (s24n1 / nutný
-            :affectee (s24e1 / entity)
-            :refer-number singular)
+            :affectee (s24e1 / entity))
         :ARG0 (s24o1 / obrátit-se-003
+            :aspect performance
             :ARG1 (s24z1 / žádost
+                :refer-number plural
                 :ARG1 (s24v1 / výjimka
-                    :refer-number singular)
-                :refer-number plural)
+                    :refer-number singular))
             :ARG0 s24e1
             :ARG2 (s24r1 / rada
+                :refer-number singular
                 :possessor (s24m1 / město
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number singular))))
 
 # alignment:
 s24b1: 5-5
@@ -1315,7 +1192,7 @@ s24m1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s25-root
+# meta-info :: sent_id = u_tree-cs-s25-root :: type = partial_conversion
 # :: snt25
 Index: 1  2  3       4  5        6      7           8  9        10      11 12        13      14   15        16     17    18      19 20  21 22 23 24  25 26  27   28
 Words: *  V  Ostravě je stánkový prodej soustředěný na Moravské náměstí ,  majitelem tržnice jsou Technické služby města Ostrava ,  tel .  :  (  069 )  611 2526 .
@@ -1323,39 +1200,31 @@ Words: *  V  Ostravě je stánkový prodej soustředěný na Moravské náměst�
 # sentence level graph:
 (s25a1 / and
         :op1 (s25b1 / být-007
+            :aspect activity
             :place (s25o1 / Ostrava
                 :refer-number singular)
-            :ARG0 (s25p1 / prodej
-                :mod (s25s1 / stánkový
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG1 (s25s2 / soustředěný
+            :ARG1 (s25p1 / prodej
+                :refer-number singular
+                :mod (s25s1 / stánkový))
+            :ARG2 (s25s2 / soustředěný
                 :goal (s25n1 / náměstí
-                    :mod (s25m1 / Moravský
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                    :refer-number singular
+                    :mod (s25m1 / Moravský))))
         :op2 (s25b2 / být-007
-            :ARG1 (s25m2 / majitel
+            :aspect activity
+            :ARG2 (s25m2 / majitel
+                :refer-number singular
                 :ARG1 (s25t1 / tržnice
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG0 (s25s3 / služba
-                :mod (s25t2 / Technický
-                    :refer-number plural)
+                    :refer-number singular))
+            :ARG1 (s25s3 / služba
+                :refer-number plural
+                :mod (s25t2 / Technický)
                 :possessor (s25m3 / město
+                    :refer-number singular
                     :name (s25o2 / Ostrava
-                        :refer-number singular)
-                    :refer-number singular)
+                        :refer-number singular))
                 :parenthesis (s25t3 / telefon
-                    :mod (s25x1 / 069_611_2526))
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity))
+                    :mod (s25x1 / 069_611_2526)))))
 
 # alignment:
 s25a1: 11-11
@@ -1383,39 +1252,34 @@ s25x1: 24-24,26-27
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s26-root
+# meta-info :: sent_id = u_tree-cs-s26-root :: type = partial_conversion
 # :: snt26
 Index: 1         2  3         4  5      6    7     8         9            10 11  12 13 14 15  16 17  18   19 20   21        22        23
 Words: Informace o  výjimkách ze zákazu podá odbor městského hospodářství ,  tel .  :  (  069 )  628 2170 ,  paní Jaroslava Borečková .
 
 # sentence level graph:
 (s26p1 / podat-008
-        :predicative-noun (s26i1 / informace
+        :aspect performance
+        :ARG1 (s26i1 / informace
+            :refer-number plural
             :ARG1 (s26v1 / výjimka
+                :refer-number plural
                 :start (s26z1 / zákaz
-                    :refer-number singular)
-                :refer-number plural)
-            :ARG0 s26i2
-            :refer-number plural)
+                    :refer-number singular))
+            :ARG0 s26i2)
         :ARG2 (s26e1 / entity)
         :ARG0 (s26i2 / identity-91
             :ARG1 (s26o1 / odbor
+                :refer-number singular
                 :possessor (s26h1 / hospodářství
-                    :mod (s26m1 / městský
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s26m1 / městský))
                 :parenthesis (s26t1 / telefon
-                    :mod (s26x2 / 069_628_2170))
-                :refer-number singular)
+                    :mod (s26x2 / 069_628_2170)))
             :ARG2 (s26b1 / Borečková
-                :mod (s26j1 / Jaroslava
-                    :refer-number singular)
-                :mod (s26p2 / paní
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect performance)
+                :refer-number singular
+                :mod (s26j1 / Jaroslava)
+                :mod (s26p2 / paní))))
 
 # alignment:
 s26p1: 6-6
@@ -1439,16 +1303,15 @@ s26p2: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s27-root
+# meta-info :: sent_id = u_tree-cs-s27-root :: type = partial_conversion
 # :: snt27
 Index: 1   2
 Words: Jan Vávra
 
 # sentence level graph:
 (s27v1 / Vávra
-        :mod (s27j1 / Jan
-            :refer-number singular)
-        :refer-number singular)
+        :refer-number singular
+        :mod (s27j1 / Jan))
 
 # alignment:
 s27v1: 2-2

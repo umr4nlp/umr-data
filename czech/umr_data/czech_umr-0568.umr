@@ -1,11 +1,12 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1  2  3      4           5          6         7     8     9       10         11
 Words: V  ČR bývají prostitutky zadržovány zpravidla jenom kvůli ověření totožnosti .
 
 # sentence level graph:
 (s1z1 / zadržovat-001
+        :aspect activity
         :place (s1c1 / ČR
             :refer-number singular)
         :ARG1 (s1p1 / prostitutka
@@ -14,12 +15,10 @@ Words: V  ČR bývají prostitutky zadržovány zpravidla jenom kvůli ověřen�
         :extent (s1z2 / zpravidla)
         :clausal-marker (s1j1 / jenom)
         :cause (s1o1 / ověření
+            :refer-number singular
             :ARG0 (s1e2 / entity)
             :ARG1 (s1t1 / totožnost
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number plural
-        :aspect activity)
+                :refer-number singular)))
 
 # alignment:
 s1z1: 3-3,5-5
@@ -37,56 +36,53 @@ s1t1: 10-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2 3          4  5 6   7      8          9
 Words: Zákon o prostituci se u nás teprve připravuje .
 
 # sentence level graph:
 (s2p1 / připravovat-003
+        :aspect activity
         :ARG1 (s2z1 / zákon
+            :refer-number singular
             :ARG1 (s2p2 / prostituce
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular))
         :ARG0 (s2e1 / entity)
-        :place (s2e2 / entity
+        :place (s2p3 / person
             :refer-number plural
             :refer-person 1st)
-        :clausal-marker (s2t1 / teprve)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :clausal-marker (s2t1 / teprve))
 
 # alignment:
 s2p1: 4-4,8-8
 s2z1: 1-1
 s2p2: 2-3
 s2e1: 0-0
-s2e2: 5-6
+s2p3: 5-6
 s2t1: 7-7
 
 # document level annotation:
 (s2s0 / sentence
-    :coref ((s2e2 :same-entity s1c1)))
+    :coref ((s2p3 :same-entity s1c1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1    2       3     4 5
 Words: Foto Lubomír Kotek - LN
 
 # sentence level graph:
 (s3e1 / event
+        :aspect state
         :ARG1 (s3f1 / foto
             :refer-number singular)
         :ARG0 (s3k1 / Kotek
-            :mod (s3l1 / Lubomír
-                :refer-number singular)
+            :refer-number singular
+            :mod (s3l1 / Lubomír)
             :parenthesis (s3l2 / LN
-                :refer-number plural)
-            :refer-number singular)
-        :aspect state)
+                :refer-number plural)))
 
 # alignment:
 s3e1: 0-0

@@ -1,5 +1,5 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1      2
 Words: štoček :
@@ -16,7 +16,7 @@ s1s1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1        2       3 4    5 6        7       8 9
 Words: PRODEJNÍ VÝSTAVY * TRHY * PRODEJNÍ VÝSTAVY * TRHY
@@ -24,15 +24,13 @@ Words: PRODEJNÍ VÝSTAVY * TRHY * PRODEJNÍ VÝSTAVY * TRHY
 # sentence level graph:
 (s2a1 / and
         :op1 (s2v1 / výstava
-            :mod (s2p1 / prodejní
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s2p1 / prodejní))
         :op2 (s2t1 / trh
             :refer-number plural)
         :op3 (s2v2 / výstava
-            :mod (s2p2 / prodejní
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s2p2 / prodejní))
         :op4 (s2t2 / trh
             :refer-number plural))
 
@@ -52,7 +50,7 @@ s2t2: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1         2 3     4 5     6 7
 Words: Kosmetika , dřevo , domov , hobby
@@ -79,16 +77,16 @@ s3h1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1     2 3 4 5
 Words: PÁTEK 8 . 4 .
 
 # sentence level graph:
 (s4p1 / pátek
+        :refer-number singular
         :possessor (s4x1 / 4
-            :mod (s4x2 / 8))
-        :refer-number singular)
+            :mod (s4x2 / 8)))
 
 # alignment:
 s4p1: 1-1
@@ -100,7 +98,7 @@ s4x2: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1     2  3  4     5       6  7  8     9     10 11   12 13 14 15 16          17      18        19 20          21 22 23 24 25 26 27 28 29   30
 Words: Praha 4  ,  Palác kultury :  LA BELLA DONNA -  jaro 94 ,  3  .  mezinárodní veletrh kosmetiky a  kadeřnictví ,  8  .  -  10 .  4  .  1994 .
@@ -108,37 +106,33 @@ Words: Praha 4  ,  Palác kultury :  LA BELLA DONNA -  jaro 94 ,  3  .  mezinár
 # sentence level graph:
 (s5i1 / identity-91
         :ARG1 (s5p1 / Palác
+            :refer-number singular
             :mod (s5p2 / Praha
-                :mod (s5x1 / 4)
-                :refer-number singular)
+                :mod (s5x1 / 4))
             :possessor (s5k1 / kultura
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular))
         :ARG2 (s5a1 / and
             :op1 (s5i2 / identity-91
                 :ARG1 (s5i3 / identity-91
-                    :ARG1 (s5x2 / #Forn
-                        :FPHR (s5l1 / LA)
-                        :FPHR (s5b1 / BELLA)
-                        :FPHR (s5d1 / DONNA))
+                    :ARG1 (s5f1 / foreign-phrase
+                        :op1 "LA" :op2 "BELLA" :op3 "DONNA")
                     :ARG2 (s5j1 / jaro
-                        :possessor (s5x3 / 94)
-                        :refer-number singular))
+                        :refer-number singular
+                        :possessor (s5x2 / 94)))
                 :ARG2 (s5v1 / veletrh
-                    :mod (s5x4 / 3)
-                    :mod (s5m1 / mezinárodní
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s5x3 / 3)
+                    :mod (s5m1 / mezinárodní)
                     :possessor (s5a2 / and
                         :op1 (s5k2 / kosmetika
                             :refer-number singular)
                         :op2 (s5k3 / kadeřnictví
-                            :refer-number singular))
-                    :refer-number singular))
-            :op2 (s5x5 / 4
-                :mod (s5m2 / math
-                    :op1 (s5x6 / 8)
-                    :op2 (s5x7 / 10))
-                :possessor (s5x8 / 1994))))
+                            :refer-number singular))))
+            :op2 (s5x4 / 4
+                :mod (s5m2 / math-entity
+                    :op1 (s5x5 / 8)
+                    :op2 (s5x6 / 10))
+                :possessor (s5x7 / 1994))))
 
 # alignment:
 s5i1: 6-6
@@ -149,23 +143,20 @@ s5k1: 5-5
 s5a1: 21-21
 s5i2: 13-13
 s5i3: 10-10
-s5x2: 0-0
-s5l1: 7-7
-s5b1: 8-8
-s5d1: 9-9
+s5f1: 7-9
 s5j1: 11-11
-s5x3: 12-12
+s5x2: 12-12
 s5v1: 17-17
-s5x4: 14-14
+s5x3: 14-14
 s5m1: 16-16
 s5a2: 19-19
 s5k2: 18-18
 s5k3: 20-20
-s5x5: 27-27
+s5x4: 27-27
 s5m2: 24-24
-s5x6: 22-22
-s5x7: 25-25
-s5x8: 29-29
+s5x5: 22-22
+s5x6: 25-25
+s5x7: 29-29
 
 # document level annotation:
 (s5s0 / sentence
@@ -173,13 +164,14 @@ s5x8: 29-29
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1      2         3  4  5  6  7  8  9  10 11        12     13 14  15 16    17 18 19        20 21 22  23 24 25 26 27 28  29   30 31  32 33 34 35 36     37 38     39
 Words: Pořádá Terinvest ,  s  .  r  .  o  .  ,  veletržní správa ,  102 00 Praha 10 ,  Zápotoční 20 ,  tel .  :  (  02 )  786 9807 ,  FAX :  (  02 )  294022 ,  294042 .
 
 # sentence level graph:
 (s6p1 / pořádat-001
+        :aspect activity
         :ARG1 (s6e1 / entity
             :refer-number singular
             :refer-person 3rd)
@@ -189,19 +181,16 @@ Words: Pořádá Terinvest ,  s  .  r  .  o  .  ,  veletržní správa ,  102 00
                     :refer-number singular)
                 :ARG2 (s6s1 / společnost
                     :instrument (s6r1 / ručení
-                        :mod (s6o1 / omezený
-                            :refer-number singular)
-                        :refer-number singular)))
+                        :refer-number singular
+                        :mod (s6o1 / omezený))))
             :ARG2 (s6s2 / správa
-                :mod (s6v1 / veletržní
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s6v1 / veletržní)
                 :mod (s6p2 / Praha
                     :mod (s6x1 / 102_00)
                     :mod (s6x2 / 10)
                     :mod (s6z1 / Zápotoční
-                        :mod (s6x3 / 20)
-                        :refer-number singular)
-                    :refer-number singular)
+                        :mod (s6x3 / 20)))
                 :mod (s6t2 / telefon
                     :mod (s6x4 / 786_9807
                         :parenthesis (s6x5 / 02)))
@@ -210,12 +199,7 @@ Words: Pořádá Terinvest ,  s  .  r  .  o  .  ,  veletržní správa ,  102 00
                         :op1 (s6x6 / 294022
                             :parenthesis (s6x7 / 02))
                         :op2 (s6x8 / 294042
-                            :parenthesis s6x7))
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                            :parenthesis s6x7))))))
 
 # alignment:
 s6p1: 1-1
@@ -248,7 +232,7 @@ s6x8: 38-38
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1       2  3          4     5     6  7     8  9  10 11 12     13           14 15       16      17  18          19 20        21 22      23 24      25 26    27 28    29 30  31 32        33 34    35 36     37 38 39 40 41 42 43 44 45   46
 Words: Ostrava ,  výstaviště Černá louka :  DOMOV 94 -  4  .  ročník kontraktační a  prodejní výstavy pro podnikatele i  veřejnost -  nábytek ,  bydlení ,  práce ,  hobby ,  dům ,  odpočinek ,  chata ,  zábava ,  8  .  -  11 .  4  .  1994 .
@@ -259,36 +243,35 @@ Words: Ostrava ,  výstaviště Černá louka :  DOMOV 94 -  4  .  ročník kont
             :ARG1 (s7o1 / Ostrava
                 :refer-number singular)
             :ARG2 (s7v1 / výstaviště
+                :refer-number singular
                 :name (s7l1 / louka
-                    :mod (s7c1 / Černý
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular))
+                    :refer-number singular
+                    :mod (s7c1 / Černý))))
         :ARG2 (s7a1 / and
             :op1 (s7i3 / identity-91
                 :ARG1 (s7d1 / Domov
-                    :mod (s7x1 / 94)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s7x1 / 94))
                 :ARG2 (s7r1 / ročník
+                    :refer-number singular
                     :mod (s7x2 / 4)
                     :possessor (s7v2 / výstava
+                        :refer-number singular
                         :affectee (s7a2 / and
                             :op1 (s7p1 / podnikatel
                                 :refer-number plural)
                             :op2 (s7v3 / veřejnost
                                 :refer-number singular))
                         :mod (s7a3 / and
-                            :op1 (s7k1 / kontraktační
-                                :refer-number singular)
-                            :op2 (s7p2 / prodejní
-                                :refer-number singular))
+                            :op1 (s7k1 / kontraktační)
+                            :op2 (s7p2 / prodejní))
                         :parenthesis (s7a4 / and
                             :op1 (s7n1 / nábytek
                                 :refer-number singular)
                             :op2 (s7b1 / bydlení
+                                :refer-number singular
                                 :ARG0 (s7e1 / entity)
-                                :place (s7e2 / entity)
-                                :refer-number singular)
+                                :place (s7c2 / concept))
                             :op3 (s7p3 / práce
                                 :refer-number singular)
                             :op4 (s7h1 / hobby)
@@ -296,14 +279,12 @@ Words: Ostrava ,  výstaviště Černá louka :  DOMOV 94 -  4  .  ročník kont
                                 :refer-number singular)
                             :op6 (s7o2 / odpočinek
                                 :refer-number singular)
-                            :op7 (s7c2 / chata
+                            :op7 (s7c3 / chata
                                 :refer-number singular)
                             :op8 (s7z1 / zábava
-                                :refer-number singular))
-                        :refer-number singular)
-                    :refer-number singular))
+                                :refer-number singular)))))
             :op2 (s7x3 / 4
-                :mod (s7m1 / math
+                :mod (s7m1 / math-entity
                     :op1 (s7x4 / 8)
                     :op2 (s7x5 / 11))
                 :possessor (s7x6 / 1994))))
@@ -332,12 +313,12 @@ s7a4: 35-35
 s7n1: 22-22
 s7b1: 24-24
 s7e1: 0-0
-s7e2: 0-0
+s7c2: 0-0
 s7p3: 26-26
 s7h1: 28-28
 s7d2: 30-30
 s7o2: 32-32
-s7c2: 34-34
+s7c3: 34-34
 s7z1: 36-36
 s7x3: 43-43
 s7m1: 40-40
@@ -347,34 +328,32 @@ s7x6: 45-45
 
 # document level annotation:
 (s7s0 / sentence
-    :coref ((s7x6 :same-entity s5x8)))
+    :coref ((s7x6 :same-entity s5x7)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1        2       3       4  5  6  7  8  9  10 11 12  13 14      15 16        17   18 19          20 21 22  23 24 25 26  27 28  29   30 31 32 33  34 35 36  37 38 39  40 41  42   43
 Words: Pořádají Výstavy Ostrava ,  s  .  r  .  o  .  ,  709 00 Ostrava -  Mariánské Hory ,  Přemyslovců 65 ,  tel .  :  (  069 )  662 5741 -  3  ,  tel .  /  FAX :  (  069 )  662 0125 .
 
 # sentence level graph:
 (s8p1 / pořádat-001
+        :aspect activity
         :ARG1 (s8e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG0 (s8i1 / identity-91
             :ARG1 (s8v1 / Výstava
+                :refer-number plural
                 :name (s8o1 / Ostrava
                     :refer-number singular)
                 :mod (s8o2 / Ostrava
                     :mod (s8x1 / 709_00)
                     :mod (s8h1 / Hora
-                        :mod (s8m1 / Mariánský
-                            :refer-number plural)
-                        :refer-number plural)
+                        :mod (s8m1 / Mariánský))
                     :mod (s8p2 / Přemyslovec
-                        :mod (s8x2 / 65)
-                        :refer-number plural)
-                    :refer-number singular)
+                        :mod (s8x2 / 65)))
                 :mod (s8t1 / telefon
                     :mod (s8x3 / 662_5741_3
                         :parenthesis (s8x4 / 069)))
@@ -383,20 +362,14 @@ Words: Pořádají Výstavy Ostrava ,  s  .  r  .  o  .  ,  709 00 Ostrava -  Ma
                         :mod (s8x5 / 662_0125
                             :parenthesis (s8x6 / 069)))
                     :op2 (s8f1 / fax
-                        :mod s8x5
-                        :refer-number singular))
-                :refer-number plural)
+                        :mod s8x5)))
             :ARG2 (s8s1 / společnost
                 :mod s8o2
                 :mod s8t1
                 :mod s8a1
                 :companion (s8r1 / ručení
-                    :mod (s8o3 / omezený
-                        :refer-number singular)
-                    :refer-number singular)))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number singular
+                    :mod (s8o3 / omezený)))))
 
 # alignment:
 s8p1: 1-1
@@ -429,7 +402,7 @@ s8o3: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1     2  3          4  5     6  7   8  9  10          11             12      13      14           15 16    17    18 19        20     21 22        23 24   25    26 27         28 29     30 31     32 33          34      35 36 37 38 39 40 41 42 43   44
 Words: Plzeň ,  výstaviště :  DŘEVO A  LES 94 -  mezinárodní specializovaná výstava lesního hospodářství ,  těžba dřeva ,  dřevařské stroje ,  materiály na bázi dřeva ,  distribuce a  obchod se dřevem a  dřevařskými výrobky ,  7  .  -  10 .  4  .  1994 .
@@ -445,51 +418,45 @@ Words: Plzeň ,  výstaviště :  DŘEVO A  LES 94 -  mezinárodní specializova
             :op1 (s9i3 / identity-91
                 :ARG1 (s9a2 / and
                     :op1 (s9d1 / Dřevo
-                        :mod (s9x1 / 94)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s9x1 / 94))
                     :op2 (s9l1 / les
-                        :mod s9x1
-                        :refer-number singular))
+                        :refer-number singular
+                        :mod s9x1))
                 :ARG2 (s9v2 / výstava
-                    :mod (s9m1 / mezinárodní
-                        :refer-number singular)
-                    :mod (s9s1 / specializovaný
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s9m1 / mezinárodní)
+                    :mod (s9s1 / specializovaný)
                     :ARG1 (s9h1 / hospodářství
-                        :mod (s9l2 / lesní
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s9l2 / lesní)
                         :parenthesis (s9a3 / and
                             :op1 (s9t1 / těžba
+                                :refer-number singular
                                 :ARG1 (s9d2 / dřevo
-                                    :refer-number singular)
-                                :refer-number singular)
+                                    :refer-number singular))
                             :op2 (s9s2 / stroj
-                                :mod (s9d3 / dřevařský
-                                    :refer-number plural)
-                                :refer-number plural)
+                                :refer-number plural
+                                :mod (s9d3 / dřevařský))
                             :op3 (s9m2 / materiál
+                                :refer-number plural
                                 :mod (s9b1 / báze
                                     :possessor (s9d4 / dřevo
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number plural)
+                                        :refer-number singular)))
                             :op4 (s9a4 / and
                                 :op1 (s9d5 / distribuce
+                                    :refer-number singular
                                     :companion (s9a5 / and
                                         :op1 (s9d6 / dřevo
                                             :refer-number singular)
                                         :op2 (s9v3 / výrobek
-                                            :mod (s9d7 / dřevařský
-                                                :refer-number plural)
-                                            :refer-number plural))
-                                    :refer-number singular)
+                                            :refer-number plural
+                                            :mod (s9d7 / dřevařský))))
                                 :op2 (s9o1 / obchod
-                                    :companion s9a5
-                                    :refer-number singular)))
-                        :refer-number singular)
-                    :refer-number singular))
+                                    :refer-number singular
+                                    :companion s9a5))))))
             :op2 (s9x4 / 4
-                :mod (s9m3 / math
+                :mod (s9m3 / math-entity
                     :op1 (s9x5 / 7)
                     :op2 (s9x6 / 10))
                 :possessor (s9x7 / 1994))))
@@ -540,13 +507,14 @@ s9x7: 43-43
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1      2     3  4  5  6  7  8  9      10     11 12       13 14  15 16    17 18 19    20 21 22    23 24 25  26 27 28 29 30 31     32 33 34  35 36 37 38 39  40   41 42    43 44     45
 Words: Pořádá Rapid ,  a  .  s  .  ,  divize výstav a  veletrhů ,  112 79 Praha 1  ,  ulice 28 .  října 13 ,  tel .  :  (  02 )  241954 10 ,  FAX :  (  02 )  232 7520 ,  telex :  121142 .
 
 # sentence level graph:
 (s10p1 / pořádat-001
+        :aspect activity
         :ARG1 (s10e1 / entity
             :refer-number singular
             :refer-person 3rd)
@@ -557,6 +525,7 @@ Words: Pořádá Rapid ,  a  .  s  .  ,  divize výstav a  veletrhů ,  112 79 P
                 :ARG2 (s10s1 / společnost
                     :mod (s10a1 / akciový)))
             :ARG2 (s10d1 / divize
+                :refer-number singular
                 :possessor (s10a2 / and
                     :op1 (s10v1 / výstava
                         :refer-number plural)
@@ -568,24 +537,15 @@ Words: Pořádá Rapid ,  a  .  s  .  ,  divize výstav a  veletrhů ,  112 79 P
                     :mod (s10u1 / ulice
                         :mod (s10r2 / Říjen
                             :mod (s10x3 / 28)
-                            :mod (s10x4 / 13)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
+                            :mod (s10x4 / 13))))
                 :mod (s10t1 / telefon
                     :mod (s10x5 / 241954_10
                         :parenthesis (s10x6 / 02)))
                 :mod (s10f1 / fax
                     :mod (s10x7 / 232_7520
-                        :parenthesis (s10x8 / 02))
-                    :refer-number singular)
+                        :parenthesis (s10x8 / 02)))
                 :mod (s10t2 / telex
-                    :mod (s10x9 / 121142)
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :mod (s10x9 / 121142)))))
 
 # alignment:
 s10p1: 1-1
@@ -621,16 +581,16 @@ s10x9: 44-44
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1      2 3 4 5
 Words: SOBOTA 9 . 4 .
 
 # sentence level graph:
 (s11s1 / sobota
+        :refer-number singular
         :possessor (s11x1 / 4
-            :mod (s11x2 / 9))
-        :refer-number singular)
+            :mod (s11x2 / 9)))
 
 # alignment:
 s11s1: 1-1
@@ -642,7 +602,7 @@ s11x2: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1    2  3      4  5       6  7       8   9     10 11        12 13    14        15 16 17        18 19    20 21   22       23 24    25 26    27 28        29 30     31  32     33 34         35 36    37 38      39 40   41  42     43 44     45  46      47 48      49   50
 Words: TRHY :  Beroun ,  Blovice ,  Brandýs nad Labem ,  Černovice (  okres Pelhřimov )  ,  Domažlice ,  Jičín ,  Nové Strašecí ,  Pacov ,  Plzeň ,  Poděbrady ,  Police nad Metují ,  Prachatice ,  Slaný ,  Teplice ,  Ústí nad Orlicí ,  Veselí nad Lužnicí ,  Železná Ruda .
@@ -657,23 +617,21 @@ Words: TRHY :  Beroun ,  Blovice ,  Brandýs nad Labem ,  Černovice (  okres Pe
             :op2 (s12b2 / Blovice
                 :refer-number plural)
             :op3 (s12b3 / Brandýs
-                :mod (s12l1 / Labe
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s12l1 / Labe))
             :op4 (s12c1 / Černovice
+                :refer-number plural
                 :parenthesis (s12o1 / okres
+                    :refer-number singular
                     :name (s12p1 / Pelhřimov
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
+                        :refer-number singular)))
             :op5 (s12d1 / Domažlice
                 :refer-number plural)
             :op6 (s12j1 / Jičín
                 :refer-number singular)
             :op7 (s12s1 / Strašecí
-                :mod (s12n1 / Nový
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s12n1 / Nový))
             :op8 (s12p2 / Pacov
                 :refer-number singular)
             :op9 (s12p3 / Plzeň
@@ -681,9 +639,8 @@ Words: TRHY :  Beroun ,  Blovice ,  Brandýs nad Labem ,  Černovice (  okres Pe
             :op10 (s12p4 / Poděbrady
                 :refer-number singular)
             :op11 (s12p5 / Police
-                :mod (s12m1 / Metuje
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s12m1 / Metuje))
             :op12 (s12p6 / Prachatice
                 :refer-number plural)
             :op13 (s12s2 / Slaný
@@ -691,17 +648,14 @@ Words: TRHY :  Beroun ,  Blovice ,  Brandýs nad Labem ,  Černovice (  okres Pe
             :op14 (s12t2 / Teplice
                 :refer-number singular)
             :op15 (s12u1 / Ústí
-                :mod (s12o2 / Orlice
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s12o2 / Orlice))
             :op16 (s12v1 / Veselí
-                :mod (s12l2 / Lužnice
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s12l2 / Lužnice))
             :op17 (s12r1 / Ruda
-                :mod (s12z1 / Železný
-                    :refer-number singular)
-                :refer-number singular)))
+                :refer-number singular
+                :mod (s12z1 / Železný))))
 
 # alignment:
 s12a1: 2-2
@@ -739,7 +693,7 @@ s12z1: 48-48
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1            2     3  4        5  6     7         8  9  10    11 12 13      14 15           16           17 18 19 20    21 22
 Words: MOTORISTICKÉ BURZY :  Chomutov (  areál autoškoly )  ,  Praha 4  -  Pankrác (  autocvičiště Reitknechtka -  od 8  hodin )  .
@@ -747,30 +701,28 @@ Words: MOTORISTICKÉ BURZY :  Chomutov (  areál autoškoly )  ,  Praha 4  -  Pa
 # sentence level graph:
 (s13a1 / and
         :op1 (s13b1 / burza
-            :mod (s13m1 / motoristický
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s13m1 / motoristický))
         :op2 (s13a2 / and
             :op1 (s13c1 / Chomutov
+                :refer-number singular
                 :parenthesis (s13a3 / areál
+                    :refer-number singular
                     :possessor (s13a4 / autoškola
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
+                        :refer-number singular)))
             :op2 (s13p1 / Praha
+                :refer-number singular
                 :mod (s13x1 / 4)
-                :mod (s13p2 / Pankrác
-                    :refer-number singular)
+                :mod (s13p2 / Pankrác)
                 :parenthesis (s13e1 / event
+                    :aspect state
                     :ARG0 (s13a5 / autocvičiště
+                        :refer-number singular
                         :name (s13r1 / Reitknechtka
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular))
                     :temporal (s13h1 / hodina
-                        :mod (s13x2 / 8)
-                        :refer-number plural)
-                    :aspect state)
-                :refer-number singular)))
+                        :refer-number plural
+                        :mod (s13x2 / 8))))))
 
 # alignment:
 s13a1: 3-3
@@ -794,7 +746,7 @@ s13x2: 19-19
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1         2     3  4        5  6     7          8  9  10    11 12 13     14 15  16 17     18 19       20 21 22 23    24 25
 Words: VŠEOBECNÉ BURZY :  Smržovka (  areál Parkhotelu od 8  hodin )  ,  Třebíč -  Týn (  hřiště u  Kuchyňků -  od 7  hodin )  .
@@ -802,34 +754,32 @@ Words: VŠEOBECNÉ BURZY :  Smržovka (  areál Parkhotelu od 8  hodin )  ,  Tř
 # sentence level graph:
 (s14a1 / and
         :op1 (s14b1 / burza
-            :mod (s14v1 / všeobecný
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s14v1 / všeobecný))
         :op2 (s14a2 / and
             :op1 (s14s1 / Smržovka
+                :refer-number singular
                 :parenthesis (s14e1 / event
+                    :aspect state
                     :ARG0 (s14a3 / areál
+                        :refer-number singular
                         :possessor (s14p1 / Parkhotel
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular))
                     :temporal (s14h1 / hodina
-                        :mod (s14x1 / 8)
-                        :refer-number plural)
-                    :aspect state)
-                :refer-number singular)
+                        :refer-number plural
+                        :mod (s14x1 / 8))))
             :op2 (s14t1 / Třebíč
-                :mod (s14t2 / Týn
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s14t2 / Týn)
                 :parenthesis (s14e2 / event
+                    :aspect state
                     :ARG0 (s14h2 / hřiště
+                        :refer-number singular
                         :name (s14k1 / Kuchyňka
-                            :refer-number plural)
-                        :refer-number singular)
+                            :refer-number plural))
                     :temporal (s14h3 / hodina
-                        :mod (s14x2 / 7)
-                        :refer-number plural)
-                    :aspect state)
-                :refer-number singular)))
+                        :refer-number plural
+                        :mod (s14x2 / 7))))))
 
 # alignment:
 s14a1: 3-3
@@ -856,16 +806,16 @@ s14x2: 22-22
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1      2  3 4 5
 Words: NEDĚLE 10 . 4 .
 
 # sentence level graph:
 (s15n1 / neděle
+        :refer-number singular
         :possessor (s15x1 / 4
-            :mod (s15x2 / 10))
-        :refer-number singular)
+            :mod (s15x2 / 10)))
 
 # alignment:
 s15n1: 1-1
@@ -877,7 +827,7 @@ s15x2: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s16-root
+# meta-info :: sent_id = u_tree-cs-s16-root :: type = partial_conversion
 # :: snt16
 Index: 1    2  3          4  5    6  7           8       9         10          11 12 13 14 15 16 17 18 19   20
 Words: Brno ,  Výstaviště :  AUVI -  mezinárodní veletrh spotřební elektroniky ,  10 .  -  14 .  4  .  1994 .
@@ -893,15 +843,13 @@ Words: Brno ,  Výstaviště :  AUVI -  mezinárodní veletrh spotřební elektr
             :op1 (s16i2 / identity-91
                 :ARG1 (s16a3 / Auvi)
                 :ARG2 (s16v2 / veletrh
-                    :mod (s16m1 / mezinárodní
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s16m1 / mezinárodní)
                     :possessor (s16e1 / elektronika
-                        :mod (s16s1 / spotřební
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular))
+                        :refer-number singular
+                        :mod (s16s1 / spotřební))))
             :op2 (s16x1 / 4
-                :mod (s16m2 / math
+                :mod (s16m2 / math-entity
                     :op1 (s16x2 / 10)
                     :op2 (s16x3 / 14))
                 :possessor (s16x4 / 1994))))
@@ -930,65 +878,54 @@ s16x4: 19-19
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s17-root
+# meta-info :: sent_id = u_tree-cs-s17-root :: type = partial_conversion
 # :: snt17
 Index: 1        2        3        4  5       6  7  8  9  10 11 12  13 14   15 16 17         18 19 20 21 22 23 24  25  26 27  28 29 30 31 32 33     34 35 36  37 38 39 40 41     42 43 44     45 46 47     48 49
 Words: Pořádají Brněnské veletrhy a  výstavy ,  a  .  s  .  ,  660 91 Brno 2  ,  Výstaviště 1  ,  P  .  O  .  BOX 491 ,  tel .  :  (  05 )  411511 11 ,  FAX :  (  05 )  411530 79 ,  411530 58 ,  411530 59 .
 
 # sentence level graph:
 (s17p1 / pořádat-001
+        :aspect activity
         :ARG1 (s17e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG0 (s17i1 / identity-91
             :ARG1 (s17a1 / and
                 :op1 (s17v1 / veletrh
+                    :refer-number plural
                     :mod s17b1
-                    :mod s17x3
-                    :mod s17t1
                     :mod s17f1
-                    :mod (s17b2 / Brněnský
-                        :refer-number plural)
-                    :refer-number plural)
+                    :mod s17t1
+                    :mod s17f2
+                    :mod (s17b2 / Brněnský))
                 :op2 (s17v2 / výstava
+                    :refer-number plural
                     :mod s17b1
-                    :mod s17x3
-                    :mod s17t1
                     :mod s17f1
-                    :mod s17b2
-                    :refer-number plural))
+                    :mod s17t1
+                    :mod s17f2
+                    :mod s17b2))
             :ARG2 (s17s1 / společnost
                 :mod (s17a2 / akciový)
                 :mod (s17b1 / Brno
-                    :mod (s17x11 / 660_91)
-                    :mod (s17x12 / 2)
+                    :mod (s17x10 / 660_91)
+                    :mod (s17x11 / 2)
                     :mod (s17v3 / Výstaviště
-                        :mod (s17x13 / 1)
-                        :refer-number singular)
-                    :refer-number singular)
-                :mod (s17x3 / #Forn
-                    :FPHR (s17p2 / P)
-                    :FPHR (s17x14 / .)
-                    :FPHR (s17o1 / O)
-                    :FPHR (s17x15 / .)
-                    :FPHR (s17b3 / BOX
-                        :refer-number singular)
-                    :mod (s17x16 / 491))
+                        :mod (s17x12 / 1)))
+                :mod (s17f1 / foreign-phrase
+                    :op1 "P.O." :op2 "BOX"
+                    :mod (s17x13 / 491))
                 :mod (s17t1 / telefon
-                    :mod (s17x17 / 411511_11
-                        :parenthesis (s17x18 / 05)))
-                :mod (s17f1 / fax
+                    :mod (s17x14 / 411511_11
+                        :parenthesis (s17x15 / 05)))
+                :mod (s17f2 / fax
                     :mod (s17a3 / and
-                        :op1 (s17x19 / 411530_79
-                            :parenthesis (s17x20 / 05))
-                        :op2 (s17x21 / 411530_58
-                            :parenthesis s17x20)
-                        :op3 (s17x23 / 411530_59
-                            :parenthesis s17x20))
-                    :refer-number singular)))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                        :op1 (s17x16 / 411530_79
+                            :parenthesis (s17x17 / 05))
+                        :op2 (s17x18 / 411530_58
+                            :parenthesis s17x17)
+                        :op3 (s17x20 / 411530_59
+                            :parenthesis s17x17))))))
 
 # alignment:
 s17p1: 1-1
@@ -1001,26 +938,21 @@ s17v2: 5-5
 s17s1: 9-9
 s17a2: 7-7
 s17b1: 14-14
-s17x11: 12-13
-s17x12: 15-15
+s17x10: 12-13
+s17x11: 15-15
 s17v3: 17-17
-s17x13: 18-18
-s17x3: 0-0
-s17p2: 20-20
-s17x14: 21-21
-s17o1: 22-22
-s17x15: 23-23
-s17b3: 24-24
-s17x16: 25-25
+s17x12: 18-18
+s17f1: 20-24
+s17x13: 25-25
 s17t1: 27-27
-s17x17: 33-34
-s17x18: 31-31
-s17f1: 36-36
+s17x14: 33-34
+s17x15: 31-31
+s17f2: 36-36
 s17a3: 46-46
-s17x19: 41-42
-s17x20: 39-39
-s17x21: 44-45
-s17x23: 47-48
+s17x16: 41-42
+s17x17: 39-39
+s17x18: 44-45
+s17x20: 47-48
 
 # document level annotation:
 (s17s0 / sentence
@@ -1029,7 +961,7 @@ s17x23: 47-48
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s18-root
+# meta-info :: sent_id = u_tree-cs-s18-root :: type = partial_conversion
 # :: snt18
 Index: 1    2  3          4  5    6  7           8       9       10 11       12      13 14     15  16        17 18        19 20 21 22 23 24 25 26 27   28
 Words: Brno ,  Výstaviště :  DOMO -  Mezinárodní veletrh nábytku ,  bytových doplňků ,  potřeb pro domácnost a  stavebnin ,  10 .  -  14 .  4  .  1944 .
@@ -1046,24 +978,22 @@ Words: Brno ,  Výstaviště :  DOMO -  Mezinárodní veletrh nábytku ,  bytov�
                 :ARG1 (s18d1 / Domo
                     :refer-number singular)
                 :ARG2 (s18v2 / veletrh
-                    :mod (s18m1 / mezinárodní
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s18m1 / mezinárodní)
                     :possessor (s18a2 / and
                         :op1 (s18n1 / nábytek
                             :refer-number singular)
                         :op2 (s18d2 / doplněk
-                            :mod (s18b2 / bytový
-                                :refer-number plural)
-                            :refer-number plural)
+                            :refer-number plural
+                            :mod (s18b2 / bytový))
                         :op3 (s18p1 / potřeba
+                            :refer-number plural
                             :affectee (s18d3 / domácnost
-                                :refer-number singular)
-                            :refer-number plural)
+                                :refer-number singular))
                         :op4 (s18s1 / stavebnina
-                            :refer-number plural))
-                    :refer-number singular))
+                            :refer-number plural))))
             :op2 (s18x1 / 4
-                :mod (s18m2 / math
+                :mod (s18m2 / math-entity
                     :op1 (s18x2 / 10)
                     :op2 (s18x3 / 14))
                 :possessor (s18x4 / 1944))))
@@ -1100,27 +1030,24 @@ s18x4: 27-27
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s19-root
+# meta-info :: sent_id = u_tree-cs-s19-root :: type = partial_conversion
 # :: snt19
 Index: 1        2        3        4 5       6
 Words: Pořádají Brněnské veletrhy a výstavy .
 
 # sentence level graph:
 (s19p1 / pořádat-001
+        :aspect activity
         :ARG1 (s19e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG0 (s19a1 / and
             :op1 (s19v1 / veletrh
-                :mod (s19b1 / Brněnský
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s19b1 / Brněnský))
             :op2 (s19v2 / výstava
-                :mod s19b1
-                :refer-number plural))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number plural
+                :mod s19b1)))
 
 # alignment:
 s19p1: 1-1
@@ -1138,7 +1065,7 @@ s19v2: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s20-root
+# meta-info :: sent_id = u_tree-cs-s20-root :: type = partial_conversion
 # :: snt20
 Index: 1    2  3          4  5    6  7           8       9      10  11    12 13    14 15    16  17 18 19 20 21 22 23 24 25   26
 Words: Brno ,  Výstaviště :  HOGA -  mezinárodní veletrh potřeb pro sport ,  hobby a  volný čas ,  10 .  -  14 .  4  .  1944 .
@@ -1155,21 +1082,19 @@ Words: Brno ,  Výstaviště :  HOGA -  mezinárodní veletrh potřeb pro sport 
                 :ARG1 (s20h1 / Hoga
                     :refer-number singular)
                 :ARG2 (s20v2 / veletrh
-                    :mod (s20m1 / mezinárodní
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s20m1 / mezinárodní)
                     :possessor (s20p1 / potřeba
+                        :refer-number plural
                         :affectee (s20a2 / and
                             :op1 (s20s1 / sport
                                 :refer-number singular)
                             :op2 (s20h2 / hobby)
                             :op3 (s20c1 / čas
-                                :mod (s20v3 / volný
-                                    :refer-number singular)
-                                :refer-number singular))
-                        :refer-number plural)
-                    :refer-number singular))
+                                :refer-number singular
+                                :mod (s20v3 / volný))))))
             :op2 (s20x1 / 4
-                :mod (s20m2 / math
+                :mod (s20m2 / math-entity
                     :op1 (s20x2 / 10)
                     :op2 (s20x3 / 14))
                 :possessor (s20x4 / 1944))))
@@ -1206,27 +1131,24 @@ s20x4: 25-25
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s21-root
+# meta-info :: sent_id = u_tree-cs-s21-root :: type = partial_conversion
 # :: snt21
 Index: 1        2        3        4 5       6
 Words: Pořádají Brněnské veletrhy a výstavy .
 
 # sentence level graph:
 (s21p1 / pořádat-001
+        :aspect activity
         :ARG1 (s21e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG0 (s21a1 / and
             :op1 (s21v1 / veletrh
-                :mod (s21b1 / Brněnský
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s21b1 / Brněnský))
             :op2 (s21v2 / výstava
-                :mod s21b1
-                :refer-number plural))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number plural
+                :mod s21b1)))
 
 # alignment:
 s21p1: 1-1
@@ -1244,7 +1166,7 @@ s21v2: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s22-root
+# meta-info :: sent_id = u_tree-cs-s22-root :: type = partial_conversion
 # :: snt22
 Index: 1    2  3          4  5    6  7           8       9       10 11    12 13   14 15      16 17      18 19      20 21        22 23         24 25        26 27 28 29 30 31 32 33 34   35
 Words: Brno ,  Výstaviště :  STYL -  mezinárodní veletrh odívání ,  obuvi ,  kůže ,  kožešin ,  klenotů ,  hodinek ,  bižuterie ,  parfumerie ,  kosmetiky ,  10 .  -  14 .  4  .  1944 .
@@ -1261,8 +1183,8 @@ Words: Brno ,  Výstaviště :  STYL -  mezinárodní veletrh odívání ,  obuv
                 :ARG1 (s22s1 / Styl
                     :refer-number singular)
                 :ARG2 (s22v2 / veletrh
-                    :mod (s22m1 / mezinárodní
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s22m1 / mezinárodní)
                     :possessor (s22a2 / and
                         :op1 (s22o1 / odívání
                             :refer-number singular)
@@ -1281,10 +1203,9 @@ Words: Brno ,  Výstaviště :  STYL -  mezinárodní veletrh odívání ,  obuv
                         :op8 (s22p1 / parfumerie
                             :refer-number singular)
                         :op9 (s22k4 / kosmetika
-                            :refer-number singular))
-                    :refer-number singular))
+                            :refer-number singular))))
             :op2 (s22x1 / 4
-                :mod (s22m2 / math
+                :mod (s22m2 / math-entity
                     :op1 (s22x2 / 10)
                     :op2 (s22x3 / 14))
                 :possessor (s22x4 / 1944))))
@@ -1325,27 +1246,24 @@ s22x4: 34-34
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s23-root
+# meta-info :: sent_id = u_tree-cs-s23-root :: type = partial_conversion
 # :: snt23
 Index: 1        2        3        4 5       6
 Words: Pořádají Brněnské veletrhy a výstavy .
 
 # sentence level graph:
 (s23p1 / pořádat-001
+        :aspect activity
         :ARG1 (s23e1 / entity
             :refer-number plural
             :refer-person 3rd)
         :ARG0 (s23a1 / and
             :op1 (s23v1 / veletrh
-                :mod (s23b1 / Brněnský
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s23b1 / Brněnský))
             :op2 (s23v2 / výstava
-                :mod s23b1
-                :refer-number plural))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number plural
+                :mod s23b1)))
 
 # alignment:
 s23p1: 1-1
@@ -1363,7 +1281,7 @@ s23v2: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s24-root
+# meta-info :: sent_id = u_tree-cs-s24-root :: type = partial_conversion
 # :: snt24
 Index: 1    2  3          4  5  6  7   8  9           10      11            12       13 14     15 16        17    18 19 20 21 22 23 24 25 26   27
 Words: Brno ,  Výstaviště :  X  -  ART ,  mezinárodní veletrh kancelářského vybavení ,  hraček a  dárkového zboží ,  10 .  -  14 .  4  .  1944 .
@@ -1377,30 +1295,26 @@ Words: Brno ,  Výstaviště :  X  -  ART ,  mezinárodní veletrh kancelářsk�
                 :refer-number singular))
         :ARG2 (s24a1 / and
             :op1 (s24i3 / identity-91
-                :ARG1 (s24x1 / #Forn
-                    :mod (s24x2 / X)
-                    :FPHR (s24x3 / -)
-                    :FPHR (s24a2 / ART))
+                :ARG1 (s24f1 / foreign-phrase
+                    :op1 "-" :op2 "ART"
+                    :mod (s24x1 / X))
                 :ARG2 (s24v2 / veletrh
-                    :mod (s24m1 / mezinárodní
-                        :refer-number singular)
-                    :possessor (s24a3 / and
+                    :refer-number singular
+                    :mod (s24m1 / mezinárodní)
+                    :possessor (s24a2 / and
                         :op1 (s24v3 / vybavení
-                            :mod (s24k1 / kancelářský
-                                :refer-number singular)
-                            :refer-number singular)
+                            :refer-number singular
+                            :mod (s24k1 / kancelářský))
                         :op2 (s24h1 / hračka
                             :refer-number plural)
                         :op3 (s24z1 / zboží
-                            :mod (s24d1 / dárkový
-                                :refer-number singular)
-                            :refer-number singular))
-                    :refer-number singular))
-            :op2 (s24x4 / 4
-                :mod (s24m2 / math
-                    :op1 (s24x5 / 10)
-                    :op2 (s24x6 / 14))
-                :possessor (s24x7 / 1944))))
+                            :refer-number singular
+                            :mod (s24d1 / dárkový)))))
+            :op2 (s24x2 / 4
+                :mod (s24m2 / math-entity
+                    :op1 (s24x3 / 10)
+                    :op2 (s24x4 / 14))
+                :possessor (s24x5 / 1944))))
 
 # alignment:
 s24i1: 4-4
@@ -1409,54 +1323,49 @@ s24b1: 1-1
 s24v1: 3-3
 s24a1: 18-18
 s24i3: 8-8
-s24x1: 0-0
-s24x2: 5-5
-s24x3: 6-6
-s24a2: 7-7
+s24f1: 6-7
+s24x1: 5-5
 s24v2: 10-10
 s24m1: 9-9
-s24a3: 15-15
+s24a2: 15-15
 s24v3: 12-12
 s24k1: 11-11
 s24h1: 14-14
 s24z1: 17-17
 s24d1: 16-16
-s24x4: 24-24
+s24x2: 24-24
 s24m2: 21-21
-s24x5: 19-19
-s24x6: 22-22
-s24x7: 26-26
+s24x3: 19-19
+s24x4: 22-22
+s24x5: 26-26
 
 # document level annotation:
 (s24s0 / sentence
     :coref ((s24b1 :same-entity s23b1)
             (s24v1 :same-entity s22v1)
-            (s24x4 :same-entity s22x1)
-            (s24x7 :same-entity s22x4)))
+            (s24x2 :same-entity s22x1)
+            (s24x5 :same-entity s22x4)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s25-root
+# meta-info :: sent_id = u_tree-cs-s25-root :: type = partial_conversion
 # :: snt25
 Index: 1        2        3        4 5       6
 Words: Pořádají Brněnské veletrhy a výstavy .
 
 # sentence level graph:
 (s25p1 / pořádat-001
+        :aspect activity
         :ARG1 (s25e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG0 (s25a1 / and
             :op1 (s25v1 / veletrh
-                :mod (s25b1 / Brněnský
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s25b1 / Brněnský))
             :op2 (s25v2 / výstava
-                :mod s25b1
-                :refer-number plural))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number plural
+                :mod s25b1)))
 
 # alignment:
 s25p1: 1-1
@@ -1474,7 +1383,7 @@ s25v2: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s26-root
+# meta-info :: sent_id = u_tree-cs-s26-root :: type = partial_conversion
 # :: snt26
 Index: 1    2  3          4  5    6       7  8           9         10        11   12 13 14 15 16 17 18 19 20   21
 Words: Brno ,  Výstaviště :  FAIR FASHION -  mezinárodní veletržní přehlídka módy ,  10 .  -  14 .  4  .  1944 .
@@ -1488,22 +1397,19 @@ Words: Brno ,  Výstaviště :  FAIR FASHION -  mezinárodní veletržní přehl
                 :refer-number singular))
         :ARG2 (s26a1 / and
             :op1 (s26i3 / identity-91
-                :ARG1 (s26x1 / #Forn
-                    :FPHR (s26f1 / FAIR)
-                    :FPHR (s26f2 / FASHION))
+                :ARG1 (s26f1 / foreign-phrase
+                    :op1 "FAIR" :op2 "FASHION")
                 :ARG2 (s26p1 / přehlídka
-                    :mod (s26m1 / mezinárodní
-                        :refer-number singular)
-                    :mod (s26v2 / veletržní
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s26m1 / mezinárodní)
+                    :mod (s26v2 / veletržní)
                     :ARG1 (s26m2 / móda
-                        :refer-number singular)
-                    :refer-number singular))
-            :op2 (s26x2 / 4
-                :mod (s26m3 / math
-                    :op1 (s26x3 / 10)
-                    :op2 (s26x4 / 14))
-                :possessor (s26x5 / 1944))))
+                        :refer-number singular)))
+            :op2 (s26x1 / 4
+                :mod (s26m3 / math-entity
+                    :op1 (s26x2 / 10)
+                    :op2 (s26x3 / 14))
+                :possessor (s26x4 / 1944))))
 
 # alignment:
 s26i1: 4-4
@@ -1512,49 +1418,44 @@ s26b1: 1-1
 s26v1: 3-3
 s26a1: 12-12
 s26i3: 7-7
-s26x1: 0-0
-s26f1: 5-5
-s26f2: 6-6
+s26f1: 5-6
 s26p1: 10-10
 s26m1: 8-8
 s26v2: 9-9
 s26m2: 11-11
-s26x2: 18-18
+s26x1: 18-18
 s26m3: 15-15
-s26x3: 13-13
-s26x4: 16-16
-s26x5: 20-20
+s26x2: 13-13
+s26x3: 16-16
+s26x4: 20-20
 
 # document level annotation:
 (s26s0 / sentence
     :coref ((s26b1 :same-entity s25b1)
             (s26v1 :same-entity s24v1)
-            (s26x2 :same-entity s24x4)
-            (s26x5 :same-entity s24x7)))
+            (s26x1 :same-entity s24x2)
+            (s26x4 :same-entity s24x5)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s27-root
+# meta-info :: sent_id = u_tree-cs-s27-root :: type = partial_conversion
 # :: snt27
 Index: 1        2        3        4 5       6
 Words: Pořádají Brněnské veletrhy a výstavy .
 
 # sentence level graph:
 (s27p1 / pořádat-001
+        :aspect activity
         :ARG1 (s27e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG0 (s27a1 / and
             :op1 (s27v1 / veletrh
-                :mod (s27b1 / Brněnský
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s27b1 / Brněnský))
             :op2 (s27v2 / výstava
-                :mod s27b1
-                :refer-number plural))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number plural
+                :mod s27b1)))
 
 # alignment:
 s27p1: 1-1
@@ -1572,7 +1473,7 @@ s27v2: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s28-root
+# meta-info :: sent_id = u_tree-cs-s28-root :: type = partial_conversion
 # :: snt28
 Index: 1    2  3       4    5  6         7  8     9  10    11    12 13      14 15      16 17      18 19    20    21 22 23      24 25      26 27      28 29      30 31         32 33 34   35 36       37
 Words: TRHY :  Karlovy Vary -  Drahovice ,  Kolín ,  Lázně Mšené -  Ředhošť ,  Nymburk ,  Ostrava (  Černá louka )  ,  Přepeře u  Turnova ,  Teplice (  stadion Na stínadlech )  ,  Valy u  Přelouče .
@@ -1583,42 +1484,37 @@ Words: TRHY :  Karlovy Vary -  Drahovice ,  Kolín ,  Lázně Mšené -  Ředho�
             :refer-number plural)
         :op2 (s28a2 / and
             :op1 (s28v1 / Vary
+                :refer-number plural
                 :mod (s28k1 / Karel
                     :refer-number singular)
-                :mod (s28d1 / Drahovice
-                    :refer-number plural)
-                :refer-number plural)
+                :mod (s28d1 / Drahovice))
             :op2 (s28k2 / Kolín
                 :refer-number singular)
             :op3 (s28a3 / and
                 :op1 (s28l1 / Lázně
-                    :mod (s28m1 / Mšené
-                        :refer-number singular)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s28m1 / Mšené))
                 :op2 (s28r1 / Ředhošť
                     :refer-number singular))
             :op4 (s28n1 / Nymburk
                 :refer-number singular)
             :op5 (s28o1 / Ostrava
+                :refer-number singular
                 :parenthesis (s28l2 / Louka
-                    :mod (s28c1 / Černý
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
+                    :refer-number singular
+                    :mod (s28c1 / Černý)))
             :op6 (s28p1 / Přepeře
-                :mod (s28t2 / Turnov
-                    :refer-number singular)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s28t2 / Turnov))
             :op7 (s28t3 / Teplice
+                :refer-number singular
                 :parenthesis (s28s1 / stadión
+                    :refer-number singular
                     :name (s28s2 / stínadlo
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular)
+                        :refer-number plural)))
             :op8 (s28v2 / val
-                :mod (s28p2 / Přelouč
-                    :refer-number singular)
-                :refer-number plural)))
+                :refer-number plural
+                :mod (s28p2 / Přelouč))))
 
 # alignment:
 s28a1: 2-2
@@ -1651,7 +1547,7 @@ s28p2: 35-36
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s29-root
+# meta-info :: sent_id = u_tree-cs-s29-root :: type = partial_conversion
 # :: snt29
 Index: 1         2     3  4     5  6    7  8       9  10        11  12 13 14   15 16
 Words: VŠEOBECNÁ BURZA :  Plzeň -  Bory ,  Dvorana ,  Klatovská 125 (  od 7.30 )  .
@@ -1659,22 +1555,18 @@ Words: VŠEOBECNÁ BURZA :  Plzeň -  Bory ,  Dvorana ,  Klatovská 125 (  od 7.
 # sentence level graph:
 (s29a1 / and
         :op1 (s29b1 / burza
-            :mod (s29v1 / všeobecný
-                :refer-number singular)
+            :refer-number singular
+            :mod (s29v1 / všeobecný)
             :parenthesis (s29e1 / event
-                :temporal (s29x1 / 7.30)
-                :aspect state)
-            :refer-number singular)
+                :aspect state
+                :temporal (s29x1 / 7.30)))
         :op2 (s29p1 / plzeň
+            :refer-number singular
             :parenthesis s29e1
-            :mod (s29b2 / bor
-                :refer-number plural)
+            :mod (s29b2 / bor)
             :mod (s29d1 / Dvorana
                 :mod (s29k1 / Klatovský
-                    :mod (s29x3 / 125)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular))
+                    :mod (s29x3 / 125)))))
 
 # alignment:
 s29a1: 3-3
@@ -1693,16 +1585,16 @@ s29x3: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s30-root
+# meta-info :: sent_id = u_tree-cs-s30-root :: type = partial_conversion
 # :: snt30
 Index: 1     2  3 4 5
 Words: ÚTERÝ 12 . 4 .
 
 # sentence level graph:
 (s30u1 / úterý
+        :refer-number singular
         :possessor (s30x1 / 4
-            :mod (s30x2 / 12))
-        :refer-number singular)
+            :mod (s30x2 / 12)))
 
 # alignment:
 s30u1: 1-1
@@ -1714,7 +1606,7 @@ s30x2: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s31-root
+# meta-info :: sent_id = u_tree-cs-s31-root :: type = partial_conversion
 # :: snt31
 Index: 1     2  3  4        5   6  7       8  9     10      11         12 13 14 15 16 17 18 19   20 21       22 23 24 25 26   27 28 29    30 31
 Words: Praha 1  ,  Výstavní dům U  Hybernů :  SALON ČESKÝCH ARCHITEKTŮ ,  12 -  16 .  4  .  1994 (  vernisáž 12 .  4  .  1994 v  17 hodin )  .
@@ -1723,36 +1615,32 @@ Words: Praha 1  ,  Výstavní dům U  Hybernů :  SALON ČESKÝCH ARCHITEKTŮ , 
 (s31i1 / identity-91
         :ARG1 (s31i2 / identity-91
             :ARG1 (s31p1 / Praha
-                :mod (s31x1 / 1)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s31x1 / 1))
             :ARG2 (s31d1 / dům
-                :mod (s31v1 / Výstavní
-                    :refer-number singular)
-                :mod (s31h1 / hybern
-                    :refer-number plural)
-                :refer-number singular))
+                :refer-number singular
+                :mod (s31v1 / Výstavní)
+                :mod (s31h1 / hybern)))
         :ARG2 (s31a1 / and
             :op1 (s31s1 / salón
+                :refer-number singular
                 :possessor (s31a2 / architekt
-                    :mod (s31c1 / český
-                        :refer-number plural)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s31c1 / český))
                 :parenthesis (s31e1 / event
+                    :aspect state
                     :ARG0 (s31v2 / vernisáž
                         :refer-number singular)
                     :temporal (s31x2 / 4
                         :mod (s31x3 / 12)
-                        :possessor (s31x4 / 1994)
-                        :refer-number singular)
+                        :possessor (s31x4 / 1994))
                     :temporal (s31h2 / hodina
-                        :mod (s31x5 / 17)
-                        :refer-number plural)
-                    :aspect state)
-                :refer-number singular)
+                        :refer-number plural
+                        :mod (s31x5 / 17))))
             :op2 (s31x6 / 4
                 :parenthesis s31e1
                 :possessor (s31x8 / 1994)
-                :mod (s31m1 / math
+                :mod (s31m1 / math-entity
                     :op1 (s31x9 / 12)
                     :op2 (s31x10 / 16)))))
 
@@ -1786,43 +1674,37 @@ s31x10: 15-15
     :coref ((s31p1 :same-entity s10p2)
             (s31x2 :same-entity s30u1)
             (s31x4 :same-entity s31x8)
-            (s31x8 :same-entity s26x5)))
+            (s31x8 :same-entity s26x4)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s32-root
+# meta-info :: sent_id = u_tree-cs-s32-root :: type = partial_conversion
 # :: snt32
 Index: 1      2     3      4          5  6   7  8  9     10 11 12       13 14 15  16 17 18 19 20 21     22 23  24 25 26 27 28     29
 Words: Pořádá Česká komora architektů ,  118 00 ,  Praha 1  ,  Letenská 5  ,  tel .  :  (  02 )  539651 ,  FAX :  (  02 )  539343 .
 
 # sentence level graph:
 (s32p1 / pořádat-001
+        :aspect activity
         :ARG1 (s32e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG0 (s32k1 / komora
-            :mod (s32c1 / Český
-                :refer-number singular)
+            :refer-number singular
+            :mod (s32c1 / Český)
             :possessor (s32a1 / architekt
                 :refer-number plural)
             :mod (s32p2 / Praha
                 :mod (s32x1 / 118_00)
                 :mod (s32x2 / 1)
                 :mod (s32l1 / Letenský
-                    :mod (s32x3 / 5)
-                    :refer-number singular)
-                :refer-number singular)
+                    :mod (s32x3 / 5)))
             :mod (s32t1 / telefon
                 :mod (s32x4 / 539651
                     :parenthesis (s32x5 / 02)))
             :mod (s32f1 / fax
                 :mod (s32x6 / 539343
-                    :parenthesis (s32x7 / 02))
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :parenthesis (s32x7 / 02)))))
 
 # alignment:
 s32p1: 1-1
@@ -1849,7 +1731,7 @@ s32x7: 26-26
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s33-root
+# meta-info :: sent_id = u_tree-cs-s33-root :: type = partial_conversion
 # :: snt33
 Index: 1    2  3         4   5  6       7  8       9  10 11     12  13      14
 Words: TRHY :  Horšovský Týn ,  Teplice (  náměstí )  ,  Veselí nad Lužnicí .
@@ -1860,17 +1742,14 @@ Words: TRHY :  Horšovský Týn ,  Teplice (  náměstí )  ,  Veselí nad Lužn
             :refer-number plural)
         :op2 (s33a2 / and
             :op1 (s33t2 / Týn
-                :mod (s33h1 / Horšovský
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s33h1 / Horšovský))
             :op2 (s33t3 / Teplice
-                :mod (s33n1 / náměstí
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s33n1 / náměstí))
             :op3 (s33v1 / Veselí
-                :mod (s33l1 / Lužnice
-                    :refer-number singular)
-                :refer-number singular)))
+                :refer-number singular
+                :mod (s33l1 / Lužnice))))
 
 # alignment:
 s33a1: 2-2
@@ -1892,7 +1771,7 @@ s33l1: 12-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s34-root
+# meta-info :: sent_id = u_tree-cs-s34-root :: type = partial_conversion
 # :: snt34
 Index: 1         2     3  4     5  6  7     8     9  10  11       12        13    14 15       16    17
 Words: VŠEOBECNÁ BURZA :  Praha 4  -  Jižní Město ,  při nákupním středisku Start v  Macurově ulici .
@@ -1900,28 +1779,24 @@ Words: VŠEOBECNÁ BURZA :  Praha 4  -  Jižní Město ,  při nákupním střed
 # sentence level graph:
 (s34a1 / and
         :op1 (s34b1 / burza
-            :mod (s34v1 / všeobecný
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s34v1 / všeobecný))
         :op2 (s34p1 / Praha
+            :refer-number singular
             :mod (s34x1 / 4)
             :mod (s34m1 / Město
-                :mod (s34j1 / Jižní
-                    :refer-number singular)
+                :mod (s34j1 / Jižní)
                 :parenthesis (s34e1 / event
+                    :aspect state
                     :place (s34s1 / středisko
-                        :mod (s34n1 / nákupní
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s34n1 / nákupní)
                         :name (s34s2 / Start
                             :refer-number singular)
                         :place (s34u1 / ulice
+                            :refer-number singular
                             :mod (s34m2 / Macura
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect state)
-                :refer-number singular)
-            :refer-number singular))
+                                :refer-number singular)))))))
 
 # alignment:
 s34a1: 3-3
@@ -1943,16 +1818,16 @@ s34m2: 15-15
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s35-root
+# meta-info :: sent_id = u_tree-cs-s35-root :: type = partial_conversion
 # :: snt35
 Index: 1      2  3 4 5
 Words: STŘEDA 13 . 4 .
 
 # sentence level graph:
 (s35s1 / středa
+        :refer-number singular
         :possessor (s35x1 / 4
-            :mod (s35x2 / 13))
-        :refer-number singular)
+            :mod (s35x2 / 13)))
 
 # alignment:
 s35s1: 1-1
@@ -1964,7 +1839,7 @@ s35x2: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s36-root
+# meta-info :: sent_id = u_tree-cs-s36-root :: type = partial_conversion
 # :: snt36
 Index: 1     2  3  4          5  6     7  8        9  10 11          12      13        14       15 16          17 18          19     20 21            22          23 24              25    26            27     28             29   30 31   32 33 34 35 36 37 38 39 40   41
 Words: Praha 7  ,  Výstaviště :  COMMA -  TRANSPED 94 -  mezinárodní veletrh komunální techniky a  technologie ,  komunálních služeb a  souvisejících technických a  podnikatelských oborů podporujících rozvoj infrastruktury měst a  obcí ,  13 .  -  17 .  4  .  1994 .
@@ -1973,64 +1848,54 @@ Words: Praha 7  ,  Výstaviště :  COMMA -  TRANSPED 94 -  mezinárodní veletr
 (s36i1 / identity-91
         :ARG1 (s36i2 / identity-91
             :ARG1 (s36p1 / Praha
-                :mod (s36x1 / 7)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s36x1 / 7))
             :ARG2 (s36v1 / Výstaviště
                 :refer-number singular))
         :ARG2 (s36a1 / and
             :op1 (s36i3 / identity-91
-                :ARG1 (s36x2 / #Forn
-                    :FPHR (s36c1 / COMMA)
-                    :FPHR (s36x3 / -)
-                    :FPHR (s36t1 / TRANSPED)
-                    :FPHR (s36x4 / 94))
+                :ARG1 (s36f1 / foreign-phrase
+                    :op1 "COMMA" :op2 "-" :op3 "TRANSPED" :op4 "94")
                 :ARG2 (s36v2 / veletrh
-                    :mod (s36m1 / mezinárodní
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s36m1 / mezinárodní)
                     :possessor (s36a2 / and
                         :op1 (s36a3 / and
-                            :op1 (s36t2 / technika
-                                :mod (s36k1 / komunální
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :op2 (s36t3 / technologie
+                            :op1 (s36t1 / technika
+                                :refer-number singular
+                                :mod (s36k1 / komunální))
+                            :op2 (s36t2 / technologie
                                 :refer-number singular))
                         :op2 (s36s1 / služba
-                            :mod (s36k2 / komunální
-                                :refer-number plural)
-                            :refer-number plural)
+                            :refer-number plural
+                            :mod (s36k2 / komunální))
                         :op3 (s36a4 / and
                             :op1 (s36o1 / obor
-                                :mod (s36t4 / technický
-                                    :refer-number plural)
-                                :mod (s36s2 / související
-                                    :refer-number plural)
+                                :refer-number plural
+                                :mod (s36t3 / technický)
+                                :mod (s36s2 / související)
                                 :mod (s36p2 / podporující
                                     :ARG1 (s36r1 / rozvoj
+                                        :refer-number singular
                                         :ARG0 (s36a5 / and
                                             :op1 (s36i4 / infrastruktura
+                                                :refer-number singular
                                                 :possessor (s36m2 / město
-                                                    :refer-number plural)
-                                                :refer-number singular)
+                                                    :refer-number plural))
                                             :op2 (s36i5 / infrastruktura
+                                                :refer-number singular
                                                 :possessor (s36o2 / obec
-                                                    :refer-number plural)
-                                                :refer-number singular))
-                                        :refer-number singular)
-                                    :refer-number plural)
-                                :refer-number plural)
+                                                    :refer-number plural))))))
                             :op2 (s36o3 / obor
+                                :refer-number plural
                                 :mod s36s2
                                 :mod s36p2
-                                :mod (s36p3 / podnikatelský
-                                    :refer-number plural)
-                                :refer-number plural)))
-                    :refer-number singular))
-            :op2 (s36x7 / 4
-                :mod (s36m3 / math
-                    :op1 (s36x8 / 13)
-                    :op2 (s36x9 / 17))
-                :possessor (s36x10 / 1994))))
+                                :mod (s36p3 / podnikatelský))))))
+            :op2 (s36x4 / 4
+                :mod (s36m3 / math-entity
+                    :op1 (s36x5 / 13)
+                    :op2 (s36x6 / 17))
+                :possessor (s36x7 / 1994))))
 
 # alignment:
 s36i1: 5-5
@@ -2040,23 +1905,19 @@ s36x1: 2-2
 s36v1: 4-4
 s36a1: 32-32
 s36i3: 10-10
-s36x2: 0-0
-s36c1: 6-6
-s36x3: 7-7
-s36t1: 8-8
-s36x4: 9-9
+s36f1: 6-9
 s36v2: 12-12
 s36m1: 11-11
 s36a2: 20-20
 s36a3: 15-15
-s36t2: 14-14
+s36t1: 14-14
 s36k1: 13-13
-s36t3: 16-16
+s36t2: 16-16
 s36s1: 19-19
 s36k2: 18-18
 s36a4: 23-23
 s36o1: 0-0
-s36t4: 22-22
+s36t3: 22-22
 s36s2: 21-21
 s36p2: 26-26
 s36r1: 27-27
@@ -2067,38 +1928,37 @@ s36i5: 0-0
 s36o2: 31-31
 s36o3: 25-25
 s36p3: 24-24
-s36x7: 38-38
+s36x4: 38-38
 s36m3: 35-35
-s36x8: 33-33
-s36x9: 36-36
-s36x10: 40-40
+s36x5: 33-33
+s36x6: 36-36
+s36x7: 40-40
 
 # document level annotation:
 (s36s0 / sentence
-    :coref ((s36x10 :same-entity s31x4)))
+    :coref ((s36x7 :same-entity s31x4)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s37-root
+# meta-info :: sent_id = u_tree-cs-s37-root :: type = partial_conversion
 # :: snt37
 Index: 1      2      3  4  5  6  7  8  9   10 11    12 13 14      15 16         17 18  19 20 21  22 23 24 25 26     27 28  29   30 31  32 33 34 35 36 37  38   39 40  41 42 43 44 45     46
 Words: Pořádá Olbron ,  a  .  s  .  ,  170 05 Praha 7  -  Bubeneč ,  Výstaviště ,  tel .  /  FAX :  (  02 )  777406 ,  788 2030 ,  tel .  :  (  02 )  872 9259 ,  FAX :  (  02 )  371352 .
 
 # sentence level graph:
 (s37p1 / pořádat-001
+        :aspect activity
         :ARG1 (s37e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG0 (s37i1 / identity-91
             :ARG1 (s37o1 / Olbron
+                :refer-number singular
                 :mod (s37p2 / Praha
                     :mod (s37x1 / 170_05)
                     :mod (s37x2 / 7)
-                    :mod (s37b1 / Bubeneč
-                        :refer-number singular)
-                    :mod (s37v1 / Výstaviště
-                        :refer-number singular)
-                    :refer-number singular)
+                    :mod (s37b1 / Bubeneč)
+                    :mod (s37v1 / Výstaviště))
                 :mod (s37a1 / and
                     :op1 (s37t1 / telefon
                         :mod (s37a2 / and
@@ -2107,25 +1967,19 @@ Words: Pořádá Olbron ,  a  .  s  .  ,  170 05 Praha 7  -  Bubeneč ,  Výstav
                             :op2 (s37x5 / 788_2030
                                 :parenthesis s37x4)))
                     :op2 (s37f1 / fax
-                        :mod s37a2
-                        :refer-number singular))
+                        :mod s37a2))
                 :mod (s37t2 / telefon
                     :mod (s37x8 / 872_9259
                         :parenthesis (s37x9 / 02)))
                 :mod (s37f2 / fax
                     :mod (s37x10 / 371352
-                        :parenthesis (s37x11 / 02))
-                    :refer-number singular)
-                :refer-number singular)
+                        :parenthesis (s37x11 / 02))))
             :ARG2 (s37s1 / společnost
                 :mod s37p2
                 :mod s37a1
                 :mod s37t2
                 :mod s37f2
-                :mod (s37a3 / akciový)))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :mod (s37a3 / akciový))))
 
 # alignment:
 s37p1: 1-1
@@ -2160,7 +2014,7 @@ s37a3: 4-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s38-root
+# meta-info :: sent_id = u_tree-cs-s38-root :: type = partial_conversion
 # :: snt38
 Index: 1     2  3  4          5  6    7    8  9  10            11      12 13     14   15 16         17      18 19              20           21 22 23 24 25 26 27 28 29 30   31
 Words: Praha 7  ,  Výstaviště :  SCAN SHOW 94 -  identifikační systémy (  čárové kódy ,  magnetické proužky ,  radiofrekvenční identifikace )  ,  13 .  -  17 .  4  .  1994 .
@@ -2169,39 +2023,33 @@ Words: Praha 7  ,  Výstaviště :  SCAN SHOW 94 -  identifikační systémy (  
 (s38i1 / identity-91
         :ARG1 (s38i2 / identity-91
             :ARG1 (s38p1 / Praha
-                :mod (s38x1 / 7)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s38x1 / 7))
             :ARG2 (s38v1 / Výstaviště
                 :refer-number singular))
         :ARG2 (s38a1 / and
             :op1 (s38i3 / identity-91
-                :ARG1 (s38x2 / #Forn
-                    :FPHR (s38s1 / SCAN)
-                    :FPHR (s38s2 / SHOW)
-                    :FPHR (s38x3 / 94))
+                :ARG1 (s38f1 / foreign-phrase
+                    :op1 "SCAN" :op2 "SHOW" :op3 "94")
                 :ARG2 (s38i4 / identity-91
-                    :ARG1 (s38s3 / systém
-                        :mod (s38i5 / identifikační
-                            :refer-number plural)
-                        :refer-number plural)
+                    :ARG1 (s38s1 / systém
+                        :refer-number plural
+                        :mod (s38i5 / identifikační))
                     :ARG2 (s38a2 / and
                         :op1 (s38k1 / kód
-                            :mod (s38c1 / čárový
-                                :refer-number plural)
-                            :refer-number plural)
+                            :refer-number plural
+                            :mod (s38c1 / čárový))
                         :op2 (s38p2 / proužek
-                            :mod (s38m1 / magnetický
-                                :refer-number plural)
-                            :refer-number plural)
+                            :refer-number plural
+                            :mod (s38m1 / magnetický))
                         :op3 (s38i6 / identifikace
-                            :mod (s38r1 / radiofrekvenční
-                                :refer-number plural)
-                            :refer-number plural))))
-            :op2 (s38x4 / 4
-                :mod (s38m2 / math
-                    :op1 (s38x5 / 13)
-                    :op2 (s38x6 / 17))
-                :possessor (s38x7 / 1994))))
+                            :refer-number plural
+                            :mod (s38r1 / radiofrekvenční)))))
+            :op2 (s38x2 / 4
+                :mod (s38m2 / math-entity
+                    :op1 (s38x3 / 13)
+                    :op2 (s38x4 / 17))
+                :possessor (s38x5 / 1994))))
 
 # alignment:
 s38i1: 5-5
@@ -2211,12 +2059,9 @@ s38x1: 2-2
 s38v1: 4-4
 s38a1: 22-22
 s38i3: 9-9
-s38x2: 0-0
-s38s1: 6-6
-s38s2: 7-7
-s38x3: 8-8
+s38f1: 6-8
 s38i4: 12-12
-s38s3: 11-11
+s38s1: 11-11
 s38i5: 10-10
 s38a2: 18-18
 s38k1: 14-14
@@ -2225,52 +2070,49 @@ s38p2: 17-17
 s38m1: 16-16
 s38i6: 20-20
 s38r1: 19-19
-s38x4: 28-28
+s38x2: 28-28
 s38m2: 25-25
-s38x5: 23-23
-s38x6: 26-26
-s38x7: 30-30
+s38x3: 23-23
+s38x4: 26-26
+s38x5: 30-30
 
 # document level annotation:
 (s38s0 / sentence
     :coref ((s38p1 :same-entity s36p1)
             (s38v1 :same-entity s37v1)
-            (s38x4 :same-entity s36x7)
-            (s38x7 :same-entity s36x10)))
+            (s38x2 :same-entity s36x4)
+            (s38x5 :same-entity s36x7)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s39-root
+# meta-info :: sent_id = u_tree-cs-s39-root :: type = partial_conversion
 # :: snt39
 Index: 1      2        3     4   5             6       7  8   9  10 11   12 13  14 15    16 17 18       19 20       21 22 23  24 25 26 27 28 29     30 31
 Words: Pořádá Asociace firem pro identifikační systémy -  AMT ČR -  AFIS ,  101 00 Praha 10 -  Vršovice ,  Kodaňská 45 ,  tel .  :  (  02 )  673123 46 .
 
 # sentence level graph:
 (s39p1 / pořádat-001
+        :aspect activity
         :ARG1 (s39e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG0 (s39i1 / identity-91
             :ARG1 (s39a1 / Asociace
+                :refer-number singular
                 :possessor (s39f1 / firma
+                    :refer-number plural
                     :affectee (s39s1 / systém
-                        :mod (s39i2 / identifikační
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural)
+                        :refer-number plural
+                        :mod (s39i2 / identifikační)))
                 :mod (s39p2 / Praha
                     :mod (s39x1 / 101_00)
                     :mod (s39x2 / 10)
-                    :mod (s39v1 / Vršovice
-                        :refer-number plural)
+                    :mod (s39v1 / Vršovice)
                     :mod (s39k1 / Kodaňský
-                        :mod (s39x3 / 45)
-                        :refer-number singular)
-                    :refer-number singular)
+                        :mod (s39x3 / 45)))
                 :mod (s39t1 / telefon
                     :mod (s39x4 / 673123_46
-                        :parenthesis (s39x5 / 02)))
-                :refer-number singular)
+                        :parenthesis (s39x5 / 02))))
             :ARG2 (s39a2 / AMT
                 :mod s39p2
                 :mod s39t1
@@ -2278,10 +2120,7 @@ Words: Pořádá Asociace firem pro identifikační systémy -  AMT ČR -  AFIS 
                     :refer-number singular))
             :ARG3 (s39a3 / AFIS
                 :mod s39p2
-                :mod s39t1))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :mod s39t1)))
 
 # alignment:
 s39p1: 1-1
@@ -2307,12 +2146,12 @@ s39a3: 11-11
 # document level annotation:
 (s39s0 / sentence
     :coref ((s39e1 :same-entity s38i3)
-            (s39s1 :same-entity s38s3)
+            (s39s1 :same-entity s38s1)
             (s39c1 :same-entity s31c1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s40-root
+# meta-info :: sent_id = u_tree-cs-s40-root :: type = partial_conversion
 # :: snt40
 Index: 1    2  3      4  5       6   7     8  9     10
 Words: TRHY :  Beroun ,  Brandýs nad Labem ,  Tábor .
@@ -2325,9 +2164,8 @@ Words: TRHY :  Beroun ,  Brandýs nad Labem ,  Tábor .
             :op1 (s40b1 / Beroun
                 :refer-number singular)
             :op2 (s40b2 / Brandýs
-                :mod (s40l1 / Labe
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s40l1 / Labe))
             :op3 (s40t2 / Tábor
                 :refer-number singular)))
 
@@ -2348,7 +2186,7 @@ s40t2: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s41-root
+# meta-info :: sent_id = u_tree-cs-s41-root :: type = partial_conversion
 # :: snt41
 Index: 1            2     3  4     5  6  7       8  9            10 11 12      13 14 15 16    17 18
 Words: MOTORISTICKÁ BURZA :  Praha 4  -  Pankrác ,  Reitknechtka ,  Na Jezerce (  od 14 hodin )  .
@@ -2356,23 +2194,19 @@ Words: MOTORISTICKÁ BURZA :  Praha 4  -  Pankrác ,  Reitknechtka ,  Na Jezerce
 # sentence level graph:
 (s41a1 / and
         :op1 (s41b1 / burza
-            :mod (s41m1 / motoristický
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s41m1 / motoristický))
         :op2 (s41p1 / Praha
+            :refer-number singular
             :mod (s41x1 / 4)
-            :mod (s41p2 / Pankrác
-                :refer-number singular)
-            :mod (s41r1 / Reitknechtka
-                :refer-number singular)
-            :mod (s41j1 / Jezerka
-                :refer-number singular)
+            :mod (s41p2 / Pankrác)
+            :mod (s41r1 / Reitknechtka)
+            :mod (s41j1 / Jezerka)
             :parenthesis (s41e1 / event
+                :aspect state
                 :temporal (s41h1 / hodina
-                    :mod (s41x2 / 14)
-                    :refer-number plural)
-                :aspect state)
-            :refer-number singular))
+                    :refer-number plural
+                    :mod (s41x2 / 14)))))
 
 # alignment:
 s41a1: 3-3
@@ -2393,7 +2227,7 @@ s41x2: 15-15
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s42-root
+# meta-info :: sent_id = u_tree-cs-s42-root :: type = partial_conversion
 # :: snt42
 Index: 1       2
 Words: ČTVRTEK :
@@ -2410,7 +2244,7 @@ s42c1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s43-root
+# meta-info :: sent_id = u_tree-cs-s43-root :: type = partial_conversion
 # :: snt43
 Index: 1    2  3       4  5          6  7        8  9       10
 Words: TRHY :  Ostrava ,  Prachatice ,  Soběslav ,  Stříbro .

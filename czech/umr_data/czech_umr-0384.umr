@@ -1,14 +1,13 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1       2
 Words: Utopený Armén
 
 # sentence level graph:
 (s1a1 / Armén
-        :mod (s1u1 / utopený
-            :refer-number singular)
-        :refer-number singular)
+        :refer-number singular
+        :mod (s1u1 / utopený))
 
 # alignment:
 s1a1: 2-2
@@ -19,15 +18,15 @@ s1u1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1       2 3   4 5
 Words: Olomouc ( mot ) -
 
 # sentence level graph:
 (s2o1 / Olomouc
-        :parenthesis (s2m1 / mot)
-        :refer-number singular)
+        :refer-number singular
+        :parenthesis (s2m1 / mot))
 
 # alignment:
 s2o1: 1-1
@@ -38,33 +37,28 @@ s2m1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1  2           3      4  5       6      7            8     9  10    11  12 13     14     15
 Words: V  zavlažovací nádrži ZK Vilémov utonul patnáctiletý Armén ,  který byl na letním táboře .
 
 # sentence level graph:
 (s3u1 / utonout-001
+        :aspect performance
         :place (s3n1 / nádrž
+            :refer-number singular
             :mod (s3z1 / ZK
                 :name (s3v1 / Vilémov
                     :refer-number singular))
-            :mod (s3z2 / zavlažovací
-                :refer-number singular)
-            :refer-number singular)
+            :mod (s3z2 / zavlažovací))
         :ARG0 (s3a1 / Armén
-            :mod (s3p1 / patnáctiletý
-                :refer-number singular)
-            :ARG0-of (s3b1 / být-011
+            :refer-number singular
+            :mod (s3p1 / patnáctiletý)
+            :ARG1-of (s3b1 / být-011
+                :aspect activity
                 :place (s3t1 / tábor
-                    :mod (s3l1 / letní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :aspect activity)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                    :refer-number singular
+                    :mod (s3l1 / letní)))))
 
 # alignment:
 s3u1: 6-6
@@ -84,7 +78,7 @@ s3l1: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1  2      3  4   5   6  7         8     9  10 11        12     13     14  15       16 17 18 19        20
 Words: V  nádrži ,  kde byl s  ostatními dětmi ,  z  neznámých příčin zmizel pod hladinou a  už se nevynořil .
@@ -92,35 +86,30 @@ Words: V  nádrži ,  kde byl s  ostatními dětmi ,  z  neznámých příčin z
 # sentence level graph:
 (s4a1 / and
         :op1 (s4z1 / zmizet-001
-            :ARG0 s4e1
+            :aspect performance
+            :ARG1 s4e1
             :place (s4n1 / nádrž
+                :refer-number singular
                 :place-of (s4b1 / být-011
-                    :ARG0 (s4e1 / entity
+                    :aspect activity
+                    :ARG1 (s4e1 / entity
                         :refer-number singular
                         :refer-person 3rd)
                     :companion (s4d1 / dítě
-                        :mod (s4o1 / ostatní
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular
-                    :aspect activity)
-                :refer-number singular)
+                        :refer-number plural
+                        :mod (s4o1 / ostatní))))
             :cause (s4p1 / příčina
+                :refer-number plural
                 :mod (s4z2 / známý
-                    :refer-number plural
-                    :polarity -)
-                :refer-number plural)
+                    :polarity -))
             :place (s4h1 / hladina
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
+                :refer-number singular))
         :op2 (s4v1 / vynořit-se-001
-            :ARG0 s4e1
-            :start (s4e2 / entity)
-            :temporal (s4u1 / už)
-            :refer-number singular
             :aspect performance
-            :polarity -))
+            :polarity -
+            :ARG1 s4e1
+            :start (s4c1 / concept)
+            :temporal (s4u1 / už)))
 
 # alignment:
 s4a1: 16-16
@@ -134,7 +123,7 @@ s4p1: 10-10,12-12
 s4z2: 11-11
 s4h1: 14-15
 s4v1: 18-19
-s4e2: 0-0
+s4c1: 0-0
 s4u1: 17-17
 
 # document level annotation:
@@ -144,27 +133,25 @@ s4u1: 17-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1      2     3    4    5  6  7             8        9
 Words: Hasiči našli jeho tělo až po čtyřiadvaceti hodinách .
 
 # sentence level graph:
 (s5n1 / najít-002
+        :aspect performance
         :ARG0 (s5h1 / hasič
             :refer-number plural)
         :ARG1 (s5t1 / tělo
+            :refer-number singular
             :possessor (s5e1 / entity
                 :refer-number singular
-                :refer-person 3rd)
-            :refer-number singular)
+                :refer-person 3rd))
         :clausal-marker (s5a1 / až)
         :temporal (s5h2 / hodina
-            :mod (s5c1 / čtyřiadvacet
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number plural
-        :aspect performance)
+            :refer-number plural
+            :mod (s5c1 / čtyřiadvacet)))
 
 # alignment:
 s5n1: 2-2
@@ -181,28 +168,24 @@ s5c1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1       2   3  4      5  6           7      8  9        10 11   12
 Words: Chlapec žil s  rodiči v  utečeneckém táboře v  Zastávce u  Brna .
 
 # sentence level graph:
 (s6z1 / žít-005
+        :aspect activity
         :ARG0 (s6c1 / chlapec
-            :refer-number singular
-            :refer-person 3rd)
+            :refer-number singular)
         :companion (s6r1 / rodič
             :refer-number singular)
         :place (s6t1 / tábor
-            :mod (s6u1 / utečenecký
-                :refer-number singular)
+            :refer-number singular
+            :mod (s6u1 / utečenecký)
             :place (s6z2 / zastávka
-                :mod (s6b1 / Brno
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect activity)
+                :refer-number singular
+                :mod (s6b1 / Brno))))
 
 # alignment:
 s6z1: 2-2

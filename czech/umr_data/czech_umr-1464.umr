@@ -1,32 +1,31 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1     2  3     4   5   6
 Words: Úroky ve světě pod 7.5 %
 
 # sentence level graph:
 (s1e1 / event
+        :aspect state
         :ARG0 (s1u1 / úrok
             :refer-number plural)
         :place (s1s1 / svět
             :refer-number singular)
-        :extent (s1x1 / #Percnt
-            :mod (s1x2 / 7.5))
-        :aspect state)
+        :extent (s1p1 / percentage-entity
+            :value "7.5"))
 
 # alignment:
 s1e1: 0-0
 s1u1: 1-1
 s1s1: 2-3
-s1x1: 6-6
-s1x2: 4-5
+s1p1: 4-6
 
 # document level annotation:
 (s1s0 / sentence)
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2
 Words: Praha -
@@ -43,7 +42,7 @@ s2p1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1       2     3  4            5     6        7  8     9  10  11 12   13      14 15    16 17           18    19 20   21      22   23
 Words: Úrokové sazby z  krátkodobých úvěrů dosahují ve světě od tří do osmi procent ,  sazby z  dlouhodobých úvěrů od pěti procent výše .
@@ -51,41 +50,31 @@ Words: Úrokové sazby z  krátkodobých úvěrů dosahují ve světě od tří 
 # sentence level graph:
 (s3a1 / and
         :op1 (s3d1 / dosahovat-002
-            :ARG0 (s3s1 / sazba
-                :mod (s3u1 / úrokový
-                    :refer-number plural)
+            :aspect activity
+            :ARG1 (s3s1 / sazba
+                :refer-number plural
+                :mod (s3u1 / úrokový)
                 :source (s3u2 / úvěr
-                    :mod (s3k1 / krátkodobý
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural)
+                    :refer-number plural
+                    :mod (s3k1 / krátkodobý)))
             :place (s3s2 / svět
                 :refer-number singular)
-            :ARG1 (s3p1 / procento
-                :mod (s3m1 / math
-                    :op1 (s3t1 / tři
-                        :refer-number plural)
-                    :op2 (s3o1 / osm
-                        :refer-number plural))
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+            :ARG2 (s3p1 / procento
+                :refer-number plural
+                :mod (s3m1 / math-entity
+                    :op1 (s3t1 / tři)
+                    :op2 (s3o1 / osm))))
         :op2 (s3d2 / dosahovat-003
+            :aspect activity
             :ARG0 (s3s3 / sazba
+                :refer-number plural
                 :source (s3u3 / úvěr
-                    :mod (s3d3 / dlouhodobý
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural)
+                    :refer-number plural
+                    :mod (s3d3 / dlouhodobý)))
             :goal (s3v1 / vysoko
                 :start (s3p2 / procento
-                    :mod (s3p3 / pět
-                        :refer-number plural)
-                    :refer-number plural))
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity))
+                    :refer-number plural
+                    :mod (s3p3 / pět)))))
 
 # alignment:
 s3a1: 14-14
@@ -113,58 +102,47 @@ s3p3: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1       2  3  4        5         6     7  8         9           10        11      12 13         14 15        16   17         18 19           20      21 22     23 24     25    26       27       28    29      30    31
 Words: Vyplývá to z  přehledu úrokových sazeb v  některých hospodářsky vyspělých státech ,  obsaženého v  publikaci Jany Sereghyové o  konjunkturní situaci v  Evropě ,  kterou vydal Institut ekonomie České národní banky .
 
 # sentence level graph:
 (s4v1 / vyplývat-001
+        :aspect activity
         :ARG0 (s4t1 / ten
             :refer-number singular)
         :ARG1 (s4p1 / přehled
+            :refer-number singular
             :ARG1 (s4s1 / sazba
-                :mod (s4u1 / úrokový
-                    :refer-number plural)
+                :refer-number plural
+                :mod (s4u1 / úrokový)
                 :place (s4s2 / stát
+                    :refer-number plural
                     :mod (s4v2 / vyspělý
-                        :regard (s4h1 / hospodářsky)
-                        :refer-number plural)
-                    :mod (s4n1 / některý
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural)
+                        :regard (s4h1 / hospodářsky))
+                    :mod (s4n1 / některý)))
             :mod (s4o1 / obsažený
                 :place (s4p2 / publikace
+                    :refer-number singular
                     :source (s4s3 / Sereghyová
-                        :mod (s4j1 / Jana
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s4j1 / Jana))
                     :ARG1 (s4s4 / situace
-                        :mod (s4k1 / konjunkturní
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s4k1 / konjunkturní)
                         :place (s4e1 / Evropa
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular))
                     :ARG1-of (s4v3 / vydat-006
+                        :aspect performance
                         :ARG0 (s4i1 / Institut
+                            :refer-number singular
                             :possessor (s4e2 / ekonomie
                                 :refer-number singular)
                             :possessor (s4b1 / banka
-                                :mod (s4n2 / národní
-                                    :refer-number singular)
-                                :mod (s4c1 / Český
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular
-                        :aspect performance)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                                :refer-number singular
+                                :mod (s4n2 / národní)
+                                :mod (s4c1 / Český))))))))
 
 # alignment:
 s4v1: 1-1
@@ -196,7 +174,7 @@ s4c1: 28-28
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1  2     3        4  5  6   7       8     9        10 11 12 13 14     15        16      17
 Words: Ve druhé polovině 80 .  let úrokové sazby stoupaly ,  a  to z  hladin podobných dnešním .
@@ -204,32 +182,26 @@ Words: Ve druhé polovině 80 .  let úrokové sazby stoupaly ,  a  to z  hladin
 # sentence level graph:
 (s5i1 / identity-91
         :ARG1 (s5s1 / stoupat-001
+            :aspect activity
             :temporal (s5p1 / polovina
-                :mod (s5d1 / druhý
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s5d1 / druhý)
                 :mod (s5r1 / rok
-                    :mod (s5x1 / 80)
-                    :refer-number plural)
-                :refer-number singular)
+                    :refer-number plural
+                    :mod (s5x1 / 80)))
             :ARG0 (s5s2 / sazba
-                :mod (s5u1 / úrokový
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :aspect activity)
+                :refer-number plural
+                :mod (s5u1 / úrokový)))
         :ARG2 (s5s3 / stoupat-001
+            :aspect activity
             :temporal s5p1
             :ARG0 s5s2
             :source (s5h1 / hladina
+                :refer-number plural
                 :mod (s5p2 / podobný
                     :ARG1 (s5h2 / hladina
-                        :mod (s5d2 / dnešní
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :aspect activity))
+                        :refer-number plural
+                        :mod (s5d2 / dnešní))))))
 
 # alignment:
 s5i1: 11-12
@@ -252,7 +224,7 @@ s5d2: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1  2    3    4   5       6  7   8      9   10       11 12           13 14        15  16       17 18           19    20 21 22      23     24   25  26        27  28 29  30 31 32 33         34  35 36  37 38 39 40     41 42   43        44  45 46 47 48     49  50 51   52 53 54 55      56  57 58   59 60 61 62    63       64   65 66   67       68
 Words: V  roce 1987 tak dosáhly v  USA zhruba 5.5 procenta z  krátkodobých a  přibližně 7.5 procenta u  dlouhodobých úvěrů ,  v  Německu činily tyto dva ukazatele 5.0 a  6.0 %  ,  v  Nizozemsku 5.7 a  6.2 %  ,  v  Belgii v  obou případech 7.5 %  ,  v  Itálii 8.7 a  10.0 %  ,  ve Francii 9.0 a  10.0 %  a  ve Velké Británii 10.0 a  10.6 procenta .
@@ -261,117 +233,103 @@ Words: V  roce 1987 tak dosáhly v  USA zhruba 5.5 procenta z  krátkodobých a 
 (s6a1 / and
         :op1 (s6a2 / and
             :op1 (s6d1 / dosáhnout-002
+                :aspect performance
                 :clausal-marker (s6t1 / tak)
                 :ARG0 (s6e1 / entity
                     :refer-number plural
                     :refer-person 3rd)
                 :temporal (s6r1 / rok
-                    :mod (s6x1 / 1987)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s6x1 / 1987))
                 :place (s6u1 / USA
                     :refer-number plural)
                 :ARG1 (s6p1 / procento
+                    :refer-number singular
                     :mod (s6x2 / 5.5
                         :extent (s6z1 / zhruba))
                     :start (s6u2 / úvěr
-                        :mod (s6k1 / krátkodobý
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number plural
-                :aspect performance)
+                        :refer-number plural
+                        :mod (s6k1 / krátkodobý))))
             :op2 (s6d2 / dosáhnout-002
+                :aspect performance
                 :clausal-marker s6t1
                 :ARG0 s6e1
                 :temporal s6r1
                 :place s6u1
                 :ARG1 (s6p2 / procento
+                    :refer-number singular
                     :mod (s6x7 / 7.5
-                        :extent (s6p3 / přibližně))
-                    :refer-number singular)
+                        :extent (s6p3 / přibližně)))
                 :place (s6u3 / úvěr
-                    :mod (s6d3 / dlouhodobý
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural
-                :aspect performance))
+                    :refer-number plural
+                    :mod (s6d3 / dlouhodobý))))
         :op2 (s6a3 / and
             :op1 (s6c1 / činit-007
-                :ARG0 (s6u4 / ukazatel
-                    :mod (s6t2 / tento
-                        :refer-number plural)
-                    :mod (s6d4 / dva
-                        :refer-number plural)
-                    :refer-number plural)
+                :aspect activity
+                :ARG1 (s6u4 / ukazatel
+                    :refer-number plural
+                    :mod (s6t2 / tento)
+                    :mod (s6d4 / dva))
                 :place (s6n1 / Německo
                     :refer-number singular)
                 :extent (s6a4 / and
-                    :op1 (s6x8 / #Percnt
-                        :mod (s6x9 / 5.0))
-                    :op2 (s6x10 / #Percnt
-                        :mod (s6x11 / 6.0)))
-                :refer-number plural
-                :aspect activity)
+                    :op1 (s6p4 / percentage-entity
+                        :value "5.0")
+                    :op2 (s6p5 / percentage-entity
+                        :value "6.0")))
             :op2 (s6c2 / činit-007
-                :ARG0 s6u4
+                :aspect activity
+                :ARG1 s6u4
                 :place (s6n2 / Nizozemsko
                     :refer-number singular)
                 :extent (s6a5 / and
-                    :op1 (s6x13 / #Percnt
-                        :mod (s6x14 / 5.7))
-                    :op2 (s6x15 / #Percnt
-                        :mod (s6x16 / 6.2)))
-                :refer-number plural
-                :aspect activity)
+                    :op1 (s6p6 / percentage-entity
+                        :value "5.7")
+                    :op2 (s6p7 / percentage-entity
+                        :value "6.2")))
             :op3 (s6c3 / činit-007
-                :ARG0 s6u4
+                :aspect activity
+                :ARG1 s6u4
                 :place (s6b1 / Belgie
                     :refer-number singular)
-                :place (s6p4 / případ
-                    :mod (s6o1 / oba
-                        :refer-number plural)
-                    :refer-number plural)
-                :extent (s6x18 / #Percnt
-                    :mod (s6x19 / 7.5))
-                :refer-number plural
-                :aspect activity)
+                :place (s6p8 / případ
+                    :refer-number plural
+                    :mod (s6o1 / oba))
+                :ARG2 (s6p9 / percentage-entity
+                    :value "7.5"))
             :op4 (s6c4 / činit-007
-                :ARG0 s6u4
+                :aspect activity
+                :ARG1 s6u4
                 :place (s6i1 / Itálie
                     :refer-number singular)
                 :extent (s6a6 / and
-                    :op1 (s6x21 / #Percnt
-                        :mod (s6x22 / 8.7))
-                    :op2 (s6x23 / #Percnt
-                        :mod (s6x24 / 10.0)))
-                :refer-number plural
-                :aspect activity)
+                    :op1 (s6p10 / percentage-entity
+                        :value "8.7")
+                    :op2 (s6p11 / percentage-entity
+                        :value "10.0")))
             :op5 (s6c5 / činit-007
-                :ARG0 s6u4
+                :aspect activity
+                :ARG1 s6u4
                 :place (s6f1 / Francie
                     :refer-number singular)
                 :extent (s6a7 / and
-                    :op1 (s6x26 / #Percnt
-                        :mod (s6x27 / 9.0))
-                    :op2 (s6x28 / #Percnt
-                        :mod (s6x29 / 10.0)))
-                :refer-number plural
-                :aspect activity)
+                    :op1 (s6p12 / percentage-entity
+                        :value "9.0")
+                    :op2 (s6p13 / percentage-entity
+                        :value "10.0")))
             :op6 (s6c6 / činit-007
-                :ARG0 s6u4
+                :aspect activity
+                :ARG1 s6u4
                 :place (s6b2 / Británie
-                    :mod (s6v1 / Velký
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s6v1 / Velký))
                 :extent (s6a8 / and
-                    :op1 (s6p5 / procento
-                        :mod (s6x31 / 10.0)
-                        :refer-number singular)
-                    :op2 (s6p6 / procento
-                        :mod (s6x32 / 10.6)
-                        :refer-number singular))
-                :refer-number plural
-                :aspect activity)))
+                    :op1 (s6p14 / procento
+                        :refer-number singular
+                        :mod (s6x13 / 10.0))
+                    :op2 (s6p15 / procento
+                        :refer-number singular
+                        :mod (s6x14 / 10.6))))))
 
 # alignment:
 s6a1: 20-20
@@ -397,48 +355,39 @@ s6a3: 60-60
 s6c1: 23-23
 s6n1: 21-22
 s6a4: 28-28
-s6x8: 0-0
-s6x9: 27-27
-s6x10: 30-30
-s6x11: 29-29
+s6p4: 27-27
+s6p5: 29-30
 s6u4: 26-26
 s6t2: 24-24
 s6d4: 25-25
 s6c2: 0-0
 s6n2: 32-33
 s6a5: 35-35
-s6x13: 0-0
-s6x14: 34-34
-s6x15: 37-37
-s6x16: 36-36
+s6p6: 34-34
+s6p7: 36-37
 s6c3: 0-0
 s6b1: 39-40
-s6p4: 41-41,43-43
+s6p8: 41-41,43-43
 s6o1: 42-42
-s6x18: 45-45
-s6x19: 44-44
+s6p9: 44-45
 s6c4: 0-0
 s6i1: 47-48
 s6a6: 50-50
-s6x21: 0-0
-s6x22: 49-49
-s6x23: 52-52
-s6x24: 51-51
+s6p10: 49-49
+s6p11: 51-52
 s6c5: 0-0
 s6f1: 54-55
 s6a7: 57-57
-s6x26: 0-0
-s6x27: 56-56
-s6x28: 59-59
-s6x29: 58-58
+s6p12: 56-56
+s6p13: 58-59
 s6c6: 0-0
 s6b2: 61-61,63-63
 s6v1: 62-62
 s6a8: 65-65
-s6p5: 0-0
-s6x31: 64-64
-s6p6: 67-67
-s6x32: 66-66
+s6p14: 0-0
+s6x13: 64-64
+s6p15: 67-67
+s6x14: 66-66
 
 # document level annotation:
 (s6s0 / sentence
@@ -448,40 +397,36 @@ s6x32: 66-66
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1  2       3  4  5  6  7  8   9     10     11         12          13     14 15 16    17      18 19 20   21   22
 Words: Na přelomu 80 .  a  90 .  let sazby vesměs dosahovaly maximálních hodnot ,  na nichž zůstaly až do roku 1992 .
 
 # sentence level graph:
 (s7d1 / dosahovat-002
+        :aspect activity
         :temporal (s7p1 / přelom
+            :refer-number singular
             :possessor (s7a1 / and
                 :op1 (s7r1 / rok
-                    :mod (s7x1 / 80)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s7x1 / 80))
                 :op2 (s7r2 / rok
-                    :mod (s7x2 / 90)
-                    :refer-number plural))
-            :refer-number singular)
-        :ARG0 (s7s1 / sazba
-            :refer-number plural
-            :refer-person 3rd)
+                    :refer-number plural
+                    :mod (s7x2 / 90))))
+        :ARG1 (s7s1 / sazba
+            :refer-number plural)
         :extent (s7v1 / vesměs)
-        :ARG1 (s7h1 / hodnota
-            :mod (s7m1 / maximální
-                :refer-number plural)
+        :ARG2 (s7h1 / hodnota
+            :refer-number plural
+            :mod (s7m1 / maximální)
             :place-of (s7z1 / zůstat-006
+                :aspect performance
                 :ARG0 s7s1
                 :temporal (s7r3 / rok
+                    :refer-number singular
                     :clausal-marker (s7a2 / až)
-                    :mod (s7x4 / 1992)
-                    :refer-number singular)
-                :refer-number plural
-                :aspect performance)
-            :refer-number plural)
-        :refer-number plural
-        :aspect activity)
+                    :mod (s7x4 / 1992)))))
 
 # alignment:
 s7d1: 11-11
@@ -507,7 +452,7 @@ s7x4: 21-21
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1  2         3         4     5  6     7    8       9      10     11    12      13   14    15 16     17                18      19
 Words: V  některých případech ovšem v  tomto roce dosáhly letité vysoké sazby vrcholu nebo došlo k  jejich několikaměsíčnímu zvýšení .
@@ -515,34 +460,26 @@ Words: V  některých případech ovšem v  tomto roce dosáhly letité vysoké 
 # sentence level graph:
 (s8o1 / or
         :op1 (s8d1 / dosáhnout-002
+            :aspect performance
             :clausal-marker (s8o2 / ovšem)
             :place (s8p1 / případ
-                :mod (s8n1 / některý
-                    :refer-number plural)
-                :refer-number plural)
-            :temporal (s8r1 / rok
-                :mod (s8t1 / tento
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG0 (s8s1 / sazba
-                :mod (s8v1 / vysoký
-                    :refer-number plural)
-                :mod (s8l1 / letitý
-                    :refer-number plural)
                 :refer-number plural
-                :refer-person 3rd)
+                :mod (s8n1 / některý))
+            :temporal (s8r1 / rok
+                :refer-number singular
+                :mod (s8t1 / tento))
+            :ARG0 (s8s1 / sazba
+                :refer-number plural
+                :mod (s8v1 / vysoký)
+                :mod (s8l1 / letitý))
             :ARG1 (s8v2 / vrchol
-                :refer-number singular)
-            :refer-number plural
-            :aspect performance)
+                :refer-number singular))
         :op2 (s8d2 / dojít-009
-            :ARG0 (s8z1 / zvýšení
+            :aspect performance
+            :ARG1 (s8z1 / zvýšení
+                :refer-number singular
                 :ARG0 s8s1
-                :extent (s8n2 / několikaměsíční
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance))
+                :extent (s8n2 / několikaměsíční))))
 
 # alignment:
 s8o1: 13-13
@@ -567,42 +504,37 @@ s8n2: 17-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1  2    3    4    5           6   7       8  9     10           11 12           13    14 15   16  17 18  19 20
 Words: V  roce 1989 tedy zaznamenaly USA maximum u  sazeb krátkodobých a  dlouhodobých úvěrů ve výši 8.7 a  9.0 %  .
 
 # sentence level graph:
 (s9z1 / zaznamenat-001
+        :aspect performance
         :clausal-marker (s9t1 / tedy)
         :temporal (s9r1 / rok
-            :mod (s9x1 / 1989)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s9x1 / 1989))
         :ARG0 (s9u1 / USA
             :refer-number plural)
         :ARG1 (s9m1 / maximum
             :refer-number singular)
         :place (s9s1 / sazba
+            :refer-number plural
             :possessor (s9a1 / and
                 :op1 (s9u2 / úvěr
-                    :mod (s9k1 / krátkodobý
-                        :refer-number plural)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s9k1 / krátkodobý))
                 :op2 (s9u3 / úvěr
-                    :mod (s9d1 / dlouhodobý
-                        :refer-number plural)
-                    :refer-number plural))
+                    :refer-number plural
+                    :mod (s9d1 / dlouhodobý)))
             :mod (s9v1 / výše
                 :mod (s9a2 / and
-                    :op1 (s9x2 / #Percnt
-                        :mod (s9x3 / 8.7))
-                    :op2 (s9x4 / #Percnt
-                        :mod (s9x5 / 9.0)))
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd)
-        :refer-number plural
-        :aspect performance)
+                    :op1 (s9p1 / percentage-entity
+                        :value "8.7")
+                    :op2 (s9p2 / percentage-entity
+                        :value "9.0")))))
 
 # alignment:
 s9z1: 5-5
@@ -619,10 +551,8 @@ s9u3: 13-13
 s9d1: 12-12
 s9v1: 14-15
 s9a2: 17-17
-s9x2: 0-0
-s9x3: 16-16
-s9x4: 19-19
-s9x5: 18-18
+s9p1: 16-16
+s9p2: 18-19
 
 # document level annotation:
 (s9s0 / sentence
@@ -633,7 +563,7 @@ s9x5: 18-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1  2      3  4       5   6  7    8    9      10   11    12   13 14   15 16 17 18     19   20 21   22 23 24 25    26       27   28 29   30 31 32 33   34   35 36      37   38 39  40 41 42 43         44  45 46  47 48
 Words: V  Belgii a  Francii pak v  roce 1990 činily tyto sazby 10.5 a  11.0 %  ,  v  Itálii 13.7 a  12.0 %  ,  ve Velké Británii 15.0 a  12.0 %  ,  v  roce 1992 v  Německu 10.0 a  8.5 %  a  v  Nizozemsku 9.8 a  8.0 %  .
@@ -642,81 +572,74 @@ Words: V  Belgii a  Francii pak v  roce 1990 činily tyto sazby 10.5 a  11.0 %  
 (s10a1 / and
         :op1 (s10a2 / and
             :op1 (s10c1 / činit-007
-                :ARG0 (s10s1 / sazba
-                    :mod (s10t1 / tento
-                        :refer-number plural)
-                    :refer-number plural)
+                :aspect activity
+                :ARG1 (s10s1 / sazba
+                    :refer-number plural
+                    :mod (s10t1 / tento))
                 :clausal-marker (s10p1 / pak)
                 :temporal (s10r1 / rok
-                    :mod (s10x1 / 1990)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s10x1 / 1990))
                 :place (s10a3 / and
                     :op1 (s10b1 / Belgie
                         :refer-number singular)
                     :op2 (s10f1 / Francie
                         :refer-number singular))
                 :extent (s10a4 / and
-                    :op1 (s10x2 / #Percnt
-                        :mod (s10x3 / 10.5))
-                    :op2 (s10x4 / #Percnt
-                        :mod (s10x5 / 11.0)))
-                :refer-number plural
-                :aspect activity)
+                    :op1 (s10p2 / percentage-entity
+                        :value "10.5")
+                    :op2 (s10p3 / percentage-entity
+                        :value "11.0")))
             :op2 (s10c2 / činit-007
-                :ARG0 s10s1
+                :aspect activity
+                :ARG1 s10s1
                 :clausal-marker s10p1
                 :temporal s10r1
                 :place (s10i1 / Itálie
                     :refer-number singular)
                 :extent (s10a5 / and
-                    :op1 (s10x9 / #Percnt
-                        :mod (s10x10 / 13.7))
-                    :op2 (s10x11 / #Percnt
-                        :mod (s10x12 / 12.0)))
-                :refer-number plural
-                :aspect activity)
+                    :op1 (s10p4 / percentage-entity
+                        :value "13.7")
+                    :op2 (s10p5 / percentage-entity
+                        :value "12.0")))
             :op3 (s10c3 / činit-007
-                :ARG0 s10s1
+                :aspect activity
+                :ARG1 s10s1
                 :clausal-marker s10p1
                 :temporal s10r1
                 :place (s10b2 / Británie
-                    :mod (s10v1 / Velký
-                        :refer-number singular)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s10v1 / Velký))
                 :extent (s10a6 / and
-                    :op1 (s10x16 / #Percnt
-                        :mod (s10x17 / 15.0))
-                    :op2 (s10x18 / #Percnt
-                        :mod (s10x19 / 12.0)))
-                :refer-number plural
-                :aspect activity))
+                    :op1 (s10p6 / percentage-entity
+                        :value "15.0")
+                    :op2 (s10p7 / percentage-entity
+                        :value "12.0"))))
         :op2 (s10a7 / and
             :op1 (s10c4 / činit-007
-                :ARG0 s10s1
+                :aspect activity
+                :ARG1 s10s1
                 :temporal (s10r2 / rok
-                    :mod (s10x21 / 1992)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s10x9 / 1992))
                 :place (s10n1 / Německo
                     :refer-number singular)
                 :extent (s10a8 / and
-                    :op1 (s10x22 / #Percnt
-                        :mod (s10x23 / 10.0))
-                    :op2 (s10x24 / #Percnt
-                        :mod (s10x25 / 8.5)))
-                :refer-number plural
-                :aspect activity)
+                    :op1 (s10p8 / percentage-entity
+                        :value "10.0")
+                    :op2 (s10p9 / percentage-entity
+                        :value "8.5")))
             :op2 (s10c5 / činit-007
-                :ARG0 s10s1
+                :aspect activity
+                :ARG1 s10s1
                 :temporal s10r2
                 :place (s10n2 / Nizozemsko
                     :refer-number singular)
                 :extent (s10a9 / and
-                    :op1 (s10x28 / #Percnt
-                        :mod (s10x29 / 9.8))
-                    :op2 (s10x30 / #Percnt
-                        :mod (s10x31 / 8.0)))
-                :refer-number plural
-                :aspect activity)))
+                    :op1 (s10p10 / percentage-entity
+                        :value "9.8")
+                    :op2 (s10p11 / percentage-entity
+                        :value "8.0")))))
 
 # alignment:
 s10a1: 31-31
@@ -726,10 +649,8 @@ s10a3: 3-3
 s10b1: 1-2
 s10f1: 1-1,4-4
 s10a4: 13-13
-s10x2: 0-0
-s10x3: 12-12
-s10x4: 15-15
-s10x5: 14-14
+s10p2: 12-12
+s10p3: 14-15
 s10s1: 11-11
 s10t1: 10-10
 s10p1: 5-5
@@ -738,35 +659,27 @@ s10x1: 8-8
 s10c2: 0-0
 s10i1: 17-18
 s10a5: 20-20
-s10x9: 0-0
-s10x10: 19-19
-s10x11: 22-22
-s10x12: 21-21
+s10p4: 19-19
+s10p5: 21-22
 s10c3: 0-0
 s10b2: 24-24,26-26
 s10v1: 25-25
 s10a6: 28-28
-s10x16: 0-0
-s10x17: 27-27
-s10x18: 30-30
-s10x19: 29-29
+s10p6: 27-27
+s10p7: 29-30
 s10a7: 41-41
 s10c4: 0-0
 s10n1: 35-36
 s10a8: 38-38
-s10x22: 0-0
-s10x23: 37-37
-s10x24: 40-40
-s10x25: 39-39
+s10p8: 37-37
+s10p9: 39-40
 s10r2: 32-33
-s10x21: 34-34
+s10x9: 34-34
 s10c5: 0-0
 s10n2: 42-43
 s10a9: 45-45
-s10x28: 0-0
-s10x29: 44-44
-s10x30: 47-47
-s10x31: 46-46
+s10p10: 44-44
+s10p11: 46-47
 
 # document level annotation:
 (s10s0 / sentence
@@ -780,7 +693,7 @@ s10x31: 46-46
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1  2       3        4    5   6       7    8       9  10    11    12     13
 Words: V  průběhu loňského roku již úrokové míry klesaly ,  často velmi prudce .
@@ -788,25 +701,21 @@ Words: V  průběhu loňského roku již úrokové míry klesaly ,  často velmi
 # sentence level graph:
 (s11i1 / identity-91
         :ARG1 (s11k1 / klesat-001
-            :ARG0 (s11m1 / míra
-                :mod (s11u1 / úrokový
-                    :refer-number plural)
-                :refer-number plural)
+            :aspect activity
+            :ARG1 (s11m1 / míra
+                :refer-number plural
+                :mod (s11u1 / úrokový))
             :temporal (s11r1 / rok
-                :mod (s11l1 / loňský
-                    :refer-number singular)
-                :refer-number singular)
-            :clausal-marker (s11j1 / již)
-            :refer-number plural
-            :aspect activity)
+                :refer-number singular
+                :mod (s11l1 / loňský))
+            :clausal-marker (s11j1 / již))
         :ARG2 (s11k2 / klesat-001
-            :ARG0 s11m1
+            :aspect activity
+            :ARG1 s11m1
             :temporal s11r1
             :manner (s11p1 / prudce
                 :extent (s11v1 / velmi))
-            :frequency (s11c1 / často)
-            :refer-number plural
-            :aspect activity))
+            :frequency (s11c1 / často)))
 
 # alignment:
 s11i1: 9-9
@@ -827,7 +736,7 @@ s11c1: 10-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1     2  3      4         5      6          7     8  9   10  11 12         13  14       15 16 17         18  19 20  21 22 23 24 25 26       27  28 29  30 31 32 33      34  35 36   37 38  39 40 41 42     43  44 45  46 47 48 49      50  51 52  53 54 55 56     57 58           59    60        61  62      63
 Words: Letos v  prvním čtvrtletí činily krátkodobé sazby v  USA 3.0 a  dlouhodobé 6.3 procenta ,  v  Nizozemsku 5.0 a  6.3 %  ,  ve V  .  Británii 5.0 a  6.5 %  ,  v  Německu 5.8 ,  resp .  5.6 %  ,  v  Belgii 6.2 a  7.0 %  ,  ve Francii 6.3 a  6.2 %  a  v  Itálii z  krátkodobých úvěrů přibližně osm procent .
@@ -836,121 +745,108 @@ Words: Letos v  prvním čtvrtletí činily krátkodobé sazby v  USA 3.0 a  dlo
 (s12a1 / and
         :op1 (s12a2 / and
             :op1 (s12c1 / činit-007
+                :aspect activity
                 :temporal s12l1
                 :temporal s12c2
-                :ARG0 (s12s1 / sazba
-                    :mod (s12k1 / krátkodobý
-                        :refer-number plural)
-                    :refer-number plural)
-                :extent (s12p1 / procento
-                    :mod (s12x3 / 3.0)
-                    :refer-number singular)
+                :ARG1 (s12s1 / sazba
+                    :refer-number plural
+                    :mod (s12k1 / krátkodobý))
+                :ARG2 (s12p1 / procento
+                    :refer-number singular
+                    :mod (s12x3 / 3.0))
                 :place (s12u1 / USA
-                    :refer-number plural)
-                :refer-number plural
-                :aspect activity)
+                    :refer-number plural))
             :op2 (s12c3 / činit-007
+                :aspect activity
                 :temporal s12l1
                 :temporal s12c2
                 :place s12u1
-                :ARG0 (s12s2 / sazba
-                    :mod (s12d1 / dlouhodobý
-                        :refer-number plural)
-                    :refer-number plural)
-                :extent (s12p2 / procento
-                    :mod (s12x7 / 6.3)
-                    :refer-number singular)
-                :refer-number plural
-                :aspect activity))
+                :ARG1 (s12s2 / sazba
+                    :refer-number plural
+                    :mod (s12d1 / dlouhodobý))
+                :ARG2 (s12p2 / procento
+                    :refer-number singular
+                    :mod (s12x7 / 6.3))))
         :op2 (s12c4 / činit-007
+            :aspect activity
             :temporal (s12l1 / letos)
             :temporal (s12c2 / čtvrtletí
-                :mod (s12p3 / první
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s12p3 / první))
             :place (s12n1 / Nizozemsko
                 :refer-number singular)
-            :ARG0 s12s2
+            :ARG1 s12s2
             :extent (s12a3 / and
-                :op1 (s12x9 / #Percnt
-                    :mod (s12x10 / 5.0))
-                :op2 (s12x11 / #Percnt
-                    :mod (s12x12 / 6.3)))
-            :refer-number plural
-            :aspect activity)
+                :op1 (s12p4 / percentage-entity
+                    :value "5.0")
+                :op2 (s12p5 / percentage-entity
+                    :value "6.3")))
         :op3 (s12c5 / činit-007
+            :aspect activity
             :temporal s12l1
             :temporal s12c2
             :place (s12b1 / Británie
-                :mod (s12v1 / Velký)
-                :refer-number singular)
-            :ARG0 s12s2
+                :refer-number singular
+                :mod (s12v1 / Velký))
+            :ARG1 s12s2
             :extent (s12a4 / and
-                :op1 (s12x16 / #Percnt
-                    :mod (s12x17 / 5.0))
-                :op2 (s12x18 / #Percnt
-                    :mod (s12x19 / 6.5)))
-            :refer-number plural
-            :aspect activity)
+                :op1 (s12p6 / percentage-entity
+                    :value "5.0")
+                :op2 (s12p7 / percentage-entity
+                    :value "6.5")))
         :op4 (s12c6 / činit-007
+            :aspect activity
             :temporal s12l1
             :temporal s12c2
             :place (s12n2 / Německo
                 :refer-number singular)
-            :ARG0 s12s2
+            :ARG1 s12s2
             :extent (s12a5 / and
-                :op1 (s12x23 / #Percnt
-                    :mod (s12x24 / 5.8))
+                :op1 (s12p8 / percentage-entity
+                    :value "5.8")
                 :clausal-marker (s12r1 / respektive)
-                :op2 (s12x25 / #Percnt
-                    :mod (s12x26 / 5.6)))
-            :refer-number plural
-            :aspect activity)
+                :op2 (s12p9 / percentage-entity
+                    :value "5.6")))
         :op5 (s12c7 / činit-007
+            :aspect activity
             :temporal s12l1
             :temporal s12c2
             :place (s12b2 / Belgie
                 :refer-number singular)
-            :ARG0 s12s2
+            :ARG1 s12s2
             :extent (s12a6 / and
-                :op1 (s12x30 / #Percnt
-                    :mod (s12x31 / 6.2))
-                :op2 (s12x32 / #Percnt
-                    :mod (s12x33 / 7.0)))
-            :refer-number plural
-            :aspect activity)
+                :op1 (s12p10 / percentage-entity
+                    :value "6.2")
+                :op2 (s12p11 / percentage-entity
+                    :value "7.0")))
         :op6 (s12c8 / činit-007
+            :aspect activity
             :temporal s12l1
             :temporal s12c2
             :place (s12f1 / Francie
                 :refer-number singular)
-            :ARG0 s12s2
+            :ARG1 s12s2
             :extent (s12a7 / and
-                :op1 (s12x37 / #Percnt
-                    :mod (s12x38 / 6.3))
-                :op2 (s12x39 / #Percnt
-                    :mod (s12x40 / 6.2)))
-            :refer-number plural
-            :aspect activity)
+                :op1 (s12p12 / percentage-entity
+                    :value "6.3")
+                :op2 (s12p13 / percentage-entity
+                    :value "6.2")))
         :op7 (s12c9 / činit-007
+            :aspect activity
             :temporal s12l1
             :temporal s12c2
             :place (s12i1 / Itálie
                 :refer-number singular)
-            :ARG0 (s12e1 / entity
-                :start (s12u2 / úvěr
-                    :mod (s12k2 / krátkodobý
-                        :refer-number plural)
-                    :refer-number plural)
+            :ARG1 (s12e1 / entity
                 :refer-number plural
-                :refer-person 3rd)
-            :extent (s12p4 / procento
+                :refer-person 3rd
+                :start (s12u2 / úvěr
+                    :refer-number plural
+                    :mod (s12k2 / krátkodobý)))
+            :ARG2 (s12p14 / procento
+                :refer-number plural
                 :mod (s12o1 / osm
-                    :extent (s12p5 / přibližně)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number plural
-            :aspect activity))
+                    :extent (s12p15 / přibližně)))))
 
 # alignment:
 s12a1: 54-54
@@ -969,10 +865,8 @@ s12x7: 13-13
 s12c4: 0-0
 s12n1: 16-17
 s12a3: 19-19
-s12x9: 0-0
-s12x10: 18-18
-s12x11: 21-21
-s12x12: 20-20
+s12p4: 18-18
+s12p5: 20-21
 s12l1: 1-1
 s12c2: 2-2,4-4
 s12p3: 3-3
@@ -980,40 +874,32 @@ s12c5: 0-0
 s12b1: 23-23,26-26
 s12v1: 24-24
 s12a4: 28-28
-s12x16: 0-0
-s12x17: 27-27
-s12x18: 30-30
-s12x19: 29-29
+s12p6: 27-27
+s12p7: 29-30
 s12c6: 0-0
 s12n2: 32-33
 s12a5: 35-35
-s12x23: 0-0
-s12x24: 34-34
+s12p8: 34-34
 s12r1: 36-36
-s12x25: 39-39
-s12x26: 38-38
+s12p9: 38-39
 s12c7: 0-0
 s12b2: 41-42
 s12a6: 44-44
-s12x30: 0-0
-s12x31: 43-43
-s12x32: 46-46
-s12x33: 45-45
+s12p10: 43-43
+s12p11: 45-46
 s12c8: 0-0
 s12f1: 48-49
 s12a7: 51-51
-s12x37: 0-0
-s12x38: 50-50
-s12x39: 53-53
-s12x40: 52-52
+s12p12: 50-50
+s12p13: 52-53
 s12c9: 0-0
 s12i1: 55-56
 s12e1: 0-0
 s12u2: 57-57,59-59
 s12k2: 58-58
-s12p4: 62-62
+s12p14: 62-62
 s12o1: 61-61
-s12p5: 60-60
+s12p15: 60-60
 
 # document level annotation:
 (s12s0 / sentence
@@ -1031,27 +917,24 @@ s12p5: 60-60
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1     2  3        4         5          6      7          8  9   10
 Words: Sazby v  Japonsku přibližně odpovídají úrovni dosahované v  USA .
 
 # sentence level graph:
 (s13o1 / odpovídat-002
-        :ARG0 (s13s1 / sazba
+        :aspect activity
+        :ARG1 (s13s1 / sazba
+            :refer-number plural
             :place (s13j1 / Japonsko
-                :refer-number singular)
-            :refer-number plural)
+                :refer-number singular))
         :extent (s13p1 / přibližně)
-        :ARG1 (s13u1 / úroveň
+        :ARG2 (s13u1 / úroveň
+            :refer-number singular
             :mod (s13d1 / dosahovaný
                 :place (s13u2 / USA
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number plural))))
 
 # alignment:
 s13o1: 5-5
@@ -1068,7 +951,7 @@ s13u2: 8-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1        2     3    4  5  6     7  8       9      10 11      12           13    14       15    16 17      18 19 20            21    22 23      24 25 26           27    28   29       30
 Words: Průměrné sazby bank v  ČR letos ve stejném období v  případě krátkodobých úvěrů kolísaly okolo 13 procent ,  u  střednědobých kolem 15 procent a  u  dlouhodobých okolo 10.5 procenta .
@@ -1076,54 +959,46 @@ Words: Průměrné sazby bank v  ČR letos ve stejném období v  případě kr�
 # sentence level graph:
 (s14a1 / and
         :op1 (s14k1 / kolísat-001
-            :ARG0 (s14s1 / sazba
-                :mod (s14p1 / průměrný
-                    :refer-number plural)
+            :aspect activity
+            :ARG1 (s14s1 / sazba
+                :refer-number plural
+                :mod (s14p1 / průměrný)
                 :possessor (s14b1 / banka
+                    :refer-number plural
                     :place (s14c1 / ČR
-                        :refer-number singular)
-                    :refer-number plural)
-                :refer-number plural)
+                        :refer-number singular)))
             :temporal (s14l1 / letos)
             :temporal (s14o1 / období
-                :mod (s14s2 / stejný
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s14s2 / stejný))
             :regard (s14u1 / úvěr
-                :mod (s14k2 / krátkodobý
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s14k2 / krátkodobý))
             :place (s14p2 / procento
-                :mod (s14x1 / 13)
-                :refer-number plural)
-            :refer-number plural
-            :aspect activity)
+                :refer-number plural
+                :mod (s14x1 / 13)))
         :op2 (s14k3 / kolísat-001
-            :ARG0 s14s1
+            :aspect activity
+            :ARG1 s14s1
             :temporal s14l1
             :temporal s14o1
             :regard (s14u2 / úvěr
-                :mod (s14s3 / střednědobý
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s14s3 / střednědobý))
             :place (s14p3 / procento
-                :mod (s14x5 / 15)
-                :refer-number plural)
-            :refer-number plural
-            :aspect activity)
+                :refer-number plural
+                :mod (s14x5 / 15)))
         :op3 (s14k4 / kolísat-001
-            :ARG0 s14s1
+            :aspect activity
+            :ARG1 s14s1
             :temporal s14l1
             :temporal s14o1
             :regard (s14u3 / úvěr
-                :mod (s14d1 / dlouhodobý
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s14d1 / dlouhodobý))
             :place (s14p4 / procento
-                :mod (s14x9 / 10.5)
-                :refer-number singular)
-            :refer-number plural
-            :aspect activity))
+                :refer-number singular
+                :mod (s14x9 / 10.5))))
 
 # alignment:
 s14a1: 24-24
@@ -1160,7 +1035,7 @@ s14x9: 28-28
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1 2  3
 Words: ( ma )

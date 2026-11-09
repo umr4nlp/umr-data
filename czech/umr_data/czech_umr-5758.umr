@@ -1,49 +1,39 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1          2   3     4   5  6      7  8  9    10      11   12        13    14     15    16        17    18
 Words: Společnost Bob Evans Inc .  uvedla ,  že její správní rada schválila nákup 500000 svých kmenových akcií .
 
 # sentence level graph:
 (s1u1 / uvést-007
+        :aspect performance
         :ARG0 (s1s1 / společnost
-            :name (s1x1 / #Forn
-                :FPHR (s1b1 / Bob)
-                :FPHR (s1e1 / Evans)
-                :FPHR (s1i1 / Inc)
-                :FPHR (s1x2 / .))
-            :refer-number singular)
+            :refer-number singular
+            :name (s1n1 / name
+                :op1 "Bob" :op2 "Evans" :op3 "Inc."))
         :effect (s1s2 / schválit-002
+            :aspect performance
             :ARG0 (s1r1 / rada
+                :refer-number singular
                 :mod s1s1
-                :mod (s1s3 / správní
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG1 (s1n1 / nákup
+                :mod (s1s3 / správní))
+            :ARG1 (s1n2 / nákup
+                :refer-number singular
                 :mod (s1a1 / akcie
-                    :mod (s1x4 / 500000)
+                    :mod (s1x2 / 500000)
                     :mod s1r1
-                    :mod (s1k1 / kmenový
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular)
-            :aspect performance)
-        :aspect performance)
+                    :mod (s1k1 / kmenový)))))
 
 # alignment:
 s1u1: 6-6
 s1s1: 1-1,9-9
-s1x1: 0-0
-s1b1: 2-2
-s1e1: 3-3
-s1i1: 4-4
-s1x2: 5-5
+s1n1: 2-5
 s1s2: 8-8,12-12
 s1r1: 11-11,15-15
 s1s3: 10-10
-s1n1: 13-13
+s1n2: 13-13
 s1a1: 17-17
-s1x4: 14-14
+s1x2: 14-14
 s1k1: 16-16
 
 # document level annotation:
@@ -51,55 +41,45 @@ s1k1: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1    2     3  4     5     6  7     8  9      10   11   12              13       14          15        16 17    18     19   20          21       22  23      24   25   26  27   28      29       30     31
 Words: Tyto akcie ,  které budou ke koupi na volném trhu nebo prostřednictvím soukromě dojednaných transakcí ,  budou drženy jako pokladniční poukázky pro akciové opce nebo pro jiné veřejné společné záměry .
 
 # sentence level graph:
 (s2d1 / držet-005
+        :aspect activity
         :ARG0 (s2e1 / entity
+            :refer-number singular
             :refer-person 3rd)
         :ARG1 (s2a1 / akcie
-            :mod (s2t1 / tento
-                :refer-number plural)
-            :ARG0-of (s2b1 / být-011
+            :refer-number plural
+            :mod (s2t1 / tento)
+            :ARG1-of (s2b1 / být-011
+                :aspect activity
                 :purpose (s2k1 / koupě
                     :refer-number singular)
                 :instrument (s2o1 / or
                     :op1 (s2t2 / trh
-                        :mod (s2v1 / volný
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s2v1 / volný))
                     :op2 (s2t3 / transakce
+                        :refer-number plural
                         :mod (s2d2 / dojednaný
-                            :manner (s2s1 / soukromě)
-                            :refer-number plural)
-                        :refer-number plural))
-                :refer-number plural
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number plural)
+                            :manner (s2s1 / soukromě))))))
         :manner (s2p1 / poukázka
+            :refer-number plural
             :mod-of s2a1
-            :mod (s2p2 / pokladniční
-                :refer-number plural)
+            :mod (s2p2 / pokladniční)
             :purpose (s2o2 / or
                 :op1 (s2o3 / opce
-                    :mod (s2a2 / akciový
-                        :refer-number plural)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s2a2 / akciový))
                 :op2 (s2z1 / záměr
-                    :mod (s2j1 / jiný
-                        :refer-number plural)
-                    :mod (s2v2 / veřejný
-                        :refer-number plural)
-                    :mod (s2s2 / společný
-                        :refer-number plural)
-                    :refer-number plural))
-            :refer-number plural)
-        :refer-number plural
-        :aspect activity)
+                    :refer-number plural
+                    :mod (s2j1 / jiný)
+                    :mod (s2v2 / veřejný)
+                    :mod (s2s2 / společný)))))
 
 # alignment:
 s2d1: 17-18
@@ -131,21 +111,19 @@ s2s2: 29-29
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1    2      3  4 5     6
 Words: Akce vyprší 27 . dubna .
 
 # sentence level graph:
 (s3v1 / vypršet-001
-        :ARG0 (s3a1 / akce
+        :aspect performance
+        :ARG1 (s3a1 / akce
             :refer-number singular)
         :temporal (s3d1 / duben
-            :mod (s3x1 / 27)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect performance)
+            :refer-number singular
+            :mod (s3x1 / 27)))
 
 # alignment:
 s3v1: 2-2
@@ -158,31 +136,26 @@ s3x1: 3-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1     2            3          4   5  6  7  8     9  10    11   12      13    14
 Words: Tento provozovatel restaurací měl k  29 .  srpnu v  oběhu 32.2 milionu akcií .
 
 # sentence level graph:
 (s4m1 / mít-002
+        :aspect state
         :ARG0 (s4p1 / provozovatel
-            :mod (s4t1 / tento
-                :refer-number singular)
-            :mod (s4r1 / restaurace
-                :refer-number plural)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s4t1 / tento)
+            :mod (s4r1 / restaurace))
         :temporal (s4s1 / srpen
-            :mod (s4x1 / 29)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s4x1 / 29))
         :place (s4o1 / oběh
             :refer-number singular)
         :ARG1 (s4m2 / milion
             :mod (s4x2 / 32.2)
-            :mod (s4a1 / akcie
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number singular
-        :aspect state)
+            :mod (s4a1 / akcie)))
 
 # alignment:
 s4m1: 4-4

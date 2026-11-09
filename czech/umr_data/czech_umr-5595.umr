@@ -1,55 +1,40 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1          2        3       4             5   6  7    8        9  10      11         12 13           14        15   16  17 18       19     20   21        22    23
 Words: Společnost American Medical International Inc .  byla vyřazena ze skupiny zabývající se poskytováním zdravotní péče Dow -  Jonesova indexu trhu kmenových akcií .
 
 # sentence level graph:
 (s1v1 / vyřadit-001
+        :aspect performance
         :ARG0 (s1e1 / entity)
         :ARG1 (s1s1 / společnost
-            :name (s1x1 / #Forn
-                :FPHR (s1a1 / American)
-                :FPHR (s1x2 / .)
-                :FPHR (s1m1 / Medical)
-                :FPHR (s1i1 / International)
-                :FPHR (s1i2 / Inc))
-            :refer-number singular)
-        :start (s1s2 / skupina
+            :refer-number singular
+            :name (s1n1 / name
+                :op1 "American" :op2 "Medical" :op3 "International" :op4 "Inc."))
+        :ARG2 (s1s2 / skupina
+            :refer-number singular
             :mod (s1z1 / zabývající_se
                 :ARG1 (s1p1 / poskytování
+                    :refer-number singular
                     :ARG2 (s1e2 / entity)
                     :ARG0 (s1e3 / entity)
                     :ARG1 (s1p2 / péče
-                        :mod (s1z2 / zdravotní
-                            :refer-number singular)
-                        :mod (s1i3 / index
+                        :refer-number singular
+                        :mod (s1z2 / zdravotní)
+                        :mod (s1i1 / index
                             :mod (s1j1 / Jonesův
-                                :mod (s1d1 / Dow)
-                                :refer-number singular)
+                                :refer-number singular
+                                :mod (s1d1 / Dow))
                             :mod (s1t1 / trh
-                                :mod (s1a2 / akcie
-                                    :mod (s1k1 / kmenový
-                                        :refer-number plural)
-                                    :refer-number plural)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :aspect performance)
+                                :mod (s1a1 / akcie
+                                    :mod (s1k1 / kmenový)))))))))
 
 # alignment:
 s1v1: 7-8
 s1e1: 0-0
 s1s1: 1-1
-s1x1: 0-0
-s1a1: 2-2
-s1x2: 6-6
-s1m1: 3-3
-s1i1: 4-4
-s1i2: 5-5
+s1n1: 2-6
 s1s2: 9-10
 s1z1: 11-12
 s1p1: 13-13
@@ -57,11 +42,11 @@ s1e2: 0-0
 s1e3: 0-0
 s1p2: 15-15
 s1z2: 14-14
-s1i3: 19-19
+s1i1: 19-19
 s1j1: 18-18
 s1d1: 16-16
 s1t1: 20-20
-s1a2: 22-22
+s1a1: 22-22
 s1k1: 21-21
 
 # document level annotation:
@@ -69,25 +54,22 @@ s1k1: 21-21
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1          2  3     4         5        6
 Words: Společnost je právě předmětem převzetí .
 
 # sentence level graph:
 (s2b1 / být-007
-        :ARG0 (s2s1 / společnost
+        :aspect activity
+        :ARG1 (s2s1 / společnost
             :refer-number singular)
         :temporal (s2p1 / právě)
-        :ARG1 (s2p2 / předmět
+        :ARG2 (s2p2 / předmět
+            :refer-number singular
             :mod (s2p3 / převzetí
                 :ARG0 (s2e1 / entity)
-                :ARG1 s2s1
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :ARG1 s2s1)))
 
 # alignment:
 s2b1: 2-2
@@ -103,30 +85,25 @@ s2e1: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1  2       3             4         5    6    7       8        9          10         11  12
 Words: Do skupiny poskytovatelů zdravotní péče byla přidána americká společnost Healthcare Inc .
 
 # sentence level graph:
 (s3p1 / přidat-003
+        :aspect performance
         :ARG0 (s3e1 / entity)
-        :goal (s3s1 / skupina
+        :ARG2 (s3s1 / skupina
+            :refer-number singular
             :mod (s3p2 / poskytovatel
                 :mod (s3p3 / péče
-                    :mod (s3z1 / zdravotní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number singular)
+                    :mod (s3z1 / zdravotní))))
         :ARG1 (s3s2 / společnost
-            :mod (s3a1 / americký
-                :refer-number singular)
-            :name (s3x1 / #Forn
-                :FPHR (s3h1 / Healthcare)
-                :FPHR (s3i1 / Inc))
-            :refer-number singular)
-        :aspect performance)
+            :refer-number singular
+            :mod (s3a1 / americký)
+            :name (s3n1 / name
+                :op1 "Healthcare" :op2 "Inc.")))
 
 # alignment:
 s3p1: 6-7
@@ -137,9 +114,7 @@ s3p3: 5-5
 s3z1: 4-4
 s3s2: 9-9
 s3a1: 8-8
-s3x1: 0-0
-s3h1: 10-10
-s3i1: 11-11
+s3n1: 10-12
 
 # document level annotation:
 (s3s0 / sentence
@@ -147,22 +122,20 @@ s3i1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1   2     3         4 5        6    7
 Words: Oba úkony vstoupily v platnost dnes .
 
 # sentence level graph:
 (s4v1 / vstoupit-005
+        :aspect performance
         :ARG0 (s4u1 / úkon
-            :mod (s4o1 / oba
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s4o1 / oba))
         :predicative-noun (s4p1 / platnost
             :refer-number singular)
-        :temporal (s4d1 / dnes)
-        :refer-number plural
-        :aspect performance)
+        :temporal (s4d1 / dnes))
 
 # alignment:
 s4v1: 3-3

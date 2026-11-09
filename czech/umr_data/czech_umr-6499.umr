@@ -1,48 +1,39 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1     2           3       4          5  6    7     8        9       10       11        12   13        14    15       16    17 18     19     20 21  22 23
 Words: Podle společnosti Norwood Securities v  září klesl průměrný veřejně nabízený komoditní fond především kvůli nestálým trhům v  cizích měnách o  4.2 %  .
 
 # sentence level graph:
 (s1k1 / klesnout-001
+        :aspect performance
         :regard (s1s1 / společnost
-            :name (s1x1 / #Forn
-                :FPHR (s1n1 / Norwood)
-                :FPHR (s1s2 / Securities))
-            :refer-number singular)
+            :refer-number singular
+            :name (s1n1 / name
+                :op1 "Norwood" :op2 "Securities"))
         :temporal (s1z1 / září
             :refer-number singular)
         :ARG0 (s1f1 / fond
-            :mod (s1p1 / průměrný
-                :refer-number singular)
+            :refer-number singular
+            :mod (s1p1 / průměrný)
             :mod (s1n2 / nabízený
-                :manner (s1v1 / veřejně)
-                :refer-number singular)
-            :mod (s1k2 / komoditní
-                :refer-number singular)
-            :refer-number singular)
+                :manner (s1v1 / veřejně))
+            :mod (s1k2 / komoditní))
         :clausal-marker (s1p2 / především)
         :cause (s1t1 / trh
-            :mod (s1s3 / stálý
-                :refer-number plural
+            :refer-number plural
+            :mod (s1s2 / stálý
                 :polarity -)
             :instrument (s1m1 / měna
-                :mod (s1c1 / cizí
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural)
-        :extent (s1x2 / #Percnt
-            :mod (s1x3 / 4.2))
-        :refer-number singular
-        :aspect performance)
+                :refer-number plural
+                :mod (s1c1 / cizí)))
+        :extent (s1p3 / percentage-entity
+            :value "4.2"))
 
 # alignment:
 s1k1: 7-7
 s1s1: 1-2
-s1x1: 0-0
-s1n1: 3-3
-s1s2: 4-4
+s1n1: 3-4
 s1z1: 5-6
 s1f1: 12-12
 s1p1: 8-8
@@ -51,65 +42,55 @@ s1v1: 9-9
 s1k2: 11-11
 s1p2: 13-13
 s1t1: 14-14,16-16
-s1s3: 15-15
+s1s2: 15-15
 s1m1: 17-17,19-19
 s1c1: 18-18
-s1x2: 20-20,22-22
-s1x3: 21-21
+s1p3: 20-22
 
 # document level annotation:
 (s1s0 / sentence)
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1          2       3  4  5  6   7     8  9     10      11 12   13   14           15  16          17 18 19 20   21  22  23 24    25
 Words: Společnost sdělila ,  že ze 122 fondů ,  které sleduje ,  bylo více stoupajících než klesajících ,  a  to více než tři ku jedné .
 
 # sentence level graph:
 (s2s1 / sdělit-001
+        :aspect performance
         :ARG2 (s2e1 / entity)
         :ARG0 (s2s2 / společnost
             :refer-number singular)
         :ARG1 (s2i1 / identity-91
             :ARG1 (s2b1 / být-007
+                :aspect activity
                 :start (s2f1 / fond
+                    :refer-number plural
                     :mod (s2x1 / 122)
                     :ARG1-of (s2s3 / sledovat-002
-                        :ARG0 s2s2
-                        :refer-number singular
-                        :refer-person 3rd
-                        :aspect activity)
-                    :refer-number plural)
-                :ARG1 (s2h1 / hodně
+                        :aspect activity
+                        :ARG0 s2s2))
+                :ARG2 (s2h1 / hodně
                     :comparison (s2b2 / být-007
-                        :ARG0 (s2f2 / fond
-                            :mod (s2k1 / klesající
-                                :refer-number plural)
-                            :refer-number plural)
-                        :ARG1 (s2x3 / #Some)
-                        :refer-number singular
-                        :aspect activity))
-                :ARG0 (s2f3 / fond
-                    :mod (s2s4 / stoupající
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular
-                :aspect activity)
+                        :aspect activity
+                        :ARG1 (s2f2 / fond
+                            :refer-number plural
+                            :mod (s2k1 / klesající))
+                        :ARG2 (s2x3 / %Some)))
+                :ARG1 (s2f3 / fond
+                    :refer-number plural
+                    :mod (s2s4 / stoupající)))
             :ARG2 (s2b3 / být-007
-                :ARG0 s2f3
-                :ARG1 (s2h2 / hodně
+                :aspect activity
+                :ARG1 s2f3
+                :ARG2 (s2h2 / hodně
                     :comparison (s2e2 / event
-                        :extent (s2m1 / math
-                            :op1 (s2t1 / tři
-                                :refer-number plural)
-                            :op2 (s2j1 / jeden
-                                :refer-number singular))
-                        :aspect state))
-                :refer-number singular
-                :aspect activity))
-        :aspect performance)
+                        :aspect state
+                        :extent (s2m1 / math-entity
+                            :op1 (s2t1 / tři)
+                            :op2 (s2j1 / jeden)))))))
 
 # alignment:
 s2s1: 2-2
@@ -140,36 +121,31 @@ s2j1: 24-24
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1          2       3       4  5  6        7    8       9  10      11    12     13   14  15 16
 Words: Společnost Norwood sdělila ,  že průměrný fond ztratil za prvních devět měsíců roku 3.3 %  .
 
 # sentence level graph:
 (s3s1 / sdělit-001
+        :aspect performance
         :ARG2 (s3e1 / entity)
         :ARG0 (s3s2 / společnost
-            :name (s3n1 / Norwood
-                :refer-number singular)
-            :refer-number singular)
-        :ARG1 (s3z1 / ztratit-002
-            :ARG0 (s3f1 / fond
-                :mod (s3p1 / průměrný
-                    :refer-number singular)
-                :refer-number singular)
-            :duration (s3m1 / měsíc
-                :mod (s3d1 / devět
-                    :mod (s3p2 / první
-                        :refer-number plural)
-                    :refer-number singular)
-                :mod (s3r1 / rok
-                    :refer-number singular)
-                :refer-number plural)
-            :ARG1 (s3x1 / #Percnt
-                :mod (s3x2 / 3.3))
             :refer-number singular
-            :aspect performance)
-        :aspect performance)
+            :name (s3n1 / Norwood
+                :refer-number singular))
+        :ARG1 (s3z1 / ztratit-002
+            :aspect performance
+            :ARG0 (s3f1 / fond
+                :refer-number singular
+                :mod (s3p1 / průměrný))
+            :duration (s3m1 / měsíc
+                :refer-number plural
+                :mod (s3d1 / devět
+                    :mod (s3p2 / první))
+                :mod (s3r1 / rok))
+            :ARG1 (s3p3 / percentage-entity
+                :value "3.3")))
 
 # alignment:
 s3s1: 3-3
@@ -183,8 +159,7 @@ s3m1: 9-9,12-12
 s3d1: 11-11
 s3p2: 10-10
 s3r1: 13-13
-s3x1: 15-15
-s3x2: 14-14
+s3p3: 14-15
 
 # document level annotation:
 (s3s0 / sentence

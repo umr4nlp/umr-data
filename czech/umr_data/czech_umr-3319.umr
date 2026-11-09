@@ -1,16 +1,15 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1     2   3
 Words: Dobrý den .
 
 # sentence level graph:
 (s1e1 / event
+        :aspect state
         :ARG1 (s1d1 / den
-            :mod (s1d2 / dobrý
-                :refer-number singular)
-            :refer-number singular)
-        :aspect state)
+            :refer-number singular
+            :mod (s1d2 / dobrý)))
 
 # alignment:
 s1e1: 0-0
@@ -22,18 +21,17 @@ s1d2: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2   3
 Words: Dobrý den .
 
 # sentence level graph:
 (s2e1 / event
+        :aspect state
         :ARG1 (s2d1 / den
-            :mod (s2d2 / dobrý
-                :refer-number singular)
-            :refer-number singular)
-        :aspect state)
+            :refer-number singular
+            :mod (s2d2 / dobrý)))
 
 # alignment:
 s2e1: 0-0
@@ -45,7 +43,7 @@ s2d2: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1       2  3     4  5    6  7  8  9    10  11     12      13
 Words: Jmenuji se Petra a  budu si tu s  vámi teď chvíli povídat .
@@ -53,22 +51,20 @@ Words: Jmenuji se Petra a  budu si tu s  vámi teď chvíli povídat .
 # sentence level graph:
 (s3a1 / and
         :op1 (s3j1 / jmenovat-se-001
-            :ARG1 (s3p1 / Petra
+            :aspect process
+            :ARG2 (s3p1 / Petra
                 :refer-number singular)
-            :ARG0 (s3e1 / entity)
-            :refer-number singular
-            :refer-person 1st
-            :aspect process)
+            :ARG0 (s3e1 / entity))
         :op2 (s3p2 / povídat-si-001
+            :aspect activity
             :ARG0 s3e1
             :place (s3t1 / tu)
-            :ARG2 (s3e2 / entity
+            :ARG2 (s3p3 / person
                 :refer-number plural
                 :refer-person 2nd)
             :temporal (s3t2 / teď)
             :duration (s3c1 / chvíle
-                :refer-number singular)
-            :aspect activity))
+                :refer-number singular)))
 
 # alignment:
 s3a1: 4-4
@@ -77,7 +73,7 @@ s3p1: 3-3
 s3e1: 0-0
 s3p2: 5-6,12-12
 s3t1: 7-7
-s3e2: 8-9
+s3p3: 8-9
 s3t2: 10-10
 s3c1: 11-11
 
@@ -86,60 +82,53 @@ s3c1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1    2   3
 Words: Jsem rád .
 
 # sentence level graph:
 (s4b1 / být-007
-        :ARG0 (s4e1 / entity
+        :aspect activity
+        :ARG1 (s4p1 / person
             :refer-number plural
             :refer-person 2nd)
-        :ARG1 (s4r1 / rád
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 1st
-        :aspect activity)
+        :ARG2 (s4r1 / rád))
 
 # alignment:
 s4b1: 1-1
-s4e1: 0-0
+s4p1: 0-0
 s4r1: 2-2
 
 # document level annotation:
 (s4s0 / sentence
-    :coref ((s4e1 :same-entity s3e2)))
+    :coref ((s4p1 :same-entity s3p3)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1     2   3       4 5  6  7     8      9
 Words: Ještě než začneme , je mě dobře slyšet ?
 
 # sentence level graph:
 (s5e1 / event
+        :aspect state
         :clausal-marker (s5j1 / ještě)
         :temporal (s5z1 / začít-001
+            :aspect performance
             :ARG0 (s5e2 / entity)
-            :ARG1 (s5e3 / entity)
-            :refer-number plural
-            :refer-person 1st
-            :aspect performance)
+            :ARG1 (s5e3 / event))
         :ARG1 (s5b1 / být-012
-            :affectee (s5e4 / entity)
-            :ARG0 (s5s1 / slyšet-003
-                :ARG1 (s5e5 / entity
+            :aspect activity
+            :affectee (s5p1 / person)
+            :ARG1 (s5s1 / slyšet-003
+                :aspect state
+                :ARG1 (s5p2 / person
                     :refer-number singular
                     :refer-person 1st)
                 :manner (s5d1 / dobře)
-                :ARG0 s5e4
-                :aspect state)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
-        :aspect state)
+                :ARG0 s5p1)))
 
 # alignment:
 s5e1: 0-0
@@ -148,19 +137,19 @@ s5z1: 2-3
 s5e2: 0-0
 s5e3: 0-0
 s5b1: 5-5
-s5e4: 0-0
+s5p1: 0-0
 s5s1: 8-8
-s5e5: 6-6
+s5p2: 6-6
 s5d1: 7-7
 
 # document level annotation:
 (s5s0 / sentence
     :coref ((s5e3 :same-event s3p2)
-            (s5e5 :same-entity s3e1)))
+            (s5p2 :same-entity s3e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1   2
 Words: Ano .
@@ -176,86 +165,78 @@ s6a1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1    2    3  4  5    6          7  8      9       10
 Words: Ráda bych si s  vámi popovídala o  vašich fotkách .
 
 # sentence level graph:
 (s7p1 / popovídat-si-001
+        :aspect performance
         :manner (s7r1 / rád
-            :mod-of s7e1)
-        :ARG2 (s7e2 / entity
+            :mod-of s7p2)
+        :ARG2 (s7p3 / person
             :refer-number plural
             :refer-person 2nd)
-        :ARG0 (s7e1 / entity
+        :ARG0 (s7p2 / person
             :refer-number singular
             :refer-person 1st)
         :ARG1 (s7f1 / fotka
-            :mod s7e2
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 1st
-        :aspect performance)
+            :refer-number plural
+            :mod s7p3))
 
 # alignment:
 s7p1: 2-3,6-6
 s7r1: 1-1
-s7e2: 4-5,8-8
-s7e1: 0-0
+s7p3: 4-5,8-8
+s7p2: 0-0
 s7f1: 7-7,9-9
 
 # document level annotation:
 (s7s0 / sentence
-    :coref ((s7e2 :same-entity s4e1)
-            (s7e1 :same-entity s5e5)))
+    :coref ((s7p3 :same-entity s4p1)
+            (s7p2 :same-entity s5p2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1      2
 Words: Děkuji .
 
 # sentence level graph:
 (s8d1 / děkovat-001
-        :ARG0 (s8e1 / entity
+        :aspect activity
+        :ARG0 (s8p1 / person
             :refer-number plural
             :refer-person 2nd)
-        :ARG2 (s8e2 / entity)
-        :refer-number singular
-        :refer-person 1st
-        :aspect activity)
+        :ARG1 (s8e1 / entity))
 
 # alignment:
 s8d1: 1-1
+s8p1: 0-0
 s8e1: 0-0
-s8e2: 0-0
 
 # document level annotation:
 (s8s0 / sentence
-    :coref ((s8e1 :same-entity s7e2)
-            (s8e2 :same-entity s7e1)))
+    :coref ((s8p1 :same-entity s7p3)
+            (s8e1 :same-entity s7p2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1       2     3 4      5
 Words: Začněme třeba s touhle .
 
 # sentence level graph:
 (s9z1 / začít-001
-        :ARG1 (s9e1 / entity
-            :refer-number singular
-            :refer-person 1st)
+        :aspect performance
+        :ARG1 (s9e1 / event)
         :ARG0 (s9e2 / entity)
         :clausal-marker (s9t1 / třeba)
         :companion (s9t2 / tenhle
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 1st
-        :aspect performance)
+            :refer-number singular))
 
 # alignment:
 s9z1: 1-1
@@ -271,7 +252,7 @@ s9t2: 3-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1   2
 Words: Ano .
@@ -287,26 +268,24 @@ s10a1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1   2  3  4  5     6
 Words: Kdo je na ní vidět ?
 
 # sentence level graph:
 (s11b1 / být-007
-        :ARG0 (s11k1 / kdo
+        :aspect activity
+        :ARG1 (s11k1 / kdo
             :refer-number singular
             :refer-person 3rd)
         :place (s11e1 / entity
             :refer-number singular
             :refer-person 3rd)
-        :ARG1 (s11v1 / vidět-007
+        :ARG2 (s11v1 / vidět-007
+            :aspect state
             :ARG0 (s11e2 / entity)
-            :ARG1 s11k1
-            :aspect state)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :ARG1 s11k1))
 
 # alignment:
 s11b1: 2-2
@@ -321,45 +300,41 @@ s11e2: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1  2  3    4     5  6  7       8  9  10   11    12      13 14  15      16 17 18     19 20     21
 Words: To je moje dcera ,  z  dvojčat ,  se svou malou dcerkou ,  mou vnučkou ,  v  Alpách na lyžích .
 
 # sentence level graph:
 (s12b1 / být-007
-        :ARG0 (s12t1 / ten
+        :aspect activity
+        :ARG1 (s12t1 / ten
+            :refer-number singular)
+        :ARG2 (s12d1 / dcera
             :refer-number singular
-            :refer-person 3rd)
-        :ARG1 (s12d1 / dcera
-            :mod (s12e1 / entity
+            :mod (s12p1 / person
                 :refer-number singular
                 :refer-person 1st)
             :start (s12d2 / dvojče
                 :refer-number plural)
             :companion (s12i1 / identity-91
                 :ARG1 (s12d3 / dcerka
+                    :refer-number singular
                     :mod s12d1
-                    :mod (s12m1 / malý
-                        :refer-number singular)
-                    :refer-number singular)
+                    :mod (s12m1 / malý))
                 :ARG2 (s12v1 / vnučka
-                    :mod s12e1
-                    :refer-number singular))
-            :refer-number singular)
+                    :refer-number singular
+                    :mod s12p1)))
         :place (s12a1 / Alpy
             :refer-number plural)
         :purpose (s12l1 / lyže
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number plural))
 
 # alignment:
 s12b1: 2-2
 s12t1: 1-1
 s12d1: 4-4,10-10
-s12e1: 3-3,14-14
+s12p1: 3-3,14-14
 s12d2: 6-7
 s12i1: 13-13
 s12d3: 9-9,12-12
@@ -372,54 +347,50 @@ s12l1: 19-20
 (s12s0 / sentence
     :coref ((s12t1 :same-event s11b1)
             (s12d1 :same-entity s11k1)
-            (s12e1 :same-entity s8e1)))
+            (s12p1 :same-entity s8p1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1   2  3       4    5      6
 Words: Jak se jmenuje vaše vnučka ?
 
 # sentence level graph:
 (s13j1 / jmenovat-se-002
-        :manner (s13j2 / jak)
-        :ARG0 (s13v1 / vnučka
-            :mod (s13e1 / entity
+        :aspect process
+        :ARG2 (s13j2 / jak)
+        :ARG1 (s13v1 / vnučka
+            :refer-number singular
+            :mod (s13p1 / person
                 :refer-number plural
-                :refer-person 2nd)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect process)
+                :refer-person 2nd)))
 
 # alignment:
 s13j1: 2-3
 s13j2: 1-1
 s13v1: 5-5
-s13e1: 4-4
+s13p1: 4-4
 
 # document level annotation:
 (s13s0 / sentence
     :coref ((s13v1 :same-entity s12i1)
-            (s13e1 :same-entity s12e1)))
+            (s13p1 :same-entity s12p1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1      2  3      4
 Words: Vnučka je Anička .
 
 # sentence level graph:
 (s14b1 / být-007
-        :ARG0 (s14v1 / vnučka
+        :aspect activity
+        :ARG1 (s14v1 / vnučka
             :refer-number singular)
-        :ARG1 (s14a1 / Anička
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :ARG2 (s14a1 / Anička
+            :refer-number singular))
 
 # alignment:
 s14b1: 2-2
@@ -433,75 +404,66 @@ s14a1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1  2  3    4        5
 Words: Je to naše zlatíčko .
 
 # sentence level graph:
 (s15b1 / být-007
-        :ARG0 (s15t1 / ten
-            :refer-number singular)
-        :ARG1 (s15z1 / zlatíčko
-            :mod (s15e1 / entity
+        :aspect activity
+        :ARG1 (s15e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG2 (s15z1 / zlatíčko
+            :refer-number singular
+            :mod (s15p1 / person
                 :refer-number plural
-                :refer-person 1st)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-person 1st)))
 
 # alignment:
 s15b1: 1-1
-s15t1: 2-2
+s15e1: 2-2
 s15z1: 4-4
-s15e1: 3-3
+s15p1: 3-3
 
 # document level annotation:
 (s15s0 / sentence
-    :coref ((s15t1 :same-entity s14v1)))
+    :coref ((s15e1 :same-entity s14v1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s16-root
+# meta-info :: sent_id = u_tree-cs-s16-root :: type = partial_conversion
 # :: snt16
 Index: 1    2  3  4   5  6    7  8         9    10 11       12       13 14  15 16       17 18 19 20       21          22       23 24     25
 Words: Bylo to ,  jak se říká ,  vymodlené dítě s  hroznými problémy ,  než se narodila ,  a  s  hroznými zdravotními problémy po porodu .
 
 # sentence level graph:
 (s16b1 / být-007
-        :ARG0 (s16t1 / ten
+        :aspect activity
+        :ARG1 (s16t1 / ten
             :refer-number singular)
-        :ARG1 (s16d1 / dítě
+        :ARG2 (s16d1 / dítě
+            :refer-number singular
             :parenthesis (s16r1 / říkat-004
+                :aspect activity
                 :ARG0 (s16e1 / entity)
-                :effect s16d1
-                :ARG1 (s16e2 / entity)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :mod (s16v1 / vymodlený
-                :refer-number singular)
+                :ARG2 s16d1
+                :ARG1 (s16e2 / entity))
+            :mod (s16v1 / vymodlený)
             :companion (s16a1 / and
                 :op1 (s16p1 / problém
-                    :mod (s16h1 / hrozný
-                        :refer-number plural)
+                    :refer-number plural
+                    :mod (s16h1 / hrozný)
                     :temporal (s16n1 / narodit-se-002
-                        :ARG0 s16t1
-                        :aspect performance)
-                    :refer-number plural)
+                        :aspect performance
+                        :ARG0 s16t1))
                 :op2 (s16p2 / problém
-                    :mod (s16h2 / hrozný
-                        :refer-number plural)
-                    :mod (s16z1 / zdravotní
-                        :refer-number plural)
+                    :refer-number plural
+                    :mod (s16h2 / hrozný)
+                    :mod (s16z1 / zdravotní)
                     :temporal (s16p3 / porod
-                        :refer-number singular)
-                    :refer-number plural))
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number singular)))))
 
 # alignment:
 s16b1: 1-1
@@ -522,11 +484,11 @@ s16p3: 23-24
 
 # document level annotation:
 (s16s0 / sentence
-    :coref ((s16t1 :same-entity s15t1)))
+    :coref ((s16t1 :same-entity s15e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s17-root
+# meta-info :: sent_id = u_tree-cs-s17-root :: type = partial_conversion
 # :: snt17
 Index: 1  2    3    4  5       6       7  8   9  10 11     12     13     14
 Words: V  roce byla na operaci srdíčka a  teď je to taková krásná slečna .
@@ -534,29 +496,22 @@ Words: V  roce byla na operaci srdíčka a  teď je to taková krásná slečna 
 # sentence level graph:
 (s17a1 / and
         :op1 (s17b1 / být-011
+            :aspect activity
             :temporal (s17r1 / rok
                 :refer-number singular)
-            :ARG0 (s17e1 / entity)
+            :ARG1 (s17e1 / entity)
             :purpose (s17o1 / operace
-                :mod (s17s1 / srdíčko
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                :refer-number singular
+                :mod (s17s1 / srdíčko)))
         :op2 (s17b2 / být-007
+            :aspect activity
             :temporal (s17t1 / teď)
-            :ARG0 (s17t2 / ten
+            :ARG1 (s17t2 / ten
                 :refer-number singular)
-            :ARG1 (s17s2 / slečna
-                :mod (s17t3 / takový
-                    :refer-number singular)
-                :mod (s17k1 / krásný
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+            :ARG2 (s17s2 / slečna
+                :refer-number singular
+                :mod (s17t3 / takový)
+                :mod (s17k1 / krásný))))
 
 # alignment:
 s17a1: 7-7
@@ -579,13 +534,14 @@ s17k1: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s18-root
+# meta-info :: sent_id = u_tree-cs-s18-root :: type = partial_conversion
 # :: snt18
 Index: 1  2     3 4 5      6  7      8
 Words: Už jezdí i v Alpách na lyžích .
 
 # sentence level graph:
 (s18j1 / jezdit-003
+        :aspect activity
         :temporal (s18u1 / už)
         :ARG0 (s18e1 / entity
             :refer-number singular)
@@ -593,10 +549,7 @@ Words: Už jezdí i v Alpách na lyžích .
         :place (s18a1 / Alpy
             :refer-number plural)
         :instrument (s18l1 / lyže
-            :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number plural))
 
 # alignment:
 s18j1: 2-2
@@ -613,20 +566,17 @@ s18l1: 6-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s19-root
+# meta-info :: sent_id = u_tree-cs-s19-root :: type = partial_conversion
 # :: snt19
 Index: 1  2  3 4       5
 Words: Už je v pořádku ?
 
 # sentence level graph:
 (s19b1 / být-076
+        :aspect activity
         :temporal (s19u1 / už)
         :ARG0 (s19e1 / entity)
-        :part-of-phraseme (s19v1 / v_pořádku
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :part-of-phraseme (s19v1 / v_pořádku))
 
 # alignment:
 s19b1: 2-2
@@ -640,21 +590,18 @@ s19v1: 3-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s20-root
+# meta-info :: sent_id = u_tree-cs-s20-root :: type = partial_conversion
 # :: snt20
 Index: 1   2  3     4 5       6
 Words: Teď je úplně v pořádku .
 
 # sentence level graph:
 (s20b1 / být-076
+        :aspect activity
         :temporal (s20t1 / teď)
         :ARG0 (s20e1 / entity)
         :extent (s20u1 / úplně)
-        :part-of-phraseme (s20v1 / v_pořádku
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :part-of-phraseme (s20v1 / v_pořádku))
 
 # alignment:
 s20b1: 2-2
@@ -670,26 +617,23 @@ s20v1: 4-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s21-root
+# meta-info :: sent_id = u_tree-cs-s21-root :: type = partial_conversion
 # :: snt21
 Index: 1  2  3 4  5        6 7     8     9
 Words: Už je z ní školačka v první třídě .
 
 # sentence level graph:
 (s21b1 / být-011
+        :aspect activity
         :temporal (s21u1 / už)
         :source (s21e1 / entity
             :refer-number singular
             :refer-person 3rd)
-        :ARG0 (s21s1 / školačka
+        :ARG1 (s21s1 / školačka
+            :refer-number singular
             :place (s21t1 / třída
-                :mod (s21p1 / první
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number singular
+                :mod (s21p1 / první))))
 
 # alignment:
 s21b1: 2-2
@@ -706,23 +650,19 @@ s21p1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s22-root
+# meta-info :: sent_id = u_tree-cs-s22-root :: type = partial_conversion
 # :: snt22
 Index: 1   2  3  4        5
 Words: Kde to je vyfocené ?
 
 # sentence level graph:
 (s22b1 / být-007
-        :place (s22k1 / kde
-            :refer-number plural)
-        :ARG0 (s22t1 / ten
+        :aspect activity
+        :place (s22k1 / kde)
+        :ARG1 (s22t1 / ten
             :refer-number singular
             :refer-person 3rd)
-        :ARG1 (s22v1 / vyfocený
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :ARG2 (s22v1 / vyfocený))
 
 # alignment:
 s22b1: 3-3
@@ -737,21 +677,19 @@ s22v1: 4-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s23-root
+# meta-info :: sent_id = u_tree-cs-s23-root :: type = partial_conversion
 # :: snt23
 Index: 1  2  3     4  5    6
 Words: Je to letos na jaře .
 
 # sentence level graph:
 (s23b1 / být-011
-        :ARG0 (s23t1 / ten
+        :aspect activity
+        :ARG1 (s23t1 / ten
             :refer-number singular)
         :temporal (s23l1 / letos)
         :temporal (s23j1 / jaro
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number singular))
 
 # alignment:
 s23b1: 1-1
@@ -764,20 +702,18 @@ s23j1: 4-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s24-root
+# meta-info :: sent_id = u_tree-cs-s24-root :: type = partial_conversion
 # :: snt24
 Index: 1 2   3
 Words: A kde ?
 
 # sentence level graph:
 (s24b1 / být-011
+        :aspect activity
         :clausal-marker (s24a1 / a)
         :place (s24k1 / kde)
-        :ARG0 (s24e1 / entity
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :ARG1 (s24e1 / entity
+            :refer-number singular))
 
 # alignment:
 s24b1: 0-0
@@ -792,22 +728,20 @@ s24e1: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s25-root
+# meta-info :: sent_id = u_tree-cs-s25-root :: type = partial_conversion
 # :: snt25
 Index: 1 2      3 4 5          6
 Words: V Alpách , v Dolomitech .
 
 # sentence level graph:
 (s25b1 / být-011
-        :ARG0 (s25e1 / entity)
+        :aspect activity
+        :ARG1 (s25e1 / entity)
         :place (s25i1 / identity-91
             :ARG1 (s25a1 / Alpy
                 :refer-number plural)
             :ARG2 (s25d1 / Dolomity
-                :refer-number plural))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number plural)))
 
 # alignment:
 s25b1: 0-0
@@ -824,50 +758,46 @@ s25d1: 4-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s26-root
+# meta-info :: sent_id = u_tree-cs-s26-root :: type = partial_conversion
 # :: snt26
 Index: 1   2    3   4    5
 Words: Byl jste tam také ?
 
 # sentence level graph:
 (s26b1 / být-011
-        :ARG0 (s26e1 / entity
+        :aspect activity
+        :ARG1 (s26p1 / person
             :refer-number plural
             :refer-person 2nd)
-        :place (s26t1 / tam
-            :refer-number plural)
-        :clausal-marker (s26t2 / také)
-        :refer-number plural
-        :refer-person 2nd
-        :aspect activity)
+        :place (s26t1 / tam)
+        :clausal-marker (s26t2 / také))
 
 # alignment:
 s26b1: 1-2
-s26e1: 0-0
+s26p1: 0-0
 s26t1: 3-3
 s26t2: 4-4
 
 # document level annotation:
 (s26s0 / sentence
-    :coref ((s26e1 :same-entity s13e1)
+    :coref ((s26p1 :same-entity s13p1)
             (s26t1 :same-entity s25d1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s27-root
+# meta-info :: sent_id = u_tree-cs-s27-root :: type = partial_conversion
 # :: snt27
 Index: 1 2    3  4
 Words: S nimi ne .
 
 # sentence level graph:
 (s27b1 / být-011
-        :ARG0 (s27e1 / entity)
+        :aspect activity
+        :ARG1 (s27e1 / entity)
         :companion (s27e2 / entity
             :refer-number plural
             :refer-person 3rd)
-        :clausal-marker (s27n1 / ne)
-        :refer-number singular
-        :aspect activity)
+        :clausal-marker (s27n1 / ne))
 
 # alignment:
 s27b1: 0-0
@@ -877,11 +807,11 @@ s27n1: 3-3
 
 # document level annotation:
 (s27s0 / sentence
-    :coref ((s27e1 :same-entity s26e1)))
+    :coref ((s27e1 :same-entity s26p1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s28-root
+# meta-info :: sent_id = u_tree-cs-s28-root :: type = partial_conversion
 # :: snt28
 Index: 1    2 3        4    5 6   7 8         9
 Words: Alpy i Dolomity znám , ale z dřívějška .
@@ -889,23 +819,19 @@ Words: Alpy i Dolomity znám , ale z dřívějška .
 # sentence level graph:
 (s28g1 / gradation
         :op1 (s28z1 / znát-001
+            :aspect state
             :ARG1 (s28a1 / and
                 :op1 (s28a2 / Alpy
                     :refer-number plural)
                 :op2 (s28d1 / Dolomity
                     :refer-number plural))
-            :ARG0 (s28e1 / entity)
-            :refer-number singular
-            :refer-person 1st
-            :aspect state)
+            :ARG0 (s28e1 / entity))
         :op2 (s28z2 / znát-001
+            :aspect state
             :ARG1 s28a1
             :ARG0 s28e1
             :temporal (s28d2 / dřívějšek
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 1st
-            :aspect state))
+                :refer-number singular)))
 
 # alignment:
 s28g1: 6-6
@@ -925,18 +851,17 @@ s28d2: 7-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s29-root
+# meta-info :: sent_id = u_tree-cs-s29-root :: type = partial_conversion
 # :: snt29
 Index: 1    2  3
 Words: Proč ne ?
 
 # sentence level graph:
 (s29b1 / být-011
-        :ARG0 (s29e1 / entity)
+        :aspect activity
+        :ARG1 (s29e1 / entity)
         :cause (s29p1 / proč)
-        :clausal-marker (s29n1 / ne)
-        :refer-number singular
-        :aspect activity)
+        :clausal-marker (s29n1 / ne))
 
 # alignment:
 s29b1: 0-0
@@ -950,40 +875,33 @@ s29n1: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s30-root
+# meta-info :: sent_id = u_tree-cs-s30-root :: type = partial_conversion
 # :: snt30
 Index: 1       2  3  4  5       6     7  8  9    10 11 12   13    14
 Words: Protože už na to fyzicky nemám ,  už jsem na to dost starý .
 
 # sentence level graph:
 (s30b1 / být-011
-        :ARG0 (s30e1 / entity)
+        :aspect activity
+        :polarity -
+        :ARG1 (s30e1 / entity)
         :cause (s30a1 / and
             :op1 (s30m1 / mít-011
+                :aspect state
+                :polarity -
                 :temporal (s30u1 / už)
                 :ARG1 (s30t1 / ten
-                    :refer-number singular
-                    :refer-person 2nd)
+                    :refer-number singular)
                 :regard (s30f1 / fyzicky)
-                :ARG0 s30e1
-                :refer-number singular
-                :refer-person 1st
-                :aspect state
-                :polarity -)
+                :ARG0 s30e1)
             :op2 (s30b2 / být-007
+                :aspect activity
                 :ARG0 s30e1
                 :temporal (s30u2 / už)
-                :ARG1 (s30s1 / starý
+                :ARG2 (s30s1 / starý
                     :regard (s30t2 / ten
                         :refer-number singular)
-                    :extent (s30d1 / dost)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 1st
-                :aspect activity))
-        :refer-number singular
-        :aspect activity
-        :polarity -)
+                    :extent (s30d1 / dost)))))
 
 # alignment:
 s30b1: 0-0
@@ -1007,67 +925,58 @@ s30d1: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s31-root
+# meta-info :: sent_id = u_tree-cs-s31-root :: type = partial_conversion
 # :: snt31
 Index: 1  2    3     4      5  6      7  8  9   10 11 12        13
 Words: I  když ještě jezdím na lyžích ,  do Alp už si netroufám .
 
 # sentence level graph:
-(s31b1 / but-91
-        :ARG2 (s31j1 / jezdit-003
+(s31t1 / troufat-si-001
+        :aspect activity
+        :polarity -
+        :concession (s31j1 / jezdit-003
+            :aspect activity
             :duration (s31j2 / ještě)
             :ARG0 (s31e1 / entity)
             :instrument (s31l1 / lyže
-                :refer-number plural)
-            :refer-number singular
-            :refer-person 1st
-            :aspect activity)
-        :ARG1 (s31t1 / troufat-si-001
-            :goal (s31a1 / Alpy
-                :refer-number plural)
-            :temporal (s31u1 / už)
-            :ARG0 s31e1
-            :ARG1 (s31e2 / entity)
-            :refer-number singular
-            :refer-person 1st
-            :aspect activity
-            :polarity -))
+                :refer-number plural))
+        :goal (s31a1 / Alpy
+            :refer-number plural)
+        :temporal (s31u1 / už)
+        :ARG0 s31e1
+        :ARG1 (s31e2 / entity))
 
 # alignment:
-s31b1: 2-2
 s31t1: 11-12
-s31a1: 8-9
-s31u1: 10-10
-s31e2: 0-0
-s31j1: 1-1,4-4
+s31j1: 1-2,4-4
 s31j2: 3-3
 s31e1: 0-0
 s31l1: 5-6
+s31a1: 8-9
+s31u1: 10-10
+s31e2: 0-0
 
 # document level annotation:
 (s31s0 / sentence
-    :coref ((s31a1 :same-entity s28d1)
-            (s31e1 :same-entity s30e1)))
+    :coref ((s31e1 :same-entity s30e1)
+            (s31a1 :same-entity s28d1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s32-root
+# meta-info :: sent_id = u_tree-cs-s32-root :: type = partial_conversion
 # :: snt32
 Index: 1      2     3   4  5      6
 Words: Jezdím hodně rád po Šumavě .
 
 # sentence level graph:
 (s32j1 / jezdit-003
+        :aspect activity
         :ARG0 (s32e1 / entity)
         :manner (s32r1 / rád
             :mod-of s32e1
-            :extent (s32h1 / hodně)
-            :refer-number singular)
+            :extent (s32h1 / hodně))
         :path (s32s1 / Šumava
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 1st
-        :aspect activity)
+            :refer-number singular))
 
 # alignment:
 s32j1: 1-1
@@ -1082,26 +991,24 @@ s32s1: 4-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s33-root
+# meta-info :: sent_id = u_tree-cs-s33-root :: type = partial_conversion
 # :: snt33
 Index: 1    2  3      4       5       6 7       8      9
 Words: Máme na Šumavě dokonce chalupu v Hojsově Stráži .
 
 # sentence level graph:
 (s33m1 / mít-007
+        :aspect state
         :ARG0 (s33e1 / entity)
-        :place (s33s1 / Šumava
+        :ARG2 (s33s1 / Šumava
             :refer-number singular)
         :clausal-marker (s33d1 / dokonce)
         :ARG1 (s33c1 / chalupa
             :refer-number singular)
-        :place (s33s2 / Stráž
+        :ARG2 (s33s2 / Stráž
+            :refer-number singular
             :mod (s33h1 / Hojsův
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 1st
-        :aspect state)
+                :refer-number singular)))
 
 # alignment:
 s33m1: 1-1
@@ -1118,7 +1025,7 @@ s33h1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s34-root
+# meta-info :: sent_id = u_tree-cs-s34-root :: type = partial_conversion
 # :: snt34
 Index: 1        2   3        4  5       6  7  8           9  10   11
 Words: Převážně tam lyžujeme na běžkách ,  na sjezdovkách už méně .
@@ -1126,24 +1033,19 @@ Words: Převážně tam lyžujeme na běžkách ,  na sjezdovkách už méně .
 # sentence level graph:
 (s34a1 / and
         :op1 (s34l1 / lyžovat-001
+            :aspect activity
             :extent (s34p1 / převážně)
-            :place (s34t1 / tam
-                :refer-number singular)
+            :place (s34t1 / tam)
             :ARG0 (s34e1 / entity)
             :instrument (s34b1 / běžka
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 1st
-            :aspect activity)
+                :refer-number plural))
         :op2 (s34l2 / lyžovat-001
+            :aspect activity
             :ARG0 s34e1
             :instrument (s34s1 / sjezdovka
                 :refer-number plural)
             :clausal-marker (s34u1 / už)
-            :extent (s34m1 / málo)
-            :refer-number plural
-            :refer-person 1st
-            :aspect activity))
+            :extent (s34m1 / málo)))
 
 # alignment:
 s34a1: 6-6
@@ -1164,27 +1066,22 @@ s34m1: 10-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s35-root
+# meta-info :: sent_id = u_tree-cs-s35-root :: type = partial_conversion
 # :: snt35
 Index: 1   2       3   4 5    6   7
 Words: Kdo všechno tam s nimi byl ?
 
 # sentence level graph:
 (s35b1 / být-011
-        :ARG0 (s35k1 / kdo
-            :mod (s35v1 / všechen
-                :refer-number singular
-                :refer-person 3rd)
+        :aspect activity
+        :ARG1 (s35k1 / kdo
             :refer-number singular
-            :refer-person 3rd)
-        :place (s35t1 / tam
-            :refer-number plural)
+            :refer-person 3rd
+            :mod (s35v1 / všechen))
+        :place (s35t1 / tam)
         :companion (s35e1 / entity
             :refer-number plural
-            :refer-person 3rd)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :refer-person 3rd))
 
 # alignment:
 s35b1: 6-6
@@ -1200,28 +1097,25 @@ s35e1: 4-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s36-root
+# meta-info :: sent_id = u_tree-cs-s36-root :: type = partial_conversion
 # :: snt36
 Index: 1     2      3 4    5    6 7     8
 Words: Jenom rodiče , její máma s tátou .
 
 # sentence level graph:
 (s36b1 / být-011
+        :aspect activity
         :clausal-marker (s36j1 / jenom)
         :ARG0 (s36i1 / identity-91
             :ARG1 (s36r1 / rodič
                 :refer-number plural)
             :ARG2 (s36m1 / máma
+                :refer-number singular
                 :mod (s36e1 / entity
                     :refer-number singular
                     :refer-person 3rd)
                 :companion (s36t1 / táta
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd)
-        :refer-number singular
-        :aspect activity)
+                    :refer-number singular))))
 
 # alignment:
 s36b1: 0-0
@@ -1240,20 +1134,18 @@ s36t1: 6-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s37-root
+# meta-info :: sent_id = u_tree-cs-s37-root :: type = partial_conversion
 # :: snt37
 Index: 1   2      3   4    5
 Words: Jak dlouho tam byli ?
 
 # sentence level graph:
 (s37b1 / být-011
+        :aspect activity
         :duration (s37d1 / dlouho
             :extent (s37j1 / jak))
         :place (s37t1 / tam)
-        :ARG0 (s37e1 / entity)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+        :ARG1 (s37e1 / entity))
 
 # alignment:
 s37b1: 4-4
@@ -1268,18 +1160,17 @@ s37e1: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s38-root
+# meta-info :: sent_id = u_tree-cs-s38-root :: type = partial_conversion
 # :: snt38
 Index: 1     2
 Words: Týden .
 
 # sentence level graph:
 (s38b1 / být-011
-        :ARG0 (s38e1 / entity)
+        :aspect activity
+        :ARG1 (s38e1 / entity)
         :duration (s38t1 / týden
-            :refer-number singular)
-        :refer-number plural
-        :aspect activity)
+            :refer-number singular))
 
 # alignment:
 s38b1: 0-0
@@ -1293,26 +1184,22 @@ s38t1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s39-root
+# meta-info :: sent_id = u_tree-cs-s39-root :: type = partial_conversion
 # :: snt39
 Index: 1      2    3         4 5        6  7       8      9
 Words: Poprvé byli ubytováni v soukromí na nějakém statku .
 
 # sentence level graph:
 (s39u1 / ubytovat-001
+        :aspect performance
         :temporal (s39p1 / poprvé)
         :ARG0 (s39e1 / entity)
         :ARG1 (s39e2 / entity)
         :place (s39s1 / soukromí
             :refer-number singular)
         :place (s39s2 / statek
-            :mod (s39n1 / nějaký
-                :refer-number singular
-                :refer-person 3rd)
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect performance)
+            :refer-number singular
+            :mod (s39n1 / nějaký)))
 
 # alignment:
 s39u1: 2-3
@@ -1330,25 +1217,22 @@ s39n1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s40-root
+# meta-info :: sent_id = u_tree-cs-s40-root :: type = partial_conversion
 # :: snt40
 Index: 1  2 3    4      5       6
 Words: Má z toho hrozně zážitků .
 
 # sentence level graph:
 (s40m1 / mít-008
+        :aspect state
         :ARG0 (s40e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :start (s40t1 / ten
-            :refer-number singular
-            :refer-person 3rd)
+            :refer-number singular)
         :ARG1 (s40z1 / zážitek
-            :extent (s40h1 / hrozně)
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect state)
+            :refer-number plural
+            :extent (s40h1 / hrozně)))
 
 # alignment:
 s40m1: 1-1
@@ -1364,7 +1248,7 @@ s40h1: 4-4
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s41-root
+# meta-info :: sent_id = u_tree-cs-s41-root :: type = partial_conversion
 # :: snt41
 Index: 1  2      3  4  5        6       7     8       9  10   11 12   13 14    15
 Words: K  večeru a  po večerech chodila krmit zvířata a  byla s  nimi ve stáji .
@@ -1372,68 +1256,61 @@ Words: K  večeru a  po večerech chodila krmit zvířata a  byla s  nimi ve st�
 # sentence level graph:
 (s41a1 / and
         :op1 (s41c1 / chodit-006
+            :aspect activity
             :temporal (s41a2 / and
                 :op1 (s41v1 / večer
                     :refer-number singular)
                 :op2 (s41v2 / večer
                     :refer-number plural))
-            :goal (s41e1 / entity)
+            :goal (s41c2 / concept)
             :purpose (s41k1 / krmit-001
-                :ARG0 s41e2
+                :aspect activity
+                :ARG0 s41e1
                 :ARG1 (s41z1 / zvíře
-                    :refer-number plural)
-                :aspect activity)
-            :ARG0 (s41e2 / entity)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                    :refer-number plural))
+            :ARG0 (s41e1 / entity))
         :op2 (s41b1 / být-011
+            :aspect activity
             :temporal s41a2
-            :ARG0 s41e2
+            :ARG0 s41e1
             :companion s41z1
             :place (s41s1 / stáj
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                :refer-number singular)))
 
 # alignment:
 s41a1: 9-9
 s41c1: 6-6
-s41e1: 0-0
+s41c2: 0-0
 s41k1: 7-7
 s41z1: 8-8,11-12
 s41a2: 3-3
 s41v1: 1-2
 s41v2: 4-5
-s41e2: 0-0
+s41e1: 0-0
 s41b1: 10-10
 s41s1: 13-14
 
 # document level annotation:
 (s41s0 / sentence
-    :coref ((s41e2 :same-entity s40e1)))
+    :coref ((s41e1 :same-entity s40e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s42-root
+# meta-info :: sent_id = u_tree-cs-s42-root :: type = partial_conversion
 # :: snt42
 Index: 1      2  3  4  5   6      7
 Words: Hrozně se jí to tam líbilo .
 
 # sentence level graph:
 (s42l1 / líbit-se-001
+        :aspect activity
         :extent (s42h1 / hrozně)
         :ARG0 (s42e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG1 (s42t1 / ten
             :refer-number singular)
-        :place (s42t2 / tam
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :place (s42t2 / tam))
 
 # alignment:
 s42l1: 2-2,6-6
@@ -1444,26 +1321,23 @@ s42t2: 5-5
 
 # document level annotation:
 (s42s0 / sentence
-    :coref ((s42e1 :same-entity s41e2)
+    :coref ((s42e1 :same-entity s41e1)
             (s42t1 :same-entity s41a1)
             (s42t2 :same-entity s39s2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s43-root
+# meta-info :: sent_id = u_tree-cs-s43-root :: type = partial_conversion
 # :: snt43
 Index: 1  2  3     4
 Words: To je pěkné .
 
 # sentence level graph:
 (s43b1 / být-007
-        :ARG0 (s43t1 / ten
+        :aspect activity
+        :ARG1 (s43t1 / ten
             :refer-number singular)
-        :ARG1 (s43p1 / pěkný
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+        :ARG2 (s43p1 / pěkný))
 
 # alignment:
 s43b1: 2-2
@@ -1475,19 +1349,17 @@ s43p1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s44-root
+# meta-info :: sent_id = u_tree-cs-s44-root :: type = partial_conversion
 # :: snt44
 Index: 1   2  3   4       5
 Words: Jak se tam dostali ?
 
 # sentence level graph:
 (s44d1 / dostat-se-008
+        :aspect performance
         :instrument (s44j1 / jak)
         :goal (s44t1 / tam)
-        :ARG0 (s44e1 / entity)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect performance)
+        :ARG0 (s44e1 / entity))
 
 # alignment:
 s44d1: 2-2,4-4
@@ -1502,31 +1374,28 @@ s44e1: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s45-root
+# meta-info :: sent_id = u_tree-cs-s45-root :: type = partial_conversion
 # :: snt45
 Index: 1     2        3     4          5     6   7
 Words: Jezdí soukromě autem pravidelně každý rok .
 
 # sentence level graph:
 (s45j1 / jezdit-002
+        :aspect activity
         :ARG0 (s45e1 / entity)
-        :goal (s45e2 / entity)
+        :ARG1 (s45c1 / concept)
         :manner (s45s1 / soukromě)
         :instrument (s45a1 / auto
             :refer-number singular)
         :frequency (s45p1 / pravidelně)
         :frequency (s45r1 / rok
-            :mod (s45k1 / každý
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number singular
+            :mod (s45k1 / každý)))
 
 # alignment:
 s45j1: 1-1
 s45e1: 0-0
-s45e2: 0-0
+s45c1: 0-0
 s45s1: 2-2
 s45a1: 3-3
 s45p1: 4-4
@@ -1539,24 +1408,22 @@ s45k1: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s46-root
+# meta-info :: sent_id = u_tree-cs-s46-root :: type = partial_conversion
 # :: snt46
 Index: 1         2  3       4    5        6
 Words: Ubytování si sehnali přes internet .
 
 # sentence level graph:
 (s46s1 / sehnat-001
+        :aspect performance
         :ARG1 (s46u1 / ubytování
+            :refer-number singular
             :ARG1 (s46e1 / entity)
-            :ARG0 (s46e2 / entity)
-            :refer-number singular)
+            :ARG0 (s46e2 / entity))
         :affectee s46e1
         :ARG0 s46e1
         :instrument (s46i1 / internet
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect performance)
+            :refer-number singular))
 
 # alignment:
 s46s1: 3-3
@@ -1572,20 +1439,18 @@ s46i1: 4-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s47-root
+# meta-info :: sent_id = u_tree-cs-s47-root :: type = partial_conversion
 # :: snt47
 Index: 1    2   3     4     5
 Words: Bývá tam hodně sněhu ?
 
 # sentence level graph:
 (s47b1 / bývat-013
+        :aspect activity
         :place (s47t1 / tam)
-        :ARG0 (s47s1 / sníh
-            :mod (s47h1 / hodně)
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+        :ARG1 (s47s1 / sníh
+            :refer-number singular
+            :mod (s47h1 / hodně)))
 
 # alignment:
 s47b1: 1-1
@@ -1599,7 +1464,7 @@ s47h1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s48-root
+# meta-info :: sent_id = u_tree-cs-s48-root :: type = partial_conversion
 # :: snt48
 Index: 1     2   3    4    5  6        7   8   9  10  11
 Words: Sněhu tam bývá dost ,  rozhodně víc než u  nás .
@@ -1607,29 +1472,23 @@ Words: Sněhu tam bývá dost ,  rozhodně víc než u  nás .
 # sentence level graph:
 (s48a1 / and
         :op1 (s48b1 / bývat-002
-            :ARG0 (s48s1 / sníh
+            :aspect activity
+            :ARG1 (s48s1 / sníh
                 :refer-number singular)
             :place (s48t1 / tam)
-            :ARG1 (s48d1 / dost)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+            :ARG2 (s48d1 / dost))
         :op2 (s48b2 / bývat-002
-            :ARG0 s48s1
+            :aspect activity
+            :ARG1 s48s1
             :clausal-marker (s48r1 / rozhodně)
-            :ARG1 (s48h1 / hodně
+            :ARG2 (s48h1 / hodně
                 :comparison (s48b3 / bývat-002
-                    :ARG0 s48s1
-                    :ARG1 (s48x3 / #Some)
-                    :place (s48e1 / entity
+                    :aspect activity
+                    :ARG1 s48s1
+                    :ARG2 (s48x3 / %Some)
+                    :place (s48p1 / person
                         :refer-number plural
-                        :refer-person 1st)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity))
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                        :refer-person 1st)))))
 
 # alignment:
 s48a1: 5-5
@@ -1642,7 +1501,7 @@ s48r1: 6-6
 s48h1: 7-7
 s48b3: 0-0
 s48x3: 0-0
-s48e1: 9-10
+s48p1: 9-10
 
 # document level annotation:
 (s48s0 / sentence
@@ -1651,14 +1510,15 @@ s48e1: 9-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s49-root
+# meta-info :: sent_id = u_tree-cs-s49-root :: type = partial_conversion
 # :: snt49
 Index: 1     2   3    4       5       6  7        8    9  10    11  12 13   14
 Words: Letos tam byli dokonce dvakrát ,  začátkem zimy a  ještě teď na jaře .
 
 # sentence level graph:
 (s49b1 / být-011
-        :ARG0 (s49e1 / entity)
+        :aspect activity
+        :ARG1 (s49e1 / entity)
         :temporal (s49l1 / letos)
         :place (s49t1 / tam)
         :clausal-marker (s49d1 / dokonce)
@@ -1670,10 +1530,7 @@ Words: Letos tam byli dokonce dvakrát ,  začátkem zimy a  ještě teď na ja�
                 :clausal-marker (s49j1 / ještě)
                 :op2 (s49t2 / teď
                     :temporal (s49j2 / jaro
-                        :refer-number singular))))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number singular)))))
 
 # alignment:
 s49b1: 3-3
@@ -1697,17 +1554,15 @@ s49j2: 12-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s50-root
+# meta-info :: sent_id = u_tree-cs-s50-root :: type = partial_conversion
 # :: snt50
 Index: 1        2
 Words: Lyžujete ?
 
 # sentence level graph:
 (s50l1 / lyžovat-001
-        :ARG0 (s50e1 / entity)
-        :refer-number plural
-        :refer-person 2nd
-        :aspect activity)
+        :aspect activity
+        :ARG0 (s50e1 / entity))
 
 # alignment:
 s50l1: 1-1

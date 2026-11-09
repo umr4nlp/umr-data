@@ -1,22 +1,20 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1     2  3     4       5     6 7
 Words: Praha se stane kulisou filmu s Cruisem
 
 # sentence level graph:
 (s1s1 / stát-se-001
-        :ARG0 (s1p1 / Praha
+        :aspect performance
+        :ARG1 (s1p1 / Praha
             :refer-number singular)
-        :ARG1 (s1k1 / kulisa
+        :ARG2 (s1k1 / kulisa
+            :refer-number singular
             :ARG1 (s1f1 / film
+                :refer-number singular
                 :companion (s1c1 / Cruise
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect performance)
+                    :refer-number singular))))
 
 # alignment:
 s1s1: 2-3
@@ -30,7 +28,7 @@ s1c1: 6-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2
 Words: Praha -
@@ -48,35 +46,30 @@ s2p1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1   2      3  4       5           6  7     8     9        10   11    12 13     14      15 16    17
 Words: Tom Cruise ,  Vanessa Redgraveová a  další herci zvučných jmen budou v  březnu působit v  Praze .
 
 # sentence level graph:
 (s3p1 / působit-006
+        :aspect activity
         :ARG0 (s3a1 / and
             :op1 (s3c1 / Cruise
-                :mod (s3t1 / Tom
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s3t1 / Tom))
             :op2 (s3r1 / Redgraveová
-                :mod (s3v1 / Vanessa
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s3v1 / Vanessa))
             :op3 (s3h1 / herec
-                :mod (s3d1 / další
-                    :refer-number plural)
+                :refer-number plural
+                :mod (s3d1 / další)
                 :mod (s3j1 / jméno
-                    :mod (s3z1 / zvučný
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural))
+                    :mod (s3z1 / zvučný))))
         :temporal (s3b1 / březen
             :refer-number singular)
         :place (s3p2 / Praha
-            :refer-number singular)
-        :aspect activity)
+            :refer-number singular))
 
 # alignment:
 s3p1: 11-11,14-14
@@ -99,53 +92,46 @@ s3p2: 15-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1         2        3  4            5       6      7  8      9      10 11    12 13 14      15    16      17   18      19    20 21      22 23         24 25
 Words: Paramount Pictures a  producentské centrum Cruise /  Wagner chtějí na Kampě a  na Karlově mostě natáčet část akčního filmu "  Mission :  Impossible "  .
 
 # sentence level graph:
 (s4n1 / natáčet-001
+        :aspect activity
         :ARG0 (s4a1 / and
-            :op1 (s4x1 / #Forn
-                :FPHR (s4p1 / Paramount)
-                :FPHR (s4p2 / Pictures))
+            :op1 (s4f1 / foreign-phrase
+                :op1 "Paramount" :op2 "Pictures")
             :op2 (s4c1 / centrum
-                :mod (s4p3 / producentský
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s4p1 / producentský)
                 :name (s4a2 / and
                     :op1 (s4c2 / Cruise
                         :refer-number singular)
                     :op2 (s4w1 / Wagner
-                        :refer-number singular))
-                :refer-number singular))
+                        :refer-number singular))))
         :place (s4a3 / and
             :op1 (s4k1 / Kampa
                 :refer-number singular)
             :op2 (s4m1 / most
+                :refer-number singular
                 :mod (s4k2 / Karel
-                    :refer-number singular)
-                :refer-number singular))
+                    :refer-number singular)))
         :ARG1 (s4c3 / část
-            :mod (s4f1 / film
-                :mod (s4a4 / akční
-                    :refer-number singular)
-                :name (s4x2 / #Forn
-                    :FPHR (s4m2 / Mission)
-                    :FPHR (s4x3 / colon)
-                    :FPHR (s4i1 / Impossible))
-                :refer-number singular)
-            :refer-number singular)
-        :aspect activity)
+            :refer-number singular
+            :mod (s4f2 / film
+                :refer-number singular
+                :mod (s4a4 / akční)
+                :name (s4n2 / name
+                    :op1 "Mission:" :op2 "Impossible"))))
 
 # alignment:
 s4n1: 9-9,16-16
 s4a1: 3-3
-s4x1: 0-0
-s4p1: 1-1
-s4p2: 2-2
+s4f1: 1-2
 s4c1: 5-5
-s4p3: 4-4
+s4p1: 4-4
 s4a2: 7-7
 s4c2: 6-6
 s4w1: 8-8
@@ -154,41 +140,34 @@ s4k1: 10-11
 s4m1: 13-13,15-15
 s4k2: 14-14
 s4c3: 17-17
-s4f1: 19-19
+s4f2: 19-19
 s4a4: 18-18
-s4x2: 0-0
-s4m2: 21-21
-s4x3: 22-22
-s4i1: 23-23
+s4n2: 21-23
 
 # document level annotation:
 (s4s0 / sentence
-    :coref ((s4f1 :same-entity s1f1)))
+    :coref ((s4f2 :same-entity s1f1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1     2  3     4      5  6     7  8      9          10       11    12     13
 Words: Půjde o  noční záběry ,  které by neměly významněji ovlivnit běžný provoz .
 
 # sentence level graph:
 (s5j1 / jít-035
-        :ARG0 (s5z1 / záběr
-            :mod (s5n1 / noční
-                :refer-number plural)
+        :aspect activity
+        :ARG2 (s5z1 / záběr
+            :refer-number plural
+            :mod (s5n1 / noční)
             :ARG0-of (s5o1 / ovlivnit-001
+                :aspect performance
+                :polarity -
                 :extent (s5v1 / významně)
                 :ARG1 (s5p1 / provoz
-                    :mod (s5b1 / běžný
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect performance
-                :polarity -)
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number singular
+                    :mod (s5b1 / běžný)))))
 
 # alignment:
 s5j1: 1-1
@@ -205,28 +184,24 @@ s5b1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1       2    3             4      5     6    7        8        9
 Words: Filmaři však pravděpodobně naruší noční klid místních obyvatel .
 
 # sentence level graph:
 (s6n1 / narušit-001
+        :aspect performance
         :clausal-marker (s6v1 / však)
         :ARG0 (s6f1 / filmař
             :refer-number plural)
         :clausal-marker (s6p1 / pravděpodobně)
         :ARG1 (s6k1 / klid
-            :mod (s6n2 / noční
-                :refer-number singular)
+            :refer-number singular
+            :mod (s6n2 / noční)
             :possessor (s6o1 / obyvatel
-                :mod (s6m1 / místní
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect performance)
+                :refer-number plural
+                :mod (s6m1 / místní))))
 
 # alignment:
 s6n1: 4-4
@@ -244,71 +219,58 @@ s6m1: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1        2      3  4           5    6             7  8   9         10            11       12    13   14 15      16        17 18 19 20      21 22        23        24  25 26 27  28 29    30   31    32     33     34
 Words: Jaroslav Kučera ze společnosti Prag International ,  jež poskytuje mezinárodnímu projektu český štáb ,  dokonce připustil ,  že se uvažuje o  náhradním ubytování pro ty ,  kdo si budou přát zcela klidný spánek .
 
 # sentence level graph:
 (s7p1 / připustit-004
+        :aspect performance
         :ARG0 (s7k1 / Kučera
-            :mod (s7j1 / Jaroslav
-                :refer-number singular)
+            :refer-number singular
+            :mod (s7j1 / Jaroslav)
             :start (s7s1 / společnost
-                :name (s7x1 / #Forn
-                    :FPHR (s7p2 / Prag)
-                    :FPHR (s7i1 / International))
-                :ARG0-of (s7p3 / poskytovat-001
-                    :ARG2 (s7p4 / projekt
-                        :mod (s7m1 / mezinárodní
-                            :refer-number singular)
-                        :refer-number singular)
+                :refer-number singular
+                :name (s7n1 / name
+                    :op1 "Prag" :op2 "International")
+                :ARG0-of (s7p2 / poskytovat-001
+                    :aspect activity
+                    :ARG2 (s7p3 / projekt
+                        :refer-number singular
+                        :mod (s7m1 / mezinárodní))
                     :ARG1 (s7s2 / štáb
-                        :mod (s7c1 / český
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity)
-                :refer-number singular)
-            :refer-number singular)
+                        :refer-number singular
+                        :mod (s7c1 / český)))))
         :clausal-marker (s7d1 / dokonce)
         :ARG1 (s7u1 / uvažovat-002
+            :aspect activity
             :ARG0 (s7e1 / entity)
             :ARG1 (s7u2 / ubytování
+                :refer-number singular
                 :ARG0 (s7e2 / entity)
                 :ARG1 s7t1
-                :place (s7e3 / entity)
-                :mod (s7n1 / náhradní
-                    :refer-number singular)
+                :place (s7c2 / concept)
+                :mod (s7n2 / náhradní)
                 :affectee (s7t1 / ten
-                    :mod (s7p5 / přát-si-002
+                    :refer-number plural
+                    :mod (s7p4 / přát-si-002
+                        :aspect state
                         :ARG0 (s7k2 / kdo
                             :refer-number plural)
                         :ARG1 (s7s3 / spánek
+                            :refer-number singular
                             :mod (s7k3 / klidný
-                                :extent (s7z1 / zcela)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :aspect state)
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
-        :refer-number singular
-        :aspect performance)
+                                :extent (s7z1 / zcela))))))))
 
 # alignment:
 s7p1: 16-16
 s7k1: 2-2
 s7j1: 1-1
 s7s1: 3-4,8-8
-s7x1: 0-0
-s7p2: 5-5
-s7i1: 6-6
-s7p3: 9-9
-s7p4: 11-11
+s7n1: 5-6
+s7p2: 9-9
+s7p3: 11-11
 s7m1: 10-10
 s7s2: 13-13
 s7c1: 12-12
@@ -317,10 +279,10 @@ s7u1: 18-20
 s7e1: 0-0
 s7u2: 21-21,23-23
 s7e2: 0-0
-s7e3: 0-0
-s7n1: 22-22
+s7c2: 0-0
+s7n2: 22-22
 s7t1: 24-25
-s7p5: 28-30
+s7p4: 28-30
 s7k2: 27-27
 s7s3: 33-33
 s7k3: 32-32
@@ -333,55 +295,48 @@ s7z1: 31-31
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1       2       3  4  5  6    7      8     9           10   11 12     13   14          15       16   17    18          19        20 21  22          23
 Words: Zároveň ujistil ,  že se štáb nebude během plánovaných osmi až deseti nocí dorozumívat megafony nebo jiným zesilovacím zařízením ,  ale vysílačkami .
 
 # sentence level graph:
 (s8u1 / ujistit-001
+        :aspect performance
         :temporal (s8z1 / zároveň)
         :ARG0 (s8e1 / entity
             :refer-number singular
             :refer-person 3rd)
-        :ARG2 (s8e2 / entity)
+        :ARG1 (s8e2 / entity)
         :ARG1 (s8b1 / but-91
             :ARG1 (s8d1 / dorozumívat-se-001
+                :aspect activity
+                :polarity -
                 :ARG0 (s8s1 / štáb
                     :refer-number singular)
                 :ARG1 (s8e3 / entity)
-                :ARG2 (s8x1 / #Rcp
-                    :refer-number singular)
+                :ARG2 (s8x1 / %Rcp)
                 :temporal (s8n1 / noc
-                    :mod (s8m1 / math
-                        :op1 (s8o1 / osm
-                            :refer-number plural)
-                        :op2 (s8d2 / deset
-                            :refer-number plural))
-                    :mod (s8p1 / plánovaný
-                        :refer-number plural)
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s8m1 / math-entity
+                        :op1 (s8o1 / osm)
+                        :op2 (s8d2 / deset))
+                    :mod (s8p1 / plánovaný))
                 :instrument (s8o2 / or
                     :op1 (s8m2 / megafon
                         :refer-number plural)
                     :op2 (s8z2 / zařízení
-                        :mod (s8z3 / zesilovací
-                            :refer-number singular)
-                        :mod (s8j1 / jiný
-                            :refer-number singular)
-                        :refer-number singular))
-                :aspect activity
-                :polarity -)
+                        :refer-number singular
+                        :mod (s8z3 / zesilovací)
+                        :mod (s8j1 / jiný))))
             :ARG2 (s8d3 / dorozumívat-se-001
+                :aspect activity
                 :ARG0 s8s1
                 :ARG1 s8e3
                 :ARG2 s8x1
                 :temporal s8n1
                 :instrument (s8v1 / vysílačka
-                    :refer-number plural)
-                :aspect activity))
-        :refer-number singular
-        :aspect performance)
+                    :refer-number plural))))
 
 # alignment:
 s8u1: 2-2
@@ -414,7 +369,7 @@ s8v1: 22-22
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1      2   3        4   5         6         7  8       9  10 11        12   13 14  15 16   17        18     19     20         21
 Words: Nebude prý používat ani hlasitých playbacků a  postará se o  odstínění oken ,  aby do nich nesvítilo prudké světlo reflektorů .
@@ -422,38 +377,33 @@ Words: Nebude prý používat ani hlasitých playbacků a  postará se o  odstí
 # sentence level graph:
 (s9a1 / and
         :op1 (s9p1 / používat-001
+            :aspect activity
+            :polarity -
             :ARG0 (s9e1 / entity
                 :refer-number singular
                 :refer-person 3rd)
             :clausal-marker (s9p2 / prý)
             :clausal-marker (s9a2 / ani)
             :ARG1 (s9p3 / playback
-                :mod (s9h1 / hlasitý
-                    :refer-number plural)
-                :refer-number plural)
-            :aspect activity
-            :polarity -)
+                :refer-number plural
+                :mod (s9h1 / hlasitý)))
         :op2 (s9p4 / postarat-se-001
+            :aspect performance
             :ARG0 s9e1
             :ARG1 (s9o1 / odstínění
+                :refer-number singular
                 :ARG0 (s9e2 / entity)
                 :ARG1 (s9o2 / okno
-                    :refer-number plural)
-                :refer-number singular)
+                    :refer-number plural))
             :purpose (s9s1 / svítit-001
+                :aspect activity
+                :polarity -
                 :goal s9o2
                 :ARG0 (s9s2 / světlo
+                    :refer-number singular
                     :possessor (s9r1 / reflektor
                         :refer-number plural)
-                    :mod (s9p5 / prudký
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :aspect activity
-                :polarity -)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect performance))
+                    :mod (s9p5 / prudký)))))
 
 # alignment:
 s9a1: 7-7
@@ -478,67 +428,56 @@ s9p5: 18-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1             2       3     4     5  6    7      8  9     10 11      12 13       14      15    16 17    18     19 20     21 22   23       24     25   26   27   28       29  30       31      32    33
 Words: Místostarosta městské části Praha 1  Ivan Spěvák ,  který s  filmaři o  povolení natáčet jedná ,  zatím odmítl LN sdělit ,  jaký finanční přínos bude celá akce znamenat pro pokladnu městské části .
 
 # sentence level graph:
 (s10o1 / odmítnout-003
+        :aspect performance
         :ARG0 (s10s1 / Spěvák
-            :mod (s10i1 / Ivan
-                :refer-number singular)
+            :refer-number singular
+            :mod (s10i1 / Ivan)
             :mod (s10m1 / místostarosta
                 :possessor (s10c1 / část
-                    :mod (s10m2 / městský
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s10m2 / městský)
                     :name (s10p1 / Praha
-                        :mod (s10x1 / 1)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
+                        :refer-number singular
+                        :mod (s10x1 / 1))))
             :ARG0-of (s10j1 / jednat-001
+                :aspect activity
                 :ARG2 (s10f1 / filmař
-                    :refer-number plural
-                    :refer-person 3rd)
+                    :refer-number plural)
                 :ARG1 (s10p2 / povolení
+                    :refer-number singular
                     :ARG0 (s10e1 / entity)
                     :ARG2 (s10e2 / entity)
                     :ARG1 (s10n1 / natáčet-001
+                        :aspect activity
                         :ARG0 s10e2
-                        :ARG1 (s10e3 / entity)
-                        :aspect activity)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number singular)
+                        :ARG1 (s10e3 / entity)))))
         :temporal (s10z1 / zatím)
         :ARG1 (s10s2 / sdělit-002
+            :aspect performance
             :ARG2 (s10l1 / LN
                 :refer-number plural)
             :ARG0 s10s1
             :effect (s10z2 / znamenat-001
-                :ARG0 (s10a1 / akce
-                    :mod (s10c2 / celý
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG1 (s10p3 / přínos
-                    :mod (s10f2 / finanční
-                        :refer-number singular)
+                :aspect state
+                :ARG1 (s10a1 / akce
+                    :refer-number singular
+                    :mod (s10c2 / celý))
+                :ARG2 (s10p3 / přínos
+                    :refer-number singular
+                    :mod (s10f2 / finanční)
                     :affectee (s10p4 / pokladna
+                        :refer-number singular
                         :possessor (s10c3 / část
-                            :mod (s10m3 / městský
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :mod (s10j2 / jaký
-                        :refer-number singular)
-                    :refer-number singular)
-                :aspect state)
-            :aspect performance)
-        :refer-number singular
-        :aspect performance)
+                            :refer-number singular
+                            :mod (s10m3 / městský)))
+                    :mod (s10j2 / jaký)))))
 
 # alignment:
 s10o1: 18-18
@@ -577,57 +516,49 @@ s10j2: 22-22
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1         2    3  4  5       6     7      8  9   10      11         12         13    14 15       16      17    18      19    20 21  22         23    24       25   26    27    28
 Words: Zdůraznil však ,  že radnice hledá způsob ,  jak získané prostředky investovat právě do obydlené oblasti kolem Karlova mostu ,  kde zahraniční štáby narušují klid dosti často .
 
 # sentence level graph:
 (s11z1 / zdůraznit-001
+        :aspect performance
         :clausal-marker (s11v1 / však)
         :ARG0 (s11e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG1 (s11h1 / hledat-002
+            :aspect activity
             :ARG0 (s11r1 / radnice
                 :refer-number singular)
             :ARG1 (s11z2 / způsob
+                :refer-number singular
                 :ARG0 (s11e2 / entity)
                 :ARG1 (s11i1 / investovat-001
+                    :aspect process
                     :manner (s11j1 / jak)
                     :ARG1 (s11p1 / prostředek
-                        :mod (s11z3 / získaný
-                            :refer-number plural)
-                        :refer-number plural)
+                        :refer-number plural
+                        :mod (s11z3 / získaný))
                     :ARG0 s11e2
                     :clausal-marker (s11p2 / právě)
                     :goal (s11o1 / oblast
-                        :mod (s11o2 / obydlený
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s11o2 / obydlený)
                         :place (s11m1 / most
+                            :refer-number singular
                             :mod (s11k1 / Karel
-                                :refer-number singular)
-                            :refer-number singular)
+                                :refer-number singular))
                         :place-of (s11n1 / narušovat-001
+                            :aspect activity
                             :ARG0 (s11s1 / štáb
-                                :mod (s11z4 / zahraniční
-                                    :refer-number plural)
-                                :refer-number plural)
+                                :refer-number plural
+                                :mod (s11z4 / zahraniční))
                             :ARG1 (s11k2 / klid
                                 :refer-number singular)
                             :frequency (s11c1 / často
-                                :extent (s11d1 / dost))
-                            :refer-number plural
-                            :refer-person 3rd
-                            :aspect activity)
-                        :refer-number singular)
-                    :aspect process)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
-        :refer-number singular
-        :aspect performance)
+                                :extent (s11d1 / dost))))))))
 
 # alignment:
 s11z1: 1-1
@@ -661,47 +592,38 @@ s11d1: 26-26
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1     2     3         4        5        6        7      8  9     10 11     12    13 14        15     16         17        18 19          20   21
 Words: Podle běžně užívaných pravidel nebývají poplatky vysoké ,  neboť se vybírá pouze za parkovací plochu zastavěnou technikou a  filmařskými auty .
 
 # sentence level graph:
 (s12h1 / have-cause-91
-        :ARG1 (s12b1 / být-007
-            :regard (s12p1 / pravidlo
-                :mod (s12u1 / užívaný
-                    :manner (s12b2 / běžně)
-                    :refer-number plural)
-                :refer-number plural)
-            :ARG0 (s12p2 / poplatek
-                :refer-number plural)
-            :ARG1 (s12v1 / vysoký
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
+        :ARG1 (s12b1 / bývat-002
             :aspect activity
-            :polarity -)
+            :polarity -
+            :regard (s12p1 / pravidlo
+                :refer-number plural
+                :mod (s12u1 / užívaný
+                    :manner (s12b2 / běžně)))
+            :ARG1 (s12p2 / poplatek
+                :refer-number plural)
+            :ARG2 (s12v1 / vysoký))
         :ARG2 (s12v2 / vybírat-002
+            :aspect activity
             :ARG0 (s12e1 / entity)
             :ARG1 (s12e2 / entity)
             :clausal-marker (s12p3 / pouze)
             :cause (s12p4 / plocha
-                :mod (s12p5 / parkovací
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s12p5 / parkovací)
                 :mod (s12z1 / zastavěný
                     :ARG0 (s12a1 / and
                         :op1 (s12t1 / technika
                             :refer-number singular)
                         :op2 (s12a2 / auto
-                            :mod (s12f1 / filmařský
-                                :refer-number plural)
-                            :refer-number plural))
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                            :refer-number plural
+                            :mod (s12f1 / filmařský)))))))
 
 # alignment:
 s12h1: 9-9
@@ -728,39 +650,30 @@ s12f1: 19-19
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1  2       3  4       5  6          7  8  9    10     11    12 13        14       15      16
 Words: V  případě "  Mission :  Impossible "  se však údajně jedná o  zaplacení jakéhosi paušálu .
 
 # sentence level graph:
 (s13j1 / jednat-se-002
+        :aspect activity
         :clausal-marker (s13v1 / však)
         :clausal-marker (s13u1 / údajně)
-        :regard (s13x1 / #Forn
-            :FPHR (s13m1 / Mission)
-            :FPHR (s13x2 / colon)
-            :FPHR (s13i1 / Impossible)
-            :refer-number singular)
-        :ARG0 (s13z1 / zaplacení
+        :regard (s13f1 / foreign-phrase
+            :op1 "Mission:" :op2 "Impossible")
+        :ARG2 (s13z1 / zaplacení
+            :refer-number singular
             :ARG0 (s13e1 / entity)
             :ARG1 (s13p1 / paušál
-                :mod (s13j2 / jakýsi
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number singular
+                :mod (s13j2 / jakýsi))))
 
 # alignment:
 s13j1: 8-8,11-11
 s13v1: 9-9
 s13u1: 10-10
-s13x1: 0-0
-s13m1: 4-4
-s13x2: 5-5
-s13i1: 6-6
+s13f1: 4-6
 s13z1: 12-13
 s13e1: 0-0
 s13p1: 15-15
@@ -768,58 +681,50 @@ s13j2: 14-14
 
 # document level annotation:
 (s13s0 / sentence
-    :coref ((s13x1 :same-entity s4f1)))
+    :coref ((s13f1 :same-entity s4f2)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1  2  3      4     5  6  7       8    9   10 11     12  13 14    15   16  17       18    19      20 21    22   23     24         25           26 27   28 29        30       31
 Words: I  .  Spěvák tvrdí ,  že radnice chce mít po celých osm až deset nocí při natáčení svého člověka ,  který bude hlídat dodržování hygienických ,  tedy i  hlukových podmínek .
 
 # sentence level graph:
 (s14t1 / tvrdit-002
+        :aspect activity
         :ARG0 (s14s1 / Spěvák
-            :mod (s14i1 / I)
             :refer-number singular
-            :refer-person 3rd)
-        :effect (s14m1 / mít-007
+            :mod (s14i1 / I))
+        :ARG1 (s14m1 / mít-007
+            :aspect state
             :ARG0 (s14r1 / radnice
                 :refer-number singular)
             :duration (s14n1 / noc
-                :mod (s14c1 / celý
-                    :refer-number plural)
-                :mod (s14m2 / math
-                    :op1 (s14o1 / osm
-                        :refer-number singular)
-                    :op2 (s14d1 / deset
-                        :refer-number singular))
-                :refer-number plural)
-            :place (s14n2 / natáčení
+                :refer-number plural
+                :mod (s14c1 / celý)
+                :mod (s14m2 / math-entity
+                    :op1 (s14o1 / osm)
+                    :op2 (s14d1 / deset)))
+            :ARG2 (s14n2 / natáčení
+                :refer-number singular
                 :ARG0 (s14e1 / entity)
-                :ARG1 (s14e2 / entity)
-                :refer-number singular)
+                :ARG1 (s14e2 / entity))
             :ARG1 (s14c2 / člověk
+                :refer-number singular
                 :possessor s14r1
                 :ARG0-of (s14h1 / hlídat-001
+                    :aspect activity
                     :ARG1 (s14d2 / dodržování
+                        :refer-number singular
                         :ARG0 (s14e3 / entity)
                         :ARG1 (s14p1 / podmínka
+                            :refer-number plural
                             :mod (s14i2 / identity-91
-                                :ARG1 (s14h2 / hygienický
-                                    :refer-number plural)
+                                :ARG1 (s14h2 / hygienický)
                                 :clausal-marker (s14t2 / tedy)
                                 :clausal-marker (s14i3 / i)
-                                :ARG2 (s14h3 / hlukový
-                                    :refer-number plural))
-                            :refer-number plural)
-                        :refer-number singular)
-                    :aspect activity)
-                :refer-number singular)
-            :aspect state)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                                :ARG2 (s14h3 / hlukový))))))))
 
 # alignment:
 s14t1: 4-4

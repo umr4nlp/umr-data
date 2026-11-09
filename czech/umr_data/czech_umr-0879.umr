@@ -1,17 +1,16 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1          2         3
 Words: Generálové podléhali nabídkám
 
 # sentence level graph:
 (s1p1 / podléhat-001
+        :aspect activity
         :ARG0 (s1g1 / generál
             :refer-number plural)
         :ARG1 (s1n1 / nabídka
-            :refer-number plural)
-        :refer-number plural
-        :aspect activity)
+            :refer-number plural))
 
 # alignment:
 s1p1: 2-2
@@ -23,27 +22,25 @@ s1n1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2 3            4         5        6     7
 Words: Pokus o zkorumpování Baudyšova náměstka nebyl první
 
 # sentence level graph:
 (s2b1 / být-007
-        :ARG0 (s2p1 / pokus
+        :aspect activity
+        :polarity -
+        :ARG1 (s2p1 / pokus
+            :refer-number singular
             :ARG1 (s2z1 / zkorumpování
+                :refer-number singular
                 :ARG0 (s2e1 / entity)
                 :ARG1 (s2n1 / náměstek
+                    :refer-number singular
                     :possessor (s2b2 / Baudyš
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :ARG1 (s2p2 / první
-            :refer-number singular)
-        :refer-number singular
-        :aspect activity
-        :polarity -)
+                        :refer-number singular))))
+        :ARG2 (s2p2 / první))
 
 # alignment:
 s2b1: 6-6
@@ -59,15 +56,15 @@ s2p2: 7-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2 3   4 5
 Words: Praha ( gag ) -
 
 # sentence level graph:
 (s3p1 / Praha
-        :parenthesis (s3g1 / gag)
-        :refer-number singular)
+        :refer-number singular
+        :parenthesis (s3g1 / gag))
 
 # alignment:
 s3p1: 1-1
@@ -78,76 +75,64 @@ s3g1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1       2  3     4          5        6      7         8          9       10         11    12    13    14   15 16 17 18    19      20       21         22     23 24     25          26 27       28          29     30 31   32     33      34         35       36           37     38
 Words: Úplatek ,  který náměstkovi ministra obrany Miroslavu Kalouskovi nabídla pracovnice firmy Eagle Group Věra A  .  ,  pokud ovlivní výsledek výběrového řízení na dodání elektroniky ve prospěch izraelského Elbitu ,  není prvním pokusem korumpovat úředníka ministerstva obrany .
 
 # sentence level graph:
 (s4b1 / být-007
-        :ARG0 (s4u1 / úplatek
+        :aspect activity
+        :polarity -
+        :ARG1 (s4u1 / úplatek
+            :refer-number singular
             :ARG1-of (s4n1 / nabídnout-001
+                :aspect performance
                 :ARG2 (s4k1 / Kalousek
-                    :mod (s4m1 / Miroslav
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s4m1 / Miroslav)
                     :mod (s4n2 / náměstek
                         :possessor (s4m2 / ministr
+                            :refer-number singular
                             :possessor (s4o1 / obrana
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
+                                :refer-number singular))))
                 :ARG0 (s4a1 / A
-                    :mod (s4v1 / Věra
-                        :refer-number singular)
+                    :mod (s4v1 / Věra)
                     :mod (s4p1 / pracovnice
                         :possessor (s4f1 / firma
-                            :name (s4x1 / #Forn
-                                :FPHR (s4e1 / Eagle)
-                                :FPHR (s4g1 / Group))
-                            :refer-number singular)
-                        :refer-number singular))
-                :aspect performance)
-            :refer-number singular)
+                            :refer-number singular
+                            :name (s4n3 / name
+                                :op1 "Eagle" :op2 "Group"))))))
         :condition (s4o2 / ovlivnit-001
+            :aspect performance
             :ARG0 s4k1
             :ARG1 (s4v2 / výsledek
+                :refer-number singular
                 :possessor (s4r1 / řízení
-                    :mod (s4v3 / výběrový
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s4v3 / výběrový)
                     :ARG1 (s4d1 / dodání
-                        :ARG0 (s4e2 / entity)
-                        :goal (s4e3 / entity)
-                        :ARG1 (s4e4 / elektronika
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :affectee (s4e5 / Elbit
-                :mod (s4i1 / izraelský
-                    :refer-number singular)
-                :refer-number singular)
+                        :refer-number singular
+                        :ARG0 (s4e1 / entity)
+                        :goal (s4c1 / concept)
+                        :ARG1 (s4e2 / elektronika
+                            :refer-number singular))))
+            :affectee (s4e3 / Elbit
+                :refer-number singular
+                :mod (s4i1 / izraelský)))
+        :ARG2 (s4p2 / pokus
             :refer-number singular
-            :refer-person 3rd
-            :aspect performance)
-        :ARG1 (s4p2 / pokus
             :ARG1 (s4k2 / korumpovat-001
+                :aspect process
                 :ARG1 (s4u2 / úředník
+                    :refer-number singular
                     :possessor (s4m3 / ministerstvo
+                        :refer-number singular
                         :possessor (s4o3 / obrana
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG0 s4e6
-                :aspect process)
-            :ARG0 (s4e6 / entity)
-            :mod (s4p3 / první
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity
-        :polarity -)
+                            :refer-number singular)))
+                :ARG0 s4e4)
+            :ARG0 (s4e4 / entity)
+            :mod (s4p3 / první)))
 
 # alignment:
 s4b1: 31-31
@@ -162,25 +147,23 @@ s4a1: 15-15
 s4v1: 14-14
 s4p1: 10-10
 s4f1: 11-11
-s4x1: 0-0
-s4e1: 12-12
-s4g1: 13-13
+s4n3: 12-13
 s4o2: 18-19
 s4v2: 20-20
 s4r1: 22-22
 s4v3: 21-21
 s4d1: 23-24
-s4e2: 0-0
-s4e3: 0-0
-s4e4: 25-25
-s4e5: 26-27,29-29
+s4e1: 0-0
+s4c1: 0-0
+s4e2: 25-25
+s4e3: 26-27,29-29
 s4i1: 28-28
 s4p2: 33-33
 s4k2: 34-34
 s4u2: 35-35
 s4m3: 36-36
 s4o3: 37-37
-s4e6: 0-0
+s4e4: 0-0
 s4p3: 32-32
 
 # document level annotation:
@@ -189,77 +172,61 @@ s4p3: 32-32
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1  2             3      4        5             6      7  8        9         10 11 12    13 14          15          16           17     18 19    20   21    22  23     24    25           26 27 28      29      30 31 32          33   34       35       36 37    38      39    40    41     42
 Words: Z  důvěryhodného zdroje blízkého zpravodajským kruhům LN obdržely informaci ,  že mnozí z  funkcionářů federálního ministerstva obrany ,  kteří měli slovo při výběru firem ucházejících se o  armádní zakázky ,  se nezachovali jako náměstek Kalousek ,  který úplatek Eagle Group odmítl .
 
 # sentence level graph:
 (s5o1 / obdržet-001
+        :aspect performance
         :start (s5z1 / zdroj
-            :mod (s5d1 / důvěryhodný
-                :refer-number singular)
+            :refer-number singular
+            :mod (s5d1 / důvěryhodný)
             :mod (s5b1 / blízký
                 :ARG1 (s5k1 / kruh
-                    :mod (s5z2 / zpravodajský
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular)
+                    :refer-number plural
+                    :mod (s5z2 / zpravodajský))))
         :ARG0 (s5l1 / LN
             :refer-number plural)
         :ARG1 (s5i1 / informace
+            :refer-number singular
             :ARG1 (s5z3 / zachovat-se-001
+                :aspect performance
+                :polarity -
                 :ARG0 (s5m1 / mnohý
+                    :refer-number plural
                     :start (s5f1 / funkcionář
+                        :refer-number plural
                         :possessor (s5m2 / ministerstvo
+                            :refer-number singular
                             :possessor (s5o2 / obrana
                                 :refer-number singular)
-                            :mod (s5f2 / federální
-                                :refer-number singular)
-                            :refer-number singular)
+                            :mod (s5f2 / federální))
                         :ARG0-of (s5m3 / mít-115
-                            :part-of-phraseme (s5s1 / slovo
-                                :refer-number singular)
+                            :aspect state
+                            :ARG1 (s5s1 / slovo)
                             :temporal (s5v1 / výběr
+                                :refer-number singular
                                 :ARG1 (s5f3 / firma
+                                    :refer-number plural
                                     :mod (s5u1 / ucházející_se
                                         :ARG1 (s5z4 / zakázka
-                                            :mod (s5a1 / armádní
-                                                :refer-number plural)
-                                            :refer-number plural)
-                                        :refer-number plural)
-                                    :refer-number plural)
-                                :refer-number singular)
-                            :refer-number plural
-                            :aspect state)
-                        :refer-number plural)
-                    :refer-number plural)
-                :manner (s5x1 / #Equal
+                                            :refer-number plural
+                                            :mod (s5a1 / armádní))))))))
+                :manner (s5x1 / %Equal
                     :comparison (s5z5 / zachovat-se-001
-                        :manner (s5e1 / entity)
+                        :aspect performance
+                        :manner (s5c1 / concept)
                         :ARG0 (s5k2 / Kalousek
-                            :mod (s5n1 / náměstek
-                                :refer-number singular)
-                            :ARG0-of (s5o3 / odmítnout-002
-                                :ARG1 (s5u2 / úplatek
-                                    :ARG0 (s5x2 / #Forn
-                                        :FPHR (s5e2 / Eagle)
-                                        :FPHR (s5g1 / Group)
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular
-                                :aspect performance)
                             :refer-number singular
-                            :refer-person 3rd)
-                        :refer-number plural
-                        :aspect performance))
-                :refer-number plural
-                :aspect performance
-                :polarity -)
-            :refer-number singular)
-        :refer-number plural
-        :aspect performance)
+                            :mod (s5n1 / náměstek)
+                            :ARG0-of (s5o3 / odmítnout-002
+                                :aspect performance
+                                :ARG1 (s5u2 / úplatek
+                                    :refer-number singular
+                                    :ARG0 (s5f4 / foreign-phrase
+                                        :op1 "Eagle" :op2 "Group")))))))))
 
 # alignment:
 s5o1: 8-8
@@ -285,39 +252,36 @@ s5z4: 27-27,29-29
 s5a1: 28-28
 s5x1: 0-0
 s5z5: 0-0
-s5e1: 0-0
+s5c1: 0-0
 s5k2: 35-35,37-37
 s5n1: 34-34
 s5o3: 41-41
 s5u2: 38-38
-s5x2: 0-0
-s5e2: 39-39
-s5g1: 40-40
+s5f4: 39-40
 
 # document level annotation:
 (s5s0 / sentence
     :coref ((s5m2 :same-entity s4m3)
             (s5k2 :same-entity s4k1)
             (s5u2 :same-entity s4u1)
-            (s5x2 :same-entity s4f1)))
+            (s5f4 :same-entity s4f1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1    2    3    4            5       6     7     8  9    10 11     12 13     14
 Words: Tito lidé byli zahraničními firmami běžně zváni na oběd či večeři do Ženevy .
 
 # sentence level graph:
 (s6z1 / zvát-002
+        :aspect activity
         :ARG1 (s6c1 / člověk
-            :mod (s6t1 / tento
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s6t1 / tento))
         :ARG0 (s6f1 / firma
-            :mod (s6z2 / zahraniční
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s6z2 / zahraniční))
         :frequency (s6b1 / běžně)
         :purpose (s6o1 / or
             :op1 (s6o2 / oběd
@@ -325,9 +289,7 @@ Words: Tito lidé byli zahraničními firmami běžně zváni na oběd či veče
             :op2 (s6v1 / večeře
                 :refer-number singular))
         :goal (s6z3 / Ženeva
-            :refer-number singular)
-        :refer-number plural
-        :aspect activity)
+            :refer-number singular))
 
 # alignment:
 s6z1: 3-3,7-7
@@ -347,28 +309,26 @@ s6z3: 12-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1          2   3      4        5    6          7         8
 Words: Obchodníci jim výlety nabízeli jako nezávaznou pozornost .
 
 # sentence level graph:
 (s7n1 / nabízet-001
+        :aspect activity
         :ARG0 (s7o1 / obchodník
             :refer-number plural)
         :ARG1 (s7v1 / výlet
             :refer-number plural)
-        :ARG2 (s7e1 / entity
+        :ARG3 (s7e1 / entity
             :refer-number plural
             :refer-person 3rd)
         :manner (s7p1 / pozornost
+            :refer-number singular
             :mod-of s7v1
             :mod (s7z1 / závazný
-                :refer-number singular
-                :polarity -)
-            :refer-number singular)
-        :refer-number plural
-        :aspect activity)
+                :polarity -)))
 
 # alignment:
 s7n1: 4-4
@@ -385,7 +345,7 @@ s7z1: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1     2      3      4        5      6            7      8   9    10         11         12 13       14     15           16    17 18       19           20 21    22        23 24     25      26  27 28 29     30 31    32          33
 Words: Podle našeho zdroje zvláštní služby ministerstva obrany své šéfy několikrát upozornily na rostoucí pozice zahraničních firem v  odborech ministerstva ,  které rozhodují o  výběru dodávek pro Čs .  armádu ,  avšak bezvýsledně .
@@ -393,64 +353,58 @@ Words: Podle našeho zdroje zvláštní služby ministerstva obrany své šéfy 
 # sentence level graph:
 (s8b1 / but-91
         :ARG1 (s8u1 / upozornit-001
+            :aspect performance
             :regard (s8z1 / zdroj
-                :possessor (s8e1 / entity
+                :refer-number singular
+                :possessor (s8p1 / person
                     :refer-number plural
-                    :refer-person 1st)
-                :refer-number singular)
+                    :refer-person 1st))
             :ARG0 (s8s1 / služba
+                :refer-number plural
                 :possessor (s8m1 / ministerstvo
+                    :refer-number singular
                     :possessor (s8o1 / obrana
-                        :refer-number singular)
-                    :refer-number singular)
-                :mod (s8z2 / zvláštní
-                    :refer-number plural)
-                :refer-number plural)
+                        :refer-number singular))
+                :mod (s8z2 / zvláštní))
             :ARG2 (s8s2 / šéf
-                :possessor s8s1
-                :refer-number plural)
+                :refer-number plural
+                :possessor s8s1)
             :frequency (s8n1 / několikrát)
-            :ARG1 (s8p1 / pozice
+            :ARG1 (s8p2 / pozice
+                :refer-number plural
                 :possessor (s8f1 / firma
-                    :mod (s8z3 / zahraniční
-                        :refer-number plural)
-                    :refer-number plural)
-                :mod (s8r1 / rostoucí
-                    :refer-number plural)
+                    :refer-number plural
+                    :mod (s8z3 / zahraniční))
+                :mod (s8r1 / rostoucí)
                 :place (s8o2 / odbor
+                    :refer-number plural
                     :possessor (s8m2 / ministerstvo
                         :refer-number singular)
                     :ARG0-of (s8r2 / rozhodovat-002
+                        :aspect activity
                         :ARG1 (s8v1 / výběr
+                            :refer-number singular
                             :ARG1 (s8d1 / dodávka
+                                :refer-number plural
                                 :affectee (s8a1 / armáda
-                                    :mod (s8c1 / československý)
-                                    :refer-number singular)
-                                :refer-number plural)
-                            :refer-number singular)
-                        :refer-number plural
-                        :refer-person 3rd
-                        :aspect activity)
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :aspect performance)
-        :ARG2 (s8e2 / event
-            :manner (s8b2 / bezvýsledně)
-            :aspect state))
+                                    :refer-number singular
+                                    :mod (s8c1 / československý))))))))
+        :ARG2 (s8e1 / event
+            :aspect state
+            :manner (s8b2 / bezvýsledně)))
 
 # alignment:
 s8b1: 31-31
 s8u1: 11-11
 s8z1: 1-1,3-3
-s8e1: 2-2
+s8p1: 2-2
 s8s1: 5-5,8-8
 s8m1: 6-6
 s8o1: 7-7
 s8z2: 4-4
 s8s2: 9-9
 s8n1: 10-10
-s8p1: 12-12,14-14
+s8p2: 12-12,14-14
 s8f1: 16-16
 s8z3: 15-15
 s8r1: 13-13
@@ -461,7 +415,7 @@ s8v1: 23-24
 s8d1: 25-25
 s8a1: 26-26,29-29
 s8c1: 27-27
-s8e2: 0-0
+s8e1: 0-0
 s8b2: 32-32
 
 # document level annotation:
@@ -474,65 +428,56 @@ s8b2: 32-32
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1     2    3  4        5           6  7  8            9      10          11 12 13        14     15 16           17       18 19 20 21       22  23         24       25 26    27        28      29    30 31      32
 Words: Marná byla i  varování zpravodajců ,  že transformaci armády doprovázejí i  v  zahraničí pokusy o  zkorumpování úředníků a  že je nejvyšší čas vypracovat pojistky ,  které nebezpečí úplatků sníží na minimum .
 
 # sentence level graph:
 (s9b1 / být-007
-        :ARG1 (s9m1 / marný
-            :refer-number plural)
+        :aspect activity
+        :ARG2 (s9m1 / marný)
         :clausal-marker (s9i1 / i)
-        :ARG0 (s9v1 / varování
+        :ARG1 (s9v1 / varování
+            :refer-number plural
             :ARG2 (s9e1 / entity)
             :ARG0 (s9z1 / zpravodajce
                 :refer-number plural)
             :ARG1 (s9a1 / and
                 :op1 (s9d1 / doprovázet-002
+                    :aspect activity
                     :ARG1 (s9t1 / transformace
+                        :refer-number singular
                         :ARG1 (s9a2 / armáda
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular))
                     :clausal-marker (s9i2 / i)
                     :place (s9z2 / zahraničí
                         :refer-number singular)
                     :ARG0 (s9p1 / pokus
+                        :refer-number plural
                         :ARG1 (s9z3 / zkorumpování
+                            :refer-number singular
                             :ARG0 (s9e2 / entity)
                             :ARG1 (s9u1 / úředník
-                                :refer-number plural)
-                            :refer-number singular)
-                        :refer-number plural)
-                    :refer-number plural
-                    :refer-person 3rd
-                    :aspect activity)
+                                :refer-number plural))))
                 :op2 (s9b2 / být-011
-                    :ARG0 (s9c1 / čas
+                    :aspect activity
+                    :ARG1 (s9c1 / čas
+                        :refer-number singular
                         :ARG0 (s9e3 / entity)
                         :ARG1 (s9v2 / vypracovat-001
+                            :aspect performance
                             :ARG0 s9e3
                             :ARG1 (s9p2 / pojistka
+                                :refer-number plural
                                 :ARG0-of (s9s1 / snížit-001
+                                    :aspect performance
                                     :ARG1 (s9n1 / nebezpečí
-                                        :mod (s9u2 / úplatek
-                                            :refer-number plural)
-                                        :refer-number singular)
-                                    :effect (s9m2 / minimum
-                                        :refer-number singular)
-                                    :refer-number plural
-                                    :refer-person 3rd
-                                    :aspect performance)
-                                :refer-number plural)
-                            :aspect performance)
-                        :mod (s9v3 / vysoký
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity))
-            :refer-number plural)
-        :aspect activity)
+                                        :refer-number singular
+                                        :mod (s9u2 / úplatek))
+                                    :ARG3 (s9m2 / minimum
+                                        :refer-number singular))))
+                        :mod (s9v3 / vysoký))))))
 
 # alignment:
 s9b1: 2-2
@@ -569,44 +514,41 @@ s9v3: 21-21
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1    2  3  4       5   6      7          8  9  10    11        12    13         14   15           16      17 18         19 20         21        22 23       24          25      26
 Words: Poté ,  co zůstala bez odezvy upozornění ,  z  nichž vyplývala přímá souvislost mezi zahraničními cestami či rekreacemi a  uzavřenými kontrakty ,  aktivita zpravodajců ochabla .
 
 # sentence level graph:
 (s10o1 / ochabnout-001
+        :aspect performance
         :temporal (s10z1 / zůstat-006
+            :aspect performance
             :ARG0 (s10u1 / upozornění
+                :refer-number plural
                 :ARG0 (s10e1 / entity)
                 :ARG1 (s10e2 / entity)
                 :ARG1-of (s10v1 / vyplývat-001
+                    :aspect activity
                     :ARG0 (s10s1 / souvislost
+                        :refer-number singular
                         :ARG0 (s10a1 / and
                             :op1 (s10a2 / and
                                 :op1 (s10c1 / cesta
-                                    :mod (s10z2 / zahraniční
-                                        :refer-number plural)
-                                    :refer-number plural)
+                                    :refer-number plural
+                                    :mod (s10z2 / zahraniční))
                                 :op2 (s10r1 / rekreace
                                     :refer-number plural))
                             :op2 (s10k1 / kontrakt
-                                :mod (s10u2 / uzavřený
-                                    :refer-number plural)
-                                :refer-number plural))
-                        :mod (s10p1 / přímý
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect activity)
-                :refer-number plural)
+                                :refer-number plural
+                                :mod (s10u2 / uzavřený)))
+                        :mod (s10p1 / přímý))))
             :companion (s10o2 / odezva
-                :refer-number singular)
-            :aspect performance)
-        :ARG0 (s10a3 / aktivita
+                :refer-number singular))
+        :ARG1 (s10a3 / aktivita
+            :refer-number singular
             :ARG0 (s10z3 / zpravodajce
-                :refer-number plural)
-            :refer-number singular)
-        :aspect performance)
+                :refer-number plural)))
 
 # alignment:
 s10o1: 25-25
@@ -635,35 +577,29 @@ s10z3: 24-24
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1     2    3  4     5  6         7      8        9  10   11    12     13 14   15  16 17    18
 Words: Jistí lidé ,  kteří ve federální armádě zbohatli ,  jsou podle zdroje LN dnes již za vodou .
 
 # sentence level graph:
 (s11b1 / být-060
+        :aspect activity
         :ARG0 (s11c1 / člověk
-            :mod (s11j1 / jistý
-                :refer-number plural)
+            :refer-number plural
+            :mod (s11j1 / jistý)
             :ARG0-of (s11z1 / zbohatnout-001
+                :aspect performance
                 :place (s11a1 / armáda
-                    :mod (s11f1 / federální
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural
-                :aspect performance)
-            :refer-number plural)
+                    :refer-number singular
+                    :mod (s11f1 / federální))))
         :regard (s11z2 / zdroj
+            :refer-number singular
             :possessor (s11l1 / LN
-                :refer-number plural)
-            :refer-number singular)
+                :refer-number plural))
         :temporal (s11d1 / dnes)
         :clausal-marker (s11j2 / již)
-        :part-of-phraseme (s11z3 / za_vodou
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+        :part-of-phraseme (s11z3 / za_vodou))
 
 # alignment:
 s11b1: 10-10
@@ -686,63 +622,53 @@ s11z3: 16-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1            2          3  4            5       6   7     8  9  10      11     12 13         14           15 16          17           18    19       20 21   22           23 24  25 26 27  28 29 30 31       32        33        34      35  36      37      38
 Words: Kriminalisté zabývající se hospodářskou korupcí nám řekli ,  že některé pokusy o  Kalouskovu diskreditaci ve sdělovacích prostředcích mohou souviset s  jeho neúplatností ,  ale i  s  tím ,  že je umíněným zastáncem veřejných soutěží pro armádní zakázky .
 
 # sentence level graph:
 (s12r1 / říci-008
+        :aspect performance
         :ARG0 (s12k1 / kriminalista
+            :refer-number plural
             :mod (s12z1 / zabývající_se
                 :ARG1 (s12k2 / korupce
-                    :mod (s12h1 / hospodářský
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number plural)
-        :ARG2 (s12e1 / entity
+                    :refer-number singular
+                    :mod (s12h1 / hospodářský))))
+        :ARG2 (s12p1 / person
             :refer-number plural
             :refer-person 1st)
-        :effect (s12s1 / souviset-001
-            :ARG0 (s12p1 / pokus
-                :mod (s12n1 / některý
-                    :refer-number plural)
+        :ARG1 (s12s1 / souviset-001
+            :aspect activity
+            :ARG1 (s12p2 / pokus
+                :refer-number plural
+                :mod (s12n1 / některý)
                 :ARG1 (s12d1 / diskreditace
+                    :refer-number singular
                     :ARG1 (s12k3 / Kalousek
                         :refer-number singular)
-                    :place (s12p2 / prostředek
-                        :mod (s12s2 / sdělovací
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number plural)
+                    :place (s12p3 / prostředek
+                        :refer-number plural
+                        :mod (s12s2 / sdělovací))))
             :ARG1 (s12g1 / gradation
                 :op1 (s12u1 / úplatnost
-                    :possessor s12k3
+                    :polarity -
                     :refer-number singular
-                    :polarity -)
+                    :possessor s12k3)
                 :clausal-marker (s12i1 / i)
                 :op2 (s12b1 / být-007
-                    :ARG0 s12k3
-                    :ARG1 (s12z2 / zastánce
+                    :aspect activity
+                    :ARG1 s12k3
+                    :ARG2 (s12z2 / zastánce
+                        :refer-number singular
                         :ARG1 (s12s3 / soutěž
-                            :mod (s12v1 / veřejný
-                                :refer-number plural)
+                            :refer-number plural
+                            :mod (s12v1 / veřejný)
                             :affectee (s12z3 / zakázka
-                                :mod (s12a1 / armádní
-                                    :refer-number plural)
-                                :refer-number plural)
-                            :refer-number plural)
-                        :mod (s12u2 / umíněný
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity))
-            :aspect activity)
-        :refer-number plural
-        :aspect performance)
+                                :refer-number plural
+                                :mod (s12a1 / armádní)))
+                        :mod (s12u2 / umíněný))))))
 
 # alignment:
 s12r1: 7-7
@@ -750,13 +676,13 @@ s12k1: 1-1
 s12z1: 2-3
 s12k2: 5-5
 s12h1: 4-4
-s12e1: 6-6
+s12p1: 6-6
 s12s1: 9-9,18-19
-s12p1: 11-11
+s12p2: 11-11
 s12n1: 10-10
 s12d1: 12-12,14-14
 s12k3: 13-13,21-21
-s12p2: 15-15,17-17
+s12p3: 15-15,17-17
 s12s2: 16-16
 s12g1: 24-24
 s12u1: 20-20,22-22
@@ -771,7 +697,7 @@ s12u2: 31-31
 
 # document level annotation:
 (s12s0 / sentence
-    :coref ((s12e1 :same-entity s8e1)
+    :coref ((s12p1 :same-entity s8p1)
             (s12k3 :same-entity s5k2)
             (s12a1 :same-entity s11a1)))
 

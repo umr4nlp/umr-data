@@ -1,14 +1,13 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1          2
 Words: Sestřelený Fittipaldi
 
 # sentence level graph:
 (s1f1 / Fittipaldi
-        :mod (s1s1 / sestřelený
-            :refer-number singular)
-        :refer-number singular)
+        :refer-number singular
+        :mod (s1s1 / sestřelený))
 
 # alignment:
 s1f1: 2-2
@@ -19,7 +18,7 @@ s1s1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1         2 3      4
 Words: Vancouver / Londýn -
@@ -41,37 +40,34 @@ s2l1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1  2     3  4  5  6     7      8     9      10 11     12         13          14         15      16      17
 Words: Al Unser jr .  s  vozem Penske Ilmor vyhrál GP Kanady amerického mistrovství automobilů formule IndyCar .
 
 # sentence level graph:
 (s3v1 / vyhrát-001
+        :aspect performance
         :ARG0 (s3u1 / Unser
+            :refer-number singular
             :mod (s3a1 / Al)
-            :mod (s3j1 / jr)
-            :refer-number singular)
+            :mod (s3j1 / jr))
         :companion (s3v2 / vůz
-            :name (s3x1 / #Forn
-                :FPHR (s3p1 / Penske)
-                :FPHR (s3i1 / Ilmor))
-            :refer-number singular)
+            :refer-number singular
+            :name (s3n1 / name
+                :op1 "Penske" :op2 "Ilmor"))
         :ARG1 (s3g1 / GP
             :possessor (s3k1 / Kanada
                 :refer-number singular)
             :possessor (s3m1 / mistrovství
+                :refer-number singular
                 :possessor (s3a2 / automobil
+                    :refer-number plural
                     :possessor (s3f1 / formule
-                        :name (s3i2 / Indycar
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number plural)
-                :mod (s3a3 / americký
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number singular
-        :aspect performance)
+                        :refer-number singular
+                        :name (s3i1 / Indycar
+                            :refer-number singular)))
+                :mod (s3a3 / americký))))
 
 # alignment:
 s3v1: 9-9
@@ -79,15 +75,13 @@ s3u1: 2-2
 s3a1: 1-1
 s3j1: 3-3
 s3v2: 5-6
-s3x1: 0-0
-s3p1: 7-7
-s3i1: 8-8
+s3n1: 7-8
 s3g1: 10-10
 s3k1: 11-11
 s3m1: 13-13
 s3a2: 14-14
 s3f1: 15-15
-s3i2: 16-16
+s3i1: 16-16
 s3a3: 12-12
 
 # document level annotation:
@@ -95,33 +89,28 @@ s3a3: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1     2       3            4   5  6        7      8  9     10   11       12
 Words: Druhý skončil nejrychlejší muž v  tréninku Gordon s  Lolou Ford Cosworth .
 
 # sentence level graph:
 (s4s1 / skončit-001
+        :aspect performance
         :manner (s4d1 / druhý
-            :mod-of s4g1
-            :refer-number singular)
+            :mod-of s4g1)
         :ARG1 (s4e1 / entity)
         :ARG0 (s4g1 / Gordon
+            :refer-number singular
             :mod (s4m1 / muž
                 :mod (s4r1 / rychlý
                     :place (s4t1 / trénink
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                        :refer-number singular))))
         :companion (s4l1 / Lola
+            :refer-number singular
             :name (s4f1 / Ford
-                :mod (s4c1 / Cosworth
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                :refer-number singular
+                :mod (s4c1 / Cosworth))))
 
 # alignment:
 s4s1: 2-2
@@ -140,7 +129,7 @@ s4c1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1     2      3     4     5  6    7  8     9   10     11   12        13
 Words: Unser vyhrál třetí závod v  řadě a  letos již dosáhl osmi prvenství .
@@ -148,26 +137,22 @@ Words: Unser vyhrál třetí závod v  řadě a  letos již dosáhl osmi prvenst
 # sentence level graph:
 (s5a1 / and
         :op1 (s5v1 / vyhrát-001
+            :aspect performance
             :ARG0 (s5u1 / Unser
                 :refer-number singular)
             :ARG1 (s5z1 / závod
-                :mod (s5t1 / třetí
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s5t1 / třetí)
                 :place (s5r1 / řada
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
+                    :refer-number singular)))
         :op2 (s5d1 / dosáhnout-002
+            :aspect performance
             :ARG0 s5u1
             :temporal (s5l1 / letos)
             :clausal-marker (s5j1 / již)
             :ARG1 (s5p1 / prvenství
-                :mod (s5o1 / osm
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number singular
-            :aspect performance))
+                :refer-number plural
+                :mod (s5o1 / osm))))
 
 # alignment:
 s5a1: 7-7
@@ -189,7 +174,7 @@ s5o1: 11-11
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1       2         3  4     5     6       7  8  9    10   11   12    13      14   15      16   17 18 19 20 21 22 23   24 25  26   27    28    29 30       31 32   33
 Words: Obhájce prvenství a  mistr světa formule 1  z  roku 1992 Brit Nigel Mansell vedl závodní pole od 37 .  do 75 .  kola ,  pak však musel zajet s  poruchou do boxu .
@@ -197,46 +182,40 @@ Words: Obhájce prvenství a  mistr světa formule 1  z  roku 1992 Brit Nigel Ma
 # sentence level graph:
 (s6b1 / but-91
         :ARG1 (s6v1 / vést-007
+            :aspect activity
             :ARG0 (s6m1 / Mansell
-                :mod (s6n1 / Nigel
-                    :refer-number singular)
-                :mod (s6b2 / Brit
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s6n1 / Nigel)
+                :mod (s6b2 / Brit)
                 :mod (s6a1 / and
                     :op1 (s6o1 / obhájce
                         :ARG1 (s6p1 / prvenství
-                            :refer-number singular)
-                        :refer-number singular)
+                            :refer-number singular))
                     :op2 (s6m2 / mistr
                         :possessor (s6s1 / svět
                             :refer-number singular)
                         :possessor (s6f1 / formule
-                            :mod (s6x1 / 1)
-                            :refer-number singular)
+                            :refer-number singular
+                            :mod (s6x1 / 1))
                         :temporal (s6r1 / rok
-                            :mod (s6x2 / 1992)
-                            :refer-number singular)
-                        :refer-number singular))
-                :refer-number singular)
+                            :refer-number singular
+                            :mod (s6x2 / 1992)))))
             :ARG1 (s6p2 / pole
-                :mod (s6z1 / závodní
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s6z1 / závodní))
             :temporal (s6k1 / kolo
-                :mod (s6m3 / math
+                :refer-number singular
+                :mod (s6m3 / math-entity
                     :op1 (s6x3 / 37)
-                    :op2 (s6x4 / 75))
-                :refer-number singular)
-            :refer-number singular
-            :aspect activity)
+                    :op2 (s6x4 / 75))))
         :ARG2 (s6z2 / zajet-003
+            :aspect performance
             :ARG0 s6m1
             :temporal (s6p3 / pak)
             :companion (s6p4 / porucha
                 :refer-number singular)
             :goal (s6b3 / box
-                :refer-number singular)
-            :aspect performance))
+                :refer-number singular)))
 
 # alignment:
 s6b1: 26-26
@@ -269,7 +248,7 @@ s6b3: 31-32
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1   2     3  4  5     6     7  8  9     10      11 12 13        14   15 16    17     18   19       20           21    22 23     24     25   26
 Words: Tím klesl až na šesté místo a  ve snaze prodrat se v  posledním kole na třetí příčku před Brazilce Fittipaldiho došlo ke srážce jejich vozů .
@@ -277,6 +256,7 @@ Words: Tím klesl až na šesté místo a  ve snaze prodrat se v  posledním kol
 # sentence level graph:
 (s7a1 / and
         :op1 (s7k1 / klesnout-001
+            :aspect performance
             :cause (s7t1 / ten
                 :refer-number singular)
             :ARG0 (s7e1 / entity
@@ -284,39 +264,31 @@ Words: Tím klesl až na šesté místo a  ve snaze prodrat se v  posledním kol
                 :refer-person 3rd)
             :clausal-marker (s7a2 / až)
             :ARG1 (s7m1 / místo
-                :mod (s7s1 / šestý
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance)
+                :refer-number singular
+                :mod (s7s1 / šestý)))
         :op2 (s7d1 / dojít-009
+            :aspect performance
             :cause (s7s2 / snaha
+                :refer-number singular
                 :ARG0 (s7e2 / entity)
                 :ARG1 (s7p1 / prodrat-se-002
+                    :aspect performance
                     :ARG0 s7e2
                     :temporal (s7k2 / kolo
-                        :mod (s7p2 / poslední
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s7p2 / poslední))
                     :goal (s7p3 / příčka
-                        :mod (s7t2 / třetí
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s7t2 / třetí))
                     :goal (s7f1 / Fittipaldi
-                        :mod (s7b1 / Brazilec
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect performance)
-                :refer-number singular)
-            :ARG0 (s7s3 / srážka
-                :ARG1 (s7x2 / #Rcp
-                    :refer-number plural)
+                        :refer-number singular
+                        :mod (s7b1 / Brazilec))))
+            :ARG1 (s7s3 / srážka
+                :refer-number singular
+                :ARG1 (s7x2 / %Rcp)
                 :ARG0 (s7v1 / vůz
-                    :possessor s7e1
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular
-            :aspect performance))
+                    :refer-number plural
+                    :possessor s7e1))))
 
 # alignment:
 s7a1: 7-7
@@ -349,7 +321,7 @@ s7v1: 25-25
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1          2   3       4            5      6 7       8      9
 Words: Fittipaldi byl nakonec klasifikován devátý a Mansell desátý .
@@ -357,25 +329,20 @@ Words: Fittipaldi byl nakonec klasifikován devátý a Mansell desátý .
 # sentence level graph:
 (s8a1 / and
         :op1 (s8k1 / klasifikovat-002
+            :aspect process
             :ARG0 (s8e1 / entity)
             :ARG1 (s8f1 / Fittipaldi
                 :refer-number singular)
             :temporal (s8n1 / nakonec)
             :manner (s8d1 / devátý
-                :mod-of s8f1
-                :refer-number singular)
-            :refer-number singular
-            :aspect process)
+                :mod-of s8f1))
         :op2 (s8k2 / klasifikovat-002
+            :aspect process
             :ARG0 s8e1
             :ARG1 (s8m1 / Mansell
-                :refer-number singular
-                :refer-person 3rd)
-            :manner (s8d2 / desátý
-                :mod-of s8m1
                 :refer-number singular)
-            :refer-number singular
-            :aspect process))
+            :manner (s8d2 / desátý
+                :mod-of s8m1)))
 
 # alignment:
 s8a1: 6-6
@@ -395,24 +362,23 @@ s8d2: 8-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1       2    3       4      5      6     7        8
 Words: Šampion jako Mansell nemůže jezdit tímto způsobem .
 
 # sentence level graph:
 (s9j1 / jezdit-003
+        :aspect activity
+        :polarity -
         :ARG0 (s9i1 / identity-91
             :ARG1 (s9m1 / Mansell
                 :refer-number singular)
             :ARG2 (s9s1 / šampion
                 :refer-number singular))
         :instrument (s9z1 / způsob
-            :mod (s9t1 / tento
-                :refer-number singular)
-            :refer-number singular)
-        :aspect activity
-        :polarity -)
+            :refer-number singular
+            :mod (s9t1 / tento)))
 
 # alignment:
 s9j1: 4-5
@@ -428,102 +394,88 @@ s9t1: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1  2  3      4  5    6  7        8       9      10   11      12
 Words: Je to ostuda ,  když v  poslední zatáčce vyrazí jako torpédo .
 
 # sentence level graph:
 (s10b1 / být-007
-        :INTF (s10t1 / ten)
-        :ARG1 (s10o1 / ostuda
+        :aspect activity
+        :ARG2 (s10o1 / ostuda
             :refer-number singular)
-        :ARG0 (s10v1 / vyrazit-004
+        :ARG1 (s10v1 / vyrazit-004
+            :aspect performance
             :place (s10z1 / zatáčka
-                :mod (s10p1 / poslední
-                    :refer-number singular)
-                :refer-number singular)
-            :manner (s10x1 / #Equal
+                :refer-number singular
+                :mod (s10p1 / poslední))
+            :manner (s10x1 / %Equal
                 :comparison (s10v2 / vyrazit-004
-                    :goal (s10e1 / entity)
-                    :ARG0 (s10t2 / torpédo
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect performance))
-            :ARG0 (s10e2 / entity
+                    :aspect performance
+                    :goal (s10c1 / concept)
+                    :ARG0 (s10t1 / torpédo
+                        :refer-number singular)))
+            :ARG0 (s10e1 / entity
                 :refer-number singular
                 :refer-person 3rd)
-            :goal (s10e3 / entity)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :goal (s10c2 / concept)))
 
 # alignment:
 s10b1: 1-1
-s10t1: 2-2
 s10o1: 3-3
 s10v1: 5-5,9-9
 s10z1: 6-6,8-8
 s10p1: 7-7
 s10x1: 0-0
 s10v2: 0-0
+s10c1: 0-0
+s10t1: 11-11
 s10e1: 0-0
-s10t2: 11-11
-s10e2: 0-0
-s10e3: 0-0
+s10c2: 0-0
 
 # document level annotation:
 (s10s0 / sentence
-    :coref ((s10e2 :same-entity s9s1)))
+    :coref ((s10e1 :same-entity s9s1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1        2      3     4     5    6   7     8  9   10 11   12    13          14           15 16 17    18   19      20          21
 Words: Najednou nebylo žádné místo mezi mým vozem a  zdí ,  byla slova nešťastného Fittipaldiho ,  s  nimiž však Mansell nesouhlasil :
 
 # sentence level graph:
 (s11b1 / být-007
-        :ARG1 (s11s1 / slovo
+        :aspect activity
+        :ARG2 (s11s1 / slovo
+            :refer-number plural
             :ARG0 (s11f1 / Fittipaldi
-                :mod (s11s2 / šťastný
-                    :refer-number singular
-                    :polarity -)
                 :refer-number singular
-                :refer-person 1st)
+                :mod (s11s2 / šťastný
+                    :polarity -))
             :ARG1-of (s11s3 / souhlasit-003
+                :aspect state
+                :polarity -
                 :clausal-marker (s11v1 / však)
                 :ARG0 (s11m1 / Mansell
-                    :refer-number singular)
-                :refer-number singular
-                :aspect state
-                :polarity -)
-            :refer-number plural)
-        :ARG0 (s11x1 / #Idph
+                    :refer-number singular)))
+        :ARG1 (s11x1 / %Idph
             :name (s11b2 / být-011
+                :aspect activity
+                :polarity -
                 :temporal (s11n1 / najednou)
-                :ARG0 (s11m2 / místo
+                :ARG1 (s11m2 / místo
+                    :refer-number singular
                     :mod (s11z1 / žádný
-                        :refer-number singular
-                        :polarity -)
-                    :refer-number singular)
+                        :polarity -))
                 :place (s11a1 / and
                     :op1 (s11v2 / vůz
-                        :possessor (s11e1 / entity
+                        :refer-number singular
+                        :possessor (s11p1 / person
                             :refer-number singular
-                            :refer-person 1st)
-                        :refer-number singular)
+                            :refer-person 1st))
                     :op2 (s11z2 / zeď
-                        :refer-number singular))
-                :refer-number singular
-                :aspect activity
-                :polarity -))
-        :aspect activity)
+                        :refer-number singular)))))
 
 # alignment:
 s11b1: 11-11
@@ -540,18 +492,18 @@ s11m2: 4-4
 s11z1: 3-3
 s11a1: 8-8
 s11v2: 5-5,7-7
-s11e1: 6-6
+s11p1: 6-6
 s11z2: 5-5,9-9
 
 # document level annotation:
 (s11s0 / sentence
-    :coref ((s11f1 :same-entity s11e1)
+    :coref ((s11f1 :same-entity s11p1)
             (s11m1 :same-entity s9m1)
-            (s11e1 :same-entity s8f1)))
+            (s11p1 :same-entity s8f1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1   2    3     4   5  6  7   8     9   10       11 12     13 14           15 16   17       18      19
 Words: Jel jsem podél něj a  on měl pouze dvě možnosti -  nechat se předstihnout a  nebo způsobit havárii .
@@ -559,77 +511,72 @@ Words: Jel jsem podél něj a  on měl pouze dvě možnosti -  nechat se předst
 # sentence level graph:
 (s12a1 / and
         :op1 (s12j1 / jet-005
-            :ARG0 (s12e1 / entity
+            :aspect activity
+            :ARG0 (s12p1 / person
                 :refer-number singular
                 :refer-person 1st)
-            :path (s12e2 / entity
+            :path (s12e1 / entity
                 :refer-number singular
-                :refer-person 3rd)
-            :refer-number singular
-            :aspect activity)
+                :refer-person 3rd))
         :op2 (s12m1 / mít-028
-            :ARG0 s12e2
-            :predicative-noun (s12m2 / možnost
-                :ARG0 s12e2
-                :clausal-marker (s12p1 / pouze)
-                :mod (s12d1 / dva
-                    :refer-number plural)
+            :aspect state
+            :ARG0 s12e1
+            :ARG1 (s12m2 / možnost
+                :refer-number plural
+                :ARG0 s12e1
+                :clausal-marker (s12p2 / pouze)
+                :mod (s12d1 / dva)
                 :ARG1 (s12o1 / or
                     :op1 (s12n1 / nechat-009
-                        :ARG0 s12e2
-                        :ARG1 (s12p2 / předstihnout-001
-                            :ARG0 (s12e3 / entity)
-                            :ARG1 s12e2
-                            :aspect performance)
-                        :aspect performance)
+                        :aspect performance
+                        :ARG0 s12e1
+                        :ARG1 (s12p3 / předstihnout-001
+                            :aspect performance
+                            :ARG0 (s12e2 / entity)
+                            :ARG1 s12e1))
                     :op2 (s12z1 / způsobit-002
-                        :ARG0 s12e2
+                        :aspect performance
+                        :ARG0 s12e1
                         :ARG1 (s12h1 / havárie
-                            :refer-number singular)
-                        :aspect performance))
-                :refer-number plural)
-            :refer-number singular
-            :aspect state))
+                            :refer-number singular))))))
 
 # alignment:
 s12a1: 5-5
 s12j1: 1-2
-s12e1: 0-0
-s12e2: 3-4,6-6,13-13
+s12p1: 0-0
+s12e1: 3-4,6-6,13-13
 s12m1: 7-7
 s12m2: 10-10
-s12p1: 8-8
+s12p2: 8-8
 s12d1: 9-9
 s12o1: 15-16
 s12n1: 12-12
-s12p2: 14-14
-s12e3: 0-0
+s12p3: 14-14
+s12e2: 0-0
 s12z1: 17-17
 s12h1: 18-18
 
 # document level annotation:
 (s12s0 / sentence
-    :coref ((s12e1 :same-entity s11m1)
-            (s12e2 :same-entity s11f1)))
+    :coref ((s12p1 :same-entity s11m1)
+            (s12e1 :same-entity s11f1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1     2     3      4
 Words: Volil druhý způsob .
 
 # sentence level graph:
 (s13v1 / volit-001
+        :aspect activity
         :ARG0 (s13e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :ARG1 (s13z1 / způsob
-            :mod (s13d1 / druhý
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect activity)
+            :refer-number singular
+            :mod (s13d1 / druhý)))
 
 # alignment:
 s13v1: 1-1
@@ -639,33 +586,31 @@ s13d1: 2-2
 
 # document level annotation:
 (s13s0 / sentence
-    :coref ((s13e1 :same-entity s12e2)))
+    :coref ((s13e1 :same-entity s12e1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1         2      3  4  5  6       7  8    9        10      11
 Words: Mansellův návrat do F  1  vzbudil v  týmu Williams diskuse .
 
 # sentence level graph:
 (s14v1 / vzbudit-001
+        :aspect performance
         :ARG0 (s14n1 / návrat
+            :refer-number singular
             :ARG0 (s14m1 / Mansell
-                :refer-number singular
-                :refer-person 1st)
+                :refer-number singular)
             :goal (s14f1 / F
-                :mod (s14x1 / 1)
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular
+                :mod (s14x1 / 1)))
         :place (s14t1 / tým
+            :refer-number singular
             :name (s14w1 / Williams
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular))
         :ARG1 (s14d1 / diskuse
-            :refer-number plural)
-        :refer-number singular
-        :aspect performance)
+            :refer-number plural))
 
 # alignment:
 s14v1: 6-6
@@ -679,47 +624,40 @@ s14d1: 10-10
 
 # document level annotation:
 (s14s0 / sentence
-    :coref ((s14m1 :same-entity s12e1)
+    :coref ((s14m1 :same-entity s12p1)
             (s14f1 :same-entity s6f1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1     2         3         4      5  6   7         8       9     10      11   12       13    14   15         16 17    18     19     20
 Words: Podle některých britských deníků se měl technický ředitel stáje Patrick Head vyjádřit proti jeho angažování na celou příští sezonu .
 
 # sentence level graph:
 (s15v1 / vyjádřit-se-002
+        :aspect performance
         :regard (s15d1 / deník
-            :mod (s15b1 / britský
-                :refer-number plural)
-            :mod (s15n1 / některý
-                :refer-number plural)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s15b1 / britský)
+            :mod (s15n1 / některý))
         :ARG0 (s15h1 / Head
-            :mod (s15p1 / Patrick
-                :refer-number singular)
+            :refer-number singular
+            :mod (s15p1 / Patrick)
             :mod (s15r1 / ředitel
                 :possessor (s15s1 / stáj
                     :refer-number singular)
-                :mod (s15t1 / technický
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                :mod (s15t1 / technický)))
         :ARG1 (s15a1 / angažování
+            :refer-number singular
             :ARG0 (s15e1 / entity)
             :ARG1 (s15e2 / entity
                 :refer-number singular
                 :refer-person 3rd)
             :duration (s15s2 / sezona
-                :mod (s15p2 / příští
-                    :refer-number singular)
-                :mod (s15c1 / celý
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :aspect performance)
+                :refer-number singular
+                :mod (s15p2 / příští)
+                :mod (s15c1 / celý))))
 
 # alignment:
 s15v1: 5-6,12-12
@@ -745,7 +683,7 @@ s15c1: 17-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s16-root
+# meta-info :: sent_id = u_tree-cs-s16-root :: type = partial_conversion
 # :: snt16
 Index: 1       2     3       4  5    6       7    8       9      10    11      12 13     14    15       16 17      18
 Words: Mansell letos zůstává v  týmu Newmann Haas poněkud dlužen svému věhlasu a  odmítá další působení v  IndyCar .
@@ -753,48 +691,35 @@ Words: Mansell letos zůstává v  týmu Newmann Haas poněkud dlužen svému v�
 # sentence level graph:
 (s16a1 / and
         :op1 (s16z1 / zůstávat-003
+            :aspect habitual
             :ARG0 (s16m1 / Mansell
-                :refer-number singular
-                :refer-person 3rd)
+                :refer-number singular)
             :temporal (s16l1 / letos)
             :place (s16t1 / tým
-                :name (s16x1 / #Forn
-                    :FPHR (s16n1 / Newmann
-                        :refer-number singular)
-                    :FPHR (s16h1 / Haas
-                        :refer-number singular))
-                :refer-number singular)
-            :ARG1 (s16d1 / dlužný
+                :refer-number singular
+                :name (s16n1 / name
+                    :op1 "Newmann" :op2 "Haas"))
+            :ARG2 (s16d1 / dlužný
                 :extent (s16p1 / poněkud)
                 :ARG2 (s16v1 / věhlas
-                    :possessor s16m1
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect habitual)
+                    :refer-number singular
+                    :possessor s16m1)))
         :op2 (s16o1 / odmítat-003
+            :aspect activity
             :ARG0 s16m1
             :ARG1 (s16p2 / působení
+                :refer-number singular
                 :ARG0 (s16e1 / entity)
-                :duration (s16d2 / další
-                    :refer-number singular)
-                :place (s16x4 / #Forn
-                    :FPHR (s16i1 / IndyCar
-                        :refer-number singular))
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                :duration (s16d2 / další)
+                :place (s16f1 / foreign-phrase
+                    :op1 "IndyCar"))))
 
 # alignment:
 s16a1: 12-12
 s16z1: 3-3
 s16l1: 2-2
 s16t1: 4-5
-s16x1: 0-0
-s16n1: 6-6
-s16h1: 7-7
+s16n1: 6-7
 s16d1: 9-9
 s16p1: 8-8
 s16v1: 11-11
@@ -803,46 +728,41 @@ s16o1: 13-13
 s16p2: 15-15
 s16e1: 0-0
 s16d2: 14-14
-s16x4: 0-0
-s16i1: 17-17
+s16f1: 17-17
 
 # document level annotation:
 (s16s0 / sentence
     :coref ((s16m1 :same-entity s15e2)
-            (s16i1 :same-entity s3f1)))
+            (s16f1 :same-entity s3f1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s17-root
+# meta-info :: sent_id = u_tree-cs-s17-root :: type = partial_conversion
 # :: snt17
 Index: 1  2           3  4           5        6  7    8         9  10   11       12 13       14     15 16       17    18      19
 Words: V  souvislosti s  Mansellovým návratem a  jeho působením v  týmu Williams se objevují dohady o  rekordní roční smlouvě .
 
 # sentence level graph:
 (s17o1 / objevovat-se-002
+        :aspect activity
         :companion (s17a1 / and
             :op1 (s17n1 / návrat
+                :refer-number singular
                 :ARG0 (s17m1 / Mansell
-                    :refer-number singular)
-                :refer-number singular)
+                    :refer-number singular))
             :op2 (s17p1 / působení
+                :refer-number singular
                 :place (s17t1 / tým
+                    :refer-number singular
                     :name (s17w1 / Williams
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG0 s17m1
-                :refer-number singular))
-        :ARG0 (s17d1 / dohad
+                        :refer-number singular))
+                :ARG0 s17m1))
+        :ARG1 (s17d1 / dohad
+            :refer-number plural
             :ARG1 (s17s1 / smlouva
-                :mod (s17r1 / roční
-                    :refer-number singular)
-                :mod (s17r2 / rekordní
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number singular
+                :mod (s17r1 / roční)
+                :mod (s17r2 / rekordní))))
 
 # alignment:
 s17o1: 12-13
@@ -864,25 +784,22 @@ s17r2: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s18-root
+# meta-info :: sent_id = u_tree-cs-s18-root :: type = partial_conversion
 # :: snt18
 Index: 1    2    3        4       5  6        7    8
 Words: Head však považuje rozruch za reklamní trik .
 
 # sentence level graph:
 (s18p1 / považovat-001
+        :aspect activity
         :clausal-marker (s18v1 / však)
         :ARG0 (s18h1 / Head
             :refer-number singular)
         :ARG1 (s18r1 / rozruch
             :refer-number singular)
         :effect (s18t1 / trik
-            :mod (s18r2 / reklamní
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number singular
+            :mod (s18r2 / reklamní)))
 
 # alignment:
 s18p1: 3-3
@@ -898,36 +815,30 @@ s18r2: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s19-root
+# meta-info :: sent_id = u_tree-cs-s19-root :: type = partial_conversion
 # :: snt19
 Index: 1     2  3  4  5    6    7       8  9       10        11 12    13       14    15
 Words: Jisté je ,  že také týmy McLaren a  Ferrari projevily o  Brita skutečný zájem .
 
 # sentence level graph:
 (s19b1 / být-007
-        :ARG1 (s19j1 / jistý
-            :refer-number singular)
-        :ARG0 (s19p1 / projevit-003
+        :aspect activity
+        :ARG2 (s19j1 / jistý)
+        :ARG1 (s19p1 / projevit-003
+            :aspect performance
             :clausal-marker (s19t1 / také)
-            :ARG0 (s19t2 / tým
+            :ARG1 (s19t2 / tým
+                :refer-number plural
                 :name (s19a1 / and
                     :op1 (s19m1 / McLaren
                         :refer-number singular)
-                    :op2 (s19f1 / Ferrari))
-                :refer-number plural)
-            :predicative-noun (s19z1 / zájem
+                    :op2 (s19f1 / Ferrari)))
+            :ARG2 (s19z1 / zájem
+                :refer-number singular
                 :ARG1 (s19b2 / Brit
-                    :refer-number singular
-                    :refer-person 3rd)
-                :ARG0 s19t2
-                :mod (s19s1 / skutečný
                     :refer-number singular)
-                :refer-number singular)
-            :refer-number plural
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :ARG0 s19t2
+                :mod (s19s1 / skutečný))))
 
 # alignment:
 s19b1: 2-2

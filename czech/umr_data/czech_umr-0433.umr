@@ -1,16 +1,14 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1        2         3
 Words: Kuriózní literární podvod
 
 # sentence level graph:
 (s1p1 / podvod
-        :mod (s1k1 / kuriózní
-            :refer-number singular)
-        :mod (s1l1 / literární
-            :refer-number singular)
-        :refer-number singular)
+        :refer-number singular
+        :mod (s1k1 / kuriózní)
+        :mod (s1l1 / literární))
 
 # alignment:
 s1p1: 3-3
@@ -22,56 +20,48 @@ s1l1: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2 3        4    5    6 7
 Words: Praha ( agentura Wild Duck ) -
 
 # sentence level graph:
 (s2p1 / Praha
+        :refer-number singular
         :parenthesis (s2a1 / agentura
-            :name (s2x1 / #Forn
-                :FPHR (s2w1 / Wild)
-                :FPHR (s2d1 / Duck))
-            :refer-number singular)
-        :refer-number singular)
+            :refer-number singular
+            :name (s2n1 / name
+                :op1 "Wild" :op2 "Duck")))
 
 # alignment:
 s2p1: 1-1
 s2a1: 3-3
-s2x1: 0-0
-s2w1: 4-4
-s2d1: 5-5
+s2n1: 4-5
 
 # document level annotation:
 (s2s0 / sentence)
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1          2       3  4          5  6     7   8             9  10       11   12 13 14 15
 Words: Zajímavého podvodu se dopouštěla po deset let překladatelka z  finštiny paní M  .  M  .
 
 # sentence level graph:
 (s3d1 / dopouštět-se-001
+        :aspect activity
         :ARG1 (s3p1 / podvod
-            :mod (s3z1 / zajímavý
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s3z1 / zajímavý))
         :duration (s3r1 / rok
-            :mod (s3d2 / deset
-                :refer-number singular)
-            :refer-number plural)
+            :refer-number plural
+            :mod (s3d2 / deset))
         :ARG0 (s3m1 / M
             :mod (s3m2 / M)
-            :mod (s3p2 / paní
-                :refer-number singular)
+            :mod (s3p2 / paní)
             :mod (s3p3 / překladatelka
-                :mod (s3f1 / finština
-                    :refer-number singular)
-                :refer-number singular))
-        :aspect activity)
+                :mod (s3f1 / finština))))
 
 # alignment:
 s3d1: 3-4
@@ -91,42 +81,37 @@ s3f1: 9-10
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1   2     3        4        5           6           7   8       9     10 11   12 13        14  15      16    17      18    19
 Words: Pod jmény slavných finských spisovatelů publikovala své vlastní texty ,  když z  původních děl přejala pouze vlastní jména .
 
 # sentence level graph:
 (s4p1 / publikovat-001
+        :aspect process
         :ARG0 (s4e1 / entity
             :refer-number singular
             :refer-person 3rd)
         :manner (s4j1 / jméno
+            :refer-number plural
             :possessor (s4s1 / spisovatel
-                :mod (s4s2 / slavný
-                    :refer-number plural)
-                :mod (s4f1 / finský
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural)
+                :refer-number plural
+                :mod (s4s2 / slavný)
+                :mod (s4f1 / finský)))
         :ARG1 (s4t1 / text
+            :refer-number plural
             :possessor s4e1
-            :mod (s4v1 / vlastní
-                :refer-number plural)
-            :refer-number plural)
+            :mod (s4v1 / vlastní))
         :temporal (s4p2 / přejmout-002
+            :aspect performance
             :start (s4d1 / dílo
-                :mod (s4p3 / původní
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s4p3 / původní))
             :ARG0 s4e1
             :clausal-marker (s4p4 / pouze)
             :ARG1 (s4j2 / jméno
-                :mod (s4v2 / vlastní
-                    :refer-number plural)
-                :refer-number plural)
-            :aspect performance)
-        :aspect process)
+                :refer-number plural
+                :mod (s4v2 / vlastní))))
 
 # alignment:
 s4p1: 6-6
@@ -150,7 +135,7 @@ s4v2: 17-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1   2        3      4           5  6          7    8  9     10 11 12       13       14    15
 Words: Nic netušící finští spisovatelé ji zahrnovali díky a  zvali ji na návštěvu finských jezer .
@@ -158,35 +143,30 @@ Words: Nic netušící finští spisovatelé ji zahrnovali díky a  zvali ji na 
 # sentence level graph:
 (s5a1 / and
         :op1 (s5z1 / zahrnovat-001
+            :aspect activity
             :ARG0 (s5s1 / spisovatel
-                :mod (s5f1 / finský
-                    :refer-number plural)
+                :refer-number plural
+                :mod (s5f1 / finský)
                 :mod (s5t1 / tušící
+                    :polarity -
                     :ARG1 (s5n1 / nic
+                        :polarity -
                         :refer-number singular
-                        :refer-person 3rd
-                        :polarity -)
-                    :refer-number plural
-                    :polarity -)
-                :refer-number plural)
+                        :refer-person 3rd)))
             :ARG2 (s5e1 / entity
                 :refer-number singular
                 :refer-person 3rd)
             :ARG1 (s5d1 / dík
-                :refer-number plural)
-            :refer-number plural
-            :aspect activity)
+                :refer-number plural))
         :op2 (s5z2 / zvát-002
+            :aspect activity
             :ARG0 s5s1
             :ARG1 s5e1
             :purpose (s5n2 / návštěva
+                :refer-number singular
                 :ARG1 (s5j1 / jezero
-                    :mod (s5f2 / finský
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number plural
-            :aspect activity))
+                    :refer-number plural
+                    :mod (s5f2 / finský)))))
 
 # alignment:
 s5a1: 8-8
@@ -211,15 +191,18 @@ s5f2: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1  2     3  4    5  6      7  8    9  10  11           12 13    14 15 16       17       18 19         20        21         22 23 24       25       26   27  28   29 30 31 32 33      34         35       36 37     38       39
 Words: Na dotaz ,  proč to dělala ,  když se tím připravovala o  slávu i  o  autorské honoráře ,  odpověděla literární podvodnice ,  že autorské honoráře jsou tak malé ,  že by jí nemohly vynahradit potěšení z  jejího počínání .
 
 # sentence level graph:
 (s6o1 / odpovědět-003
+        :aspect performance
         :ARG1 (s6d1 / dotaz
+            :refer-number singular
             :ARG1 (s6d2 / dělat-010
+                :aspect activity
                 :ARG1 (s6t1 / ten
                     :refer-number singular)
                 :ARG0 (s6e1 / entity
@@ -227,6 +210,7 @@ Words: Na dotaz ,  proč to dělala ,  když se tím připravovala o  slávu i  
                     :refer-person 3rd)
                 :cause (s6p1 / proč)
                 :temporal (s6p2 / připravovat-001
+                    :aspect activity
                     :instrument (s6t2 / ten
                         :refer-number singular)
                     :ARG0 s6e1
@@ -235,40 +219,30 @@ Words: Na dotaz ,  proč to dělala ,  když se tím připravovala o  slávu i  
                         :op1 (s6s1 / sláva
                             :refer-number singular)
                         :op2 (s6h1 / honorář
-                            :mod (s6a2 / autorský
-                                :refer-number plural)
-                            :refer-number plural))
-                    :aspect activity)
-                :aspect activity)
-            :refer-number singular)
+                            :refer-number plural
+                            :mod (s6a2 / autorský))))))
         :ARG2 (s6e2 / entity)
         :ARG0 (s6p3 / podvodnice
-            :mod (s6l1 / literární
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s6l1 / literární))
         :effect (s6b1 / být-007
-            :ARG0 (s6h2 / honorář
-                :mod (s6a3 / autorský
-                    :refer-number plural)
-                :refer-number plural)
-            :ARG1 (s6m1 / malý
+            :aspect activity
+            :ARG1 (s6h2 / honorář
+                :refer-number plural
+                :mod (s6a3 / autorský))
+            :ARG2 (s6m1 / malý
                 :extent (s6t3 / tak
                     :result (s6v1 / vynahradit-001
+                        :aspect performance
+                        :polarity -
                         :ARG0 s6h2
                         :ARG2 s6p3
                         :ARG1 (s6p4 / potěšení
+                            :refer-number singular
                             :ARG0 (s6e3 / entity)
                             :ARG1 (s6p5 / počínání
-                                :ARG0 s6p3
-                                :refer-number singular)
-                            :refer-number singular)
-                        :aspect performance
-                        :polarity -))
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
-        :aspect performance)
+                                :refer-number singular
+                                :ARG0 s6p3)))))))
 
 # alignment:
 s6o1: 19-19
@@ -306,7 +280,7 @@ s6p5: 36-36,38-38
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1          2  3    4       5  6  7  8     9      10          11  12 13  14   15         16 17        18 19 20 21   22   23 24 25 26 27   28       29     30 31        32         33    34  35
 Words: Podvodnice se dále domnívá ,  že i  mnoho jiných přeložených děl má jen málo společného s  originály ,  a  je také hrdá na to ,  že její překlady nemají s  originály společného vůbec nic .
@@ -314,56 +288,42 @@ Words: Podvodnice se dále domnívá ,  že i  mnoho jiných přeložených děl
 # sentence level graph:
 (s7a1 / and
         :op1 (s7d1 / domnívat-se-001
+            :aspect activity
             :ARG0 (s7p1 / podvodnice
-                :refer-number singular
-                :refer-person 3rd)
+                :refer-number singular)
             :clausal-marker (s7d2 / dále)
             :ARG1 (s7m1 / mít-005
+                :aspect state
                 :clausal-marker (s7i1 / i)
                 :ARG0 (s7d3 / dílo
+                    :refer-number plural
                     :mod (s7m2 / mnoho)
-                    :mod (s7j1 / jiný
-                        :refer-number plural)
-                    :mod (s7p2 / přeložený
-                        :refer-number plural)
-                    :refer-number plural)
+                    :mod (s7j1 / jiný)
+                    :mod (s7p2 / přeložený))
                 :clausal-marker (s7j2 / jen)
                 :ARG1 (s7m3 / málo)
-                :effect (s7s1 / společný
+                :ARG2 (s7s1 / společný
                     :ARG1 (s7o1 / originál
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect state)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                        :refer-number plural))))
         :op2 (s7b1 / být-007
+            :aspect activity
             :ARG0 s7p1
             :clausal-marker (s7t1 / také)
-            :ARG1 (s7h1 / hrdý
+            :ARG2 (s7h1 / hrdý
                 :ARG1 (s7m4 / mít-005
+                    :aspect state
+                    :polarity -
                     :ARG0 (s7p3 / překlad
-                        :possessor s7p1
-                        :refer-number plural)
-                    :effect (s7s2 / společný
+                        :refer-number plural
+                        :possessor s7p1)
+                    :ARG2 (s7s2 / společný
                         :ARG1 (s7o2 / originál
-                            :refer-number plural)
-                        :refer-number singular)
+                            :refer-number plural))
                     :clausal-marker (s7v1 / vůbec)
                     :ARG1 (s7n1 / nic
+                        :polarity -
                         :refer-number singular
-                        :refer-person 3rd
-                        :polarity -)
-                    :refer-number plural
-                    :refer-person 3rd
-                    :aspect state
-                    :polarity -)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                        :refer-person 3rd)))))
 
 # alignment:
 s7a1: 19-19

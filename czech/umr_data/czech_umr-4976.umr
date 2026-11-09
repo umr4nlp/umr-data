@@ -1,52 +1,43 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1          2    3          4   5  6        7          8        9     10    11 12    13    14 15 16    17 18    19
 Words: Společnost BELL INDUSTRIES Inc .  provedla čtvrtletní navýšení svých akcií ze sedmi centů na 10 centů na akcii .
 
 # sentence level graph:
 (s1p1 / provést-004
+        :aspect performance
         :ARG0 (s1s1 / společnost
-            :name (s1x1 / #Forn
-                :FPHR (s1b1 / BELL)
-                :FPHR (s1i1 / INDUSTRIES)
-                :FPHR (s1i2 / Inc)
-                :FPHR (s1x2 / .))
-            :refer-number singular)
-        :predicative-noun (s1n1 / navýšení
+            :refer-number singular
+            :name (s1n1 / name
+                :op1 "BELL" :op2 "INDUSTRIES" :op3 "Inc."))
+        :ARG1 (s1n2 / navýšení
+            :refer-number singular
             :ARG0 s1s1
-            :duration (s1c1 / čtvrtletní
-                :refer-number singular)
+            :duration (s1c1 / čtvrtletní)
             :ARG1 (s1a1 / akcie
-                :mod s1s1
-                :refer-number plural)
+                :refer-number plural
+                :mod s1s1)
             :source (s1c2 / cent
-                :mod (s1s2 / sedm
-                    :refer-number plural)
-                :refer-number plural)
+                :refer-number plural
+                :mod (s1s2 / sedm))
             :effect (s1c3 / cent
-                :mod (s1x5 / 10)
+                :refer-number plural
+                :mod (s1x3 / 10)
                 :regard (s1a2 / akcie
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number singular)
-        :aspect performance)
+                    :refer-number singular))))
 
 # alignment:
 s1p1: 6-6
 s1s1: 1-1,9-9
-s1x1: 0-0
-s1b1: 2-2
-s1i1: 3-3
-s1i2: 4-4
-s1x2: 5-5
-s1n1: 8-8
+s1n1: 2-5
+s1n2: 8-8
 s1c1: 7-7
 s1a1: 10-10
 s1c2: 11-11,13-13
 s1s2: 12-12
 s1c3: 14-14,16-16
-s1x5: 15-15
+s1x3: 15-15
 s1a2: 17-18
 
 # document level annotation:
@@ -54,25 +45,21 @@ s1a2: 17-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1    2     3    4       5 6  7 8     9
 Words: Nová sazba bude splatná k 15 . únoru .
 
 # sentence level graph:
 (s2b1 / být-007
-        :ARG0 (s2s1 / sazba
-            :mod (s2n1 / nový
-                :refer-number singular)
-            :refer-number singular)
-        :ARG1 (s2s2 / splatný
+        :aspect activity
+        :ARG1 (s2s1 / sazba
+            :refer-number singular
+            :mod (s2n1 / nový))
+        :ARG2 (s2s2 / splatný
             :temporal (s2u1 / únor
-                :mod (s2x1 / 15)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number singular
+                :mod (s2x1 / 15))))
 
 # alignment:
 s2b1: 3-3
@@ -88,23 +75,21 @@ s2x1: 6-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1     2      3     4      5         6
 Words: Datum upsání zatím nebylo stanoveno .
 
 # sentence level graph:
 (s3s1 / stanovit-004
+        :aspect performance
+        :polarity -
         :ARG0 (s3e1 / entity
             :refer-number plural)
         :ARG1 (s3d1 / datum
-            :mod (s3u1 / upsání
-                :refer-number singular)
-            :refer-number singular)
-        :temporal (s3z1 / zatím)
-        :refer-number singular
-        :aspect performance
-        :polarity -)
+            :refer-number singular
+            :mod (s3u1 / upsání))
+        :temporal (s3z1 / zatím))
 
 # alignment:
 s3s1: 4-5
@@ -119,7 +104,7 @@ s3z1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1          2    3  4      5  6   7       8      9  10          11          12 13       14 15       16      17
 Words: Společnost Bell se sídlem v  Los Angeles vyrábí a  distribuuje elektroniku ,  počítače a  stavební výrobky .
@@ -127,33 +112,26 @@ Words: Společnost Bell se sídlem v  Los Angeles vyrábí a  distribuuje elektr
 # sentence level graph:
 (s4a1 / and
         :op1 (s4v1 / vyrábět-001
+            :aspect activity
             :ARG0 (s4s1 / společnost
+                :refer-number singular
                 :name (s4b1 / Bell
                     :refer-number singular)
                 :mod (s4s2 / sídlo
-                    :place (s4x1 / #Forn
-                        :FPHR (s4l1 / Los)
-                        :FPHR (s4a2 / Angeles))
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG1 (s4a3 / and
+                    :place (s4f1 / foreign-phrase
+                        :op1 "Los" :op2 "Angeles")))
+            :ARG1 (s4a2 / and
                 :op1 (s4e1 / elektronika
                     :refer-number singular)
                 :op2 (s4p1 / počítač
                     :refer-number plural)
                 :op3 (s4v2 / výrobek
-                    :mod (s4s3 / stavební
-                        :refer-number plural)
-                    :refer-number plural))
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                    :refer-number plural
+                    :mod (s4s3 / stavební))))
         :op2 (s4d1 / distribuovat-002
+            :aspect process
             :ARG0 s4s1
-            :ARG1 s4a3
-            :refer-number singular
-            :refer-person 3rd
-            :aspect process))
+            :ARG1 s4a2))
 
 # alignment:
 s4a1: 9-9
@@ -161,10 +139,8 @@ s4v1: 8-8
 s4s1: 1-1
 s4b1: 2-2
 s4s2: 3-4
-s4x1: 0-0
-s4l1: 6-6
-s4a2: 7-7
-s4a3: 14-14
+s4f1: 6-7
+s4a2: 14-14
 s4e1: 11-11
 s4p1: 13-13
 s4v2: 16-16

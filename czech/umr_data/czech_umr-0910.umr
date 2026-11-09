@@ -1,21 +1,18 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1     2        3      4
 Words: Vláda navrhuje daňové úpravy
 
 # sentence level graph:
 (s1n1 / navrhovat-001
+        :aspect activity
         :ARG0 (s1v1 / vláda
             :refer-number singular)
         :ARG2 (s1e1 / entity)
         :ARG1 (s1u1 / úprava
-            :mod (s1d1 / daňový
-                :refer-number plural)
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number plural
+            :mod (s1d1 / daňový)))
 
 # alignment:
 s1n1: 2-2
@@ -29,15 +26,15 @@ s1d1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2 3   4 5
 Words: Praha ( mrk ) -
 
 # sentence level graph:
 (s2p1 / Praha
-        :parenthesis (s2m1 / mrk)
-        :refer-number singular)
+        :refer-number singular
+        :parenthesis (s2m1 / mrk))
 
 # alignment:
 s2p1: 1-1
@@ -48,69 +45,62 @@ s2m1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1  2          3  4  5  6  7  8  9  10      11   12   13     14  15 16      17      18
 Words: Ze současných 23 na 22 %  by se v  příštím roce měla snížit daň z  přidané hodnoty .
 
 # sentence level graph:
 (s3s1 / snížit-001
-        :source (s3x1 / 23
-            :mod (s3s2 / současný
-                :refer-number plural)
-            :refer-number plural)
-        :effect (s3x2 / #Percnt
-            :mod (s3x3 / 22))
+        :aspect performance
+        :ARG2 (s3x1 / 23
+            :mod (s3s2 / současný))
+        :ARG3 (s3p1 / percentage-entity
+            :value "22")
         :ARG0 (s3e1 / entity)
         :temporal (s3r1 / rok
-            :mod (s3p1 / příští
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s3p2 / příští))
         :ARG1 (s3d1 / daň
+            :refer-number singular
             :start (s3h1 / hodnota
-                :mod (s3p2 / přidaný
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :aspect performance)
+                :refer-number singular
+                :mod (s3p3 / přidaný))))
 
 # alignment:
 s3s1: 7-7,12-13
 s3x1: 1-1,3-3
 s3s2: 2-2
-s3x2: 4-4,6-6
-s3x3: 5-5
+s3p1: 4-6
 s3e1: 0-0
 s3r1: 9-9,11-11
-s3p1: 10-10
+s3p2: 10-10
 s3d1: 14-14
 s3h1: 15-15,17-17
-s3p2: 16-16
+s3p3: 16-16
 
 # document level annotation:
 (s3s0 / sentence)
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1      2     3  4   5   6        7       8  9    10  11      12
 Words: Rovněž úlevy od DPH pro finanční leasing by měly být zrušeny .
 
 # sentence level graph:
 (s4z1 / zrušit-001
+        :aspect performance
         :clausal-marker (s4r1 / rovněž)
         :ARG1 (s4u1 / úleva
+            :refer-number plural
             :ARG1 (s4d1 / DPH
                 :refer-number singular)
             :affectee (s4l1 / leasing
-                :mod (s4f1 / finanční
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural)
-        :ARG0 (s4e1 / entity)
-        :refer-number plural
-        :aspect performance)
+                :refer-number singular
+                :mod (s4f1 / finanční)))
+        :ARG0 (s4e1 / entity))
 
 # alignment:
 s4z1: 8-11
@@ -127,31 +117,28 @@ s4e1: 0-0
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1       2  3  4      5      6      7  8   9  10     11    12        13    14
 Words: Vyplývá to z  návrhu novely zákona o  DPH ,  kterou včera schválila vláda .
 
 # sentence level graph:
 (s5v1 / vyplývat-001
+        :aspect activity
         :ARG0 (s5t1 / ten
             :refer-number singular)
         :ARG1 (s5n1 / návrh
+            :refer-number singular
             :ARG1 (s5n2 / novela
+                :refer-number singular
                 :ARG1 (s5z1 / zákon
-                    :ARG1 (s5d1 / DPH)
-                    :refer-number singular)
+                    :refer-number singular
+                    :ARG1 (s5d1 / DPH))
                 :ARG1-of (s5s1 / schválit-002
+                    :aspect performance
                     :temporal (s5v2 / včera)
                     :ARG0 (s5v3 / vláda
-                        :refer-number singular)
-                    :aspect performance)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number singular)))))
 
 # alignment:
 s5v1: 1-1
@@ -172,54 +159,46 @@ s5v3: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1   2          3       4       5    6        7  8       9      10    11 12     13        14     15    16 17      18           19 20     21 22
 Words: Jak informoval ministr financí Ivan Kočárník ,  důvodem tohoto kroku je obecné snižování daňové kvóty a  nutnost přibližování se normám EU .
 
 # sentence level graph:
 (s6b1 / být-007
+        :aspect activity
         :parenthesis (s6i1 / informovat-001
+            :aspect process
             :ARG1 s6b1
             :ARG2 (s6e1 / entity)
             :ARG0 (s6k1 / Kočárník
-                :mod (s6i2 / Ivan
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s6i2 / Ivan)
                 :mod (s6m1 / ministr
                     :possessor (s6f1 / finance
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
+                        :refer-number singular))))
+        :ARG2 (s6d1 / důvod
             :refer-number singular
-            :aspect process)
-        :ARG1 (s6d1 / důvod
             :ARG1 (s6k2 / krok
-                :mod (s6t1 / tento
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular
+                :mod (s6t1 / tento)))
         :ARG0 (s6a1 / and
             :op1 (s6s1 / snižování
+                :refer-number singular
                 :ARG0 (s6e2 / entity)
-                :manner (s6o1 / obecný
-                    :refer-number singular)
+                :manner (s6o1 / obecný)
                 :ARG1 (s6k3 / kvóta
-                    :mod (s6d2 / daňový
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
+                    :refer-number singular
+                    :mod (s6d2 / daňový)))
             :op2 (s6n1 / nutnost
+                :refer-number singular
                 :ARG0 (s6e3 / entity)
                 :ARG1 (s6p1 / přibližování_se
+                    :refer-number singular
                     :ARG0 s6e3
                     :ARG1 (s6n2 / norma
-                        :possessor (s6e4 / EU)
-                        :refer-number plural)
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :refer-number plural
+                        :possessor (s6e4 / EU))))))
 
 # alignment:
 s6b1: 11-11
@@ -250,44 +229,41 @@ s6e4: 21-21
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1  2          3        4     5   6    7  8  9  10       11 12       13   14 15 16 17       18
 Words: Ta doporučuje základní sazbu DPH mezi 15 a  19 procenty a  sníženou mezi 5  a  9  procenty .
 
 # sentence level graph:
 (s7d1 / doporučovat-001
-        :ARG0 (s7t1 / ten
-            :refer-number singular)
-        :ARG2 (s7e1 / entity)
+        :aspect activity
+        :ARG0 (s7e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG2 (s7e2 / entity)
         :ARG1 (s7a1 / and
             :op1 (s7s1 / sazba
+                :refer-number singular
                 :ARG1 (s7d2 / DPH)
-                :mod (s7z1 / základní
-                    :refer-number singular)
+                :mod (s7z1 / základní)
                 :place (s7p1 / procento
-                    :mod (s7m1 / math
+                    :refer-number plural
+                    :mod (s7m1 / math-entity
                         :op1 (s7x1 / 15)
-                        :op2 (s7x2 / 19))
-                    :refer-number plural)
-                :refer-number singular)
+                        :op2 (s7x2 / 19))))
             :op2 (s7s2 / sazba
-                :mod (s7s3 / snížený
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s7s3 / snížený)
                 :place (s7p2 / procento
-                    :mod (s7m2 / math
+                    :refer-number plural
+                    :mod (s7m2 / math-entity
                         :op1 (s7x3 / 5)
-                        :op2 (s7x4 / 9))
-                    :refer-number plural)
-                :refer-number singular))
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                        :op2 (s7x4 / 9))))))
 
 # alignment:
 s7d1: 2-2
-s7t1: 1-1
-s7e1: 0-0
+s7e1: 1-1
+s7e2: 0-0
 s7a1: 11-11
 s7s1: 4-4
 s7d2: 5-5
@@ -305,12 +281,12 @@ s7x4: 16-16
 
 # document level annotation:
 (s7s0 / sentence
-    :coref ((s7t1 :same-entity s6e4)
+    :coref ((s7e1 :same-entity s6e4)
             (s7d2 :same-entity s5d1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1        2  3  4   5    6        7        8  9                10     11 12        13     14 15      16       17
 Words: Opatření by se prý mělo příznivě projevit ve spotřebitelských cenách ,  negativně naopak ve státním rozpočtu .
@@ -318,24 +294,22 @@ Words: Opatření by se prý mělo příznivě projevit ve spotřebitelských ce
 # sentence level graph:
 (s8a1 / and
         :op1 (s8p1 / projevit-se-002
-            :ARG0 (s8o1 / opatření
+            :aspect performance
+            :ARG1 (s8o1 / opatření
                 :refer-number singular)
             :result (s8p2 / příznivě)
             :clausal-marker (s8p3 / prý)
             :place (s8c1 / cena
-                :mod (s8s1 / spotřebitelský
-                    :refer-number plural)
-                :refer-number plural)
-            :aspect performance)
+                :refer-number plural
+                :mod (s8s1 / spotřebitelský)))
         :op2 (s8p4 / projevit-se-002
-            :ARG0 s8o1
+            :aspect performance
+            :ARG1 s8o1
             :result (s8n1 / negativně)
             :clausal-marker (s8n2 / naopak)
             :place (s8r1 / rozpočet
-                :mod (s8s2 / státní
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance))
+                :refer-number singular
+                :mod (s8s2 / státní))))
 
 # alignment:
 s8a1: 11-11
@@ -357,46 +331,41 @@ s8s2: 15-15
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1     2       3        4     5  6      7     8        9       10     11 12      13  14         15         16     17   18  19
 Words: Kromě snížení základní sazby se novela snaží zabránit daňovým únikům v  oblasti DPH zpřesněním povinnosti platit tuto daň .
 
 # sentence level graph:
 (s9s1 / snažit-se-001
+        :aspect activity
         :subtraction (s9s2 / snížení
+            :refer-number singular
             :ARG1 (s9s3 / sazba
-                :mod (s9z1 / základní
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG0 (s9e1 / entity)
-            :refer-number singular)
+                :refer-number singular
+                :mod (s9z1 / základní))
+            :ARG0 (s9e1 / entity))
         :ARG0 (s9n1 / novela
             :refer-number singular)
         :ARG1 (s9z2 / zabránit-002
+            :aspect performance
             :ARG0 s9n1
             :ARG1 (s9u1 / únik
+                :refer-number plural
                 :place (s9d1 / DPH)
-                :mod (s9d2 / daňový
-                    :refer-number plural)
-                :refer-number plural)
+                :mod (s9d2 / daňový))
             :instrument (s9z3 / zpřesnění
+                :refer-number singular
                 :ARG0 s9n1
                 :ARG1 (s9p1 / povinnost
+                    :refer-number singular
                     :ARG0 (s9e2 / entity)
                     :ARG1 (s9p2 / platit-001
+                        :aspect activity
                         :ARG0 s9e2
                         :ARG1 (s9d3 / daň
-                            :mod (s9t1 / tento
-                                :refer-number singular)
-                            :refer-number singular)
-                        :aspect activity)
-                    :refer-number singular)
-                :refer-number singular)
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                            :refer-number singular
+                            :mod (s9t1 / tento)))))))
 
 # alignment:
 s9s1: 5-5,7-7
@@ -426,39 +395,34 @@ s9t1: 17-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1       2      3  4           5      6        7      8     9  10    11       12     13        14   15
 Words: Novelou zákona o  spotřebních daních navrhuje naopak vláda o  jedno procento zvýšit spotřební daně .
 
 # sentence level graph:
 (s10n1 / navrhovat-001
+        :aspect activity
         :instrument (s10n2 / novela
+            :refer-number singular
             :ARG1 (s10z1 / zákon
+                :refer-number singular
                 :ARG1 (s10d1 / daň
-                    :mod (s10s1 / spotřební
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular)
+                    :refer-number plural
+                    :mod (s10s1 / spotřební))))
         :clausal-marker (s10n3 / naopak)
         :ARG0 (s10v1 / vláda
             :refer-number singular)
         :ARG2 (s10e1 / entity)
         :ARG1 (s10z2 / zvýšit-001
+            :aspect performance
             :extent (s10p1 / procento
-                :mod (s10j1 / jeden
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s10j1 / jeden))
             :ARG0 (s10e2 / entity)
             :ARG1 (s10d2 / daň
-                :mod (s10s2 / spotřební
-                    :refer-number plural)
-                :refer-number plural)
-            :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number plural
+                :mod (s10s2 / spotřební))))
 
 # alignment:
 s10n1: 6-6
@@ -483,7 +447,7 @@ s10s2: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1     2         3  4       5  6        7   8  9     10 11      12         13          14     15   16    17      18     19       20       21
 Words: Podle Kočárníka to souvisí se snížením DPH ,  neboť u  výrobků zatížených spotřebními daněmi není důvod celkové daňové zatížení snižovat .
@@ -491,45 +455,36 @@ Words: Podle Kočárníka to souvisí se snížením DPH ,  neboť u  výrobků 
 # sentence level graph:
 (s11h1 / have-cause-91
         :ARG1 (s11s1 / souviset-001
+            :aspect activity
             :regard (s11k1 / Kočárník
                 :refer-number singular)
-            :ARG0 (s11t1 / ten
-                :refer-number singular
-                :refer-person 3rd)
-            :ARG1 (s11s2 / snížení
-                :ARG0 (s11d1 / DPH
-                    :refer-number singular)
+            :ARG1 (s11t1 / ten
                 :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+            :ARG2 (s11s2 / snížení
+                :refer-number singular
+                :ARG0 (s11d1 / DPH
+                    :refer-number singular)))
         :ARG2 (s11b1 / být-011
+            :aspect activity
+            :polarity -
             :place (s11v1 / výrobek
+                :refer-number plural
                 :mod (s11z1 / zatížený
                     :effect (s11d2 / daň
-                        :mod (s11s3 / spotřební
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural)
-            :ARG0 (s11d3 / důvod
+                        :refer-number plural
+                        :mod (s11s3 / spotřební))))
+            :ARG1 (s11d3 / důvod
+                :refer-number singular
                 :ARG0 (s11e1 / entity)
                 :ARG1 (s11s4 / snižovat-001
+                    :aspect activity
                     :ARG0 s11e1
                     :ARG1 (s11z2 / zatížení
-                        :instrument (s11d4 / daňový
-                            :refer-number singular)
+                        :refer-number singular
+                        :instrument (s11d4 / daňový)
                         :ARG0 (s11e2 / entity)
                         :ARG1 (s11e3 / entity)
-                        :mod (s11c1 / celkový
-                            :refer-number singular)
-                        :refer-number singular)
-                    :aspect activity)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity
-            :polarity -))
+                        :mod (s11c1 / celkový))))))
 
 # alignment:
 s11h1: 9-9
@@ -562,7 +517,7 @@ s11c1: 17-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1      2    3      4        5       6      7  8       9  10   11  12    13       14 15          16      17 18    19    20    21
 Words: Novela chce rovněž zabránit daňovým únikům :  zdaněny by měly být směsi vyráběné z  technických benzinů a  lehké topné oleje .
@@ -570,33 +525,27 @@ Words: Novela chce rovněž zabránit daňovým únikům :  zdaněny by měly b�
 # sentence level graph:
 (s12a1 / and
         :op1 (s12z1 / zabránit-002
+            :aspect performance
             :ARG0 (s12n1 / novela
                 :refer-number singular)
             :clausal-marker (s12r1 / rovněž)
             :ARG1 (s12u1 / únik
-                :mod (s12d1 / daňový
-                    :refer-number plural)
-                :refer-number plural)
-            :aspect performance)
+                :refer-number plural
+                :mod (s12d1 / daňový)))
         :op2 (s12z2 / zdaňovat-001
+            :aspect performance
             :ARG0 (s12e1 / entity)
             :ARG1 (s12a2 / and
                 :op1 (s12s1 / směs
+                    :refer-number plural
                     :mod (s12v1 / vyráběný
                         :source (s12b1 / benzín
-                            :mod (s12t1 / technický
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number plural)
+                            :refer-number plural
+                            :mod (s12t1 / technický))))
                 :op2 (s12o1 / olej
-                    :mod (s12t2 / topný
-                        :refer-number plural)
-                    :mod (s12l1 / lehký
-                        :refer-number plural)
-                    :refer-number plural))
-            :refer-number plural
-            :aspect performance))
+                    :refer-number plural
+                    :mod (s12t2 / topný)
+                    :mod (s12l1 / lehký)))))
 
 # alignment:
 s12a1: 7-7
@@ -622,26 +571,26 @@ s12l1: 18-18
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1    2  3      4 5 6    7    8      9
 Words: Více na straně 3 - Stát bude městům přispívat
 
 # sentence level graph:
 (s13e1 / event
+        :aspect state
         :ARG0 (s13h1 / hodně)
         :place (s13s1 / strana
-            :mod (s13x1 / 3)
-            :refer-number singular)
-        :parenthesis (s13x2 / #Idph
+            :refer-number singular
+            :mod (s13x1 / 3))
+        :parenthesis (s13x2 / %Idph
             :name (s13p1 / přispívat-001
+                :aspect activity
                 :ARG0 (s13s2 / stát
                     :refer-number singular)
                 :ARG2 (s13m1 / město
                     :refer-number plural)
-                :ARG1 (s13e2 / entity)
-                :aspect activity))
-        :aspect state)
+                :ARG1 (s13e2 / entity))))
 
 # alignment:
 s13e1: 0-0

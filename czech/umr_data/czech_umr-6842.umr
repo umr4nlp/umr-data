@@ -1,31 +1,25 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1      2  3  4      5   6        7       8               9    10          11  12       13       14
 Words: Steven F  .  Kaplan byl jmenován starším viceprezidentem této společnosti pro grafické vybavení .
 
 # sentence level graph:
 (s1j1 / jmenovat-002
+        :aspect process
         :ARG0 (s1e1 / entity)
         :ARG1 (s1k1 / Kaplan
-            :mod (s1s1 / Steven
-                :refer-number singular)
-            :mod (s1f1 / F)
-            :refer-number singular)
-        :effect (s1v1 / viceprezident
-            :mod (s1s2 / starý
-                :refer-number singular)
+            :refer-number singular
+            :mod (s1s1 / Steven)
+            :mod (s1f1 / F))
+        :ARG2 (s1v1 / viceprezident
+            :refer-number singular
+            :mod (s1s2 / starý)
             :mod (s1s3 / společnost
-                :mod (s1t1 / tento
-                    :refer-number singular)
+                :mod (s1t1 / tento)
                 :affectee (s1v2 / vybavení
-                    :mod (s1g1 / grafický
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :aspect process)
+                    :refer-number singular
+                    :mod (s1g1 / grafický)))))
 
 # alignment:
 s1j1: 5-6
@@ -45,37 +39,30 @@ s1g1: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1         2  3   4        5     6        7        8  9             10 11         12 13       14
 Words: Ponechává si své současné místo hlavního stratéga AM International a  prezidenta AM Ventures .
 
 # sentence level graph:
 (s2p1 / ponechávat-002
+        :aspect habitual
         :ARG0 (s2e1 / entity
-            :refer-number singular)
+            :refer-number singular
+            :refer-person 3rd)
         :ARG2 s2e1
         :ARG1 (s2m1 / místo
+            :refer-number singular
             :mod s2e1
-            :mod (s2s1 / současný
-                :refer-number singular)
+            :mod (s2s1 / současný)
             :mod (s2a1 / and
                 :op1 (s2s2 / stratég
-                    :mod (s2h1 / hlavní
-                        :refer-number singular)
-                    :mod (s2x3 / #Forn
-                        :FPHR (s2a2 / AM)
-                        :FPHR (s2i1 / International))
-                    :refer-number singular)
+                    :mod (s2h1 / hlavní)
+                    :mod (s2f1 / foreign-phrase
+                        :op1 "AM" :op2 "International"))
                 :op2 (s2p2 / prezident
-                    :mod (s2x4 / #Forn
-                        :FPHR (s2a3 / AM)
-                        :FPHR (s2v1 / Ventures))
-                    :refer-number singular))
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect habitual)
+                    :mod (s2f2 / foreign-phrase
+                        :op1 "AM" :op2 "Ventures")))))
 
 # alignment:
 s2p1: 1-1
@@ -85,13 +72,9 @@ s2s1: 4-4
 s2a1: 10-10
 s2s2: 7-7
 s2h1: 6-6
-s2x3: 0-0
-s2a2: 8-8
-s2i1: 9-9
+s2f1: 8-9
 s2p2: 11-11
-s2x4: 0-0
-s2a3: 12-12
-s2v1: 13-13
+s2f2: 12-13
 
 # document level annotation:
 (s2s0 / sentence

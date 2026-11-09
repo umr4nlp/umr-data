@@ -1,22 +1,20 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1        2    3    4 5      6 7
 Words: Alergici mají sraz v paláci U Hybernů
 
 # sentence level graph:
 (s1m1 / mít-008
+        :aspect state
         :ARG0 (s1a1 / alergik
             :refer-number plural)
         :ARG1 (s1s1 / sraz
             :refer-number singular)
         :place (s1p1 / palác
+            :refer-number singular
             :name (s1h1 / Hybern
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect state)
+                :refer-number plural)))
 
 # alignment:
 s1m1: 2-2
@@ -30,7 +28,7 @@ s1h1: 6-7
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1     2
 Words: Praha -
@@ -47,51 +45,44 @@ s2p1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1       2       3  4  5      6       7           8    9  10      11 12    13      14   15 16 17   18    19   20 21    22 23     24 25      26 27       28      29        30
 Words: Výstava Alergie '  95 určená rodičům alergických dětí i  lékařům ,  kteří nemocné léčí ,  se koná ještě dnes a  zítra v  paláci U  Hybernů na pražském náměstí Republiky .
 
 # sentence level graph:
 (s3k1 / konat-se-001
-        :ARG0 (s3v1 / výstava
+        :aspect activity
+        :ARG1 (s3v1 / výstava
+            :refer-number singular
             :name (s3a1 / Alergie
-                :mod (s3x1 / 95)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s3x1 / 95))
             :mod (s3u1 / určený
                 :ARG1 (s3a2 / and
                     :op1 (s3r1 / rodič
                         :possessor (s3d1 / dítě
-                            :mod (s3a3 / alergický
-                                :refer-number plural)
-                            :refer-number plural))
-                    :op2 (s3l1 / lékař
-                        :ARG0-of (s3l2 / léčit-001
-                            :ARG1 (s3n1 / nemocný
-                                :refer-number plural)
                             :refer-number plural
-                            :refer-person 3rd
-                            :aspect activity)
-                        :refer-number plural))
-                :refer-number singular)
-            :refer-number singular)
+                            :mod (s3a3 / alergický)))
+                    :op2 (s3l1 / lékař
+                        :refer-number plural
+                        :ARG3-of (s3l2 / léčit-001
+                            :aspect activity
+                            :ARG2 (s3n1 / nemocný
+                                :refer-number plural))))))
         :clausal-marker (s3j1 / ještě)
         :temporal (s3a4 / and
             :op1 (s3d2 / dnes)
             :op2 (s3z1 / zítra))
         :place (s3p1 / palác
+            :refer-number singular
             :name (s3h1 / Hybern
                 :refer-number plural)
             :place (s3n2 / náměstí
-                :mod (s3p2 / pražský
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s3p2 / pražský)
                 :possessor (s3r2 / Republika
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :refer-number singular))))
 
 # alignment:
 s3k1: 16-17
@@ -124,13 +115,14 @@ s3r2: 29-29
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1   2     3       4          5         6      7  8     9           10    11
 Words: Již včera výstavu procházeli především rodiče se svými alergickými dětmi .
 
 # sentence level graph:
 (s4p1 / procházet-001
+        :aspect activity
         :clausal-marker (s4j1 / již)
         :temporal (s4v1 / včera)
         :ARG1 (s4v2 / výstava
@@ -138,12 +130,9 @@ Words: Již včera výstavu procházeli především rodiče se svými alergick�
         :clausal-marker (s4p2 / především)
         :ARG0 (s4r1 / rodič
             :companion (s4d1 / dítě
+                :refer-number plural
                 :possessor s4r1
-                :mod (s4a1 / alergický
-                    :refer-number plural)
-                :refer-number plural))
-        :refer-number plural
-        :aspect activity)
+                :mod (s4a1 / alergický))))
 
 # alignment:
 s4p1: 4-4
@@ -161,67 +150,59 @@ s4a1: 9-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1       2  3       4         5  6     7    8  9    10   11 12        13 14    15   16       17       18 19         20        21 22 23      24       25      26 27    28         29 30    31       32       33   34       35
 Words: Zaujala je zejména kosmetika k  denní péči o  pleť dětí i  dospělých ,  která byla vyrobena výhradně z  přírodních materiálů ,  a  podobně vyráběné čisticí a  prací prostředky ,  které nedráždí citlivou pleť alergiků .
 
 # sentence level graph:
 (s5z1 / zaujmout-001
+        :aspect performance
         :ARG1 (s5e1 / entity
             :refer-number plural
             :refer-person 3rd)
         :clausal-marker (s5z2 / zejména)
         :ARG0 (s5a1 / and
             :op1 (s5k1 / kosmetika
+                :refer-number singular
                 :purpose (s5p1 / péče
-                    :mod (s5d1 / denní
-                        :refer-number singular)
+                    :refer-number singular
+                    :mod (s5d1 / denní)
                     :ARG1 (s5a2 / and
                         :op1 (s5p2 / pleť
+                            :refer-number singular
                             :possessor (s5d2 / dítě
-                                :refer-number plural)
-                            :refer-number singular)
+                                :refer-number plural))
                         :op2 (s5p3 / pleť
+                            :refer-number singular
                             :possessor (s5d3 / dospělý
-                                :refer-number plural)
-                            :refer-number singular))
-                    :refer-number singular)
+                                :refer-number plural))))
                 :ARG1-of (s5v1 / vyrobit-001
+                    :aspect performance
                     :ARG0 (s5e2 / entity)
                     :clausal-marker (s5v2 / výhradně)
-                    :source (s5m1 / materiál
-                        :mod (s5p4 / přírodní
-                            :refer-number plural)
-                        :refer-number plural)
-                    :aspect performance)
+                    :ARG2 (s5m1 / materiál
+                        :refer-number plural
+                        :mod (s5p4 / přírodní)))
                 :ARG0 (s5a3 / and
                     :op1 (s5p5 / prostředek
+                        :refer-number plural
                         :mod (s5v3 / vyráběný
-                            :manner (s5p6 / podobně)
-                            :refer-number plural)
-                        :mod (s5c1 / čisticí
-                            :refer-number plural)
+                            :manner (s5p6 / podobně))
+                        :mod (s5c1 / čisticí)
                         :ARG0-of (s5d4 / dráždit-002
+                            :aspect activity
+                            :polarity -
                             :ARG1 (s5p7 / pleť
+                                :refer-number singular
                                 :possessor (s5a4 / alergik
                                     :refer-number plural)
-                                :mod (s5c2 / citlivý
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number plural
-                            :refer-person 3rd
-                            :aspect activity
-                            :polarity -)
-                        :refer-number plural)
+                                :mod (s5c2 / citlivý))))
                     :op2 (s5p8 / prostředek
+                        :refer-number plural
                         :mod s5v3
                         :ARG0-of s5d4
-                        :mod (s5p9 / prací
-                            :refer-number plural)
-                        :refer-number plural))
-                :refer-number singular))
-        :aspect performance)
+                        :mod (s5p9 / prací))))))
 
 # alignment:
 s5z1: 1-1
@@ -260,26 +241,22 @@ s5p9: 27-27
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1       2      3       4    5 6       7 8         9
 Words: Některé takové výrobky jsou k dostání v lékárnách .
 
 # sentence level graph:
 (s6b1 / být-011
-        :ARG0 (s6v1 / výrobek
-            :mod (s6n1 / některý
-                :refer-number plural)
-            :mod (s6t1 / takový
-                :refer-number plural)
-            :refer-number plural)
+        :aspect activity
+        :ARG1 (s6v1 / výrobek
+            :refer-number plural
+            :mod (s6n1 / některý)
+            :mod (s6t1 / takový))
         :result (s6d1 / dostání
             :refer-number singular)
         :place (s6l1 / lékárna
-            :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number plural))
 
 # alignment:
 s6b1: 4-4
@@ -294,7 +271,7 @@ s6l1: 7-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1  2       3    4  5        6       7      8   9      10     11       12 13  14  15 16      17       18 19      20       21       22
 Words: Na výstavě jsou i  vysavače schopné zbavit byt prachu takřka dokonale ,  ale zde se nabídka pohybuje ve vyšších cenových relacích .
@@ -302,38 +279,31 @@ Words: Na výstavě jsou i  vysavače schopné zbavit byt prachu takřka dokonal
 # sentence level graph:
 (s7b1 / but-91
         :ARG1 (s7b2 / být-011
+            :aspect activity
             :place (s7v1 / výstava
                 :refer-number singular)
             :clausal-marker (s7i1 / i)
-            :ARG0 (s7v2 / vysavač
+            :ARG1 (s7v2 / vysavač
+                :refer-number plural
                 :mod (s7s1 / schopný
                     :ARG1 (s7z1 / zbavit-001
+                        :aspect performance
                         :ARG0 s7v2
                         :ARG2 (s7b3 / byt
                             :refer-number singular)
                         :ARG1 (s7p1 / prach
                             :refer-number singular)
                         :extent (s7d1 / dokonale
-                            :extent (s7t1 / takřka))
-                        :aspect performance)
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                            :extent (s7t1 / takřka))))))
         :ARG2 (s7p2 / pohybovat-se-002
+            :aspect activity
             :ARG0 (s7n1 / nabídka
                 :refer-number singular)
             :place (s7z2 / zde)
             :place (s7r1 / relace
-                :mod (s7c1 / cenový
-                    :refer-number plural)
-                :mod (s7v3 / vysoký
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                :refer-number plural
+                :mod (s7c1 / cenový)
+                :mod (s7v3 / vysoký))))
 
 # alignment:
 s7b1: 13-13
@@ -361,7 +331,7 @@ s7v3: 19-19
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1         2       3     4   5     6  7    8      9     10    11 12  13  14   15     16 17      18
 Words: Například vysavač firmy Lux stojí i  přes dvacet tisíc korun ,  lze jej však koupit na splátky .
@@ -369,33 +339,27 @@ Words: Například vysavač firmy Lux stojí i  přes dvacet tisíc korun ,  lze
 # sentence level graph:
 (s8b1 / but-91
         :ARG1 (s8s1 / stát-014
+            :aspect activity
             :clausal-marker (s8n1 / například)
-            :ARG0 (s8v1 / vysavač
+            :ARG1 (s8v1 / vysavač
+                :refer-number singular
                 :possessor (s8f1 / firma
-                    :name (s8l1 / Lux)
-                    :refer-number singular)
-                :refer-number singular)
-            :extent (s8t1 / tisíc
+                    :refer-number singular
+                    :name (s8l1 / Lux)))
+            :ARG2 (s8t1 / tisíc
                 :mod (s8k1 / koruna
                     :refer-number plural)
                 :clausal-marker (s8i1 / i)
-                :mod (s8d1 / dvacet
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                :mod (s8d1 / dvacet)))
         :ARG2 (s8l2 / lze-001
+            :aspect state
             :affectee (s8e1 / entity)
-            :ARG0 (s8k2 / koupit-001
+            :ARG2 (s8k2 / koupit-001
+                :aspect performance
                 :ARG0 s8e1
                 :ARG1 s8v1
                 :instrument (s8s2 / splátka
-                    :refer-number plural)
-                :aspect performance)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect state))
+                    :refer-number plural))))
 
 # alignment:
 s8b1: 14-14
@@ -418,34 +382,28 @@ s8s2: 16-17
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1       2  3     4    5         6       7         8  9    10     11 12        13 14
 Words: Roztoči ,  kteří jsou nejhorším bytovým alergenem ,  jsou hlavně v  matracích a  povlečení
 
 # sentence level graph:
 (s9b1 / být-011
-        :ARG0 (s9r1 / roztoč
-            :ARG0-of (s9b2 / být-007
-                :ARG1 (s9a1 / alergen
-                    :mod (s9b3 / bytový
-                        :refer-number singular)
-                    :mod (s9s1 / špatný
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural
-                :refer-person 3rd
-                :aspect activity)
-            :refer-number plural)
+        :aspect activity
+        :ARG1 (s9r1 / roztoč
+            :refer-number plural
+            :ARG1-of (s9b2 / být-007
+                :aspect activity
+                :ARG2 (s9a1 / alergen
+                    :refer-number singular
+                    :mod (s9b3 / bytový)
+                    :mod (s9s1 / špatný))))
         :clausal-marker (s9h1 / hlavně)
         :place (s9a2 / and
             :op1 (s9m1 / matrace
                 :refer-number plural)
             :op2 (s9p1 / povlečení
-                :refer-number singular))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number singular)))
 
 # alignment:
 s9b1: 9-9
@@ -464,32 +422,29 @@ s9p1: 11-11,14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1  2          3         4    5      6      7     8  9     10
 Words: Ve speciálním povlečení však nemají příliš šancí se šířit .
 
 # sentence level graph:
 (s10m1 / mít-028
+        :aspect state
+        :polarity -
         :clausal-marker (s10v1 / však)
         :place (s10p1 / povlečení
-            :mod (s10s1 / speciální
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s10s1 / speciální))
         :ARG0 (s10e1 / entity
             :refer-number plural
             :refer-person 3rd)
         :extent (s10p2 / příliš)
-        :predicative-noun (s10s2 / šance
+        :ARG1 (s10s2 / šance
+            :refer-number plural
             :ARG0 s10e1
             :ARG1 (s10s3 / šířit-se-001
-                :ARG0 s10e1
-                :aspect activity)
-            :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
-        :aspect state
-        :polarity -)
+                :aspect activity
+                :ARG1 s10e1)))
 
 # alignment:
 s10m1: 5-5
@@ -507,7 +462,7 @@ s10s3: 8-9
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1     2  3     4       5       6     7   8    9         10   11    12 13     14 15       16   17    18 19 20     21 22     23      24 25    26    27  28     29
 Words: Potah na jednu dětskou matraci stojí bez daně například 3034 korun ,  povlak na pokrývku 3226 korun a  za povlak na dětský polštář je třeba vydat 704 koruny .
@@ -515,53 +470,41 @@ Words: Potah na jednu dětskou matraci stojí bez daně například 3034 korun ,
 # sentence level graph:
 (s11a1 / and
         :op1 (s11s1 / stát-014
-            :ARG0 (s11p1 / potah
+            :aspect activity
+            :ARG1 (s11p1 / potah
+                :refer-number singular
                 :mod (s11m1 / matrace
-                    :mod (s11d1 / dětský
-                        :refer-number singular)
-                    :mod (s11j1 / jeden
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
+                    :mod (s11d1 / dětský)
+                    :mod (s11j1 / jeden)))
             :companion (s11d2 / daň
                 :refer-number singular)
             :clausal-marker (s11n1 / například)
-            :extent (s11k1 / koruna
-                :mod (s11x1 / 3034)
-                :refer-number plural)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+            :ARG2 (s11k1 / koruna
+                :refer-number plural
+                :mod (s11x1 / 3034)))
         :op2 (s11s2 / stát-014
-            :ARG0 (s11p2 / povlak
-                :mod (s11p3 / pokrývka
-                    :refer-number singular)
-                :refer-number singular)
-            :extent (s11k2 / koruna
-                :mod (s11x2 / 3226)
-                :refer-number plural)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+            :aspect activity
+            :ARG1 (s11p2 / povlak
+                :refer-number singular
+                :mod (s11p3 / pokrývka))
+            :ARG2 (s11k2 / koruna
+                :refer-number plural
+                :mod (s11x2 / 3226)))
         :op3 (s11b1 / být-020
-            :predicative-noun (s11t1 / třeba
-                :affectee (s11e1 / entity)
-                :refer-number singular)
-            :ARG0 (s11v1 / vydat-004
+            :aspect activity
+            :ARG2 (s11t1 / třeba
+                :refer-number singular
+                :affectee (s11e1 / entity))
+            :ARG1 (s11v1 / vydat-004
+                :aspect performance
                 :purpose (s11p4 / povlak
+                    :refer-number singular
                     :mod (s11p5 / polštář
-                        :mod (s11d3 / dětský
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
+                        :mod (s11d3 / dětský)))
                 :ARG0 s11e1
                 :ARG1 (s11k3 / koruna
-                    :mod (s11x4 / 704)
-                    :refer-number plural)
-                :aspect performance)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+                    :refer-number plural
+                    :mod (s11x4 / 704)))))
 
 # alignment:
 s11a1: 18-18

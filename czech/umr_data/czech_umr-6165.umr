@@ -1,75 +1,58 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1          2      3        4   5  6      7  8  9       10       11      12       13      14 15  16 17    18 19     20 21        22      23      24       25      26 27      28 29    30        31      32     33
 Words: Společnost Comair Holdings Inc .  uvedla ,  že koupila akademii Airline Aviation Academy ,  což je škola se sídlem na oblastním letišti Sanford nedaleko Orlanda na Floridě ,  která zajišťuje pilotní výcvik .
 
 # sentence level graph:
 (s1u1 / uvést-007
+        :aspect performance
         :ARG0 (s1s1 / společnost
-            :name (s1x1 / #Forn
-                :FPHR (s1c1 / Comair)
-                :FPHR (s1h1 / Holdings)
-                :FPHR (s1i1 / Inc)
-                :FPHR (s1x2 / .))
-            :refer-number singular)
+            :refer-number singular
+            :name (s1n1 / name
+                :op1 "Comair" :op2 "Holdings" :op3 "Inc."))
         :effect (s1k1 / koupit-001
+            :aspect performance
             :ARG0 s1s1
-            :ARG1 (s1i2 / identity-91
+            :ARG1 (s1i1 / identity-91
                 :ARG1 (s1a1 / akademie
-                    :name (s1x4 / #Forn
-                        :FPHR (s1a2 / Airline)
-                        :FPHR (s1a3 / Aviation)
-                        :FPHR (s1a4 / Academy))
-                    :refer-number singular)
+                    :refer-number singular
+                    :name (s1n2 / name
+                        :op1 "Airline" :op2 "Aviation" :op3 "Academy"))
                 :ARG2 (s1b1 / být-007
-                    :ARG0 (s1c2 / což
-                        :refer-number singular)
-                    :ARG1 (s1s2 / škola
+                    :aspect activity
+                    :ARG1 (s1e1 / entity
+                        :refer-number singular
+                        :refer-person 3rd)
+                    :ARG2 (s1s2 / škola
+                        :refer-number singular
                         :companion (s1s3 / sídlo
+                            :refer-number singular
                             :place (s1l1 / letiště
-                                :mod (s1o1 / oblastní
-                                    :refer-number singular)
+                                :refer-number singular
+                                :mod (s1o1 / oblastní)
                                 :name (s1s4 / Sanford
                                     :refer-number singular)
                                 :place (s1o2 / Orlando
+                                    :refer-number singular
                                     :place (s1f1 / Florida
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular)
+                                        :refer-number singular))))
                         :ARG0-of (s1z1 / zajišťovat-001
+                            :aspect activity
                             :ARG1 (s1v1 / výcvik
-                                :mod (s1p1 / pilotní
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular
-                            :refer-person 3rd
-                            :aspect activity)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity))
-            :aspect performance)
-        :aspect performance)
+                                :refer-number singular
+                                :mod (s1p1 / pilotní))))))))
 
 # alignment:
 s1u1: 6-6
 s1s1: 1-1
-s1x1: 0-0
-s1c1: 2-2
-s1h1: 3-3
-s1i1: 4-4
-s1x2: 5-5
+s1n1: 2-5
 s1k1: 8-9
-s1i2: 14-14
+s1i1: 14-14
 s1a1: 10-10
-s1x4: 0-0
-s1a2: 11-11
-s1a3: 12-12
-s1a4: 13-13
+s1n2: 11-13
 s1b1: 16-16
-s1c2: 15-15
+s1e1: 15-15
 s1s2: 17-17,29-29
 s1s3: 18-19
 s1l1: 20-20,22-22
@@ -83,11 +66,11 @@ s1p1: 31-31
 
 # document level annotation:
 (s1s0 / sentence
-    :coref ((s1c2 :same-entity s1a1)))
+    :coref ((s1e1 :same-entity s1a1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1          2      3      4  5  6         7      8  9     10      11    12   13
 Words: Společnost Comair uvedla ,  že zaplatila hotově ,  avšak odmítla uvést cenu .
@@ -95,24 +78,24 @@ Words: Společnost Comair uvedla ,  že zaplatila hotově ,  avšak odmítla uv�
 # sentence level graph:
 (s2b1 / but-91
         :ARG1 (s2u1 / uvést-007
+            :aspect performance
             :ARG0 (s2s1 / společnost
+                :refer-number singular
                 :name (s2c1 / Comair
-                    :refer-number singular)
-                :refer-number singular)
+                    :refer-number singular))
             :effect (s2z1 / zaplatit-001
+                :aspect performance
                 :ARG1 (s2e1 / entity)
                 :ARG0 s2s1
-                :manner (s2h1 / hotově)
-                :aspect performance)
-            :aspect performance)
+                :manner (s2h1 / hotově)))
         :ARG2 (s2o1 / odmítnout-003
+            :aspect performance
             :ARG0 s2s1
             :ARG1 (s2u2 / uvést-001
+                :aspect performance
                 :ARG0 s2s1
                 :ARG1 (s2c2 / cena
-                    :refer-number singular)
-                :aspect performance)
-            :aspect performance))
+                    :refer-number singular))))
 
 # alignment:
 s2b1: 9-9
@@ -132,53 +115,38 @@ s2c2: 12-12
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1          2      3        4  5        6          7           8      9   10 11 12         13        14       15
 Words: Společnost Comair Holdings je mateřská společnost společnosti Comair Inc .  ,  oblastního leteckého dopravce .
 
 # sentence level graph:
 (s3b1 / být-007
-        :ARG0 (s3s1 / společnost
-            :name (s3x1 / #Forn
-                :FPHR (s3c1 / Comair)
-                :FPHR (s3h1 / Holdings))
-            :refer-number singular)
-        :ARG1 (s3s2 / společnost
-            :mod (s3m1 / mateřský
-                :refer-number singular)
+        :aspect activity
+        :ARG1 (s3s1 / společnost
+            :refer-number singular
+            :name (s3n1 / name
+                :op1 "Comair" :op2 "Holdings"))
+        :ARG2 (s3s2 / společnost
+            :refer-number singular
+            :mod (s3m1 / mateřský)
             :mod (s3i1 / identity-91
                 :ARG1 (s3s3 / společnost
-                    :name (s3x2 / #Forn
-                        :FPHR (s3c2 / Comair)
-                        :FPHR (s3i2 / Inc)
-                        :FPHR (s3x3 / .))
-                    :refer-number singular)
+                    :name (s3n2 / name
+                        :op1 "Comair" :op2 "Inc."))
                 :ARG2 (s3d1 / dopravce
-                    :mod (s3o1 / oblastní
-                        :refer-number singular)
-                    :mod (s3l1 / letecký
-                        :refer-number singular)
-                    :refer-number singular))
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+                    :mod (s3o1 / oblastní)
+                    :mod (s3l1 / letecký)))))
 
 # alignment:
 s3b1: 4-4
 s3s1: 1-1
-s3x1: 0-0
-s3c1: 2-2
-s3h1: 3-3
+s3n1: 2-3
 s3s2: 6-6
 s3m1: 5-5
 s3i1: 11-11
 s3s3: 7-7
-s3x2: 0-0
-s3c2: 8-8
-s3i2: 9-9
-s3x3: 10-10
+s3n2: 8-10
 s3d1: 14-14
 s3o1: 12-12
 s3l1: 13-13
@@ -189,64 +157,48 @@ s3l1: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1          2      3      4  5  6        7       8        9  10    11 12    13     14 15 16 17      18     19 20 21       22 23       24    25         26     27 28    29 30    31          32   33 34    35      36        37
 Words: Společnost Comair uvedla ,  že akademie Airline Aviation ,  která má roční příjmy 5  až 6  milionů dolarů ,  má vzhledem k  vysokému počtu amerických pilotů ,  kteří se blíží důchodovému věku ,  velký růstový potenciál .
 
 # sentence level graph:
 (s4u1 / uvést-007
+        :aspect performance
         :ARG0 (s4s1 / společnost
-            :name (s4c1 / Comair
-                :refer-number singular)
-            :refer-number singular)
-        :effect (s4m1 / mít-009
-            :ARG0 (s4a1 / akademie
-                :name (s4x1 / #Forn
-                    :FPHR (s4a2 / Airline)
-                    :FPHR (s4a3 / Aviation))
-                :ARG0-of (s4m2 / mít-002
-                    :ARG1 (s4p1 / příjem
-                        :mod (s4r1 / roční
-                            :refer-number plural)
-                        :extent (s4m3 / milión
-                            :mod (s4m4 / math
-                                :op1 (s4x2 / 5)
-                                :op2 (s4x3 / 6))
-                            :mod (s4d1 / dolar
-                                :refer-number plural)
-                            :refer-number plural)
-                        :refer-number plural)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect state)
-                :refer-number singular)
-            :regard (s4p2 / počet
-                :mod (s4v1 / vysoký
-                    :refer-number singular)
-                :mod (s4p3 / pilot
-                    :mod (s4a4 / americký
-                        :refer-number plural)
-                    :ARG0-of (s4b1 / blížit-se-002
-                        :ARG1 (s4v2 / věk
-                            :mod (s4d2 / důchodový
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number plural
-                        :refer-person 3rd
-                        :aspect activity)
-                    :refer-number plural)
-                :refer-number singular)
-            :ARG1 (s4p4 / potenciál
-                :mod (s4v3 / velký
-                    :refer-number singular)
-                :mod (s4r2 / růstový
-                    :refer-number singular)
-                :refer-number singular)
             :refer-number singular
-            :refer-person 3rd
-            :aspect state)
-        :aspect performance)
+            :name (s4c1 / Comair
+                :refer-number singular))
+        :effect (s4m1 / mít-009
+            :aspect state
+            :ARG0 (s4a1 / akademie
+                :refer-number singular
+                :name (s4n1 / name
+                    :op1 "Airline" :op2 "Aviation")
+                :ARG0-of (s4m2 / mít-002
+                    :aspect state
+                    :ARG1 (s4p1 / příjem
+                        :refer-number plural
+                        :mod (s4r1 / roční)
+                        :extent (s4m3 / milión
+                            :mod (s4m4 / math-entity
+                                :op1 (s4x1 / 5)
+                                :op2 (s4x2 / 6))
+                            :mod (s4d1 / dolar)))))
+            :regard (s4p2 / počet
+                :refer-number singular
+                :mod (s4v1 / vysoký)
+                :mod (s4p3 / pilot
+                    :mod (s4a2 / americký)
+                    :ARG0-of (s4b1 / blížit-se-002
+                        :aspect activity
+                        :ARG1 (s4v2 / věk
+                            :refer-number singular
+                            :mod (s4d2 / důchodový)))))
+            :ARG1 (s4p4 / potenciál
+                :refer-number singular
+                :mod (s4v3 / velký)
+                :mod (s4r2 / růstový))))
 
 # alignment:
 s4u1: 3-3
@@ -254,21 +206,19 @@ s4s1: 1-1
 s4c1: 2-2
 s4m1: 5-5,20-20
 s4a1: 6-6,10-10
-s4x1: 0-0
-s4a2: 7-7
-s4a3: 8-8
+s4n1: 7-8
 s4m2: 11-11
 s4p1: 13-13
 s4r1: 12-12
 s4m3: 17-17
 s4m4: 15-15
-s4x2: 14-14
-s4x3: 16-16
+s4x1: 14-14
+s4x2: 16-16
 s4d1: 18-18
 s4p2: 21-22,24-24
 s4v1: 23-23
 s4p3: 26-26,28-28
-s4a4: 25-25
+s4a2: 25-25
 s4b1: 29-30
 s4v2: 32-32
 s4d2: 31-31
@@ -279,53 +229,46 @@ s4r2: 35-35
 # document level annotation:
 (s4s0 / sentence
     :coref ((s4s1 :same-entity s3s1)
-            (s4a1 :same-entity s1i2)))
+            (s4a1 :same-entity s1i1)))
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1          2      3      4  5  6    7        8    9            10 11     12       13      14 15    16        17   18 19     20    21       22 23  24     25          26
 Words: Společnost Comair uvedla ,  že tato jednotka bude přejmenována na Comair Aviation Academy a  jejím ředitelem bude i  nadále Scott Williams ,  syn jejího zakladatele .
 
 # sentence level graph:
 (s5u1 / uvést-007
+        :aspect performance
         :ARG0 (s5s1 / společnost
+            :refer-number singular
             :name (s5c1 / Comair
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular))
         :effect (s5a1 / and
             :op1 (s5p1 / přejmenovat-001
+                :aspect performance
                 :ARG0 s5s1
                 :ARG1 (s5j1 / jednotka
-                    :mod (s5t1 / tento
-                        :refer-number singular)
-                    :refer-number singular)
-                :effect (s5x2 / #Forn
-                    :FPHR (s5c2 / Comair)
-                    :FPHR (s5a2 / Aviation)
-                    :FPHR (s5a3 / Academy))
-                :aspect performance)
+                    :refer-number singular
+                    :mod (s5t1 / tento))
+                :effect (s5f1 / foreign-phrase
+                    :op1 "Comair" :op2 "Aviation" :op3 "Academy"))
             :op2 (s5b1 / být-007
-                :ARG1 (s5r1 / ředitel
-                    :mod s5j1
-                    :refer-number singular)
+                :aspect activity
+                :ARG2 (s5r1 / ředitel
+                    :refer-number singular
+                    :mod s5j1)
                 :clausal-marker (s5i1 / i)
                 :duration (s5n1 / nadále)
-                :ARG0 (s5a4 / and
+                :ARG0 (s5a2 / and
                     :op1 (s5s2 / Scott
-                        :mod (s5w1 / Williams
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s5w1 / Williams))
                     :op2 (s5s3 / syn
+                        :refer-number singular
                         :mod (s5z1 / zakladatel
-                            :mod s5j1
-                            :refer-number singular)
-                        :refer-number singular))
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity))
-        :aspect performance)
+                            :mod s5j1))))))
 
 # alignment:
 s5u1: 3-3
@@ -335,15 +278,12 @@ s5a1: 14-14
 s5p1: 5-5,8-9
 s5j1: 7-7,15-15,24-24
 s5t1: 6-6
-s5x2: 0-0
-s5c2: 11-11
-s5a2: 12-12
-s5a3: 13-13
+s5f1: 11-13
 s5b1: 5-5,17-17
 s5r1: 16-16
 s5i1: 18-18
 s5n1: 19-19
-s5a4: 22-22
+s5a2: 22-22
 s5s2: 20-20
 s5w1: 21-21
 s5s3: 23-23

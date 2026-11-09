@@ -1,5 +1,5 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1     2 3      4
 Words: Lásky a trable žurnalistů
@@ -7,12 +7,12 @@ Words: Lásky a trable žurnalistů
 # sentence level graph:
 (s1a1 / and
         :op1 (s1l1 / láska
+            :refer-number plural
             :possessor (s1z1 / žurnalista
-                :refer-number plural)
-            :refer-number plural)
+                :refer-number plural))
         :op2 (s1t1 / trable
-            :possessor s1z1
-            :refer-number plural))
+            :refer-number plural
+            :possessor s1z1))
 
 # alignment:
 s1a1: 2-2
@@ -25,7 +25,7 @@ s1t1: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1
 Words: Recenze
@@ -42,7 +42,7 @@ s2r1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1    2  3    4   5       6  7      8        9  10       11       12     13       14         15      16       17     18 19 20   21      22 23   24 25
 Words: FILM :  Jako dva kohouti na jednom smetišti si zpočátku počínají hlavní hrdinové romantické komedie ZBOŽŇUJU TRABLE (  I  Love Trouble ,  1994 )  .
@@ -52,47 +52,35 @@ Words: FILM :  Jako dva kohouti na jednom smetišti si zpočátku počínají hl
         :ARG1 (s3f1 / film
             :refer-number singular)
         :ARG2 (s3p1 / počínat-si-001
-            :manner (s3x1 / #Equal
+            :aspect activity
+            :manner (s3x1 / %Equal
                 :comparison (s3p2 / počínat-si-001
-                    :manner (s3e1 / entity)
+                    :aspect activity
+                    :manner (s3c1 / concept)
                     :ARG0 (s3k1 / kohout
-                        :mod (s3d1 / dva
-                            :refer-number plural)
+                        :refer-number plural
+                        :mod (s3d1 / dva)
                         :place (s3s1 / smetiště
-                            :mod (s3j1 / jeden
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number plural)
-                    :refer-number plural
-                    :refer-person 3rd
-                    :aspect activity))
+                            :refer-number singular
+                            :mod (s3j1 / jeden)))))
             :temporal (s3z1 / zpočátku)
             :ARG0 (s3h1 / hrdina
-                :mod (s3h2 / hlavní
-                    :refer-number plural)
+                :refer-number plural
+                :mod (s3h2 / hlavní)
                 :possessor (s3k2 / komedie
+                    :refer-number singular
                     :name (s3i2 / identity-91
                         :ARG1 (s3z2 / zbožňovat-001
-                            :ARG0 (s3e2 / entity
+                            :aspect activity
+                            :ARG0 (s3p3 / person
                                 :refer-number singular
                                 :refer-person 1st)
                             :ARG1 (s3t1 / trable
-                                :refer-number plural)
-                            :refer-number singular
-                            :refer-person 1st
-                            :aspect activity)
-                        :ARG2 (s3x2 / #Forn
-                            :FPHR (s3i3 / I)
-                            :FPHR (s3l1 / Love)
-                            :FPHR (s3t2 / Trouble)
-                            :parenthesis (s3x3 / 1994)))
-                    :mod (s3r1 / romantický
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity))
+                                :refer-number plural))
+                        :ARG2 (s3f2 / foreign-phrase
+                            :op1 "I" :op2 "Love" :op3 "Trouble"
+                            :parenthesis (s3x2 / 1994)))
+                    :mod (s3r1 / romantický)))))
 
 # alignment:
 s3i1: 2-2
@@ -100,7 +88,7 @@ s3f1: 1-1
 s3p1: 9-9,11-11
 s3x1: 0-0
 s3p2: 0-0
-s3e1: 0-0
+s3c1: 0-0
 s3k1: 5-5
 s3d1: 4-4
 s3s1: 6-6,8-8
@@ -111,13 +99,10 @@ s3h2: 12-12
 s3k2: 15-15
 s3i2: 18-18
 s3z2: 16-16
-s3e2: 0-0
+s3p3: 0-0
 s3t1: 17-17
-s3x2: 0-0
-s3i3: 19-19
-s3l1: 20-20
-s3t2: 21-21
-s3x3: 23-23
+s3f2: 19-21
+s3x2: 23-23
 s3r1: 14-14
 
 # document level annotation:
@@ -126,53 +111,44 @@ s3r1: 14-14
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1    2    3         4  5          6  7       8             9     10        11  12 13       14       15       16 17         18    19         20 21   22    23
 Words: Role dvou reportérů -  konkurentů ,  jejichž profesionální zápal nepohasne ani ve chvílích vzájemné sympatie ,  ztělesnili Julia Robertsová a  Nick Nolte .
 
 # sentence level graph:
 (s4z1 / ztělesnit-001
+        :aspect performance
         :ARG1 (s4r1 / role
+            :refer-number plural
             :possessor (s4i1 / identity-91
                 :ARG1 (s4r2 / reportér
-                    :mod (s4d1 / dva
-                        :refer-number plural)
+                    :refer-number plural
+                    :mod (s4d1 / dva)
                     :mod (s4p1 / pohasnout-001
-                        :ARG0 (s4z2 / zápal
+                        :aspect performance
+                        :polarity -
+                        :ARG1 (s4z2 / zápal
+                            :refer-number singular
                             :possessor s4i1
-                            :mod (s4p2 / profesionální
-                                :refer-number singular)
-                            :refer-number singular)
+                            :mod (s4p2 / profesionální))
                         :clausal-marker (s4a1 / ani)
                         :temporal (s4c1 / chvíle
+                            :refer-number plural
                             :possessor (s4s1 / sympatie
-                                :mod (s4v1 / vzájemný
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number plural)
-                        :refer-number singular
-                        :refer-person 3rd
-                        :aspect performance
-                        :polarity -)
-                    :refer-number plural)
+                                :refer-number singular
+                                :mod (s4v1 / vzájemný)))))
                 :ARG2 (s4k1 / konkurent
+                    :refer-number plural
                     :mod s4d1
-                    :mod s4p1
-                    :refer-number plural)
-                :refer-number plural)
-            :refer-number plural)
+                    :mod s4p1)))
         :ARG0 (s4a2 / and
             :op1 (s4r3 / Robertsová
-                :mod (s4j1 / Julia
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s4j1 / Julia))
             :op2 (s4n1 / Nolte
-                :mod (s4n2 / Nick
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number plural
-        :aspect performance)
+                :refer-number singular
+                :mod (s4n2 / Nick))))
 
 # alignment:
 s4z1: 17-17
@@ -200,48 +176,39 @@ s4n2: 21-21
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s5-root
+# meta-info :: sent_id = u_tree-cs-s5-root :: type = partial_conversion
 # :: snt5
 Index: 1    2     3         4           5     6     7  8             9      10     11      12      13    14       15 16   17          18              19 20      21    22         23
 Words: Love story rámovanou odhalováním velké aféry s  karcinogenním mlékem napsal režisér Charles Shyer společně se svou dlouholetou spolupracovnicí a  družkou Nancy Meyersovou .
 
 # sentence level graph:
 (s5n1 / napsat-007
+        :aspect performance
         :effect (s5s1 / story
+            :refer-number singular
             :mod (s5l1 / love)
             :mod (s5r1 / rámovaný
                 :ARG0 (s5o1 / odhalování
+                    :refer-number singular
                     :ARG0 (s5e1 / entity)
                     :ARG1 (s5a1 / aféra
-                        :mod (s5v1 / velký
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s5v1 / velký)
                         :companion (s5m1 / mléko
-                            :mod (s5k1 / karcinogenní
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                            :refer-number singular
+                            :mod (s5k1 / karcinogenní))))))
         :ARG0 (s5s2 / Shyer
-            :mod (s5c1 / Charles
-                :refer-number singular)
-            :mod (s5r2 / režisér
-                :refer-number singular)
-            :refer-number singular)
+            :refer-number singular
+            :mod (s5c1 / Charles)
+            :mod (s5r2 / režisér))
         :companion (s5m2 / Meyersová
+            :refer-number singular
             :mod (s5n2 / Nancy)
             :mod (s5a2 / and
                 :op1 (s5s3 / spolupracovnice
                     :possessor s5s2
-                    :mod (s5d1 / dlouholetý
-                        :refer-number singular)
-                    :refer-number singular)
-                :op2 (s5d2 / druh
-                    :refer-number singular))
-            :refer-number singular)
-        :refer-number singular
-        :aspect performance)
+                    :mod (s5d1 / dlouholetý))
+                :op2 (s5d2 / druh))))
 
 # alignment:
 s5n1: 10-10
@@ -270,40 +237,34 @@ s5d2: 20-20
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s6-root
+# meta-info :: sent_id = u_tree-cs-s6-root :: type = partial_conversion
 # :: snt6
 Index: 1          2  3  4  5       6          7         8            9   10 11      12      13    14 15   16             17           18
 Words: Samozřejmě ,  že v  příběhu sbližování unaveného novinářského esa s  bystrou elévkou nejde o  taje investigativní žurnalistiky .
 
 # sentence level graph:
 (s6e1 / event
+        :aspect state
         :clausal-marker (s6s1 / samozřejmě)
         :ARG0 (s6j1 / jít-035
-            :place (s6p1 / příběh
-                :possessor (s6s2 / sbližování
-                    :ARG0 (s6e2 / eso
-                        :mod (s6n1 / novinářský
-                            :refer-number singular)
-                        :mod (s6u1 / unavený
-                            :refer-number singular)
-                        :refer-number singular)
-                    :ARG1 (s6e3 / elévka
-                        :mod (s6b1 / bystrý
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :ARG0 (s6t1 / taj
-                :possessor (s6z1 / žurnalistika
-                    :mod (s6i1 / investigativní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity
-            :polarity -)
-        :aspect state)
+            :polarity -
+            :place (s6p1 / příběh
+                :refer-number singular
+                :possessor (s6s2 / sbližování
+                    :refer-number singular
+                    :ARG0 (s6e2 / eso
+                        :refer-number singular
+                        :mod (s6n1 / novinářský)
+                        :mod (s6u1 / unavený))
+                    :ARG1 (s6e3 / elévka
+                        :refer-number singular
+                        :mod (s6b1 / bystrý))))
+            :ARG2 (s6t1 / taj
+                :refer-number plural
+                :possessor (s6z1 / žurnalistika
+                    :refer-number singular
+                    :mod (s6i1 / investigativní)))))
 
 # alignment:
 s6e1: 0-0
@@ -326,41 +287,35 @@ s6i1: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s7-root
+# meta-info :: sent_id = u_tree-cs-s7-root :: type = partial_conversion
 # :: snt7
 Index: 1      2      3        4        5  6      7        8         9    10    11    12 13     14          15 16      17      18
 Words: Starou dobrou červenou knihovnu se autoři pokusili nadlehčit spíš prvky krimi ,  vtipné konverzačky i  akčního dramatu .
 
 # sentence level graph:
 (s7p1 / pokusit-se-001
+        :aspect performance
         :ARG0 (s7a1 / autor
             :refer-number plural)
         :ARG1 (s7n1 / nadlehčit-001
+            :aspect performance
             :ARG1 (s7k1 / knihovna
-                :mod (s7c1 / červený
-                    :refer-number singular)
-                :mod (s7d1 / dobrý
-                    :refer-number singular)
-                :mod (s7s1 / starý
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s7c1 / červený)
+                :mod (s7d1 / dobrý)
+                :mod (s7s1 / starý))
             :ARG0 s7a1
             :clausal-marker (s7s2 / spíše)
             :instrument (s7p2 / prvek
+                :refer-number plural
                 :possessor (s7a2 / and
                     :op1 (s7k2 / krimi)
                     :op2 (s7k3 / konverzačka
-                        :mod (s7v1 / vtipný
-                            :refer-number singular)
-                        :refer-number singular)
+                        :refer-number singular
+                        :mod (s7v1 / vtipný))
                     :op3 (s7d2 / drama
-                        :mod (s7a3 / akční
-                            :refer-number singular)
-                        :refer-number singular))
-                :refer-number plural)
-            :aspect performance)
-        :refer-number plural
-        :aspect performance)
+                        :refer-number singular
+                        :mod (s7a3 / akční))))))
 
 # alignment:
 s7p1: 5-5,7-7
@@ -384,7 +339,7 @@ s7a3: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s8-root
+# meta-info :: sent_id = u_tree-cs-s8-root :: type = partial_conversion
 # :: snt8
 Index: 1        2       3  4      5  6  7     8          9     10    11 12       13 14        15   16      17 18       19     20 21    22          23       24      25 26    27       28 29     30          31 32    33 34       35 36       37      38  39       40       41      42
 Words: Příjemný nadhled ,  patrný už z  mírně ironického názvu filmu ,  dodržuje i  kameraman John Lindley :  invenční záběry z  ptačí perspektivy vyniknou zejména ve scéně účtování s  podlým protivníkem ,  která se odehrává na kymácivé plošině pod střechou chemické továrny .
@@ -392,66 +347,50 @@ Words: Příjemný nadhled ,  patrný už z  mírně ironického názvu filmu , 
 # sentence level graph:
 (s8a1 / and
         :op1 (s8d1 / dodržovat-002
+            :aspect activity
             :ARG1 (s8n1 / nadhled
-                :mod (s8p1 / příjemný
-                    :refer-number singular)
+                :refer-number singular
+                :mod (s8p1 / příjemný)
                 :mod (s8p2 / patrný
                     :clausal-marker (s8u1 / už)
                     :source (s8n2 / název
+                        :refer-number singular
                         :ARG1 (s8f1 / film
                             :refer-number singular)
                         :mod (s8i1 / ironický
-                            :extent (s8m1 / mírně)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
+                            :extent (s8m1 / mírně)))))
             :clausal-marker (s8i2 / i)
             :ARG0 (s8l1 / Lindley
-                :mod (s8j1 / John
-                    :refer-number singular)
-                :mod (s8k1 / kameraman
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity)
+                :refer-number singular
+                :mod (s8j1 / John)
+                :mod (s8k1 / kameraman)))
         :op2 (s8v1 / vyniknout-001
-            :ARG0 (s8z1 / záběr
-                :mod (s8i3 / invenční
-                    :refer-number plural)
+            :aspect performance
+            :ARG1 (s8z1 / záběr
+                :refer-number plural
+                :mod (s8i3 / invenční)
                 :start (s8p3 / perspektiva
-                    :mod (s8p4 / ptačí
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
+                    :refer-number singular
+                    :mod (s8p4 / ptačí)))
             :clausal-marker (s8z2 / zejména)
             :place (s8s1 / scéna
+                :refer-number singular
                 :name (s8u2 / účtování
+                    :refer-number singular
                     :ARG0 (s8e1 / entity)
                     :ARG1 (s8p5 / protivník
-                        :mod (s8p6 / podlý
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG0-of (s8o1 / odehrávat-se-001
+                        :refer-number singular
+                        :mod (s8p6 / podlý)))
+                :ARG1-of (s8o1 / odehrávat-se-001
+                    :aspect activity
                     :place (s8p7 / plošina
-                        :mod (s8k2 / kymácivý
-                            :refer-number singular)
+                        :refer-number singular
+                        :mod (s8k2 / kymácivý)
                         :place (s8s2 / střecha
+                            :refer-number singular
                             :possessor (s8t1 / továrna
-                                :mod (s8c1 / chemický
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
-                    :aspect activity)
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect performance))
+                                :refer-number singular
+                                :mod (s8c1 / chemický))))))))
 
 # alignment:
 s8a1: 17-17
@@ -493,52 +432,39 @@ s8c1: 40-40
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s9-root
+# meta-info :: sent_id = u_tree-cs-s9-root :: type = partial_conversion
 # :: snt9
 Index: 1  2                 3       4    5    6      7   8     9  10      11    12         13 14      15      16 17   18    19       20           21
 Words: Ke kinematografickým výšinám však film doletí jen stěží ,  třebaže Julie Robertsová je opravdu půvabná a  Nick Nolte zajímavě opotřebovaný .
 
 # sentence level graph:
-(s9b1 / but-91
-        :ARG1 (s9d1 / doletět-001
-            :clausal-marker (s9v1 / však)
-            :goal (s9v2 / výšina
-                :mod (s9k1 / kinematografický
-                    :refer-number plural)
-                :refer-number plural)
-            :ARG0 (s9f1 / film
-                :refer-number singular)
-            :clausal-marker (s9j1 / jen)
-            :manner (s9s1 / stěží)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect performance)
-        :ARG2 (s9a1 / and
-            :op1 (s9b2 / být-007
+(s9d1 / doletět-001
+        :aspect performance
+        :clausal-marker (s9v1 / však)
+        :goal (s9v2 / výšina
+            :refer-number plural
+            :mod (s9k1 / kinematografický))
+        :ARG0 (s9f1 / film
+            :refer-number singular)
+        :clausal-marker (s9j1 / jen)
+        :manner (s9s1 / stěží)
+        :concession (s9a1 / and
+            :op1 (s9b1 / být-007
+                :aspect activity
                 :clausal-marker (s9o1 / opravdu)
-                :ARG0 (s9r1 / Robertsová
-                    :mod (s9j2 / Julie
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG1 (s9p1 / půvabný
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)
-            :op2 (s9b3 / být-007
-                :ARG0 (s9n1 / Nolte
-                    :mod (s9n2 / Nick
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG1 (s9o2 / opotřebovaný
-                    :manner (s9z1 / zajímavě)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
-                :aspect activity)))
+                :ARG1 (s9r1 / Robertsová
+                    :refer-number singular
+                    :mod (s9j2 / Julie))
+                :ARG2 (s9p1 / půvabný))
+            :op2 (s9b2 / být-007
+                :aspect activity
+                :ARG1 (s9n1 / Nolte
+                    :refer-number singular
+                    :mod (s9n2 / Nick))
+                :ARG2 (s9o2 / opotřebovaný
+                    :manner (s9z1 / zajímavě)))))
 
 # alignment:
-s9b1: 0-0
 s9d1: 6-6
 s9v1: 4-4
 s9v2: 1-1,3-3
@@ -547,12 +473,12 @@ s9f1: 5-5
 s9j1: 7-7
 s9s1: 8-8
 s9a1: 16-16
-s9b2: 10-10,13-13
+s9b1: 10-10,13-13
 s9o1: 14-14
 s9r1: 12-12
 s9j2: 11-11
 s9p1: 15-15
-s9b3: 0-0
+s9b2: 0-0
 s9n1: 18-18
 s9n2: 17-17
 s9o2: 20-20
@@ -566,7 +492,7 @@ s9z1: 19-19
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s10-root
+# meta-info :: sent_id = u_tree-cs-s10-root :: type = partial_conversion
 # :: snt10
 Index: 1      2         3         4  5      6          7     8        9  10           11      12    13      14 15    16 17      18       19 20    21   22 23        24            25
 Words: Jejich elegantní kočkování a  slovní přestřelky totiž vzhledem k  dvouhodinové metráži filmu hraničí s  nudou a  žánrová pestrost se místy mění v  bezradnou roztříštěnost .
@@ -574,43 +500,34 @@ Words: Jejich elegantní kočkování a  slovní přestřelky totiž vzhledem k 
 # sentence level graph:
 (s10a1 / and
         :op1 (s10h1 / hraničit-001
+            :aspect activity
             :clausal-marker (s10t1 / totiž)
             :ARG0 (s10a2 / and
                 :op1 (s10k1 / kočkování
+                    :refer-number singular
                     :ARG0 (s10e1 / entity
                         :refer-number plural
                         :refer-person 3rd)
-                    :manner (s10e2 / elegantní
-                        :refer-number singular)
-                    :refer-number singular)
+                    :manner (s10e2 / elegantní))
                 :op2 (s10p1 / přestřelka
-                    :mod (s10s1 / slovní
-                        :refer-number plural)
-                    :refer-number plural))
+                    :refer-number plural
+                    :mod (s10s1 / slovní)))
             :regard (s10m1 / metráž
+                :refer-number singular
                 :possessor (s10f1 / film
                     :refer-number singular)
-                :mod (s10d1 / dvouhodinový
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s10d1 / dvouhodinový))
             :ARG1 (s10n1 / nuda
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
-            :aspect activity)
+                :refer-number singular))
         :op2 (s10m2 / měnit-se-001
-            :ARG0 (s10p2 / pestrost
-                :mod (s10z1 / žánrový
-                    :refer-number singular)
-                :refer-number singular)
+            :aspect activity
+            :ARG1 (s10p2 / pestrost
+                :refer-number singular
+                :mod (s10z1 / žánrový))
             :temporal (s10m3 / místy)
-            :ARG1 (s10r1 / roztříštěnost
-                :mod (s10b1 / bezradný
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
-            :aspect activity))
+            :ARG2 (s10r1 / roztříštěnost
+                :refer-number singular
+                :mod (s10b1 / bezradný))))
 
 # alignment:
 s10a1: 16-16
@@ -640,27 +557,24 @@ s10b1: 23-23
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s11-root
+# meta-info :: sent_id = u_tree-cs-s11-root :: type = partial_conversion
 # :: snt11
 Index: 1  2       3  4        5     6        7      8        9    10
 Words: A  koktejl z  několika žánrů postupně ztrácí veškerou chuť .
 
 # sentence level graph:
 (s11z1 / ztrácet-002
+        :aspect activity
         :clausal-marker (s11a1 / a)
         :ARG0 (s11k1 / koktejl
+            :refer-number singular
             :source (s11z2 / žánr
-                :mod (s11n1 / několik)
-                :refer-number plural)
-            :refer-number singular)
+                :refer-number plural
+                :mod (s11n1 / několik)))
         :manner (s11p1 / postupně)
         :ARG1 (s11c1 / chuť
-            :mod (s11v1 / veškerý
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
-        :aspect activity)
+            :refer-number singular
+            :mod (s11v1 / veškerý)))
 
 # alignment:
 s11z1: 7-7
@@ -678,16 +592,15 @@ s11v1: 8-8
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s12-root
+# meta-info :: sent_id = u_tree-cs-s12-root :: type = partial_conversion
 # :: snt12
 Index: 1         2
 Words: Magdalena Bičíková
 
 # sentence level graph:
 (s12b1 / Bičíková
-        :mod (s12m1 / Magdalena
-            :refer-number singular)
-        :refer-number singular)
+        :refer-number singular
+        :mod (s12m1 / Magdalena))
 
 # alignment:
 s12b1: 2-2
@@ -698,24 +611,21 @@ s12m1: 1-1
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s13-root
+# meta-info :: sent_id = u_tree-cs-s13-root :: type = partial_conversion
 # :: snt13
 Index: 1        2      3 4   5 6    7
 Words: Zbožňuju trable , USA , 1994 .
 
 # sentence level graph:
 (s13a1 / and
-        :op1 (s13x1 / #Idph
+        :op1 (s13x1 / %Idph
             :name (s13z1 / zbožňovat-001
-                :ARG0 (s13e1 / entity
+                :aspect activity
+                :ARG0 (s13p1 / person
                     :refer-number singular
                     :refer-person 1st)
                 :ARG1 (s13t1 / trable
-                    :refer-number plural)
-                :refer-number singular
-                :refer-person 1st
-                :aspect activity)
-            :refer-number singular)
+                    :refer-number plural)))
         :op2 (s13u1 / USA
             :refer-number plural)
         :op3 (s13x2 / 1994))
@@ -724,7 +634,7 @@ Words: Zbožňuju trable , USA , 1994 .
 s13a1: 5-5
 s13x1: 0-0
 s13z1: 1-1
-s13e1: 0-0
+s13p1: 0-0
 s13t1: 2-2
 s13u1: 4-4
 s13x2: 6-6
@@ -735,7 +645,7 @@ s13x2: 6-6
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s14-root
+# meta-info :: sent_id = u_tree-cs-s14-root :: type = partial_conversion
 # :: snt14
 Index: 1          2 3  4 5      6
 Words: Distribuce v ČR : Falcon .
@@ -743,9 +653,9 @@ Words: Distribuce v ČR : Falcon .
 # sentence level graph:
 (s14i1 / identity-91
         :ARG1 (s14d1 / distribuce
+            :refer-number singular
             :place (s14c1 / ČR
-                :refer-number singular)
-            :refer-number singular)
+                :refer-number singular))
         :ARG2 (s14f1 / Falcon
             :refer-number singular))
 
@@ -760,33 +670,31 @@ s14f1: 5-5
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s15-root
+# meta-info :: sent_id = u_tree-cs-s15-root :: type = partial_conversion
 # :: snt15
 Index: 1     2  3       4     5  6      7  8     9         10 11     12 13   14      15
 Words: Režie :  Charles Shyer ,  scénář :  Nancy Meyersová ,  kamera :  John Lindley .
 
 # sentence level graph:
 (s15a1 / and
-        :op1 (s15x1 / #Colon
+        :op1 (s15x1 / %Colon
             :ARG0 (s15r1 / režie
                 :refer-number singular)
             :ARG1 (s15s1 / Shyer
-                :mod (s15c1 / Charles
-                    :refer-number singular)
-                :refer-number singular))
-        :op2 (s15x2 / #Colon
+                :refer-number singular
+                :mod (s15c1 / Charles)))
+        :op2 (s15x2 / %Colon
             :ARG0 (s15s2 / scénář
                 :refer-number singular)
             :ARG1 (s15m1 / Meyersová
-                :mod (s15n1 / Nancy)
-                :refer-number singular))
-        :op3 (s15x3 / #Colon
+                :refer-number singular
+                :mod (s15n1 / Nancy)))
+        :op3 (s15x3 / %Colon
             :ARG0 (s15k1 / kamera
                 :refer-number singular)
             :ARG1 (s15l1 / Lindley
-                :mod (s15j1 / John
-                    :refer-number singular)
-                :refer-number singular)))
+                :refer-number singular
+                :mod (s15j1 / John))))
 
 # alignment:
 s15a1: 10-10
@@ -811,32 +719,27 @@ s15j1: 13-13
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s16-root
+# meta-info :: sent_id = u_tree-cs-s16-root :: type = partial_conversion
 # :: snt16
 Index: 1     2  3     4          5  6    7     8  9    10      11 12    13
 Words: Hrají :  Julia Robertsová ,  Nick Nolte ,  Saul Rubinek a  další .
 
 # sentence level graph:
 (s16h1 / hrát-003
+        :aspect activity
         :ARG1 (s16e1 / entity)
         :ARG0 (s16a1 / and
             :op1 (s16r1 / Robertsová
-                :mod (s16j1 / Julia
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s16j1 / Julia))
             :op2 (s16n1 / Nolte
-                :mod (s16n2 / Nick
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s16n2 / Nick))
             :op3 (s16r2 / Rubinek
-                :mod (s16s1 / Saul
-                    :refer-number singular)
-                :refer-number singular)
+                :refer-number singular
+                :mod (s16s1 / Saul))
             :op4 (s16d1 / další
-                :refer-number plural))
-        :refer-number plural
-        :refer-person 3rd
-        :aspect activity)
+                :refer-number plural)))
 
 # alignment:
 s16h1: 1-1

@@ -1,18 +1,17 @@
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s1-root
+# meta-info :: sent_id = u_tree-cs-s1-root :: type = partial_conversion
 # :: snt1
 Index: 1      2 3 4    5 6 7
 Words: Součet 5 . kola I . ligy
 
 # sentence level graph:
 (s1s1 / součet
+        :refer-number singular
         :mod (s1k1 / kolo
             :possessor (s1l1 / liga
-                :mod (s1i1 / I)
-                :refer-number singular)
-            :mod (s1x1 / 5)
-            :refer-number singular)
-        :refer-number singular)
+                :refer-number singular
+                :mod (s1i1 / I))
+            :mod (s1x1 / 5)))
 
 # alignment:
 s1s1: 1-1
@@ -26,13 +25,13 @@ s1x1: 2-2
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s2-root
+# meta-info :: sent_id = u_tree-cs-s2-root :: type = partial_conversion
 # :: snt2
 Index: 1       2 3 4
 Words: Penalty : 4 -
 
 # sentence level graph:
-(s2x1 / #Colon
+(s2x1 / %Colon
         :ARG0 (s2p1 / penalta
             :refer-number plural)
         :ARG1 (s2x2 / 4))
@@ -47,7 +46,7 @@ s2x2: 3-3
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s3-root
+# meta-info :: sent_id = u_tree-cs-s3-root :: type = partial_conversion
 # :: snt3
 Index: 1      2  3      4  5  6     7         8  9      10 11    12 13 14     15 16   17 18          19
 Words: Vrabec (  Žižkov )  a  Sokol proměnili ,  Pavlík (  Plzeň )  a  Bielik (  Cheb )  neproměnili .
@@ -55,32 +54,30 @@ Words: Vrabec (  Žižkov )  a  Sokol proměnili ,  Pavlík (  Plzeň )  a  Biel
 # sentence level graph:
 (s3a1 / and
         :op1 (s3p1 / proměnit-002
+            :aspect performance
             :ARG1 (s3e1 / entity)
-            :effect (s3e2 / entity)
+            :ARG2 (s3e2 / entity)
             :ARG0 (s3a2 / and
                 :op1 (s3v1 / Vrabec
+                    :refer-number singular
                     :parenthesis (s3z1 / Žižkov
-                        :refer-number singular)
-                    :refer-number singular)
+                        :refer-number singular))
                 :op2 (s3s1 / Sokol
-                    :refer-number singular))
-            :refer-number plural
-            :aspect performance)
+                    :refer-number singular)))
         :op2 (s3p2 / proměnit-002
+            :aspect performance
+            :polarity -
             :ARG1 s3e1
-            :effect s3e2
+            :ARG2 s3e2
             :ARG0 (s3a3 / and
                 :op1 (s3p3 / Pavlík
+                    :refer-number singular
                     :parenthesis (s3p4 / Plzeň
-                        :refer-number singular)
-                    :refer-number singular)
+                        :refer-number singular))
                 :op2 (s3b1 / Bielik
+                    :refer-number singular
                     :parenthesis (s3c1 / Cheb
-                        :refer-number singular)
-                    :refer-number singular))
-            :refer-number plural
-            :aspect performance
-            :polarity -))
+                        :refer-number singular)))))
 
 # alignment:
 s3a1: 8-8
@@ -103,7 +100,7 @@ s3c1: 16-16
 
 
 ################################################################################
-# meta-info :: type = partial_conversion :: sent_id = u_tree-cs-s4-root
+# meta-info :: sent_id = u_tree-cs-s4-root :: type = partial_conversion
 # :: snt4
 Index: 1 2  3
 Words: ( šv )
